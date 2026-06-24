@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/pc.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+
+    <title>인사말 | 아산나눔재단</title>
+  </head>
+  <body>
+    <!-- 스크롤시 header 에 scroll -->
+    <header class="scroll">
+      <!-- 
+            pc :
+            1. depth1 에 마우스오버됐을때 open 클래스 추가 
+            2. depth1 를 클릭했을때 active 클래스 추가
+            3. depth3 에 마우스오버되면 depth2__menu에 active 클래스 추가
+    
+            mobile :
+            1. mobileBtn클릭시 header에 openM 클래스 추가 (한번더 클릭시 openM 클래스 제거)
+            2. depth1 클릭시 active 클래스 추가
+          -->
+      <div class="headerWrap clear">
+        <h1>
+          <a href=""></a>
+          <button type="button" class="mobileBtn">닫기</button>
+        </h1>
+        <nav>
+          <ul class="headerWrap__menu clear">
+            <li>
+              <a href="" class="depth1">아산나눔재단</a>
+              <ul class="depth2">
+                <li><a href="">재단 소개</a></li>
+                <li><a href="">인사말</a></li>
+                <li><a href="">투명경영</a></li>
+                <li><a href="">함께하는 사람들</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">프로그램</a>
+              <ul class="depth2 program">
+                <li>
+                  <a href="" class="depth2__menu active">청소년 기업가정신 확산</a>
+                  <ul class="depth3 clear">
+                    <li><a href="">기업가정신 레츠고</a></li>
+                    <li><a href="">아산 유스프러너</a></li>
+                    <li><a href="">아산 티처프러너</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">청년창업 지원</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 창업경진대회</a></li>
+                    <li><a href="">MARU</a></li>
+                    <li><a href="">아산 비영리스타트업</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">사회혁신가 양성</a>
+                  <ul class="depth3">
+                    <li><a href="">아산 프론티어 아카데미</a></li>
+                    <li><a href="">아산 프론티어 네트워크</a></li>
+                    <li><a href="">아산상회</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">혁신생태계 조성</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 엔젤투자기금</a></li>
+                    <li><a href="">아산 기업가정신 리뷰</a></li>
+                    <li><a href="">창업생태계 파트너십</a></li>
+                    <li><a href="">창업생태계 활성화 연구</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">재단소식</a>
+              <ul class="depth2">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">보도자료</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">자료실</a>
+              <ul class="depth2">
+                <li><a href="">소개자료</a></li>
+                <li><a href="">블로그</a></li>
+                <li><a href="">영상</a></li>
+                <li><a href="">뉴스레터</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">아산 정주영</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="headerWrap__side">
+          <ul class="clear">
+            <li><a href="">파트너십 제안</a></li>
+            <li><a href="">ENGLISH</a></li>
+          </ul>
+          <input type="submit" id="search1_1" class="active" />
+          <label for="search1_1"
+            >검색
+            <button type="button">닫기</button>
+          </label>
+        </div>
+
+        <!-- 모바일 메뉴 -->
+        <ul class="headerWrap__gnbM clear">
+          <li><a href="">주소/연락처</a></li>
+          <li><a href="">사이트맵</a></li>
+          <li><a href="">개인정보 보호정책</a></li>
+          <li><a href="">공익제보</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="mt67">
+      <section class="greeting">
+        <div class="basicWrap">
+          <div class="comSubP__tit">
+            <p>THE ASAN NANUM FOUNDATION</p>
+            <h2>인사말</h2>
+          </div>
+          <article class="greeting__message clear">
+            <div class="devideTit">
+              <small>HONORARY CHAIRMAN’S MESSAGE</small>
+              <h3>명예이사장 인사말</h3>
+            </div>
+            <div class="greeting__message--profile pic01">
+              <figure class="pic01"></figure>
+              <p>아산나눔재단 명예이사장</p>
+              <strong>정몽준</strong>
+            </div>
+            <div class="greeting__message--txt">
+              <p>
+                기업인에게 요구되는 사회적 덕목에는 여러 가지가 있습니다. 선친께서는 “우리 사회의
+                가장 어려운 이웃을 돕는다”는 뜻을 세우고 1977년 아산사회복지재단을 설립하셨습니다.
+                아버님의 뜻을 실천하기를 거의 40년 저희는 새 시대가 요구하는 목소리에 귀를
+                기울이고자 했습니다.
+              </p>
+              <p>
+                우리 사회는 새로운 변화를 겪고 있습니다. 창조적이고 역동적인 인재가 필요하게 되고,
+                나눔의 미덕이 소중한 사회로 나아가고 있습니다.
+              </p>
+              <p>
+                이런 시대상에 맞춰 아산나눔재단이 설립됐습니다. 아산나눔재단은 2011년, 선친의 서거
+                10주기를 기념하고 ‘함께 잘사는 공동체’를 구현하고자, 사회구성원이 다같이 참여하는
+                ‘열린 운동’을 시작했습니다.
+              </p>
+              <p>
+                아산나눔재단은 NPO 정신과 기업가정신을 두루 갖추어 사회발전에 도움이 되도록
+                노력하겠습니다. 진취적 기상으로 오늘의 어려움을 극복하여 우리사회를 건강하게 만드는
+                데 기여하고 싶습니다.
+              </p>
+              <p>
+                아산나눔재단은 청년 기업가들이 일을 잘할 수 있는 창업 환경을 만들고, 비영리분야에
+                계신 분들이 더 좋은 방법으로 취약계층을 도울 수 있는 여건을 조성하겠습니다. 많은
+                분들의 참여와 관심, 격려를 부탁 드립니다. 아산나눔재단은 여러분들과 함께
+                일하겠습니다.
+              </p>
+            </div>
+          </article>
+          <article class="greeting__message clear">
+            <div class="devideTit">
+              <small>CHAIRMAN’S MESSAGE</small>
+              <h3>이사장 인사말</h3>
+            </div>
+            <div class="greeting__message--profile pic02">
+              <figure class="pic02"></figure>
+              <p>아산나눔재단 이사장</p>
+              <strong>장석환</strong>
+            </div>
+            <div class="greeting__message--txt">
+              <p>
+                안녕하십니까. 아산나눔재단 이사장 장석환입니다. 아산나눔재단은 설립 이래 우리나라의
+                젊은 창업가와 사회혁신가가 도전하고, 성장할 수 있도록 꾸준히 지원해왔습니다.
+              </p>
+              <p>
+                아산나눔재단과 함께한 창업가와 사회혁신가는 기업가정신을 각자의 영역에서 발휘하며
+                창업 및 사회혁신 생태계를 풍성하게 만들어가고 있습니다. 또한, 이들이 만들어갈 새로운
+                혁신과 나눔의 확산은 아산나눔재단이 꾸준히 활동하는 원동력이 됩니다.
+              </p>
+              <p>
+                아산 정주영 현대창업자는 “함께 잘 사는 공동체를 만드는 것이 나의 궁극적 목표”라고
+                하셨습니다. 아산나눔재단은 아산의 창조정신을 계승한 기업가정신을 확산하여 개인과
+                사회, 나아가 한국 경제를 우뚝 세우는 데 힘을 보탤 수 있도록 역할을 다하겠습니다.
+              </p>
+              <p>
+                “할 수 있다고 생각하면 이룰 수 있는 세상”을 만들기 위한 여정에 여러분도 함께해
+                주시기 바랍니다.
+              </p>
+              <p>감사합니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <article class="newsLetter clear h400">
+        <div class="newsLetter__tit">
+          <h2>
+            <span>아산나눔재단</span>이 진행하는<br />다양한 프로그램의 소식을<br />가장 먼저
+            받아보세요.
+          </h2>
+        </div>
+        <div class="newsLetter__right">
+          <div class="newsLetter__right--email">
+            <input type="text" id="sendEmail" placeholder="이메일 주소" />
+            <button type="button">뉴스레터 구독하기</button>
+          </div>
+          <input type="checkbox" id="chk1_1" class="inputAgree" />
+          <label for="chk1_1">개인정보 수집 및 이용에 동의합니다.</label>
+          <p>
+            뉴스레터 발송을 위한 이메일 정보를 수집하고 이용합니다. 수집된 정보는 뉴스레터 발송
+            외<br />
+            다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+          </p>
+          <div class="newsLetter__right--follow clear">
+            <b>FOLLOW US</b>
+            <ul class="clear">
+              <li><img src="../img/ic_facebook_wh.svg" alt="페이스북" /></li>
+              <li><img src="../img/ic_youtube_wh.svg" alt="유튜브" /></li>
+              <li><img src="../img/ic_blog_wh.png" alt="네이버 블로그" /></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <div class="footer__menu">
+        <div class="clear">
+          <a href="">주소/연락처</a>
+          <a href="">사이트맵</a>
+          <a href="">개인정보보호정책</a>
+          <a href="">공익제보</a>
+          <button type="button" class="topBtn">TOP</button>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <a href="" class="footer__bottom--logo">
+          <img src="../img/img_logo.png" alt="아산나눔재단" />
+        </a>
+        <div class="footer__bottom--famSite clear">
+          <p>Copyright © <span>The Asan Nanum Foundation.</span> All right Reserved.</p>
+          <ul>
+            <li>
+              MARU
+              <div class="maru">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_insta_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              정주영 창업경진대회
+              <div class="contest">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 리뷰
+              <div class="review">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 스쿨
+              <div class="school">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

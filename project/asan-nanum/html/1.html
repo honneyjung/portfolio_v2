@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/pc.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+
+    <title>재단 소개 | 아산나눔재단</title>
+  </head>
+  <body>
+    <!-- 스크롤시 header 에 scroll -->
+    <header>
+      <!-- 
+        pc :
+        1. depth1 에 마우스오버됐을때 open 클래스 추가 → depth2 노출
+        2. depth1 를 클릭했을때 active 클래스 추가
+        3. depth3 에 마우스오버되면 depth2__menu에 active 클래스 추가
+
+        mobile :
+        1. mobileBtn클릭시 header에 openM 클래스 추가 (한번더 클릭시 openM 클래스 제거)
+        2. depth1 클릭시 active 클래스 추가 (아코디언)
+
+        공통 :
+        - 스크롤 10px 이상 내려가면 header에 scroll 클래스 추가
+      -->
+      <div class="headerWrap clear">
+        <h1>
+          <a href=""></a>
+          <button type="button" class="mobileBtn">닫기</button>
+        </h1>
+        <nav>
+          <ul class="headerWrap__menu clear">
+            <li>
+              <a href="" class="depth1">아산나눔재단</a>
+              <ul class="depth2">
+                <li><a href="./1.html">재단 소개</a></li>
+                <li><a href="">인사말</a></li>
+                <li><a href="">투명경영</a></li>
+                <li><a href="">함께하는 사람들</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">프로그램</a>
+              <ul class="depth2 program">
+                <li>
+                  <a href="" class="depth2__menu active"
+                    >청소년 기업가정신 확산</a
+                  >
+                  <ul class="depth3 clear">
+                    <li><a href="">기업가정신 레츠고</a></li>
+                    <li><a href="">아산 유스프러너</a></li>
+                    <li><a href="">아산 티처프러너</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">청년창업 지원</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 창업경진대회</a></li>
+                    <li><a href="">MARU</a></li>
+                    <li><a href="">아산 비영리스타트업</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">사회혁신가 양성</a>
+                  <ul class="depth3">
+                    <li><a href="">아산 프론티어 아카데미</a></li>
+                    <li><a href="">아산 프론티어 네트워크</a></li>
+                    <li><a href="">아산상회</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">혁신생태계 조성</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 엔젤투자기금</a></li>
+                    <li><a href="">아산 기업가정신 리뷰</a></li>
+                    <li><a href="">창업생태계 파트너십</a></li>
+                    <li><a href="">창업생태계 활성화 연구</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">재단소식</a>
+              <ul class="depth2">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">보도자료</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">자료실</a>
+              <ul class="depth2">
+                <li><a href="">소개자료</a></li>
+                <li><a href="">블로그</a></li>
+                <li><a href="">영상</a></li>
+                <li><a href="">뉴스레터</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">아산 정주영</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="headerWrap__side">
+          <ul class="clear">
+            <li><a href="">파트너십 제안</a></li>
+            <li><a href="">ENGLISH</a></li>
+          </ul>
+          <input type="submit" id="search1_1" class="active" />
+          <label for="search1_1"
+            >검색
+            <button type="button">닫기</button>
+          </label>
+        </div>
+
+        <!-- 모바일 메뉴 -->
+        <ul class="headerWrap__gnbM clear">
+          <li><a href="">주소/연락처</a></li>
+          <li><a href="">사이트맵</a></li>
+          <li><a href="">개인정보 보호정책</a></li>
+          <li><a href="">공익제보</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="mt67">
+      <section class="fndation">
+        <div class="basicWrap">
+          <div class="comSubP__tit">
+            <p>THE ASAN NANUM FOUNDATION</p>
+            <h2>재단 소개</h2>
+          </div>
+          <article class="fndation__info">
+            <figure></figure>
+            <div class="fndation__info--txt">
+              <strong>
+                아산나눔재단은 아산 정주영 현대 창업자의 서거 10주기를 기념해
+                2011년 10월 출범한 공익재단입니다.
+              </strong>
+              <p>
+                아산나눔재단은 아산 정주영 현대 창업자의 서거 10주기를 기념해
+                2011년 10월 출범한 공익재단 입니다.
+              </p>
+              <p>
+                우리 사회에 아산의 창조 정신을 계승한
+                <span>‘기업가정신(起業家精神; Entrepreneurship)’</span>
+                확산을 위해 사회 전반에서 다양한 방식의 지원사업을 진행하고
+                있습니다.
+              </p>
+              <p>
+                더 나은 세상으로의 변화를 이끄는 사람과 기관을 양성해 사회발전을
+                이루고자 "할 수 있다고 생각하면 이룰 수 있는 세상"이라는 비전
+                아래 청년 창업가와 사회혁신가가 도전하고, 성장하고, 나누는
+                기반을 만들고자 합니다.
+              </p>
+              <p>
+                이를 위해 청소년 기업가정신 확산 사업, 청년창업 지원 사업,
+                사회혁신가 양성 사업, 혁신생태계 조성 사업 등을 다양하게
+                펼쳐나가고 있습니다.
+              </p>
+            </div>
+          </article>
+          <article class="fndation__vision">
+            <div class="devideTit">
+              <small>VISION & MISSION</small>
+              <h3>비전과 미션</h3>
+              <p>
+                아산은 “할 수 있다고 생각하는 사람은 무슨 일이든 이룰 수 있다”
+                고 말한 바 있습니다.
+              </p>
+              <p>
+                아산나눔재단은 더 나은 세상으로의 변화를 이끄는 사람과 기관을
+                양성해 사회발전을 이루고자 합니다.<br />
+                이들은 다음세대가 지닌 무한한 가능성이 실현될 수 있도록 새로운
+                미래를 창조하고 도움이 필요한 이웃들을 보듬어 줄 것입니다.
+              </p>
+            </div>
+            <div class="fndation__vision--keyword">
+              <dl class="clear">
+                <div class="clear">
+                  <dt>VISION</dt>
+                  <dd>할 수 있다고 생각하면 이룰 수 있는 세상</dd>
+                </div>
+                <div>
+                  <dt>MISSION</dt>
+                  <dd>
+                    세상을 변화시키는 창업가와 사회혁신가(Social Innovator)<br />가
+                    도전하고 성장하고 나누는 기반을 만듭니다.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div class="fndation__vision--list clear">
+              <ul>
+                <li class="clear">
+                  <i>1</i>
+                  <h4>핵심가치</h4>
+                </li>
+                <li class="clear">
+                  <i>2</i>
+                  <h4>사업선택 원칙</h4>
+                </li>
+                <li class="clear">
+                  <i>3</i>
+                  <h4>사업진행 방식</h4>
+                </li>
+              </ul>
+              <div class="visionTxtWrap">
+                <div class="submitM">
+                  <p><span>1</span>핵심가치</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>도전</dt>
+                    <dd>더 나은 세상으로의 변화를 이끄는 힘</dd>
+                  </div>
+                  <div>
+                    <dt>성장</dt>
+                    <dd>배움과 실천을 통한 잠재력의 발휘</dd>
+                  </div>
+                  <div>
+                    <dt>나눔</dt>
+                    <dd>더불어 사는 책임주체로서의 성숙한 의식</dd>
+                  </div>
+                </dl>
+                <div class="submitM">
+                  <p><span>2</span>사업선택 원칙</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>역량개발</dt>
+                    <dd>
+                      일회성, 시혜성 사업이 아닌 지속적인 역량개발을 지원하는
+                      사업
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>사회적 파급효과</dt>
+                    <dd>
+                      선택과 집중을 통해 사회적 파급효과를 기대할 수 있는 사업
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>자생력 복원</dt>
+                    <dd>개인과 사회의 자생력을 복원하는 데 도움이 되는 사업</dd>
+                  </div>
+                </dl>
+                <div class="submitM">
+                  <p><span>3</span>사업진행 방식</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>책임성</dt>
+                    <dd>새로운 시도에 과감하지만 책임 있는 투자</dd>
+                  </div>
+                  <div>
+                    <dt>질적 성과</dt>
+                    <dd>양적 사업성과를 넘어 질적 사업성과를 추구</dd>
+                  </div>
+                  <div>
+                    <dt>투명성</dt>
+                    <dd>정보공개를 통한 투명한 사업진행</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </article>
+          <article class="comSubP__devide">
+            <div class="devideTit">
+              <small>HISTORY</small>
+              <h3>연혁</h3>
+            </div>
+            <div class="fndation__historyWrap">
+              <div class="fndation__historyWrap--btn clear">
+                <button type="button">이전</button>
+                <button type="button">다음</button>
+                <ul class="clear">
+                  <li><button type="button" class="active">2023</button></li>
+                  <li><button type="button">2022</button></li>
+                  <li><button type="button">2021</button></li>
+                  <li><button type="button">2020</button></li>
+                  <li><button type="button">2019</button></li>
+                  <li><button type="button">2018</button></li>
+                  <li><button type="button">2017</button></li>
+                  <li><button type="button">2016</button></li>
+                  <li><button type="button">2015</button></li>
+                  <li><button type="button">2014</button></li>
+                  <li><button type="button">2013</button></li>
+                  <li><button type="button">2012</button></li>
+                  <li><button type="button">2011</button></li>
+                </ul>
+              </div>
+              <div class="fndation__historyWrap--info">
+                <h4>2023</h4>
+                <dl class="clear">
+                  <div>
+                    <dt>01.07</dt>
+                    <dd>'아산 티처프러너' 4기 수료식</dd>
+                  </div>
+                  <div>
+                    <dt>01.12</dt>
+                    <dd>'아산 유스프러너 데모데이' 진행</dd>
+                  </div>
+                  <div>
+                    <dt>02.01</dt>
+                    <dd>'아산 유스프러너' 참여학교 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.06</dt>
+                    <dd>아산나눔재단 CI 리뉴얼</dd>
+                  </div>
+                  <div>
+                    <dt>02.10</dt>
+                    <dd>'아산 프론티어 아카데미' 12기 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.13</dt>
+                    <dd>'아산 비영리스타트업' 참여 기관 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.15</dt>
+                    <dd>'마루' 상반기 입주 스타트업 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.20</dt>
+                    <dd>'아산상회' 5기 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.22</dt>
+                    <dd>'아산 보이저' 론칭 및 모집</dd>
+                  </div>
+                  <div>
+                    <dt>02.27</dt>
+                    <dd>'마루콜렉트' 입점 스타트업 모집</dd>
+                  </div>
+                  <div>
+                    <dt>03.08</dt>
+                    <dd>‘아산 기업가정신 리뷰’ 사례 발행</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <article class="newsLetter clear h400">
+        <div class="newsLetter__tit">
+          <h2>
+            <span>아산나눔재단</span>이 진행하는<br />다양한 프로그램의
+            소식을<br />가장 먼저 받아보세요.
+          </h2>
+        </div>
+        <div class="newsLetter__right">
+          <div class="newsLetter__right--email">
+            <input type="text" id="sendEmail" placeholder="이메일 주소" />
+            <button type="button">뉴스레터 구독하기</button>
+          </div>
+          <input type="checkbox" id="chk1_1" class="inputAgree" />
+          <label for="chk1_1">개인정보 수집 및 이용에 동의합니다.</label>
+          <p>
+            뉴스레터 발송을 위한 이메일 정보를 수집하고 이용합니다. 수집된
+            정보는 뉴스레터 발송 외<br />
+            다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지할
+            경우 즉시 파기됩니다.
+          </p>
+          <div class="newsLetter__right--follow clear">
+            <b>FOLLOW US</b>
+            <ul class="clear">
+              <li><img src="../img/ic_facebook_wh.svg" alt="페이스북" /></li>
+              <li><img src="../img/ic_youtube_wh.svg" alt="유튜브" /></li>
+              <li><img src="../img/ic_blog_wh.png" alt="네이버 블로그" /></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <div class="footer__menu">
+        <div class="clear">
+          <a href="">주소/연락처</a>
+          <a href="">사이트맵</a>
+          <a href="">개인정보보호정책</a>
+          <a href="">공익제보</a>
+          <button type="button" class="topBtn">TOP</button>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <a href="" class="footer__bottom--logo">
+          <img src="../img/img_logo.png" alt="아산나눔재단" />
+        </a>
+        <div class="footer__bottom--famSite clear">
+          <p>
+            Copyright © <span>The Asan Nanum Foundation.</span> All right
+            Reserved.
+          </p>
+          <ul>
+            <li>
+              MARU
+              <div class="maru">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_insta_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              정주영 창업경진대회
+              <div class="contest">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 리뷰
+              <div class="review">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 스쿨
+              <div class="school">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

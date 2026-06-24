@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/pc.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+
+    <title>검색결과 | 아산나눔재단</title>
+  </head>
+  <body>
+    <header class="">
+      <!-- 
+      pc :
+      1. depth1 에 마우스오버됐을때 open 클래스 추가 
+      2. depth1 를 클릭했을때 current 클래스 추가
+      3. depth2 > li > a 에 active 클래스 추가
+    -->
+      <div class="headerWrap clear">
+        <h1>
+          <a href=""></a>
+        </h1>
+        <nav>
+          <ul class="headerWrap__menu clear">
+            <li>
+              <a href="" class="depth1 current">아산나눔재단</a>
+              <ul class="depth2">
+                <li><a href="">재단 소개</a></li>
+                <li><a href="">인사말</a></li>
+                <li><a href="">투명경영</a></li>
+                <li><a href="">함께하는 사람들</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">프로그램</a>
+              <ul class="depth2 program">
+                <li>
+                  <a href="" class="depth2__menu">청소년 기업가정신 확산</a>
+                  <ul class="depth3 clear">
+                    <li><a href="">기업가정신 레츠고</a></li>
+                    <li><a href="">아산 유스프러너</a></li>
+                    <li><a href="">아산 티처프러너</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu active">청년창업 지원</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 창업경진대회</a></li>
+                    <li><a href="">MARU</a></li>
+                    <li><a href="">아산 비영리스타트업</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">사회혁신가 양성</a>
+                  <ul class="depth3">
+                    <li><a href="">아산 프론티어 아카데미</a></li>
+                    <li><a href="">아산 프론티어 네트워크</a></li>
+                    <li><a href="">아산상회</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="" class="depth2__menu">혁신생태계 조성</a>
+                  <ul class="depth3">
+                    <li><a href="">정주영 엔젤투자기금</a></li>
+                    <li><a href="">아산 기업가정신 리뷰</a></li>
+                    <li><a href="">창업생태계 파트너십</a></li>
+                    <li><a href="">창업생태계 활성화 연구</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">재단소식</a>
+              <ul class="depth2">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">보도자료</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">자료실</a>
+              <ul class="depth2">
+                <li><a href="">소개자료</a></li>
+                <li><a href="">블로그</a></li>
+                <li><a href="">영상</a></li>
+                <li><a href="">뉴스레터</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="depth1">아산 정주영</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="headerWrap__side">
+          <ul class="clear">
+            <li><a href="">파트너십 제안</a></li>
+            <li><a href="">ENGLISH</a></li>
+          </ul>
+          <input type="ch" id="search1_1" />
+          <label for="search1_1"
+            >검색
+            <button type="button">닫기</button>
+          </label>
+        </div>
+
+        <!-- 모바일 메뉴 -->
+        <ul class="headerWrap__mobile">
+          <li><a href="">주소/연락처</a></li>
+          <li><a href="">사이트맵</a></li>
+          <li><a href="">개인정보 보호정책</a></li>
+          <li><a href="">공익제보</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="">
+      <section class="search">
+        <div class="basicWrap">
+          <div class="search__inputWrap">
+            <div class="search__inputWrap--bar">
+              <input type="text" placeholder="검색" />
+              <button type="submit" class="searchBtn">검색</button>
+              <button type="reset" class="resetBtn">검색초기화</button>
+            </div>
+            <p><span>교사</span>에 대한 <span>30</span>건의 검색결과가 있습니다</p>
+          </div>
+          <article class="search__list">
+            <h3>페이지 <span>0</span>건</h3>
+            <ul>
+              <li>검색 결과를 찾을 수 없습니다</li>
+            </ul>
+          </article>
+          <article class="search__list">
+            <h3>재단소식 <span>26</span>건</h3>
+            <ul>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>보도자료</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>보도자료</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>보도자료</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>보도자료</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a href="" class="moreBtn">재단소식 검색결과 더 보기</a>
+          </article>
+          <article class="search__list">
+            <h3>자료실 <span>4</span>건</h3>
+            <ul>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>뉴스레터</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>블로그</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>블로그</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="" class="clear">
+                  <figure class="default"></figure>
+                  <div class="search__list--txtWrap">
+                    <small>블로그</small>
+                    <h4>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행
+                    </h4>
+                    <p>
+                      이제는 필수과목이 된 ‘기업가정신’, <b>교사</b>와 학부모도 배운다!
+                      아산나눔재단, ‘기업가정신 레츠고(Let’s Go)’ 프로그램 진행 – <b>교사</b>,
+                      학부모, 교육 관계자 대상으로 다양한 기업가정신 체험 기회 – 3월부터 11월까지 총
+                      18회 진행 예정, 3월 참여자는 오늘부터 모집 (2019-02-21) 아산나눔재단(이사장
+                      이경숙)이 오는 3월부터 11월까지 ‘기업가정신 레츠고(Let’s Go)’ 프로그램을
+                      실시하고 기업가정신 확산에 나선다.
+                    </p>
+                    <span>2019.02.21</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a href="" class="moreBtn">자료실 검색결과 더 보기</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <article class="newsLetter clear h400">
+        <div class="newsLetter__tit">
+          <h2>
+            <span>아산나눔재단</span>이 진행하는<br />다양한 프로그램의 소식을<br />가장 먼저
+            받아보세요.
+          </h2>
+        </div>
+        <div class="newsLetter__right">
+          <div class="newsLetter__right--email">
+            <input type="text" id="sendEmail" placeholder="이메일 주소" />
+            <button type="button">뉴스레터 구독하기</button>
+          </div>
+          <input type="checkbox" id="chk1_1" class="inputAgree" />
+          <label for="chk1_1">개인정보 수집 및 이용에 동의합니다.</label>
+          <p>
+            뉴스레터 발송을 위한 이메일 정보를 수집하고 이용합니다. 수집된 정보는 뉴스레터 발송
+            외<br />
+            다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+          </p>
+          <div class="newsLetter__right--follow clear">
+            <b>FOLLOW US</b>
+            <ul class="clear">
+              <li><img src="../img/ic_facebook_wh.svg" alt="페이스북" /></li>
+              <li><img src="../img/ic_youtube_wh.svg" alt="유튜브" /></li>
+              <li><img src="../img/ic_blog_wh.png" alt="네이버 블로그" /></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <div class="footer__menu">
+        <div class="clear">
+          <a href="">주소/연락처</a>
+          <a href="">사이트맵</a>
+          <a href="">개인정보보호정책</a>
+          <a href="">공익제보</a>
+          <button type="button" class="topBtn">TOP</button>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <a href="" class="footer__bottom--logo">
+          <img src="../img/img_logo.png" alt="아산나눔재단" />
+        </a>
+        <div class="footer__bottom--famSite clear">
+          <p>Copyright © <span>The Asan Nanum Foundation.</span> All right Reserved.</p>
+          <ul>
+            <li>
+              MARU
+              <div class="maru">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_insta_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              정주영 창업경진대회
+              <div class="contest">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+                <a href="" target="_blank">
+                  <img src="../img/ic_facebook_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 리뷰
+              <div class="review">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+            <li>
+              아산 기업가정신 스쿨
+              <div class="school">
+                <a href="" target="_blank">
+                  <img src="../img/ic_home_dark.svg" alt="" aria-hidden />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
