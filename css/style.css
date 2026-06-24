@@ -19,6 +19,55 @@
   font-weight: 700;
   font-display: swap;
 }
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
 *,
 *::before,
 *::after {
@@ -128,9 +177,9 @@ ul {
   object-fit: cover;
 }
 .profile-name {
-  font-family: "Playfair Display", serif;
+  font-family: "Aggravo", sans-serif;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 300;
   color: #ffffff;
   margin-bottom: 6px;
   text-align: center;
@@ -261,9 +310,8 @@ ul {
 }
 
 .page-title {
-  font-family: "Playfair Display", serif;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 500;
   color: #1a1a2e;
   margin-bottom: 40px;
   position: relative;
@@ -281,9 +329,9 @@ ul {
 }
 
 .section-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Aggravo", sans-serif;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 300;
   color: #1a1a2e;
   margin: 44px 0 24px;
   position: relative;
@@ -350,9 +398,8 @@ ul {
 }
 .hero-name {
   margin-bottom: 20px;
-  font-family: "Playfair Display", serif;
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 500;
   color: #1a1a2e;
   line-height: 1.05;
 }
@@ -453,7 +500,7 @@ ul {
   top: -6px;
   font-size: 40px;
   color: rgba(245, 166, 35, 0.25);
-  font-family: "Playfair Display", serif;
+  font-family: "Aggravo", sans-serif;
   line-height: 1;
 }
 .testimonial-item .testimonial-author {
@@ -578,9 +625,9 @@ ul {
   margin-bottom: 18px;
 }
 .pricing-card .price {
-  font-family: "Playfair Display", serif;
+  font-family: "Aggravo", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 300;
   color: #1a1a2e;
   line-height: 1;
   margin-bottom: 20px;
@@ -643,9 +690,9 @@ ul {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 }
 .fact-item .fact-number {
-  font-family: "Playfair Display", serif;
+  font-family: "Aggravo", sans-serif;
   font-size: 44px;
-  font-weight: 700;
+  font-weight: 300;
   color: #f5a623;
   line-height: 1;
   margin-bottom: 8px;
