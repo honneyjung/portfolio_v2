@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentIndex < 0) {
         currentIndex = total - perPage;
         goTo(currentIndex, false);
-      } else if (currentIndex + perPage > total) {
+      } else if (currentIndex >= total) {
         currentIndex = 0;
         goTo(currentIndex, false);
       }
@@ -425,6 +425,151 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 3000);
     });
   }
+
+  // ================================================================
+  // PORTFOLIO MODAL
+  // ================================================================
+  (function () {
+    const MODAL_DATA = {
+      hemily: {
+        title: "해밀리 헬스",
+        cat: "Frontend(React)",
+        img: null,
+        imgIcon: "fab fa-react",
+        meta: [
+          { label: "역할", value: "Frontend Developer" },
+          { label: "기여도", value: "38%" },
+          { label: "기간", value: "2026.07" },
+        ],
+        desc: "헬스케어 스타트업 해밀리의 신규 앱 프론트엔드 개발에 참여했습니다. 설문 기반 건강 유형 분류 화면부터 DNA 단계별 챌린지·리포트 UI까지 컴포넌트 설계 및 API 연동을 직접 담당했습니다.",
+        tags: ["React 19", "TypeScript", "TanStack Query", "Zustand", "Vite", "TailwindCSS"],
+        link: "#",
+      },
+      "carenation-web": {
+        title: "케어네이션 홈페이지 리뉴얼",
+        cat: "Web",
+        img: "./images/img_carenation_homepage.png",
+        imgAlt: "케어네이션 홈페이지",
+        meta: [
+          { label: "역할", value: "Web Publisher" },
+          { label: "기여도", value: "100%" },
+          { label: "페이지 수", value: "13 pages" },
+        ],
+        desc: "신규 서비스 추가에 따른 케어네이션 홈페이지 전면 리뉴얼을 담당했습니다. 페이지 구조 설계부터 퍼블리싱까지 단독으로 진행했으며, 기존 CSS를 SCSS로 리팩토링하여 유지보수성을 개선했습니다.",
+        tags: ["HTML5", "CSS3", "SCSS", "jQuery", "반응형"],
+        link: "./project/carenation_v2/html/0.html",
+      },
+      asan: {
+        title: "아산나눔재단 웹사이트",
+        cat: "Web",
+        img: "./images/img-asan_homepage.png",
+        imgAlt: "아산나눔재단 웹사이트",
+        meta: [
+          { label: "역할", value: "Web Publisher" },
+          { label: "기여도", value: "100%" },
+          { label: "페이지 수", value: "16 pages" },
+        ],
+        desc: "아산나눔재단 공식 홈페이지 클론 코딩을 작업했습니다. 시맨틱 마크업과 웹 접근성 기준을 준수하며 1920px~280px 반응형 레이아웃을 구현했습니다.",
+        tags: ["HTML5", "CSS3", "SCSS", "반응형", "웹접근성"],
+        link: "./project/asan-nanum/html/0.html",
+      },
+      "carenation-app": {
+        title: "케어네이션 앱 UI",
+        cat: "App",
+        img: null,
+        imgIcon: "fas fa-mobile-alt",
+        meta: [
+          { label: "역할", value: "Web Publisher" },
+          { label: "기여도", value: "100%" },
+          { label: "페이지 수", value: "14 pages" },
+        ],
+        desc: "요양·간병 매칭 서비스 케어네이션의 모바일 앱 UI를 퍼블리싱했습니다. 모바일 환경 기준으로 컴포넌트를 설계하고 공통 스타일을 구조화했습니다.",
+        tags: ["HTML5", "CSS3", "SCSS", "모바일 UI"],
+        link: "./project/care/html/0.html",
+      },
+      backoffice: {
+        title: "경영진 관리자 대시보드",
+        cat: "Dashboard",
+        img: null,
+        imgIcon: "fas fa-th-large",
+        meta: [
+          { label: "역할", value: "Web Publisher" },
+          { label: "기여도", value: "100%" },
+          { label: "페이지 수", value: "66 pages" },
+        ],
+        desc: "백오피스 경영진 전용 관리자 대시보드를 퍼블리싱했습니다. 테이블·차트·모달·폼 등 다양한 공통 컴포넌트를 구조화하고, 대규모 페이지 구성을 체계적으로 관리했습니다.",
+        tags: ["HTML5", "CSS3", "SCSS", "Dashboard", "공통 컴포넌트"],
+        link: "./project/backoffice-executive/html/0.html",
+      },
+    };
+
+    const overlay = document.getElementById("pfModalOverlay");
+    const closeBtn = document.getElementById("pfModalClose");
+    if (!overlay) return;
+
+    function openModal(id) {
+      const data = MODAL_DATA[id];
+      if (!data) return;
+
+      // 이미지
+      const imgWrap = document.getElementById("pfModalImg");
+      if (data.img) {
+        imgWrap.innerHTML = `<img src="${data.img}" alt="${data.imgAlt || data.title}" />`;
+      } else {
+        imgWrap.innerHTML = `<div class="pf-modal-img-placeholder"><i class="${data.imgIcon}"></i><span>이미지 준비 중</span></div>`;
+      }
+
+      document.getElementById("pfModalTitle").textContent = data.title;
+      document.getElementById("pfModalCat").textContent = data.cat;
+
+      // 메타
+      document.getElementById("pfModalMeta").innerHTML = data.meta
+        .map((m) => `<div class="pf-modal-meta-item"><span>${m.label}</span><p>${m.value}</p></div>`)
+        .join("");
+
+      document.getElementById("pfModalDesc").textContent = data.desc;
+
+      // 태그
+      document.getElementById("pfModalTags").innerHTML = data.tags
+        .map((t) => `<span>${t}</span>`)
+        .join("");
+
+      // 링크
+      const link = document.getElementById("pfModalLink");
+      if (data.link && data.link !== "#") {
+        link.href = data.link;
+        link.style.display = "inline-flex";
+      } else {
+        link.style.display = "none";
+      }
+
+      overlay.setAttribute("aria-hidden", "false");
+      overlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // 카드 클릭 — 클론 포함 이벤트 위임 (cloneNode(true)로 data-modal 복사됨)
+    document.getElementById("pfTrack").addEventListener("click", function (e) {
+      const card = e.target.closest(".pf-card");
+      if (!card) return;
+      const id = card.dataset.modal;
+      if (id) openModal(id);
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  })();
 
   // ================================================================
   // HERO CHIP ANIMATION
