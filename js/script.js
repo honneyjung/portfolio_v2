@@ -434,8 +434,8 @@ document.addEventListener("DOMContentLoaded", function () {
       hemily: {
         title: "해밀리 헬스",
         cat: "Frontend(React)",
-        img: null,
-        imgIcon: "fab fa-react",
+        img: "./images/img_project1.png",
+        imgAlt: "해밀리 헬스",
         meta: [
           { label: "역할", value: "Frontend Developer" },
           { label: "기여도", value: "38%" },
@@ -443,7 +443,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         desc: "헬스케어 스타트업 해밀리의 신규 앱 프론트엔드 개발에 참여했습니다. 설문 기반 건강 유형 분류 화면부터 DNA 단계별 챌린지·리포트 UI까지 컴포넌트 설계 및 API 연동을 직접 담당했습니다.",
         tags: ["React 19", "TypeScript", "TanStack Query", "Zustand", "Vite", "TailwindCSS"],
-        link: "#",
+        link: "./project/hemily-health/frontend/dist/index.html",
       },
       "carenation-web": {
         title: "케어네이션 홈페이지 리뉴얼",
@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "carenation-app": {
         title: "케어네이션 앱 UI",
         cat: "App",
-        img: null,
+        img: "./images/img_project2.jpg",
         imgIcon: "fas fa-mobile-alt",
         meta: [
           { label: "역할", value: "Web Publisher" },
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function () {
       backoffice: {
         title: "경영진 관리자 대시보드",
         cat: "Dashboard",
-        img: null,
+        img: "./images/img_project3.jpg",
         imgIcon: "fas fa-th-large",
         meta: [
           { label: "역할", value: "Web Publisher" },
@@ -499,7 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         desc: "백오피스 경영진 전용 관리자 대시보드를 퍼블리싱했습니다. 테이블·차트·모달·폼 등 다양한 공통 컴포넌트를 구조화하고, 대규모 페이지 구성을 체계적으로 관리했습니다.",
         tags: ["HTML5", "CSS3", "SCSS", "Dashboard", "공통 컴포넌트"],
-        link: "./project/backoffice-executive/html/0.html",
+        link: "./project/backoffice-executive/html/1.html",
       },
     };
 
@@ -511,9 +511,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = MODAL_DATA[id];
       if (!data) return;
 
-      // 이미지
+      // 이미지 / 미리보기
       const imgWrap = document.getElementById("pfModalImg");
-      if (data.img) {
+      if (data.previewUrl) {
+        imgWrap.innerHTML = `<iframe class="pf-modal-iframe" src="${data.previewUrl}" title="${data.title} 미리보기" loading="lazy"></iframe>`;
+      } else if (data.img) {
         imgWrap.innerHTML = `<img src="${data.img}" alt="${data.imgAlt || data.title}" />`;
       } else {
         imgWrap.innerHTML = `<div class="pf-modal-img-placeholder"><i class="${data.imgIcon}"></i><span>이미지 준비 중</span></div>`;

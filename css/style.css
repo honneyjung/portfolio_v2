@@ -104,11 +104,6 @@ a {
   color: inherit;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 ul {
   list-style: none;
 }
@@ -1113,10 +1108,7 @@ ul {
   overflow: hidden;
 }
 .pf-modal-img img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  display: block;
 }
 .pf-modal-img-placeholder {
   width: 100%;
