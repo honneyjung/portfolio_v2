@@ -197,11 +197,12 @@
   .depth2 a:hover {
     color: #003c1e;
   }
-  .depth1:hover + .depth2,
+  .headerWrap__menu > li:hover .depth2,
   .depth1.open + .depth2 {
     opacity: 1;
     visibility: visible;
   }
+  .headerWrap__menu li:nth-child(2):hover .depth2:before,
   .headerWrap__menu li:nth-child(2) .depth1.open + .depth2:before {
     content: "";
     display: block;
@@ -212,7 +213,7 @@
     height: 1px;
     background-color: #e7e3de;
   }
-  .depth1:hover + .depth2 > li > a,
+  .headerWrap__menu > li:hover .depth2 > li > a,
   .depth1.open + .depth2 > li > a {
     display: inline-block;
   }
@@ -1047,6 +1048,52 @@
   .orgzChart .devideTit small:before,
   .orgzChart .devideTit small:after {
     width: calc(50% - 100px);
+  }
+
+  /* sub-tab-wrap */
+  .sub-tab-wrap {
+    width: 100%;
+    position: sticky;
+    top: 68px;
+    z-index: 100;
+    background-color: #fff;
+    border-bottom: solid 1px #e7e3de;
+  }
+  .sub-tab-wrap .sub-tab {
+    display: table;
+    width: 100%;
+    text-align: center;
+  }
+  .sub-tab-wrap .sub-tab li {
+    display: table-cell;
+    cursor: pointer;
+    background-color: #fff;
+    border-right: solid 1px #e7e3de;
+    color: #585e64;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .sub-tab-wrap .sub-tab li:last-child {
+    border-right: 0;
+  }
+  .sub-tab-wrap .sub-tab li a {
+    display: inline-block;
+    width: 100%;
+    line-height: 80px;
+    color: inherit;
+  }
+  .sub-tab-wrap .sub-tab li.on,
+  .sub-tab-wrap .sub-tab li:hover {
+    color: #fff;
+    background-color: #003c1e;
+    border-right-color: transparent;
+  }
+  .sub-tab-wrap .sub-tab.entrepreneurship li {
+    width: calc(100% / 3);
+  }
+  .comProgram[id] {
+    scroll-margin-top: 148px;
   }
 
   /* 프로그램 */

@@ -1,0 +1,157 @@
+{
+  "title": "마이페이지",
+  "home": {
+    "title": "마이페이지",
+    "nameSuffix": "님",
+    "userType": {
+      "cancer": "암환우",
+      "chronic": "만성질환",
+      "normal": "일반",
+      "hemilian": "해밀리안"
+    },
+    "gender": { "male": "남성", "female": "여성" },
+    "ageBand": "{{n}}대",
+    "manager": {
+      "label": "담당 해밀리안",
+      "suffix": "{{name}} 해밀리안",
+      "change": "담당 해밀리안 변경",
+      "none": "연결된 해밀리안이 없어요"
+    },
+    "stats": {
+      "report": "리포트",
+      "challenge": "진행 챌린지",
+      "point": "포인트"
+    },
+    "menu": {
+      "reportHistory": "리포트 히스토리",
+      "challengeHistory": "챌린지 히스토리",
+      "consent": "동의 설정",
+      "managerManage": "담당 해밀리안 관리"
+    }
+  },
+  "reportHistory": {
+    "title": "리포트 히스토리",
+    "latestChip": "최신",
+    "latestItem": "#{{no}} 최신 리포트",
+    "item": "#{{no}} 리포트",
+    "careType": {
+      "cancer": "암환우",
+      "chronic": "만성질환",
+      "normal": "일반",
+      "hemilian": "해밀리안"
+    },
+    "compare": "리포트 비교하기",
+    "empty": "아직 생성된 리포트가 없어요"
+  },
+  "challengeHistory": {
+    "title": "챌린지 히스토리",
+    "tabActive": "진행 중 챌린지",
+    "tabEnded": "종료 된 챌린지",
+    "careType": {
+      "cancer": "암환우",
+      "chronic": "만성질환",
+      "normal": "일반",
+      "hemilian": "해밀리안"
+    },
+    "selfChallenge": "셀프 챌린지",
+    "teamChallenge": "함께 챌린지",
+    "empty": "챌린지 내역이 없어요"
+  },
+  "consentSettings": {
+    "title": "동의 설정",
+    "requiredSection": "필수 동의",
+    "shareSection": "정보 공유 범위",
+    "items": {
+      "terms": "서비스 이용약관",
+      "privacy": "개인정보 수집 ∙ 이용",
+      "sensitive": "민감 건강정보 수집",
+      "infoShare": "해밀리안 정보 열람",
+      "marketing": "마케팅 수신(선택)"
+    },
+    "desc": {
+      "agreedDone": "동의 완료",
+      "version": "v{{v}} ∙ 동의 완료",
+      "infoShareScope": "리포트 ∙ 챌린지 ∙ 메모",
+      "agreed": "동의",
+      "denied": "미동의"
+    },
+    "save": "저장하기"
+  },
+  "managerManage": {
+    "title": "담당 해밀리안 관리",
+    "currentLabel": "현재 담당 해밀리안",
+    "nameSuffix": "{{name}} 해밀리안님",
+    "currentCode": "현재 담당 코드",
+    "connectedDate": "연결일자",
+    "changeSection": "담당 해밀리안 변경",
+    "codeInputLabel": "변경 해밀리안 코드 입력",
+    "codePlaceholder": "변경할 해밀리안 코드를 입력하세요",
+    "checkCode": "코드 확인",
+    "notice": "1인 당 1명의 해밀리안 연결이 가능합니다",
+    "save": "변경 사항 저장",
+    "none": "연결된 해밀리안이 없어요"
+  },
+  "pointHistory": {
+    "title": "포인트 내역",
+    "balance": "보유 포인트",
+    "point": "{{n}}p",
+    "pending": "적립 예정",
+    "thisMonth": "이번 달 적립",
+    "amount": "+{{n}}p",
+    "historyLabel": "적립 내역",
+    "empty": "적립 내역이 없어요"
+  },
+  "profile": {
+    "title": "내 프로필",
+    "edit": "프로필 수정",
+    "hemilianManager": "담당 해밀리안",
+    "connect": "코드 연결",
+    "changeRequest": "변경 요청"
+  },
+  "report": {
+    "title": "내 리포트",
+    "latestReport": "최근 리포트",
+    "history": "리포트 히스토리",
+    "viewAll": "전체 보기"
+  },
+  "challenge": {
+    "title": "챌린지 현황",
+    "achievementHistory": "달성 히스토리"
+  },
+  "point": {
+    "title": "포인트",
+    "balance": "보유 포인트",
+    "history": "적립 내역"
+  },
+  "notification": {
+    "title": "알림",
+    "markAllRead": "전체 읽음",
+    "empty": "새로운 알림이 없습니다."
+  },
+  "settings": {
+    "title": "설정",
+    "language": "언어",
+    "logout": "로그아웃",
+    "withdrawal": "회원 탈퇴"
+  },
+  "hemilian": {
+    "badge": "해밀리안",
+    "referralCode": {
+      "label": "내 추천코드",
+      "placeholder": "—",
+      "copied": "복사됨!"
+    },
+    "stats": {
+      "report": "내 리포트",
+      "challenge": "내 챌린지",
+      "point": "포인트"
+    },
+    "menu": {
+      "grade": "내 등급 · 혜택",
+      "reportHistory": "리포트 히스토리",
+      "challengeHistory": "챌린지 히스토리",
+      "point": "포인트",
+      "consent": "정보공유 동의 설정"
+    }
+  }
+}

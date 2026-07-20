@@ -1,0 +1,45 @@
+{
+  "brand": {
+    "tagline": "Manage your health,\ntogether"
+  },
+  "btn": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "next": "Next",
+    "prev": "Back",
+    "start": "Get Started",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "submit": "Submit",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "home": "Home",
+    "challenge": "Challenge",
+    "report": "Report",
+    "mypage": "Mypage"
+  },
+  "error": {
+    "required": "This field is required.",
+    "network": "Network error. Please try again.",
+    "server": "Server error occurred.",
+    "unknown": "An unknown error occurred."
+  },
+  "status": {
+    "active": "Active",
+    "completed": "Completed",
+    "paused": "Paused",
+    "abandoned": "Abandoned"
+  },
+  "unit": {
+    "count_one": "{{count}} item",
+    "count_other": "{{count}} items",
+    "day_one": "{{count}} day",
+    "day_other": "{{count}} days",
+    "percent": "{{value}}%"
+  },
+  "empty": "No data available.",
+  "loading": "Loading..."
+}

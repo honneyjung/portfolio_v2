@@ -63,6 +63,7 @@
   }
   .headerWrap__side {
     top: 64px;
+    left: 0;
     width: 100%;
     height: 54px;
     border-bottom: solid 1px #e7e3de;
@@ -510,6 +511,39 @@
   }
   .greeting__message--txt p {
     margin-bottom: 32px;
+  }
+
+  /* sub-tab-wrap (모바일) */
+  .sub-tab-wrap {
+    width: 100%;
+    position: sticky;
+    top: 64px;
+    z-index: 100;
+    background-color: #fff;
+    border-bottom: solid 1px #e7e3de;
+  }
+  .sub-tab-wrap .sub-tab {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sub-tab-wrap .sub-tab::-webkit-scrollbar {
+    display: none;
+  }
+  .sub-tab-wrap .sub-tab li {
+    display: block;
+    flex: 1 0 auto;
+    border-right: solid 1px #e7e3de;
+  }
+  .sub-tab-wrap .sub-tab li a {
+    display: block;
+    padding: 0 20px;
+    line-height: 50px;
+    white-space: nowrap;
+  }
+  .comProgram[id] {
+    scroll-margin-top: 114px; /* 64px 모바일 헤더 + 50px sub-tab */
   }
 
   /* 프로그램 */

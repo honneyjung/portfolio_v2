@@ -1,0 +1,44 @@
+{
+  "brand": {
+    "tagline": "건강을 함께\n관리해요",
+    "authTagline": "나만의 건강 루틴을\n스마트하게 관리하세요"
+  },
+  "btn": {
+    "confirm": "확인",
+    "cancel": "취소",
+    "save": "저장",
+    "next": "다음",
+    "prev": "이전",
+    "start": "시작하기",
+    "close": "닫기",
+    "edit": "수정",
+    "delete": "삭제",
+    "submit": "제출",
+    "loading": "로딩 중..."
+  },
+  "nav": {
+    "home": "홈",
+    "challenge": "챌린지",
+    "report": "리포트",
+    "mypage": "마이페이지"
+  },
+  "error": {
+    "required": "필수 항목입니다.",
+    "network": "네트워크 오류가 발생했습니다. 다시 시도해주세요.",
+    "server": "서버 오류가 발생했습니다.",
+    "unknown": "알 수 없는 오류가 발생했습니다."
+  },
+  "status": {
+    "active": "진행 중",
+    "completed": "완료",
+    "paused": "일시정지",
+    "abandoned": "중단"
+  },
+  "unit": {
+    "count": "{{count}}개",
+    "day": "{{count}}일",
+    "percent": "{{value}}%"
+  },
+  "empty": "데이터가 없습니다.",
+  "loading": "불러오는 중..."
+}

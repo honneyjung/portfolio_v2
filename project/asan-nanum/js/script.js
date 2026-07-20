@@ -9,8 +9,9 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       ============================== */
 (function () {
   const topBan = $(".topBan");
+  if (!topBan) return;
   const closeBtn = $("button", topBan);
-  if (!topBan || !closeBtn) return;
+  if (!closeBtn) return;
 
   closeBtn.addEventListener("click", () => {
     topBan.style.display = "none";
@@ -27,7 +28,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   if (!header) return;
 
   const SCROLL_CLASS = "scroll";
-  const THRESHOLD = 10; // px
+  const THRESHOLD = 68; // px — header 축소 전환점 (live 사이트 기준)
 
   function onScroll() {
     if (window.scrollY > THRESHOLD) {
@@ -76,14 +77,31 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     });
 
     /* ── PC 전용: hover → open (항상 등록, 모바일에선 no-op) ── */
+    let leaveTimer = null;
     li.addEventListener("mouseenter", () => {
       if (!mq.matches) return;
+      clearTimeout(leaveTimer);
       depth1.classList.add("open");
     });
     li.addEventListener("mouseleave", () => {
       if (!mq.matches) return;
-      depth1.classList.remove("open");
+      leaveTimer = setTimeout(() => {
+        depth1.classList.remove("open");
+      }, 100);
     });
+    if (depth2) {
+      depth2.addEventListener("mouseenter", () => {
+        if (!mq.matches) return;
+        clearTimeout(leaveTimer);
+        depth1.classList.add("open");
+      });
+      depth2.addEventListener("mouseleave", () => {
+        if (!mq.matches) return;
+        leaveTimer = setTimeout(() => {
+          depth1.classList.remove("open");
+        }, 100);
+      });
+    }
 
     /* ── PC 전용: depth3 hover → depth2__menu active ── */
     if (depth2) {
@@ -238,6 +256,37 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       passive: true,
     });
   });
+})();
+
+/* ==============================
+         sub-tab-wrap — hash 기반 탭 활성화
+         – 탭 클릭 → anchor href → URL hash 변경 → activeTab() 실행
+         – 직접 URL hash 접근 시 load 이벤트로 초기 탭 설정
+      ============================== */
+(function () {
+  if (!$(".sub-tab-wrap")) return;
+
+  function activeTab() {
+    const hash = window.location.hash;
+    $$(".sub-tab li").forEach((li) => li.classList.remove("on"));
+
+    if (!hash) {
+      const first = $(".sub-tab li:first-child");
+      if (first) first.classList.add("on");
+    } else {
+      const cleanHash = hash.slice(1);
+      const target = $(`.sub-tab li[data-tab="${cleanHash}"]`);
+      if (target) {
+        target.classList.add("on");
+      } else {
+        const first = $(".sub-tab li:first-child");
+        if (first) first.classList.add("on");
+      }
+    }
+  }
+
+  window.addEventListener("hashchange", activeTab);
+  window.addEventListener("load", activeTab);
 })();
 
 /* ==============================
