@@ -1,0 +1,19 @@
+{
+  "title": "알림",
+  "markAllRead": "전체 읽음",
+  "empty": "새로운 알림이 없습니다.",
+  "time": {
+    "now": "방금",
+    "minute": "{{n}}분 전",
+    "hour": "{{n}}시간 전",
+    "yesterday": "어제",
+    "day": "{{n}}일 전"
+  },
+  "type": {
+    "challenge_ended": "챌린지 종료",
+    "point_earned": "포인트 적립 완료!",
+    "report_created": "신규 리포트 생성",
+    "hemilian_connected": "해밀리안 연결 완료",
+    "default": "알림"
+  }
+}

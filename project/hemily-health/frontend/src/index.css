@@ -1,0 +1,163 @@
+/* ── 언어별 폰트 ──────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :lang(zh) {
+    font-family: "Noto Sans SC", system-ui, sans-serif;
+  }
+  :lang(ar) {
+    font-family: "Noto Sans Arabic", system-ui, sans-serif;
+  }
+  :lang(ko),
+  :lang(en),
+  :lang(fr),
+  :lang(es),
+  :lang(pt) {
+    font-family: "Pretendard", system-ui, sans-serif;
+  }
+
+  html[dir="rtl"] * {
+    direction: rtl;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Pretendard", system-ui, sans-serif;
+    background-color: #f4f4f4; /* bg */
+    color: #191919; /* text */
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ────────────────────────────────────────────────────────
+   컴포넌트 클래스
+   ────────────────────────────────────────────────────── */
+@layer components {
+  /* ── 버튼 ── */
+
+  /* 주요 파란 버튼 (그라디언트) */
+  .btn-primary {
+    background: linear-gradient(
+      180deg,
+      #003e7f 0%,
+      #052649 100%
+    ); /* button_blue */
+    @apply w-full py-3 px-4 rounded-xl text-white font-bold text-body-sm
+           transition-all active:scale-[0.98]
+           disabled:bg-none disabled:bg-gray-300 disabled:cursor-not-allowed;
+  }
+
+  /* 주요 빨간 버튼 (그라디언트) */
+  .btn-danger {
+    background: linear-gradient(
+      180deg,
+      #9d0006 0%,
+      #710a0e 100%
+    ); /* button_red */
+    @apply w-full py-3 px-4 rounded-xl text-white font-bold text-body-sm
+           transition-all active:scale-[0.98];
+  }
+
+  /* 아웃라인 버튼 */
+  .btn-outline {
+    @apply w-full py-3 px-4 rounded-xl border border-blue text-blue font-bold text-body-sm
+           transition-all active:scale-[0.98];
+  }
+
+  /* 보조 버튼 (bottom_blue #D2DFED) */
+  .btn-secondary {
+    @apply w-full py-3 px-4 rounded-xl bg-blue-btn text-blue font-bold text-body-sm
+           transition-all active:scale-[0.98];
+  }
+
+  /* 연한 파란 버튼 (background_blue #BCE4F8) */
+  .btn-light {
+    @apply w-full py-3 px-4 rounded-xl bg-blue-light text-blue font-bold text-body-sm
+           transition-all active:scale-[0.98];
+  }
+
+  /* ── 인풋 ── */
+
+  /* h-[49px] / pl-6(24px) / rounded-full / border sub_blue / bg white / placeholder disabled+label */
+  .input {
+    @apply w-full h-[49px] pl-6 pr-4 rounded-full bg-page-login border border-blue-mid
+           text-body-sm text-gray-900
+           placeholder:text-gray-300 placeholder:text-label placeholder:font-normal
+           outline-none focus:border-blue transition-colors;
+  }
+
+  /* ── 카드 ── */
+
+  .card {
+    @apply bg-gray-50 rounded-2xl border border-gray-100 p-4;
+  }
+
+  /* ── 배지 ── */
+
+  .badge-blue {
+    @apply text-caption font-medium px-2 py-0.5 rounded-full bg-blue-light text-blue;
+  }
+
+  .badge-red {
+    @apply text-caption font-medium px-2 py-0.5 rounded-full bg-red-light text-red;
+  }
+}
+
+/* ────────────────────────────────────────────────────────
+   유틸리티 — 그라디언트 배경
+   ────────────────────────────────────────────────────── */
+@layer utilities {
+  .bg-gradient-blue {
+    background: linear-gradient(180deg, #003e7f 0%, #052649 100%);
+  }
+  .bg-gradient-red {
+    background: linear-gradient(180deg, #9d0006 0%, #710a0e 100%);
+  }
+}
+
+/* ── react-datepicker 테마 오버라이드 ────────────────────── */
+.react-datepicker {
+  font-family: inherit;
+  border: 1px solid #C5D6E8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.react-datepicker__header {
+  background-color: #003E7F;
+  border-bottom: none;
+  padding-top: 12px;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #fff;
+}
+.react-datepicker__navigation-icon::before {
+  border-color: #fff;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #003E7F;
+  border-radius: 50%;
+}
+.react-datepicker__day:hover {
+  background-color: #EAF0F7;
+  border-radius: 50%;
+}
+.react-datepicker__year-select,
+.react-datepicker__month-select {
+  background-color: #003E7F;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 13px;
+}

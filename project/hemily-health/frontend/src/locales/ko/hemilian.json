@@ -1,0 +1,113 @@
+{
+  "title": "해밀리안 마스터",
+  "subtitle": "해밀리안 마스터 육성 도구",
+  "dashboard": {
+    "memberCount": "이달 케이스",
+    "reportCount": "생성된 리포트",
+    "challengeCount": "챌린지 참여",
+    "greeting": "안녕하세요,",
+    "greetingName": "{{name}} 해밀리안",
+    "greetingHonorific": "님",
+    "notifications": "알림",
+    "managedMembers": "담당회원",
+    "challengeInProgress": "챌린지 진행 중",
+    "unit": "명",
+    "unverifiedCases": "미확인 케이스 확인하기",
+    "recentCases": "최근 상담 케이스 이력",
+    "viewAll": "전체보기",
+    "registerCase": "케이스 등록하기",
+    "memberList": "담당 회원 목록"
+  },
+  "caseList": {
+    "title": "최근 상담 목록",
+    "register": "케이스 등록",
+    "empty": "케이스가 없어요"
+  },
+  "caseCreate": {
+    "title": "케이스 등록",
+    "sectionType": "케이스 구분",
+    "typeMember": "해밀리 회원",
+    "typeNonMember": "비회원",
+    "sectionMember": "회원 검색",
+    "memberSearchPlaceholder": "이름 또는 이메일로 검색",
+    "memberSearchEmpty": "검색 결과가 없어요",
+    "sectionClientName": "고객 이름",
+    "clientNamePlaceholder": "이름을 입력하세요",
+    "sectionCategory": "상담 유형",
+    "categoryCancer": "암 환우",
+    "categoryChronic": "만성질환",
+    "categoryGeneral": "일반 건강관리",
+    "sectionMemo": "상담 메모 (선택)",
+    "memoPlaceholder": "상담 내용을 자유롭게 기록하세요",
+    "submit": "등록하기",
+    "submitting": "등록 중...",
+    "errorRequired": "케이스 구분과 상담 유형을 선택해주세요",
+    "errorMemberRequired": "회원을 선택해주세요",
+    "errorClientNameRequired": "고객 이름을 입력해주세요"
+  },
+  "caseDetail": {
+    "title": "상담 상세보기",
+    "backToList": "목록으로",
+    "labelCategory": "케이스 유형",
+    "labelHemilian": "담당 해밀리안",
+    "labelRegisteredAt": "최초 등록일",
+    "challengeTitle": "챌린지 진행률",
+    "challengeEmpty": "아직 연결된 챌린지가 없어요",
+    "memoTitle": "상담 메모",
+    "memoSave": "메모 저장",
+    "memoSaving": "저장 중...",
+    "memoSaved": "저장 완료!",
+    "viewReport": "고객 리포트 확인하기",
+    "noReport": "연결된 리포트가 없어요",
+    "notFound": "케이스 정보를 찾을 수 없어요",
+    "backLink": "목록으로 돌아가기",
+    "loading": "불러오는 중..."
+  },
+  "nav": {
+    "home": "해밀리안 홈",
+    "health": "내 건강관리",
+    "mypage": "마이페이지"
+  },
+  "tabs": {
+    "guide": "질환 가이드",
+    "cases": "케이스 목록",
+    "challenge": "챌린지",
+    "template": "루틴 템플릿",
+    "myReport": "내 리포트"
+  },
+  "case": {
+    "title": "케이스",
+    "type": {
+      "member": "해밀리 회원",
+      "non_member": "비회원"
+    },
+    "status": {
+      "new": "신규",
+      "followup": "팔로업",
+      "completed": "완료"
+    },
+    "add": "케이스 등록",
+    "memo": "상담 메모",
+    "memoPlaceholder": "상담 내용을 자유롭게 기록하세요"
+  },
+  "guide": {
+    "searchDisease": "질환을 검색하세요",
+    "consultGuide": "상담 가이드 멘트",
+    "generateReport": "케이스 리포트 생성"
+  },
+  "member": {
+    "search": "회원 검색",
+    "searchPlaceholder": "이름 또는 이메일로 검색"
+  },
+  "gradeInfo": {
+    "title": "내 등급·혜택",
+    "myGrade": "나의 현재 등급",
+    "colGrade": "등급",
+    "colLevel": "구분",
+    "colDescription": "직급 소개",
+    "colTeamChallenge": "팀챌린지 주도",
+    "currentBadge": "현재 등급",
+    "memberSection": "멤버",
+    "leaderSection": "리더"
+  }
+}

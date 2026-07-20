@@ -1,0 +1,146 @@
+/**
+ * 홈 화면 프리뷰 (개발용 — 인증 없이 mock 데이터로 확인)
+ * 확인 후 삭제 예정
+ */
+import { Navigate } from 'react-router-dom'
+import { queryClient } from '../lib/queryClient'
+import { useAuthStore } from '../lib/store/authStore'
+
+queryClient.setQueryData(['mypage', 'summary'], {
+  data: {
+    me: { id: 'u1', name: '홍길동', email: 'a@b.com', userType: 'chronic', pointCfw: 320, createdAt: '', birth_date: '1975-05-15', gender: 'male' },
+    latest_report: {
+      id: 'r1',
+      result_snapshot: { is_chronic_patient: true, diseases: [{ name: '당뇨' }], disease_stage: '2단계' },
+      basicProducts: [{}, {}, {}], premiumProducts: [],
+    },
+    latest_challenge: {
+      challenge_id: 'c1', status: 'active',
+      routineItems: [
+        { id: '1', name: '스트레칭', category: 'exercise', isChecked: true },
+        { id: '2', name: '유산균', category: 'supplement', isChecked: false },
+        { id: '3', name: '물 4잔', category: 'water', isChecked: false },
+        { id: '4', name: '5감사 쓰기', category: 'gratitude', isChecked: false },
+        { id: '5', name: 'a', category: 'custom', isChecked: true },
+        { id: '6', name: 'b', category: 'custom', isChecked: true },
+        { id: '7', name: 'c', category: 'custom', isChecked: true },
+        { id: '8', name: 'd', category: 'custom', isChecked: true },
+        { id: '9', name: 'e', category: 'custom', isChecked: false },
+        { id: '10', name: 'f', category: 'custom', isChecked: false },
+        { id: '11', name: 'g', category: 'custom', isChecked: false },
+      ],
+    },
+  },
+})
+
+const today = new Date()
+const dow = (today.getDay() + 6) % 7
+const monday = new Date(today)
+monday.setDate(today.getDate() - dow)
+const ymd = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+const histItems = [0, 1, 2, 3].map((i) => {
+  const d = new Date(monday)
+  d.setDate(monday.getDate() + i)
+  return { log_date: ymd(d), completion_rate: 80 }
+})
+queryClient.setQueryData(['challenge', 'history'], { data: { items: histItems } })
+
+queryClient.setQueryData(['challenge', 'teams'], {
+  data: {
+    items: [
+      {
+        team_id: 't1', team_name: '당뇨 관리 21일 챌린지', progress: 62,
+        members: [
+          { userId: '1', name: '김', achievementRate: 80 },
+          { userId: '2', name: '박', achievementRate: 70 },
+          { userId: '3', name: '이', achievementRate: 60 },
+          { userId: '4', name: '강', achievementRate: 50 },
+        ],
+      },
+    ],
+  },
+})
+
+// 홈에서 '나의 맞춤 리포트' 클릭 시 이동하는 /report/r1 도 프리뷰로 렌더되도록 시드
+queryClient.setQueryData(['report', 'r1'], {
+  data: {
+    id: 'r1',
+    result_snapshot: { is_chronic_patient: true, diseases: [{ name: '당뇨' }], disease_stage: '2단계' },
+    previous_report_id: null,
+    createdAt: new Date().toISOString(),
+    products: [
+      { product_id: 'p1', tier: 'core', display_order: 0, product_name: '알티지 오메가3', dna_stage: 'N', intake_timing: '아침 식후', intake_method: '1정', personalized_reason: '혈중 지질 개선과 혈당 안정에 도움.', package_image_url: null, homepage_url: null },
+      { product_id: 'p2', tier: 'core', display_order: 1, product_name: '플러스 혈당케어 미숙여주 바나바', dna_stage: 'N', intake_timing: '저녁 식전', intake_method: '2캡슐', personalized_reason: '인슐린 저항성 개선에 도움.', package_image_url: null, homepage_url: null },
+      { product_id: 'p3', tier: 'support', display_order: 2, product_name: '플러스 면역앤&장유산균', dna_stage: 'N', intake_timing: '취침 전', intake_method: '1포', personalized_reason: '장 환경 개선으로 면역 기반 강화.', package_image_url: null, homepage_url: null },
+    ],
+  },
+})
+
+// 종 아이콘 → /notifications 프리뷰
+const iso = (minAgo: number) => new Date(Date.now() - minAgo * 60000).toISOString()
+queryClient.setQueryData(['notifications'], {
+  data: {
+    items: [
+      { id: 'n1', type: 'challenge_ended', is_read: false, created_at: iso(0), data: { message: "'당뇨 관리 21일' 챌린지가 종료되었습니다. 추가 설문을 작성해보세요!" } },
+      { id: 'n2', type: 'point_earned', is_read: true, created_at: iso(60), data: { message: '인증샷이 검수 완료 되어 10p가 적립되었습니다.' } },
+      { id: 'n3', type: 'report_created', is_read: true, created_at: iso(60 * 26), data: { message: '맞춤 리포트가 새로 생성되었어요. 바로 확인해보세요!' } },
+      { id: 'n4', type: 'hemilian_connected', is_read: true, created_at: iso(60 * 24 * 3), data: { message: '김해밀 해밀리안님과 연결되었습니다.' } },
+    ],
+  },
+})
+
+// 마이페이지(/mypage) 프리뷰용 시드
+queryClient.setQueryData(['mypage', 'reports'], {
+  data: {
+    items: [
+      { report_id: 'r1', created_at: '2026-05-26T09:00:00Z' },
+      { report_id: 'r0', created_at: '2026-02-10T09:00:00Z' },
+    ],
+  },
+})
+queryClient.setQueryData(['mypage', 'challenges', 'active'], {
+  data: { items: [{ challenge_id: 'c1', status: 'active', type: 'self', start_date: '2026-05-01', goal_description: '당뇨 셀프 챌린지' }] },
+})
+queryClient.setQueryData(['mypage', 'challenges', 'completed'], {
+  data: { items: [{ challenge_id: 'c0', status: 'completed', type: 'together', start_date: '2026-03-01', goal_description: '당뇨 관리 21일 챌린지' }] },
+})
+queryClient.setQueryData(['point', 'wallet'], { data: { user_id: 'u1', crm_point_balance: 320 } })
+queryClient.setQueryData(['point', 'transactions'], {
+  data: {
+    items: [
+      { id: 'pt1', amount: 100, status: 'pending', created_at: '2026-05-28', title: '챌린지 종료 보상', detail: '당뇨 관리 21일' },
+      { id: 'pt2', amount: 10, status: 'earned', created_at: '2026-05-20', title: '인증샷 검수 완료', detail: '면역 영양' },
+      { id: 'pt3', amount: 10, status: 'earned', created_at: '2026-05-18', title: '인증샷 검수 완료', detail: '혈당 관리' },
+    ],
+  },
+})
+queryClient.setQueryData(['users', 'hemilian-manager'], {
+  data: {
+    status: 'connected',
+    connected_at: '2026-05-26',
+    hemilian: { id: 'h1', name: '김해밀', code: 'HML-AA123', email: 'hemil@hemliy.kr' },
+  },
+})
+
+// 동의 설정(/mypage/consent) 프리뷰용 시드
+queryClient.setQueryData(['users', 'consents'], {
+  data: {
+    items: [
+      { consent_type: 'terms_of_service', is_agreed: true, version: '1.2' },
+      { consent_type: 'privacy_policy', is_agreed: true, version: '1.2' },
+      { consent_type: 'sensitive_health_info', is_agreed: true },
+      { consent_type: 'info_share_agreed', is_agreed: true },
+      { consent_type: 'marketing', is_agreed: false },
+    ],
+  },
+})
+
+useAuthStore.getState().setAuth(
+  { id: 'u1', name: '홍길동', email: 'a@b.com', userType: 'chronic', pointCfw: 320, createdAt: '', birth_date: '1975-05-15', gender: 'male' },
+  'preview-token',
+)
+
+export default function HomePagePreview() {
+  return <Navigate to="/preview/home/view" replace />
+}
