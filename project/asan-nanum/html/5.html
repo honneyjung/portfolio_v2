@@ -24,6 +24,7 @@
       <div class="headerWrap clear">
         <h1>
           <a href=""></a>
+          <button type="button" class="mobileBtn">닫기</button>
         </h1>
         <nav>
           <ul class="headerWrap__menu clear">
@@ -108,7 +109,7 @@
         </div>
 
         <!-- 모바일 메뉴 -->
-        <ul class="headerWrap__mobile">
+        <ul class="headerWrap__gnbM clear">
           <li><a href="">주소/연락처</a></li>
           <li><a href="">사이트맵</a></li>
           <li><a href="">개인정보 보호정책</a></li>
@@ -127,12 +128,16 @@
               제공합니다.</small
             >
           </div>
-          <ul class="programTapMenu clear">
-            <li><button type="button" class="active">기업가정신 레츠고</button></li>
-            <li><button type="button">아산 유스프러너</button></li>
-            <li><button type="button">아산 티처프러너</button></li>
+        </div>
+        <div class="sub-tab-wrap">
+          <ul class="sub-tab entrepreneurship">
+            <li data-tab="program01" class="on"><a href="#program01">기업가정신 레츠고</a></li>
+            <li data-tab="program02"><a href="#program02">아산 유스프러너</a></li>
+            <li data-tab="program03"><a href="#program03">아산 티처프러너</a></li>
           </ul>
-          <article class="comProgram clear">
+        </div>
+        <div class="basicWrap">
+          <article class="comProgram clear" id="program01">
             <h3>기업가정신 레츠고</h3>
             <figure class="program01"></figure>
             <div class="comProgram__con clear">
@@ -176,7 +181,7 @@
               </div>
             </div>
           </article>
-          <article class="comProgram clear">
+          <article class="comProgram clear" id="program02">
             <h3>아산 유스프러너</h3>
             <figure class="program02"></figure>
             <div class="comProgram__con clear">
@@ -224,7 +229,7 @@
               </div>
             </div>
           </article>
-          <article class="comProgram clear">
+          <article class="comProgram clear" id="program03">
             <h3>아산 티처프러너</h3>
             <figure class="program03"></figure>
             <div class="comProgram__con clear">
@@ -374,5 +379,6 @@
         </div>
       </div>
     </footer>
+    <script src="../js/script.js"></script>
   </body>
 </html>
