@@ -4,55 +4,479 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>아산나눔재단 인덱스</title>
-
+    <title>아산나눔재단 · 퍼블리싱 인덱스</title>
     <style>
       * {
-        padding: 0;
         margin: 0;
-        border: 0;
-        border-spacing: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      table {
-        width: 80%;
-        border-collapse: collapse;
+      :root {
+        --green: #003c1e;
+        --green-deep: #012a16;
+        --teal: #4d9a89;
+        --teal-dark: #0c5a49;
+        --cream: #f7f5f2;
+        --beige: #e7e3de;
+        --mint: #e2ece9;
+        --ink: #1f1f1f;
+        --gray: #585e64;
+        --line: #e3e0da;
       }
-      table td,
-      table th {
-        border: solid 1px #e1e1e1;
-        padding: 2px;
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+          "Malgun Gothic", "맑은 고딕", sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.5;
+        letter-spacing: -0.2px;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ── 헤더 ── */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--green) 0%, var(--teal-dark) 100%);
+        color: #fff;
+        padding: 56px 32px 60px;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: -80px;
+        top: -80px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(77, 154, 137, 0.55), transparent 70%);
+      }
+      .hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+      .hero__tag {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .hero h1 span {
+        color: #b7e0d5;
+      }
+      .hero p {
+        margin-top: 12px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+      .hero__meta {
+        margin-top: 26px;
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .hero__meta div {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero__meta strong {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .hero__meta small {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.72);
+        margin-top: 2px;
+      }
+
+      /* ── 본문 ── */
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 48px 32px 80px;
+      }
+      .section {
+        margin-bottom: 44px;
+      }
+      .section__head {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--beige);
+      }
+      .section__head h2 {
+        position: relative;
+        padding-left: 14px;
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--green);
+      }
+      .section__head h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        bottom: 3px;
+        width: 5px;
+        border-radius: 3px;
+        background: var(--teal);
+      }
+      .section__head span {
+        font-size: 13px;
+        color: var(--gray);
+        font-weight: 500;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0, 60, 30, 0.1);
+        border-color: var(--teal);
+      }
+      .card__id {
+        flex-shrink: 0;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--teal-dark);
+        background: var(--mint);
+        border-radius: 11px;
+        transition: background 0.18s ease, color 0.18s ease;
+      }
+      .card:hover .card__id {
+        background: var(--teal);
+        color: #fff;
+      }
+      .card__body {
+        min-width: 0;
+      }
+      .card__title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .card__file {
+        margin-top: 3px;
+        font-size: 12px;
+        color: var(--gray);
+        font-variant-numeric: tabular-nums;
+      }
+      .card__arrow {
+        margin-left: auto;
+        flex-shrink: 0;
+        color: #c7c2ba;
+        transition: color 0.18s ease, transform 0.18s ease;
+      }
+      .card:hover .card__arrow {
+        color: var(--teal);
+        transform: translateX(3px);
+      }
+      .card--guide .card__id {
+        background: var(--beige);
+        color: var(--green);
+      }
+
+      footer {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 24px 32px 48px;
+        color: var(--gray);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+
+      @media screen and (max-width: 600px) {
+        .hero {
+          padding: 40px 20px 44px;
+        }
+        .hero h1 {
+          font-size: 26px;
+        }
+        main {
+          padding: 32px 20px 60px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1>아산나눔재단</h1>
-      <div>
-        <table>
-          <colgroup>
-            <col style="width: 10%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 15%" />
-            <col style="width: 7%" />
-            <col style="width: 7%" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>분류</th>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Page ID</th>
-              <th>mobile</th>
-              <th>PC</th>
-            </tr>
-          </thead>
-        </table>
+    <header class="hero">
+      <div class="hero__inner">
+        <span class="hero__tag">PUBLISHING INDEX</span>
+        <h1>아산나눔재단 <span>퍼블리싱 인덱스</span></h1>
+        <p>제작된 페이지를 카테고리별로 확인할 수 있습니다. 카드를 클릭하면 새 창에서 열립니다.</p>
+        <div class="hero__meta">
+          <div>
+            <strong>16</strong>
+            <small>전체 페이지</small>
+          </div>
+          <div>
+            <strong>7</strong>
+            <small>카테고리</small>
+          </div>
+          <div>
+            <strong>PC · Mobile</strong>
+            <small>반응형 지원</small>
+          </div>
+        </div>
       </div>
-    </div>
-    <script src="./js/script.js"></script>
+    </header>
+
+    <main>
+      <!-- 메인 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>메인</h2>
+          <span>Main</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/0.html" target="_blank">
+            <span class="card__id">00</span>
+            <span class="card__body">
+              <span class="card__title">메인 홈페이지</span>
+              <span class="card__file">0.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 재단 소개 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>아산나눔재단</h2>
+          <span>About</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/1.html" target="_blank">
+            <span class="card__id">01</span>
+            <span class="card__body">
+              <span class="card__title">재단 소개</span>
+              <span class="card__file">1.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/2.html" target="_blank">
+            <span class="card__id">02</span>
+            <span class="card__body">
+              <span class="card__title">인사말</span>
+              <span class="card__file">2.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/3.html" target="_blank">
+            <span class="card__id">03</span>
+            <span class="card__body">
+              <span class="card__title">투명경영</span>
+              <span class="card__file">3.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/4.html" target="_blank">
+            <span class="card__id">04</span>
+            <span class="card__body">
+              <span class="card__title">함께하는 사람들</span>
+              <span class="card__file">4.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 프로그램 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>프로그램</h2>
+          <span>Program</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/5.html" target="_blank">
+            <span class="card__id">05</span>
+            <span class="card__body">
+              <span class="card__title">청소년 기업가정신 확산</span>
+              <span class="card__file">5.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 재단소식 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>재단소식</h2>
+          <span>News</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/6.html" target="_blank">
+            <span class="card__id">06</span>
+            <span class="card__body">
+              <span class="card__title">공지사항</span>
+              <span class="card__file">6.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/6-1.html" target="_blank">
+            <span class="card__id">06-1</span>
+            <span class="card__body">
+              <span class="card__title">공지사항 상세</span>
+              <span class="card__file">6-1.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 자료실 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>자료실</h2>
+          <span>Resources</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/7.html" target="_blank">
+            <span class="card__id">07</span>
+            <span class="card__body">
+              <span class="card__title">소개자료</span>
+              <span class="card__file">7.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 아산 정주영 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>아산 정주영</h2>
+          <span>Chung Ju-yung</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/8.html" target="_blank">
+            <span class="card__id">08</span>
+            <span class="card__body">
+              <span class="card__title">아산 정주영</span>
+              <span class="card__file">8.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 이용안내 · 기타 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>이용안내 · 기타</h2>
+          <span>Utility</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/9.html" target="_blank">
+            <span class="card__id">09</span>
+            <span class="card__body">
+              <span class="card__title">파트너십 제안</span>
+              <span class="card__file">9.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/11.html" target="_blank">
+            <span class="card__id">11</span>
+            <span class="card__body">
+              <span class="card__title">Contact us</span>
+              <span class="card__file">11.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/12.html" target="_blank">
+            <span class="card__id">12</span>
+            <span class="card__body">
+              <span class="card__title">사이트맵</span>
+              <span class="card__file">12.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/13.html" target="_blank">
+            <span class="card__id">13</span>
+            <span class="card__body">
+              <span class="card__title">검색결과</span>
+              <span class="card__file">13.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/10.html" target="_blank">
+            <span class="card__id">10</span>
+            <span class="card__body">
+              <span class="card__title">개인정보보호정책</span>
+              <span class="card__file">10.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 공통 가이드 -->
+      <section class="section">
+        <div class="section__head">
+          <h2>공통 가이드</h2>
+          <span>Guide</span>
+        </div>
+        <div class="grid">
+          <a class="card card--guide" href="./html/layout.html" target="_blank">
+            <span class="card__id">LAY</span>
+            <span class="card__body">
+              <span class="card__title">공통 레이아웃</span>
+              <span class="card__file">layout.html</span>
+            </span>
+            <span class="card__arrow">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 아산나눔재단 · 퍼블리싱 인덱스</footer>
   </body>
 </html>
