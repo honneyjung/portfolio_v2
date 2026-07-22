@@ -508,11 +508,13 @@
     margin-bottom: 73px;
     font-size: 46px;
   }
-  .cardSlideWrap > div {
-    float: left;
+  .cardSlideWrap__track {
+    width: max-content;
+  }
+  .cardSlideWrap__track > div {
     margin-right: 32px;
   }
-  .cardSlideWrap > div:last-child {
+  .cardSlideWrap__track > div:last-child {
     margin-right: 0;
   }
   .cardSlideWrap figure {
@@ -569,6 +571,32 @@
   }
   .hashCardWrap h4 {
     margin-top: 26px;
+  }
+  /* mainBiz / mainStartup / mainInno / mainEco — 3장 고정 노출, 폭은 뷰포트에 맞춰 유동 */
+  .mainBiz .hashCardWrap > li,
+  .mainStartup .hashCardWrap > li,
+  .mainInno .hashCardWrap > li,
+  .mainEco .hashCardWrap > li {
+    width: calc((100% - 64px) / 3);
+    margin-right: 32px;
+  }
+  .mainBiz .hashCardWrap > li:last-child,
+  .mainStartup .hashCardWrap > li:last-child,
+  .mainInno .hashCardWrap > li:last-child,
+  .mainEco .hashCardWrap > li:last-child {
+    margin-right: 0;
+  }
+  .mainBiz .hashCardWrap figure,
+  .mainStartup .hashCardWrap figure,
+  .mainInno .hashCardWrap figure,
+  .mainEco .hashCardWrap figure,
+  .mainBiz .hashCardWrap img,
+  .mainStartup .hashCardWrap img,
+  .mainInno .hashCardWrap img,
+  .mainEco .hashCardWrap img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 348 / 408;
   }
   .hashCardWrap__link {
     margin-top: 10px;

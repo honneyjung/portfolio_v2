@@ -142,119 +142,236 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* ==============================
          centerInfo (아산나눔재단 소식) 슬라이드
-         – 카드 4개씩 노출, 이전/다음 버튼, pager 업데이트
+         – PC(≥1024px): 화면 폭에 맞춰 노출 개수 자동 계산, transform 슬라이드(기존과 동일)
+         – 태블릿·모바일(<1024px): 1개만 노출, 무한 루프(양끝에서 순환), 가운데 정렬
       ============================== */
 (function () {
-  const wrap = $(".cardSlideWrap");
-  if (!wrap) return;
+  const viewport = $(".cardSlideWrap__viewport");
+  const track = $(".cardSlideWrap__track");
+  if (!viewport || !track) return;
 
-  const cards = $$(":scope > div", wrap); // news01~04
+  const cards = $$(":scope > div", track); // news01~08
   const btnPrev = $(".centerInfo__arrowBtn button:first-child");
   const btnNext = $(".centerInfo__arrowBtn button:last-child");
   const pagerSpan = $(".centerInfo__pager span");
-  const pagerTotal = $(".centerInfo__pager p");
-
-  const VISIBLE = window.innerWidth >= 1024 ? 4 : 1;
-  let current = 0;
   const total = cards.length;
 
   if (!total) return;
 
-  /* 초기 세팅: 첫 번째만 표시 (PC는 모두 표시 → float 레이아웃 그대로) */
-  function isMobile() {
-    return window.innerWidth < 1024;
+  let current = 0;
+  let perView = 1;
+
+  function isDesktop() {
+    return window.innerWidth >= 1024;
   }
 
-  function showCard(idx) {
-    if (!isMobile()) return; // PC 는 CSS float으로 처리
+  /* ── PC: 실측 폭 기준 개수 계산 후 transform 이동, 경계에서 정지 ── */
+  function unitWidth() {
+    const style = getComputedStyle(cards[0]);
+    return cards[0].offsetWidth + parseFloat(style.marginRight || 0);
+  }
+
+  function getPerView() {
+    const unit = unitWidth();
+    if (!unit) return 1;
+    return Math.max(
+      1,
+      Math.min(total, Math.floor((viewport.offsetWidth + 1) / unit)),
+    );
+  }
+
+  function maxIndexPC() {
+    return Math.max(0, total - perView);
+  }
+
+  function renderPC() {
+    cards.forEach((c) => (c.style.display = ""));
+    track.style.transform = `translateX(-${current * unitWidth()}px)`;
+    if (pagerSpan) pagerSpan.textContent = current + 1;
+    if (btnPrev) btnPrev.disabled = current <= 0;
+    if (btnNext) btnNext.disabled = current >= maxIndexPC();
+  }
+
+  /* ── 태블릿/모바일: 1개만 표시, 양끝 순환(무한 루프) ── */
+  function renderLoop() {
+    track.style.transform = "";
     cards.forEach((c, i) => {
-      c.style.display = i === idx ? "" : "none";
+      c.style.display = i === current ? "" : "none";
     });
+    if (pagerSpan) pagerSpan.textContent = current + 1;
+    if (btnPrev) btnPrev.disabled = false;
+    if (btnNext) btnNext.disabled = false;
   }
 
-  function updatePager(idx) {
-    if (pagerSpan) pagerSpan.textContent = idx + 1;
-    if (pagerTotal) {
-      // total 텍스트가 "18" 이런 형태 → 유지, span만 교체
-      const totalNum = pagerTotal.querySelector("span");
-      if (totalNum) totalNum.textContent = idx + 1;
-    }
+  function render() {
+    isDesktop() ? renderPC() : renderLoop();
   }
 
   function goTo(idx) {
-    current = (idx + total) % total;
-    showCard(current);
-    if (pagerSpan) pagerSpan.textContent = current + 1;
+    current = isDesktop()
+      ? Math.max(0, Math.min(idx, maxIndexPC()))
+      : ((idx % total) + total) % total; // 무한 루프
+    render();
   }
 
-  btnPrev && btnPrev.addEventListener("click", () => goTo(current - 1));
-  btnNext && btnNext.addEventListener("click", () => goTo(current + 1));
+  btnPrev &&
+    btnPrev.addEventListener("click", () =>
+      goTo(current - (isDesktop() ? perView : 1)),
+    );
+  btnNext &&
+    btnNext.addEventListener("click", () =>
+      goTo(current + (isDesktop() ? perView : 1)),
+    );
 
-  /* 초기 실행 */
-  goTo(0);
+  function refresh() {
+    perView = isDesktop() ? getPerView() : 1;
+    goTo(current); // 브레이크포인트 전환/폭 변경 시 재계산
+  }
 
-  /* 리사이즈 대응 */
+  refresh();
+
+  let resizeTimer;
   window.addEventListener(
     "resize",
     () => {
-      if (!isMobile()) {
-        cards.forEach((c) => (c.style.display = ""));
-      } else {
-        showCard(current);
-      }
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(refresh, 150);
     },
     { passive: true },
   );
 })();
 
 /* ==============================
-         leftInfo (사업 섹션) 슬라이드
-         – hashCardWrap li 를 1개씩 슬라이드 (모바일)
-         – PC 는 float 레이아웃(3개 동시 표시) 유지
+         leftInfo 카드 슬라이드 — mainBiz / mainStartup / mainInno / mainEco
+         – PC(≥1024px): 3개 고정 노출, 무한 루프(전체 세트를 앞뒤로 복제해
+           경계를 넘어가면 transitionend 시점에 무애니메이션으로 순간이동)
+         – 태블릿·모바일(<1024px): 1개만 노출, 무한 루프(양끝에서 순환),
+           ul(.hashCardWrap)에 justify-content:center 로 가운데 정렬
       ============================== */
 (function () {
-  const leftInfoSections = $$(".leftInfo");
+  function initFixedCountSlider(section, perViewDesktop) {
+    const viewport = $(".hashCardWrap__viewport", section);
+    const track = $(".hashCardWrap", section);
+    if (!viewport || !track) return;
 
-  leftInfoSections.forEach((section) => {
-    const items = $$(".hashCardWrap > li", section);
+    const realCards = $$(":scope > li", track);
     const btnPrev = $(".leftInfo__arrowBtn button:first-child", section);
     const btnNext = $(".leftInfo__arrowBtn button:last-child", section);
     const pagerSpan = $(".leftInfo__pager span", section);
+    const total = realCards.length;
 
-    if (!items.length) return;
+    if (!total) return;
 
-    let current = 0;
-    const total = items.length;
-
-    function isMobile() {
-      return window.innerWidth < 1024;
-    }
-
-    function showItem(idx) {
-      if (!isMobile()) {
-        items.forEach((el) => (el.style.display = ""));
-        return;
-      }
-      items.forEach((el, i) => {
-        el.style.display = i === idx ? "" : "none";
-      });
-      if (pagerSpan) pagerSpan.textContent = idx + 1;
-    }
-
-    function goTo(idx) {
-      current = (idx + total) % total;
-      showItem(current);
-    }
-
-    btnPrev && btnPrev.addEventListener("click", () => goTo(current - 1));
-    btnNext && btnNext.addEventListener("click", () => goTo(current + 1));
-
-    /* 초기 실행 */
-    goTo(0);
-
-    window.addEventListener("resize", () => showItem(current), {
-      passive: true,
+    /* PC 무한 루프용: 전체 세트를 앞/뒤로 복제 → [클론][실제][클론] */
+    const clonesBefore = realCards.map((c) => {
+      const cl = c.cloneNode(true);
+      cl.classList.add("pc-clone");
+      return cl;
     });
+    const clonesAfter = realCards.map((c) => {
+      const cl = c.cloneNode(true);
+      cl.classList.add("pc-clone");
+      return cl;
+    });
+    clonesBefore
+      .slice()
+      .reverse()
+      .forEach((cl) => track.prepend(cl));
+    clonesAfter.forEach((cl) => track.append(cl));
+    const allCards = $$(":scope > li", track);
+
+    let pcIndex = total; // 실제 세트 시작 위치(앞쪽 클론 total개 다음)
+    let mobileIndex = 0;
+
+    function isDesktop() {
+      return window.innerWidth >= 1024;
+    }
+
+    function unitWidth() {
+      const style = getComputedStyle(realCards[0]);
+      return realCards[0].offsetWidth + parseFloat(style.marginRight || 0);
+    }
+
+    /* ── PC: 실측 폭으로 transform 이동, 경계에서 순간이동(무한 루프) ── */
+    function renderPC(animate) {
+      allCards.forEach((c) => (c.style.display = ""));
+      track.style.transition = animate
+        ? "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)"
+        : "none";
+      track.style.transform = `translateX(-${pcIndex * unitWidth()}px)`;
+      const realIdx = ((pcIndex - total) % total + total) % total;
+      if (pagerSpan) pagerSpan.textContent = realIdx + 1;
+      if (btnPrev) btnPrev.disabled = false;
+      if (btnNext) btnNext.disabled = false;
+    }
+
+    let boundaryTimer = null;
+    const TRANSITION_MS = 450;
+
+    function goToPC(idx, animate = true) {
+      pcIndex = idx;
+      renderPC(animate);
+      clearTimeout(boundaryTimer);
+      if (animate) {
+        /* 애니메이션 종료 시점(transitionend 대신 지속시간 기반)에
+           클론 구간에 도달했으면 무애니메이션으로 실제 구간에 순간이동 */
+        boundaryTimer = setTimeout(() => {
+          if (pcIndex >= total * 2) {
+            goToPC(pcIndex - total, false);
+          } else if (pcIndex < 0) {
+            goToPC(pcIndex + total, false);
+          }
+        }, TRANSITION_MS + 30);
+      }
+    }
+
+    /* ── 태블릿/모바일: 1개만 표시, 양끝 순환(무한 루프) ── */
+    function renderMobile() {
+      track.style.transition = "none";
+      track.style.transform = "";
+      allCards.forEach((c) => (c.style.display = "none"));
+      realCards[mobileIndex].style.display = "";
+      if (pagerSpan) pagerSpan.textContent = mobileIndex + 1;
+      if (btnPrev) btnPrev.disabled = false;
+      if (btnNext) btnNext.disabled = false;
+    }
+
+    function goToMobile(idx) {
+      mobileIndex = ((idx % total) + total) % total;
+      renderMobile();
+    }
+
+    function render() {
+      isDesktop() ? renderPC(false) : renderMobile();
+    }
+
+    btnPrev &&
+      btnPrev.addEventListener("click", () => {
+        if (isDesktop()) goToPC(pcIndex - perViewDesktop);
+        else goToMobile(mobileIndex - 1);
+      });
+    btnNext &&
+      btnNext.addEventListener("click", () => {
+        if (isDesktop()) goToPC(pcIndex + perViewDesktop);
+        else goToMobile(mobileIndex + 1);
+      });
+
+    render();
+
+    let resizeTimer;
+    window.addEventListener(
+      "resize",
+      () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(render, 150);
+      },
+      { passive: true },
+    );
+  }
+
+  [".mainBiz", ".mainStartup", ".mainInno", ".mainEco"].forEach((sel) => {
+    const section = $(sel);
+    if (section) initFixedCountSlider(section, 3);
   });
 })();
 
