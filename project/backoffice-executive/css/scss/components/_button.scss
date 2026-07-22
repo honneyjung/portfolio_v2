@@ -1,0 +1,230 @@
+.btnWrap {
+  button {
+    width: 100%;
+    height: 66px;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+
+/* 검색 버튼 */
+.searchBtnWrap {
+  padding-top: 28px;
+  text-align: right;
+  button {
+    &:nth-child(n + 2) {
+      margin-left: 12px;
+    }
+  }
+}
+
+.btnDefault {
+  padding: 10px 16px;
+  @include border-box($white-three, 8px, $white-four);
+  @include font-style(18, $black-two);
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $white-five;
+    font-weight: $med-w;
+  }
+}
+.btnBrownish {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: $brownish;
+  @include font-style(18, $white);
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $cocoa;
+  }
+}
+.btnRed {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #ff8787;
+  transition: all 0.2s ease;
+  @include font-style(18, $white);
+  &:hover {
+    background-color: #f55959;
+  }
+}
+/* 접기 버튼 */
+.btnToggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid $cool-grey;
+  border-radius: 4px;
+  @extend %text-hidden;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    border-radius: 16px;
+    background-color: #707070;
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
+  &:before {
+    left: 8px;
+  }
+  &:after {
+    right: 7px;
+  }
+  &.on {
+    &:before {
+      left: 6.5px;
+      width: 8px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &:after {
+      right: 6.5px;
+      width: 8px;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}
+
+/* 라벨 */
+.label {
+  padding: 7px 8px;
+  border-radius: 4px;
+  @include font-style(12, color, med);
+  line-height: 1;
+  &.yellow {
+    background-color: #ffffb9;
+    color: #b37200;
+  }
+  &.green {
+    background-color: #e5fae5;
+    color: #3f9b3d;
+  }
+  &.blue {
+    background-color: #edf5fd;
+    color: #0a6cd8;
+  }
+  &.red {
+    background-color: #ffecee;
+    color: #dc3545;
+  }
+  &.grey {
+    background-color: #f6f6f6;
+    color: #555;
+  }
+  &.brown {
+    background-color: $very-light-pink;
+    color: $cocoa;
+  }
+}
+
+/* input 초기화 버튼 */
+.reset {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  background: url(../img/icon_delCircle_grey.svg) no-repeat right 20px center / 16px;
+  @extend %text-hidden;
+  transform: translateY(-50%);
+  @media screen and (max-width: 321px) {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* 컨텐츠 내부 메뉴 탭 */
+.menuTab {
+  @media screen and (min-width: 1024px) {
+    @include flexbox(inherit, center);
+    gap: 8px;
+    + .content__box {
+      border-radius: 0 12px 12px 12px;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    + .content__box {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  }
+  // PC에서 보는 탭 레이아웃
+  &__btn {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+    a {
+      position: relative;
+      width: 210px;
+      height: 60px;
+      @include border-box($white-three, 12px 12px 0 0, $white-seven);
+      border-bottom: 0;
+      @include font-style(22, $cool-grey, med);
+      text-align: center;
+      align-content: center;
+      &.active {
+        border: 0;
+        background-color: $white;
+        color: $cocoa;
+        font-weight: $bol-w;
+        box-shadow: 0px 2px 25px 0 rgba(0, 0, 0, 0.05);
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          z-index: 1;
+          width: 100%;
+          height: 20px;
+          background-color: $white;
+          @media screen and (max-width: 1023px) {
+            bottom: -20px;
+          }
+        }
+      }
+    }
+  }
+  // mobile에서 보는 셀렉트 레이아웃
+  &__select {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      background: url(../img/ic_arrowDown_b.svg) no-repeat center / 10px $white;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+    }
+    &:has(select:focus):after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+    @media screen and (max-width: 1023px) {
+      display: block;
+    }
+    select {
+      padding: 10px 32px 10px 12px;
+      @include border-box($white-three, 8px, $white);
+      @include font-style(16, $black);
+      &:focus + i {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+}

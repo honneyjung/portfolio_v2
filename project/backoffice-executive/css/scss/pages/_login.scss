@@ -1,0 +1,212 @@
+.commonWrap:has(.loginWrap) {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding-left: 0;
+  max-width: 100%;
+  min-height: 100dvh;
+  background-color: $white-four;
+}
+.loginWrap {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 53px 40px 56px;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 18px;
+  background-color: $white;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transform: translateY(-50%);
+  &__tit {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-top: 16px;
+      @include font-style(30, $black-two, bol);
+    }
+    p {
+      margin-top: 8px;
+      @include font-style(20, $greyish-brown);
+    }
+  }
+  &__enter {
+    margin-top: 24px;
+    .inputWrap {
+      position: relative;
+      padding-left: 52px;
+      padding-right: 62px;
+      margin-bottom: 12px;
+      height: 64px;
+      border: 1px solid $white-three;
+      border-radius: 4px;
+      background: no-repeat 20px center;
+      &.email {
+        background-image: url(../img/icon_person_grey.svg);
+      }
+      &.password {
+        background-image: url(../img/icon_lock_grey.svg);
+      }
+      &.active {
+        padding-right: 54px;
+        border: 1px solid #111;
+        .btnCloseCircle {
+          display: block;
+        }
+        &.email {
+          background-image: url(../img/ic_person_b.svg);
+        }
+        &.password {
+          background-image: url(../img/ic_lock_b.svg);
+        }
+      }
+      .reset {
+        width: 62px;
+        height: 64px;
+      }
+    }
+    input {
+      padding-left: 0;
+      margin-top: 1px;
+      height: calc(100% - 2px);
+      border: 0;
+      @include font-style(18, $warm-grey-two);
+      &:focus {
+        color: #111;
+      }
+    }
+    /* 자동완성시 input 색상 기본값 변경 */
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-text-fill-color: #000;
+      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+      transition: background-color 5000s ease-in-out 0s;
+      font-size: 18px !important;
+    }
+  }
+  &__checkBox {
+    @include flexbox(inherit, center);
+    margin-top: 24px;
+    & > div {
+      &:first-child {
+        position: relative;
+        margin-right: 32px;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -32px;
+          width: 1px;
+          height: 12px;
+          background-color: $white-three;
+          transform: translateY(-50%);
+        }
+      }
+      &:last-child {
+        margin-left: 32px;
+      }
+      input + label {
+        @include font-style(18, $greyish-brown);
+        cursor: pointer;
+      }
+    }
+  }
+  &__err {
+    padding-left: 20px;
+    margin-top: 24px;
+    background: url(../img/icon_warning.svg) no-repeat left center;
+    @include font-style(16, $faded-red);
+    text-align: left;
+  }
+  .btnWrap {
+    margin-top: 24px;
+    button {
+      font-size: 20px;
+      font-weight: $med-w;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .commonWrap:has(.loginWrap) {
+    background-color: $white;
+  }
+  .loginWrap {
+    top: 43%;
+    padding: 36px 20px;
+    width: auto;
+    border-radius: 0;
+    box-shadow: none;
+    &__tit {
+      img {
+        width: 180px;
+      }
+      h2 {
+        margin-top: 12px;
+        font-size: 26px;
+      }
+    }
+    &__enter {
+      margin-top: 32px;
+      .inputWrap {
+        padding-left: 40px;
+        margin-bottom: 8px;
+        height: 50px;
+        background-position: 16px center;
+        background-size: 16px;
+        input {
+          font-size: 16px;
+        }
+        .reset {
+          width: 46px;
+          height: 46px;
+          background-position: right 12px center;
+        }
+      }
+    }
+    &__checkBox {
+      justify-content: center;
+      margin-top: 16px;
+      > div {
+        width: 50%;
+        &:first-child {
+          margin-right: 0;
+          &:after {
+            right: 0;
+          }
+        }
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+      input[type="checkbox"] + label {
+        padding-left: 24px;
+        &:before,
+        &:after {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      label {
+        font-size: 16px !important;
+      }
+    }
+    &__err {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .btnWrap {
+      margin-top: 20px;
+      button {
+        height: 50px;
+        @include font-style(16);
+      }
+    }
+  }
+}

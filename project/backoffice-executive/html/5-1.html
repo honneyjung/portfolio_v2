@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>메인 관리</title>
+  </head>
+  <body>
+    <div class="commonWrap">
+      <aside class="navi">
+        <figure class="sideLogo">CARENATION</figure>
+        <div class="sideBar">
+          <div class="sideBar__list">
+            <a href="1.html" class="board"><span class="listItem">대시보드</span></a>
+            <a href="2-1.html" class="statistics"><span class="listItem">통계</span></a>
+            <ul>
+              <li class="listItem">
+                <details>
+                  <summary>기간 통계</summary>
+                  <ul>
+                    <li><a href="2-1.html">사용자 통계</a></li>
+                    <li><a href="2-2.html">공고 통계</a></li>
+                    <li><a href="2-3.html">거래 통계</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>월별 통계</summary>
+                  <ul>
+                    <li><a href="2-4.html">사용자 통계</a></li>
+                    <li><a href="2-5.html">공고 통계</a></li>
+                    <li><a href="2-6.html">거래 통계</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>일별 통계</summary>
+                  <ul>
+                    <li><a href="2-4.html">사용자 통계</a></li>
+                    <li><a href="2-5.html">공고 통계</a></li>
+                    <li><a href="2-6.html">거래 통계</a></li>
+                    <li><a href="2-7.html">서비스 거래 비율</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+            <a href="3-1.html" class="user"><span class="listItem">사용자 정보</span></a>
+            <div class="linkWrap">
+              <a href="3-1.html">케어메이트</a>
+              <a href="3-2.html">보호자</a>
+              <a href="3-3.html">전문가</a>
+            </div>
+            <a href="4-1.html" class="cs"><span class="listItem">의견 접수</span></a>
+            <a href="5-1.html" class="mainManage active"><span class="listItem">APP</span></a>
+            <div class="linkWrap">
+              <a href="5-1.html" class="active">메인 관리</a>
+              <a href="5-2.html">사업자 정보</a>
+              <a href="5-3.html">약관 관리</a>
+              <a href="5-4.html">공지사항 관리</a>
+              <a href="5-5.html">팝업 관리</a>
+              <a href="5-6.html">이벤트 관리</a>
+              <a href="5-7.html">Q&A 관리</a>
+              <a href="5-8.html">커뮤니티 카테고리 관리</a>
+              <a href="5-9.html">커뮤니티 정보글 관리</a>
+              <a href="5-11.html">커뮤니티 상담 관리</a>
+              <a href="5-10.html">한 줄 평</a>
+              <a href="5-12.html">신고 접수 관리</a>
+              <a href="5-13.html">돌봄동향리포트 관리</a>
+            </div>
+            <a href="6-1.html" class="notifi"><span class="listItem">전체 공고</span></a>
+            <div class="linkWrap">
+              <a href="6-1.html">돌봄 서비스</a>
+              <a href="6-2.html">상담 서비스</a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btnSide"></button>
+      </aside>
+      <header class="clear">
+        <h1>케어네이션</h1>
+        <div class="mobileMenu">
+          <input type="checkbox" class="menuChk" id="menuChk" />
+          <label for="menuChk" class="menuBtn">
+            <span class="navIcon"></span>
+          </label>
+          <ul class="mobileMenu__list">
+            <li class="dashBoard"><a href="1.html">대시보드</a></li>
+            <li class="statistics">
+              <a href="2-1.html">통계</a>
+              <details class="depth2">
+                <summary>기간 통계</summary>
+                <ul class="depth3">
+                  <li class=""><a href="2-1.html">사용자 통계</a></li>
+                  <li><a href="2-2.html">공고 통계</a></li>
+                  <li><a href="2-3.html">거래 통계</a></li>
+                </ul>
+              </details>
+              <details class="depth2">
+                <summary>월별 통계</summary>
+                <ul class="depth3">
+                  <li class=""><a href="2-4.html">사용자 통계</a></li>
+                  <li><a href="2-5.html">공고 통계</a></li>
+                  <li><a href="2-6.html">거래 통계</a></li>
+                </ul>
+              </details>
+              <details class="depth2">
+                <summary>일별 통계</summary>
+                <ul class="depth3">
+                  <li><a href="2-4.html">사용자 통계</a></li>
+                  <li class=""><a href="2-5.html">공고 통계</a></li>
+                  <li><a href="2-6.html">거래 통계</a></li>
+                  <li><a href="2-7.html">서비스 거래 비율</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="user">
+              <a href="3-1.html">사용자 정보</a>
+              <div class="linkWrap">
+                <a href="3-1.html">케어메이트</a>
+                <a href="3-2.html">보호자</a>
+                <a href="3-3.html">전문가</a>
+              </div>
+            </li>
+            <li class="cs"><a href="4-1.html">의견 접수</a></li>
+            <li class="mainManage active">
+              <a href="5-1.html" class="active">APP</a>
+              <div class="linkWrap">
+                <a href="5-1.html" class="active">메인 관리</a>
+                <a href="5-2.html">사업자 정보</a>
+                <a href="5-3.html">약관 관리</a>
+                <a href="5-4.html">공지사항 관리</a>
+                <a href="5-5.html">팝업 관리</a>
+                <a href="5-6.html">이벤트 관리</a>
+                <a href="5-7.html">Q&A 관리</a>
+                <a href="5-8.html">커뮤니티 카테고리 관리</a>
+                <a href="5-9.html">커뮤니티 정보글 관리</a>
+                <a href="5-11.html">커뮤니티 상담 관리</a>
+                <a href="5-10.html">한 줄 평</a>
+                <a href="5-12.html">신고 접수 관리</a>
+                <a href="5-13.html">돌봄동향리포트 관리</a>
+              </div>
+            </li>
+            <li class="notifi">
+              <a href="6-1.html">전체 공고</a>
+              <div class="linkWrap">
+                <a href="6-1.html">돌봄 서비스</a>
+                <a href="6-2.html">상담 서비스</a>
+              </div>
+            </li>
+            <li class="myInfo"><a href="7.html">내 정보</a></li>
+            <li class="logout"><a href="">로그아웃</a></li>
+          </ul>
+        </div>
+        <div class="loginUser">
+          <p>반갑습니다!</p>
+          <div class="loginUser__name">
+            <img src="../img/ic_logo_m.svg" alt="" aria-hidden />
+            <strong>홍길동 님</strong>
+          </div>
+          <div class="loginUser__btn">
+            <button type="button">내 정보</button>
+            <button type="button">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="content">
+        <div class="subWrap appMain">
+          <article class="content__box">
+            <div class="content__box--tit">
+              <h2>메인 서비스 설정</h2>
+            </div>
+            <div class="appMain__content">
+              <div class="appView">
+                <div class="appView__container">
+                  <div class="appView__container--topBan">
+                    <div>
+                      <i></i>
+                      <span>로그인</span>
+                    </div>
+                    <p>CARENATION</p>
+                  </div>
+                  <ul class="appView__container--servList">
+                    <li class="hot warning">
+                      <input type="radio" id="service1_1" name="service" checked />
+                      <label for="service1_1"><span>간병</span></label>
+                    </li>
+                    <li>
+                      <input type="radio" id="service1_2" name="service" />
+                      <label for="service1_2"><span>가사돌봄</span></label>
+                    </li>
+                    <li>
+                      <input type="radio" id="service1_3" name="service" />
+                      <label for="service1_3"><span>동행</span></label>
+                    </li>
+                    <li class="beta">
+                      <input type="radio" id="service1_4" name="service" />
+                      <label for="service1_4"><span>방문요양</span></label>
+                    </li>
+                    <li class="new">
+                      <input type="radio" id="service1_5" name="service" />
+                      <label for="service1_5"><span>산후돌봄</span></label>
+                    </li>
+                    <li>
+                      <input type="radio" id="service1_6" name="service" />
+                      <label for="service1_6"><span>스토어</span></label>
+                    </li>
+                    <li class="">
+                      <input type="radio" id="service1_7" name="service" />
+                      <label for="service1_7"><span>손해보상찾기</span></label>
+                    </li>
+                    <li class="new save">
+                      <input type="radio" id="service1_8" name="service" />
+                      <label for="service1_8"><span>아이돌봄</span></label>
+                    </li>
+                    <li class="commingsoon">
+                      <input type="radio" id="service1_9" name="service" />
+                      <label for="service1_9"><span>건강검진</span></label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="searchFormWrap">
+                <li class="w100">
+                  <label for="serviceName">서비스명</label>
+                  <div>
+                    <input type="text" value="간병" id="serviceName" />
+                    <button type="button" class="reset">삭제</button>
+                  </div>
+                </li>
+                <li class="w100">
+                  <label for="rad1_1">서비스 상태</label>
+                  <ul class="radioListWrap">
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad1_1" name="rad1" />
+                      <label for="rad1_1">없음</label>
+                    </li>
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad1_2" name="rad1" />
+                      <label for="rad1_2">HOT</label>
+                    </li>
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad1_3" name="rad1" />
+                      <label for="rad1_3">NEW</label>
+                    </li>
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad1_4" name="rad1" />
+                      <label for="rad1_4">BETA</label>
+                    </li>
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad1_5" name="rad1" />
+                      <label for="rad1_5">COMING SOON</label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="w100">
+                  <label for="rad2_1">모달 유무</label>
+                  <ul class="radioListWrap">
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad2_1" name="rad2" />
+                      <label for="rad2_1">없음</label>
+                    </li>
+                    <li class="radioCheckSel">
+                      <input type="radio" id="rad2_2" name="rad2" />
+                      <label for="rad2_2">있음</label>
+                    </li>
+                  </ul>
+                  <ul class="greyBox">
+                    <li>
+                      <label for="modalText">텍스트</label>
+                      <div>
+                        <textarea name="modalText" id="modalText">
+오픈 준비중인 서비스입니다. 빠른 시일내에 찾아 뵙겠습니다.</textarea
+                        >
+                        <button type="button" class="reset">삭제</button>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="modalLink">이동 경로</label>
+                      <div>
+                        <textarea name="modalLink" id="modalLink"></textarea>
+                        <button type="button" class="reset">삭제</button>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="w100">
+                  <label for="serviceLink">이동 경로</label>
+                  <div>
+                    <textarea name="serviceLink" id="serviceLink"></textarea>
+                    <button type="button" class="reset">삭제</button>
+                  </div>
+                  <p class="reference mark">http:// 혹은 https://를 포함하여 입력해 주세요.</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <div class="centerBtnWrap">
+            <button type="button" class="btnBrownish">적용</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-monthpicker@1.0.3/jquery.ui.monthpicker.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.standalone.min.css"
+    />
+    <script>
+      // 사이드바 폴딩
+      $(".navi .btnSide").click(function () {
+        if ($(".navi").hasClass("fold")) {
+          $(".commonWrap").toggleClass("fold");
+          $(".navi").toggleClass("fold");
+          setTimeout(function () {
+            $(".navi .listItem").toggleClass("fold");
+          }, 300);
+        } else {
+          $(".navi .listItem").toggleClass("fold");
+          setTimeout(function () {
+            $(".commonWrap").toggleClass("fold");
+            $(".navi").toggleClass("fold");
+          }, 200);
+        }
+      });
+      // 데이트 피커
+      $(function () {
+        var today = new Date();
+        var month = (today.getMonth() + 1).toString();
+        var year = today.getFullYear().toString();
+
+        if (month.length < 2) {
+          month = "0" + month;
+        }
+
+        var dateString = today.getFullYear() + "-" + month;
+
+        $("#monthpicker01").monthpicker({
+          defaultData: dateString,
+          dateFormat: "yy-mm",
+          monthNamesShort: [
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월",
+          ],
+        });
+
+        $("#monthpicker02").datepicker({
+          format: "yyyy",
+          startView: "years",
+          minViewMode: "years",
+          autoclose: true,
+          language: "ko",
+        });
+
+        $("#monthpicker01").attr("placeholder", dateString);
+        $("#monthpicker02").attr("placeholder", year);
+      });
+
+      // 유동적으로 변하는 textarea 높이값
+      document.addEventListener("DOMContentLoaded", function () {
+        var $textarea = document.querySelector("textarea");
+        $textarea.addEventListener("keyup", function (e) {
+          this.style.height = "50";
+          this.style.height = this.scrollHeight + "px";
+        });
+        $textarea.dispatchEvent(new Event("keyup"));
+      });
+    </script>
+  </body>
+</html>

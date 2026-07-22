@@ -1,0 +1,228 @@
+// 입력 폼
+.searchFormWrap {
+  @include flexbox(between, center);
+  flex-wrap: wrap;
+  &.layout2 {
+    li {
+      width: calc(50% - 6px);
+      &:nth-child(n + 3) {
+        margin-top: 26px;
+      }
+    }
+  }
+  &.layout3 {
+    li {
+      width: calc(33.3333% - 8px);
+      &:nth-child(n + 4) {
+        margin-top: 26px;
+      }
+    }
+  }
+  &.layout4 {
+    li {
+      width: calc(25% - 8px);
+      &:nth-child(n + 5) {
+        margin-top: 26px;
+      }
+    }
+  }
+  &__typeSel {
+    div {
+      @include flexbox(inherit, center);
+    }
+    select {
+      flex-shrink: 0;
+      margin-right: 12px;
+      width: 180px;
+    }
+  }
+  &__file {
+    > div {
+      @include flexbox(between, center);
+      padding: 12px 16px;
+      @include border-box($white-three, 8px, $white-five);
+    }
+    &--btn {
+      @include flexbox(inherit, center);
+      gap: 12px;
+      * {
+        padding: 8px 12px 8px 34px;
+        border-radius: 8px;
+        background: no-repeat 12px center / 18px;
+        @include font-style(16, $white, med);
+        transition: all 0.2s ease;
+      }
+      a {
+        border: solid 1px $greyish-brown;
+        background-image: url(../img/ic_doc_btn01.svg);
+        background-color: $white;
+        color: $greyish-brown;
+        &:hover {
+          background-color: $white-two;
+        }
+      }
+      input {
+        @extend %input-hidden;
+      }
+      label {
+        background-image: url(../img/ic_add_wh.svg);
+        background-color: $greyish-brown;
+        background-size: 14px;
+        cursor: pointer;
+        &:hover {
+          background-color: $black-two;
+        }
+      }
+      p {
+        padding-left: 32px;
+        background: url(../img/ic_doc.svg) no-repeat 0 center;
+        @include font-style(18, $black-two, med);
+      }
+    }
+  }
+  li {
+    position: relative;
+    > label {
+      @include font-style(20, $black, med);
+    }
+    > div {
+      position: relative;
+      margin-top: 12px;
+      .reset {
+        background-position: center;
+      }
+    }
+    select {
+      padding: 13px 46px 13px 20px;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      background: url(../img/ic_arrowDown_b.svg) no-repeat right 20px center / 15px;
+      @include font-style(16);
+      &:focus {
+        background-image: url(../img/ic_arrowUp_b.svg);
+      }
+    }
+    input {
+      &.cal {
+        margin-top: 0;
+        background: url(../img/ic_cal.svg) no-repeat right 20px center;
+        cursor: pointer;
+      }
+    }
+    h3 {
+      @include font-style(20, color, med);
+    }
+    .checkSquare {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+    }
+  }
+  .dp__input {
+    height: 52px;
+    font-size: 16px !important;
+    letter-spacing: -0.8px !important;
+    line-height: 1 !important;
+  }
+  &.accumulate {
+    li {
+      width: calc(50% - 20px) !important;
+      &:first-child {
+        > div {
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            width: 10px;
+            height: 1px;
+            background-color: $black;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+.disabledBox {
+  margin-top: 16px;
+  h3 {
+    @include font-style(20, color, med);
+  }
+  p {
+    padding: 13px 46px 13px 20px;
+    margin-top: 12px;
+    @include border-box($white-three, 8px, $white-five);
+  }
+}
+.thumbnailWrap {
+  &__imgArea {
+    margin-top: 12px;
+    width: 100%;
+    height: 180px;
+    @include border-box($white-three, 8px, $white);
+    align-content: center;
+    input {
+      @extend %input-hidden;
+    }
+    label {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center / contain;
+      text-align: center;
+      align-content: center;
+      cursor: pointer;
+    }
+    .addFile {
+      padding-top: 66px;
+      background: url(../img/icon_add_bk.svg) no-repeat top center / 50px;
+      @include font-style(18, $black, med);
+    }
+    .noImage {
+      padding-top: 48px;
+      background: url(../img/ic_signup.svg) no-repeat top center / 40px;
+      @include font-style(16, $black-two, med);
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .searchFormWrap {
+    &.layout2,
+    &.layout3,
+    &.layout4 {
+      li {
+        &:nth-child(n + 2) {
+          margin-top: 24px;
+        }
+      }
+    }
+    > li {
+      width: 100% !important;
+      > div {
+        margin-top: 8px;
+      }
+      label {
+        font-size: 18px;
+      }
+      select {
+        padding: 10px 32px 10px 12px;
+        background-position: right 12px center;
+        background-size: 10px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      input.cal {
+        background-position: right 12px center;
+        background-size: 16px;
+      }
+      .thumbnailWrap label {
+        margin-top: 8px;
+      }
+    }
+  }
+}

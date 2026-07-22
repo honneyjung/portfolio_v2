@@ -1,0 +1,322 @@
+$lig-w: 300;
+$nor-w: normal;
+$med-w: 500;
+$bol-w: bold;
+
+$font-size-30: 30px;
+$line-height-30: inherit;
+$letter-spacing-30: -1.5px;
+
+$font-size-28: 28px;
+$line-height-28: inherit;
+$letter-spacing-28: -1.4px;
+
+$font-size-26: 26px;
+$line-height-26: inherit;
+$letter-spacing-26: -1.3px;
+
+$font-size-24: 24px;
+$line-height-24: 1.33;
+$letter-spacing-24: -1.2px;
+
+$font-size-22: 22px;
+$line-height-22: 1.36;
+$letter-spacing-22: -1.1px;
+
+$font-size-21: 21px;
+$line-height-21: 1.33;
+$letter-spacing-21: -1.05px;
+
+$font-size-20: 20px;
+$line-height-20: 1.4;
+$letter-spacing-20: -1px;
+
+$font-size-18: 18px;
+$line-height-18: 1.33;
+$letter-spacing-18: -0.9px;
+
+$font-size-16: 16px;
+$line-height-16: 1.5;
+$letter-spacing-16: -0.8px;
+
+$font-size-14: 14px;
+$line-height-14: 1.43;
+$letter-spacing-14: -0.7px;
+
+$font-size-12: 12px;
+$line-height-12: 1.5;
+$letter-spacing-12: -0.6px;
+
+$font-size-10: 10px;
+$line-height-10: inherit;
+$letter-spacing-10: 0.5px;
+
+/* text mixin */
+@mixin font-style-30() {
+  font-size: $font-size-30;
+  line-height: $line-height-30;
+  letter-spacing: $letter-spacing-30;
+  @media screen and (max-width: 321px) {
+    font-size: 28px;
+  }
+}
+@mixin font-style-28() {
+  font-size: $font-size-28;
+  line-height: $line-height-28;
+  letter-spacing: $letter-spacing-28;
+  @media screen and (max-width: 321px) {
+    font-size: 26px;
+  }
+}
+
+@mixin font-style-26() {
+  font-size: $font-size-26;
+  line-height: $line-height-26;
+  letter-spacing: $letter-spacing-26;
+  @media screen and (max-width: 321px) {
+    font-size: 24px;
+  }
+}
+@mixin font-style-24() {
+  font-size: $font-size-24;
+  line-height: $line-height-24;
+  letter-spacing: $letter-spacing-24;
+  @media screen and (max-width: 321px) {
+    font-size: 22px;
+  }
+}
+@mixin font-style-22() {
+  font-size: $font-size-22;
+  line-height: $line-height-22;
+  letter-spacing: $letter-spacing-22;
+  @media screen and (max-width: 321px) {
+    font-size: 18px;
+  }
+}
+@mixin font-style-21() {
+  font-size: $font-size-21;
+  line-height: $line-height-21;
+  letter-spacing: $letter-spacing-21;
+  @media screen and (max-width: 321px) {
+    font-size: 17px;
+  }
+}
+@mixin font-style-20() {
+  font-size: $font-size-20;
+  line-height: $line-height-20;
+  letter-spacing: $letter-spacing-20;
+  @media screen and (max-width: 321px) {
+    font-size: 16px;
+  }
+}
+@mixin font-style-18() {
+  font-size: $font-size-18;
+  line-height: $line-height-18;
+  letter-spacing: $letter-spacing-18;
+  @media screen and (max-width: 321px) {
+    font-size: 16px;
+  }
+}
+@mixin font-style-16() {
+  font-size: $font-size-16;
+  line-height: $line-height-16;
+  letter-spacing: $letter-spacing-16;
+  @media screen and (max-width: 321px) {
+    font-size: 14px;
+  }
+}
+@mixin font-style-14() {
+  font-size: $font-size-14;
+  line-height: $line-height-14;
+  letter-spacing: $letter-spacing-14;
+  @media screen and (max-width: 321px) {
+    font-size: 12px;
+  }
+}
+@mixin font-style-12() {
+  font-size: $font-size-12;
+  line-height: $line-height-12;
+  letter-spacing: $letter-spacing-12;
+  @media screen and (max-width: 321px) {
+    font-size: 11px;
+  }
+}
+@mixin font-style-10() {
+  font-size: $font-size-10;
+  line-height: $line-height-10;
+  letter-spacing: $letter-spacing-10;
+  @media screen and (max-width: 321px) {
+    font-size: 9px;
+  }
+}
+
+@mixin font-style($size, $color: false, $weight: false) {
+  @if (type-of($color) == color) {
+    color: $color;
+  }
+  @if ($size == 30) {
+    @include font-style-30;
+  }
+  @if ($size == 28) {
+    @include font-style-28;
+  }
+  @if ($size == 26) {
+    @include font-style-26;
+  }
+  @if ($size == 24) {
+    @include font-style-24;
+  }
+  @if ($size == 22) {
+    @include font-style-22;
+  }
+  @if ($size == 21) {
+    @include font-style-21;
+  }
+  @if ($size == 20) {
+    @include font-style-20;
+  }
+  @if ($size == 18) {
+    @include font-style-18;
+  }
+  @if ($size == 16) {
+    @include font-style-16;
+  }
+  @if ($size == 15) {
+    @include font-style-15;
+  }
+  @if ($size == 14) {
+    @include font-style-14;
+  }
+  @if ($size == 12) {
+    @include font-style-12;
+  }
+  @if ($size == 11) {
+    @include font-style-11;
+  }
+  @if ($size == 10) {
+    @include font-style-10;
+  }
+  @if ($weight == nor) {
+    font-weight: $nor-w;
+  }
+  @if ($weight == med) {
+    font-weight: $med-w;
+  }
+  @if ($weight == bol) {
+    font-weight: $bol-w;
+  }
+}
+
+mark {
+  background: linear-gradient(to top, $egg-shell 48%, transparent 48%);
+  &.markBrw {
+    background: linear-gradient(to top, #f6efec 48%, transparent 48%);
+  }
+  &.markBu {
+    background: linear-gradient(to top, #edf5fd 48%, transparent 48%);
+  }
+}
+
+/* 웹 접근성 */
+.a11y-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* 글자 안보이게 */
+%text-hidden {
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+/* 앞에 데쉬 스타일 */
+.dash {
+  padding-left: 8px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 4px;
+    height: 1px;
+    background-color: $greyish-brown;
+  }
+  span {
+    font-weight: $med-w;
+  }
+}
+.warning {
+  input {
+    border-color: $faded-red !important;
+  }
+}
+.alert {
+  display: block;
+  margin-top: 2px;
+  @include font-style(14, $faded-red, nor);
+}
+
+.underline {
+  @include font-style(12, $warm-grey-two);
+  text-decoration: underline;
+}
+.underline02 {
+  @include font-style(16, $warm-grey);
+  text-decoration: underline;
+}
+.underline03 {
+  @include font-style(14, $warm-grey);
+  text-decoration: underline;
+}
+
+.txtBlack {
+  color: $black !important;
+}
+.txtGray {
+  color: $cool-grey !important;
+}
+.txtRed {
+  color: $faded-red !important;
+}
+.txtGrey {
+  color: $greyish-brown !important;
+}
+.txtCocoa {
+  color: $cocoa !important;
+}
+.txtBold {
+  font-weight: $bol-w !important;
+}
+.reference {
+  display: block;
+  margin-top: 8px;
+  @include font-style(14, $warm-grey);
+  &.mark {
+    position: relative;
+    padding-left: 18px;
+    &:before {
+      content: "※";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 20px;
+    }
+  }
+}
+
+.lineTit {
+  padding-bottom: 30px;
+  &__txt {
+    padding-bottom: 30px;
+    border-bottom: solid 1px $white-three;
+    @include font-style(20);
+  }
+}

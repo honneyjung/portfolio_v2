@@ -1,0 +1,42 @@
+.keywordList {
+  @include flexbox(inherit, center);
+  flex-wrap: wrap;
+  gap: 8px;
+  &__item {
+    @include flexbox(center, center);
+    width: calc(50% - 4px);
+    height: 64px;
+    @include border-box(transparent, 10px, $white-five);
+    @for $i from 1 through 10 {
+      &.keyword#{$i} {
+        p {
+          background-image: url("../img/ic_keyword#{$i}-pro.svg");
+        }
+      }
+    }
+    p {
+      padding-left: 30px;
+      background: no-repeat 0 center / 20px;
+      @include font-style(18, $black, med);
+      span {
+        @include font-style(14);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .keywordList {
+    &__item {
+      height: 50px;
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .keywordList__item {
+    width: 100% !important;
+  }
+}

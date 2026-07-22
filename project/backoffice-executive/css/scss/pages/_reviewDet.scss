@@ -1,0 +1,111 @@
+// 한 줄 평
+.review {
+  .defaultTable {
+    tbody {
+      td {
+        &:nth-child(7) {
+          max-width: 60px;
+        }
+      }
+    }
+  }
+}
+// 한 줄 평 상세
+.reviewDet {
+  &__list {
+    border-bottom: solid 1px $white-two;
+    > li {
+      padding: 20px 0;
+      @include flexbox(between, center);
+      span {
+        @include font-style(16);
+      }
+      ~ li {
+        border-top: solid 1px $white-two;
+      }
+      h3 {
+        padding-right: 10px;
+        @include font-style(16, $black, med);
+      }
+      .radioView {
+        flex-wrap: nowrap;
+        li {
+          width: auto;
+          ~ li {
+            margin-left: 20px;
+          }
+        }
+      }
+      .keywordList {
+        justify-content: flex-end;
+        max-width: 90%;
+        &__item {
+          padding: 0 10px;
+          width: 200px;
+          height: 36px;
+          @include border-box(transparent, 8px, $white-five);
+          @for $i from 1 through 10 {
+            &.keyword#{$i} {
+              p {
+                background-image: url("../img/ic_keyword#{$i}.svg");
+              }
+              &.active p {
+                background-image: url("../img/ic_keyword#{$i}-act.svg");
+              }
+            }
+          }
+          p {
+            padding-left: 20px;
+            background-size: 16px;
+            @include font-style(14, $warm-grey-two);
+          }
+          &.active {
+            border-color: $cocoa;
+            background-color: $white;
+            p {
+              color: $cocoa;
+              font-weight: $med-w;
+            }
+          }
+        }
+      }
+    }
+  }
+  .qnaDet__txt {
+    margin-top: 50px;
+    h3 {
+      @include font-style(16, $black, med);
+    }
+  }
+}
+.starBox {
+  @include flexbox(between, center);
+  width: 100%;
+  max-width: 320px;
+  .star {
+    font-size: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .reviewDet__list {
+    li:has(.keywordList) {
+      flex-direction: column;
+      align-items: start;
+      .keywordList {
+        justify-content: space-between;
+        margin-top: 20px;
+        max-width: 100%;
+        &__item {
+          width: calc(50% - 4px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .starBox {
+    max-width: 150px;
+  }
+}

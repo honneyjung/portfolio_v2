@@ -1,0 +1,473 @@
+.appMain {
+  &__content {
+    @include flexbox(center, start);
+    .appView {
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+      padding: 16px 16px 0 16px;
+      width: 392px;
+      height: 484px;
+      border-radius: 36px 36px 0 0;
+      background: linear-gradient(165deg, #f6f6f6 10.61%, #f0f0f0 93.77%);
+      box-shadow: 1px 0 8px 0 rgba(0, 0, 0, 0.15);
+      &:after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        bottom: -30px;
+        width: 105%;
+        height: 30px;
+        background-color: $white;
+      }
+      &__container {
+        &--topBan {
+          width: 100%;
+          height: 122px;
+          border-radius: 24px 24px 0 0;
+          background: url(../../../img/img_appviewBan.png) no-repeat center / cover;
+          div {
+            @include flexbox(end, center);
+            padding: 10px 20px 0 0;
+            i {
+              width: 24px;
+              height: 24px;
+              background: url(../../../img/iconSearch-wh.svg) no-repeat center;
+            }
+            span {
+              padding: 6px 8px;
+              margin-left: 20px;
+              border: solid 1px $white;
+              border-radius: 20px;
+              @include font-style(14, $white, med);
+              line-height: 1;
+            }
+          }
+          p {
+            margin: 6px 20px 0 auto;
+            width: 200px;
+            height: 31px;
+            background: url(../../../img/img_carenation_enWh.svg) no-repeat center;
+            @extend %text-hidden;
+          }
+        }
+        &--servList {
+          @include flexbox(between, start);
+          flex-wrap: wrap;
+          gap: 8px;
+          padding: 12px;
+          margin-top: -12px;
+          border-radius: 13px 13px 0 0;
+          background-color: $white;
+          li {
+            position: relative;
+            width: calc(33.3333% - 16px);
+            min-width: 106px;
+            height: 106px;
+            &:nth-child(1) {
+              label {
+                background-image: url(../../../img/img_servList01_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList01.png);
+              }
+            }
+            &:nth-child(2) {
+              label {
+                background-image: url(../../../img/img_servList02_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList02.png);
+              }
+            }
+            &:nth-child(3) {
+              label {
+                background-image: url(../../../img/img_servList03_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList03.png);
+              }
+            }
+            &:nth-child(4) {
+              label {
+                background-image: url(../../../img/img_servList04_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList04.png);
+              }
+            }
+            &:nth-child(5) {
+              label {
+                background-image: url(../../../img/img_servList05_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList05.png);
+              }
+            }
+            &:nth-child(6) {
+              label {
+                background-image: url(../../../img/img_servList06_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList06.png);
+              }
+            }
+            &:nth-child(7) {
+              label {
+                background-image: url(../../../img/img_servList07_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList07.png);
+              }
+            }
+            &:nth-child(8) {
+              label {
+                background-image: url(../../../img/img_servList08_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList08.png);
+              }
+            }
+            &:nth-child(9) {
+              label {
+                background-image: url(../../../img/img_servList09_dis.png);
+              }
+              &:has(input:checked) label {
+                background-image: url(../../../img/img_servList09.png);
+              }
+            }
+            &:before {
+              content: "";
+              display: none;
+              position: absolute;
+              top: -8px;
+              right: 0;
+              z-index: 3;
+              width: 52px;
+              height: 34px;
+              background: no-repeat 0;
+            }
+            &.hot {
+              &:before {
+                display: block;
+                background-image: url(../../../img/ic_label_hot_dis.svg);
+              }
+              &:has(input:checked):before {
+                background-image: url(../../../img/ic_label_hot.svg);
+              }
+              &.save:before,
+              &.save:has(input:checked):before {
+                background-image: url(../../../img/ic_label_hot_save.svg);
+              }
+            }
+            &.beta {
+              &:before {
+                display: block;
+                background-image: url(../../../img/ic_label_beta_dis.svg);
+              }
+              &:has(input:checked):before {
+                background-image: url(../../../img/ic_label_beta.svg);
+              }
+              &.save:before,
+              &.save:has(input:checked):before {
+                background-image: url(../../../img/ic_label_beta_save.svg);
+              }
+            }
+            &.new {
+              &:before {
+                display: block;
+                background-image: url(../../../img/ic_label_new_dis.svg);
+              }
+              &:has(input:checked):before {
+                background-image: url(../../../img/ic_label_new.svg);
+              }
+              &.save:before,
+              &.save:has(input:checked):before {
+                background-image: url(../../../img/ic_label_new_save.svg);
+              }
+            }
+            &.commingsoon {
+              input:checked + label:after,
+              label:after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                background: url(../../../img/img_commingsoon.svg) no-repeat center / cover;
+              }
+            }
+            &.save {
+              input:checked + label:after,
+              label:after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                background: url(../../../img/img_saveServ.svg) no-repeat center / cover;
+              }
+            }
+            &.warning {
+              &:before {
+                animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+              }
+              label {
+                border: solid 4px $faded-red;
+                border-radius: 12px;
+                transform: translate3d(0, 0, 0);
+                animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+                backface-visibility: hidden;
+                perspective: 1000px;
+              }
+              @keyframes shake {
+                10%,
+                90% {
+                  transform: translate3d(-1px, 0, 0);
+                }
+                20%,
+                80% {
+                  transform: translate3d(2px, 0, 0);
+                }
+                30%,
+                50%,
+                70% {
+                  transform: translate3d(-4px, 0, 0);
+                }
+                40%,
+                60% {
+                  transform: translate3d(4px, 0, 0);
+                }
+              }
+            }
+            input {
+              @extend %input-hidden;
+              + label {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                background: no-repeat center / cover;
+                cursor: pointer;
+                span {
+                  position: absolute;
+                  z-index: 1;
+                  bottom: 8px;
+                  left: 8px;
+                  color: $white;
+                  font-size: 17px;
+                  font-weight: 700;
+                  line-height: 20px;
+                  letter-spacing: -0.9px;
+                }
+              }
+              &:checked {
+                + label {
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 8px;
+                    background-image: linear-gradient(
+                      180deg,
+                      rgba(120, 112, 99, 0.1) 0.04%,
+                      rgba(0, 0, 0, 0.12) 59.54%,
+                      rgba(81, 64, 35, 0.56) 98.79%
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .searchFormWrap {
+      margin-left: 48px;
+      width: calc(100% - 392px);
+      > li {
+        ~ li {
+          margin-top: 32px;
+        }
+        .radioView {
+          margin-top: 12px;
+          li {
+            width: auto;
+          }
+        }
+        .radioListWrap {
+          @include flexbox(inherit, center);
+          flex-wrap: wrap;
+          gap: 12px 40px;
+          margin-top: 12px;
+          .radioCheckSel {
+            input[type="radio"]:checked + label {
+              &:before {
+                background-color: transparent;
+              }
+              &:after {
+                left: 4px;
+              }
+            }
+            ~ .radioCheckSel {
+              margin-top: 0;
+            }
+            label {
+              padding: 0 0 0 30px;
+              border: 0;
+              background-color: transparent;
+              cursor: pointer;
+              &:before {
+                left: 0;
+              }
+            }
+          }
+        }
+        .greyBox {
+          padding: 16px;
+          margin-top: 16px;
+          border: solid 1px $white-three;
+          border-radius: 12px;
+          background-color: $white-five;
+          label {
+            @include font-style(18, $black-two, med);
+          }
+          li:nth-child(n + 2) {
+            margin-top: 12px;
+          }
+        }
+        textarea {
+          height: 46px;
+          max-height: 138px;
+          padding: 13px 46px 13px 20px;
+          border-radius: 8px;
+          @include font-style(16, $black-two);
+          + .reset {
+            right: 16px;
+          }
+        }
+      }
+    }
+
+    // 사업자 정보 설정
+    &--infoForm {
+      @include flexbox(between, start);
+      flex-wrap: wrap;
+      width: 100%;
+      li {
+        width: calc(50% - 6px);
+        ~ li:nth-child(n + 3) {
+          margin-top: 16px;
+        }
+        &:first-child {
+          b {
+            @include font-style(22, $black-two);
+            &:first-child {
+              width: 250px;
+            }
+          }
+        }
+        div {
+          position: relative;
+          margin-top: 12px;
+        }
+        label {
+          width: 250px;
+          @include font-style(20, $black-two, med);
+        }
+        input,
+        textarea {
+          @include font-style(16, $black-two);
+          white-space: pre;
+        }
+        input {
+          padding-right: 46px;
+        }
+        textarea {
+          padding: 13px 46px 13px 20px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .centerBtnWrap {
+    @include flexbox(center, center);
+    margin-top: 100px;
+    button {
+      width: 264px;
+      height: 66px;
+      border-radius: 4px;
+      @include font-style(20);
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .appManagement {
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      .searchFormWrap {
+        margin: 32px 0 0 0;
+        width: 100%;
+        li textarea + .reset {
+          right: 0;
+        }
+      }
+      &--infoForm {
+        li {
+          width: 100%;
+        }
+      }
+    }
+    .centerBtnWrap {
+      margin-top: 40px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 472px) {
+  .appManagement {
+    &__content {
+      .appView {
+        overflow: auto;
+        width: 100%;
+        &:after {
+          display: none;
+        }
+        &__container {
+          &--topBan {
+            background-position: -20px center;
+            p {
+              width: 120px;
+              background-size: contain;
+            }
+          }
+          &--servList {
+            li {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 321px) {
+  .appManagement__content {
+    .appView__container--topBan {
+      background-position: -50px center;
+      p {
+        width: 100px;
+      }
+    }
+  }
+}

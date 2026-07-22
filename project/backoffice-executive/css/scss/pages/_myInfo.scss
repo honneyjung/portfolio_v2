@@ -1,0 +1,48 @@
+.myInfo {
+  .searchFormWrap {
+    li {
+      width: 100%;
+      ~ li {
+        margin-top: 26px;
+      }
+      div {
+        width: calc(50% - 6px);
+      }
+      &.half {
+        width: calc(50% - 6px);
+        div {
+          width: 100%;
+        }
+      }
+      .disabled {
+        padding: 13px 20px;
+        border: solid 1px $white-three;
+        border-radius: 8px;
+        background-color: $white-five;
+        cursor: default;
+        p {
+          @include font-style(16, $black-two);
+          @include ellipsis;
+        }
+      }
+    }
+  }
+  .searchBtnWrap {
+    padding-top: 65px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .myInfo {
+    .searchFormWrap {
+      li {
+        div {
+          width: 100%;
+        }
+        .disabled {
+          padding: 10px 12px;
+        }
+      }
+    }
+  }
+}

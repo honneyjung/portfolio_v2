@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>로그인</title>
+  </head>
+  <body>
+    <section class="commonWrap">
+      <main class="loginWrap">
+        <div class="loginWrap__tit">
+          <h1 class="a11y-hidden">경영진 관리자 로그인</h1>
+          <img src="../img/icon_logo.svg" alt="CARENATION" />
+          <h2>경영진 관리자</h2>
+        </div>
+        <div class="loginWrap__enter">
+          <!-- input 클릭 시 inpuWrap에 active 클래스 추가 필요 -->
+          <div class="inputWrap email">
+            <input type="email" id="email01" placeholder="아이디 입력" autocomplete="off" />
+            <button type="button" class="reset">삭제</button>
+          </div>
+          <div class="inputWrap password">
+            <input type="password" placeholder="비밀번호 입력" />
+            <button type="button" class="reset">삭제</button>
+          </div>
+        </div>
+        <div class="loginWrap__checkBox">
+          <div class="inputWrap">
+            <input type="checkbox" id="chk01" />
+            <label for="chk01">자동 로그인</label>
+          </div>
+          <div class="inputWrap">
+            <input type="checkbox" id="chk02" />
+            <label for="chk02">아이디 저장</label>
+          </div>
+        </div>
+        <!-- 오류시 loginWrap__err 활성화 -->
+        <div class="loginWrap__err">아이디를 입력해 주세요.</div>
+        <div class="btnWrap">
+          <button type="button" class="btnBrownish">로그인</button>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+  let isButtonClicked = false;
+
+  $(".loginWrap__enter .inputWrap input").focus(function () {
+    $(this).parent(".inputWrap").addClass("active");
+  });
+  // 버튼 클릭 시 플래그 값을 변경
+  $(".loginWrap__enter .inputWrap .btnCloseCircle").mousedown(function () {
+    isButtonClicked = true;
+  });
+  // 포커스가 이동할 때 isButtonClicked 값을 확인하여 클릭 여부 판단
+  $(".loginWrap__enter .inputWrap input").blur(function () {
+    if (isButtonClicked) {
+      $(this).val("");
+      console.log("hi");
+    }
+    isButtonClicked = false;
+    $(this).parent(".inputWrap").removeClass("active");
+  });
+</script>

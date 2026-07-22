@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+em,
+img,
+small,
+strong,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+video,
+input,
+textarea,
+button {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-family: "Noto Sans KR", "Sans-serif";
+  word-wrap: break-word;
+  box-sizing: border-box;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* HTML5 display-role reset for older browsers */
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+i {
+  display: block;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+a,
+span,
+time {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: left;
+  cursor: pointer;
+}
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: block;
+  width: 100%;
+  border: solid 1px #e1e1e1;
+}
+textarea {
+  resize: none;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #333 !important;
+  color: #333;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+input:before,
+label:before {
+  box-sizing: border-box;
+}
+input:disabled,
+textarea:disabled,
+input:read-only,
+textarea:read-only {
+  opacity: 1; /* iphone issue */
+  -webkit-text-fill-color: inherit; /* iphone issue */
+  -webkit-appearance: none; /* iphone issue */
+}
+input:disabled,
+textarea:disabled {
+  cursor: auto;
+}
+/* input type="number" 일때 기본 화살표 속성 제거 */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox  */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button:focus {
+  outline: 0;
+}
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0 0);
+  -webkit-tap-highlight-color: transparent;
+}

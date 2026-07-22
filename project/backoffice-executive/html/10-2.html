@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1920", initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <title>브라우저 안내</title>
+    <style>
+      .clear:before,
+      .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .greyPage {
+        width: 100%;
+        min-width: 1903px;
+        min-height: 100dvh;
+        background-color: #f6f6f6;
+      }
+      .browser {
+        padding: 120px 0 102px;
+      }
+      .browser__tit {
+        text-align: center;
+      }
+      .browser__tit--txt h2 {
+        font-size: 50px;
+        line-height: 1.28;
+        letter-spacing: -2.5px;
+        color: #111;
+      }
+      .browser__tit--txt p {
+        margin-top: 18px;
+        font-size: 18px;
+        line-height: 1.56;
+        letter-spacing: -0.9px;
+      }
+      .browser__tit--img {
+        margin-top: 60px;
+      }
+      .browser__tit--img ul li {
+        display: inline-block;
+        position: relative;
+        padding-bottom: 63px;
+        margin: 0 10px;
+      }
+      .browser__tit--img ul li figure {
+        width: 185px;
+        height: 182px;
+      }
+      .browser__tit--img ul li figure img {
+        width: 100%;
+      }
+      .browser__tit--img ul li p {
+        position: absolute;
+        top: 198px;
+        right: 50%;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.33;
+        letter-spacing: -0.9px;
+        transform: translateX(50%);
+      }
+      .browser__tit--img ul li p span {
+        font-weight: 500;
+        color: #717171;
+      }
+      .browser__store {
+        padding: 48px 108px;
+        margin: 68px auto 0;
+        width: 1280px;
+        border: solid 1px #e1e1e1;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      .browser__store > div {
+        float: left;
+        width: 49%;
+        box-sizing: border-box;
+      }
+      .browser__store--prot {
+        position: relative;
+      }
+      .browser__store--prot:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 250px;
+        background-color: #e1e1e1;
+        transform: translateY(-50%);
+      }
+      .browser__store--care {
+        padding-left: 116px;
+      }
+      .browser__store span {
+        padding: 11px 16px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -0.9px;
+        color: #fff;
+      }
+      .browser__store--prot span {
+        background-color: #a47768;
+      }
+      .browser__store--care span {
+        background-color: #386392;
+      }
+      .browser__store h3 {
+        margin-top: 16px;
+        font-size: 36px;
+        line-height: 1.39;
+        letter-spacing: -1.8px;
+        color: #111;
+      }
+      .browser__store p {
+        margin-top: 8px;
+        font-size: 22px;
+        line-height: 1.55;
+        letter-spacing: -1.1px;
+      }
+      .browser__store--btn {
+        margin-top: 42px;
+        width: 100%;
+      }
+      .browser__store--btn button {
+        float: left;
+        width: 164px;
+        height: 46px;
+        border: solid 1px #e1e1e1;
+        border-radius: 7px;
+        background: no-repeat center;
+        font-size: 0;
+        text-indent: -9999px;
+        transition: background 0.2s linear;
+      }
+      .browser__store--btn .google {
+        margin-right: 8px;
+        background-size: 108px;
+        background-image: url(../img/icon_google_bk.png);
+      }
+      .browser__store--btn .apple {
+        background-size: 94px;
+        background-image: url(../img/icon_apple_bk.png);
+      }
+      .browser__store--btn button:hover {
+        background-color: #f6f6f6;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="greyPage">
+      <section class="browser">
+        <article class="browser__tit clear">
+          <div class="browser__tit--txt">
+            <h2>다른 브라우저를 이용해 주세요.</h2>
+            <p>
+              현재 케어네이션은 하단의 브라우저만 지원하고 있습니다.<br />
+              하단의 브라우저 중 원하는 브라우저를 설치 후, 이용해 주시기 바랍니다.
+            </p>
+          </div>
+          <div class="browser__tit--img">
+            <ul>
+              <li>
+                <figure><img src="../img/img_browser_chrome.png" alt="크롬 브라우저" /></figure>
+                <p>Chrome</p>
+              </li>
+              <li>
+                <figure>
+                  <img src="../img/img_browser_whale.png" alt="네이버 웨일 브라우저" />
+                </figure>
+                <p>Naver Whale</p>
+              </li>
+              <li>
+                <figure><img src="../img/img_browser_edge.png" alt="엣지 브라우저" /></figure>
+                <p>
+                  Edge<br />
+                  <span>(Window에서만)</span>
+                </p>
+              </li>
+              <li>
+                <figure>
+                  <img src="../img/img_browser_firefox.png" alt="파이어폭스 브라우저" />
+                </figure>
+                <p>Firefox</p>
+              </li>
+              <li>
+                <figure><img src="../img/img_browser_safari.png" alt="사파리 브라우저" /></figure>
+                <p>Safari</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article class="browser__store clear">
+          <div class="browser__store--prot">
+            <span>보호자 / 환자</span>
+            <h3>간병인 찾을 땐 케어네이션</h3>
+            <p>프로필과 후기를 보고 원하는 간병서비스를 직접 선택!</p>
+            <div class="browser__store--btn">
+              <button type="button" class="google">구글 플레이 스토어</button>
+              <button type="button" class="apple">앱 스토어</button>
+            </div>
+          </div>
+          <div class="browser__store--care">
+            <span>간병인</span>
+            <h3>내가 직접 찾는 간병 일자리!</h3>
+            <p>원하는 날짜/지역/병원을 직접 선택!</p>
+            <div class="browser__store--btn clear">
+              <button type="button" class="google">구글 플레이 스토어</button>
+              <button type="button" class="apple">앱 스토어</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

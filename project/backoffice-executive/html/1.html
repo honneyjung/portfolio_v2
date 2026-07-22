@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>대시보드</title>
+  </head>
+  <body>
+    <section class="commonWrap">
+      <h1 class="a11y-hidden">대시보드</h1>
+      <aside class="navi">
+        <figure class="sideLogo">CARENATION</figure>
+        <div class="sideBar">
+          <div class="sideBar__list">
+            <a href="1.html" class="board active"><span class="listItem">대시보드</span></a>
+            <a href="2-1.html" class="statistics"><span class="listItem">통계</span></a>
+            <ul>
+              <li class="listItem">
+                <details>
+                  <summary>기간 통계</summary>
+                  <ul>
+                    <li><a href="2-1.html">사용자 통계</a></li>
+                    <li><a href="2-2.html">공고 통계</a></li>
+                    <li><a href="2-3.html">거래 통계</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>월별 통계</summary>
+                  <ul>
+                    <li><a href="2-4.html">사용자 통계</a></li>
+                    <li><a href="2-5.html">공고 통계</a></li>
+                    <li><a href="2-6.html">거래 통계</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>일별 통계</summary>
+                  <ul>
+                    <li><a href="2-4.html">사용자 통계</a></li>
+                    <li><a href="2-5.html">공고 통계</a></li>
+                    <li><a href="2-6.html">거래 통계</a></li>
+                    <li><a href="2-7.html">서비스 거래 비율</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+            <a href="3-1.html" class="user"><span class="listItem">사용자 정보</span></a>
+            <div class="linkWrap">
+              <a href="3-1.html">케어메이트</a>
+              <a href="3-2.html">보호자</a>
+              <a href="3-3.html">전문가</a>
+            </div>
+            <a href="4-1.html" class="cs"><span class="listItem">의견 접수</span></a>
+            <a href="5-1.html" class="mainManage"><span class="listItem">APP</span></a>
+            <div class="linkWrap">
+              <a href="5-1.html">메인 관리</a>
+              <a href="5-2.html">사업자 정보</a>
+              <a href="5-3.html">약관 관리</a>
+              <a href="5-4.html">공지사항 관리</a>
+              <a href="5-5.html">팝업 관리</a>
+              <a href="5-6.html">이벤트 관리</a>
+              <a href="5-7.html">Q&A 관리</a>
+              <a href="5-8.html">커뮤니티 카테고리 관리</a>
+              <a href="5-9.html">커뮤니티 정보글 관리</a>
+              <a href="5-11.html">커뮤니티 상담 관리</a>
+              <a href="5-10.html">한 줄 평</a>
+              <a href="5-12.html">신고 접수 관리</a>
+              <a href="5-13.html">돌봄동향리포트 관리</a>
+            </div>
+            <a href="6-1.html" class="notifi"><span class="listItem">전체 공고</span></a>
+            <div class="linkWrap">
+              <a href="6-1.html">돌봄 서비스</a>
+              <a href="6-2.html">상담 서비스</a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btnSide"></button>
+      </aside>
+      <header class="clear">
+        <h1>케어네이션</h1>
+        <div class="mobileMenu">
+          <input type="checkbox" class="menuChk" id="menuChk" />
+          <label for="menuChk" class="menuBtn">
+            <span class="navIcon"></span>
+          </label>
+          <ul class="mobileMenu__list">
+            <li class="dashBoard active"><a href="1.html">대시보드</a></li>
+            <li class="statistics">
+              <a href="2-1.html">통계</a>
+              <details class="depth2">
+                <summary>기간 통계</summary>
+                <ul class="depth3">
+                  <li class=""><a href="2-1.html">사용자 통계</a></li>
+                  <li><a href="2-2.html">공고 통계</a></li>
+                  <li><a href="2-3.html">거래 통계</a></li>
+                </ul>
+              </details>
+              <details class="depth2">
+                <summary>월별 통계</summary>
+                <ul class="depth3">
+                  <li class=""><a href="2-4.html">사용자 통계</a></li>
+                  <li><a href="2-5.html">공고 통계</a></li>
+                  <li><a href="2-6.html">거래 통계</a></li>
+                </ul>
+              </details>
+              <details class="depth2">
+                <summary>일별 통계</summary>
+                <ul class="depth3">
+                  <li><a href="2-4.html">사용자 통계</a></li>
+                  <li class=""><a href="2-5.html">공고 통계</a></li>
+                  <li><a href="2-6.html">거래 통계</a></li>
+                  <li><a href="2-7.html">서비스 거래 비율</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="user">
+              <a href="3-1.html">사용자 정보</a>
+              <div class="linkWrap">
+                <a href="3-1.html">케어메이트</a>
+                <a href="3-2.html">보호자</a>
+                <a href="3-3.html">전문가</a>
+              </div>
+            </li>
+            <li class="cs"><a href="4-1.html">의견 접수</a></li>
+            <li class="mainManage">
+              <a href="5-1.html">APP</a>
+              <div class="linkWrap">
+                <a href="5-1.html">메인 관리</a>
+                <a href="5-2.html">사업자 정보</a>
+                <a href="5-3.html">약관 관리</a>
+                <a href="5-4.html">공지사항 관리</a>
+                <a href="5-5.html">팝업 관리</a>
+                <a href="5-6.html">이벤트 관리</a>
+                <a href="5-7.html">Q&A 관리</a>
+                <a href="5-8.html">커뮤니티 카테고리 관리</a>
+                <a href="5-9.html">커뮤니티 정보글 관리</a>
+                <a href="5-11.html">커뮤니티 상담 관리</a>
+                <a href="5-10.html">한 줄 평</a>
+                <a href="5-12.html">신고 접수 관리</a>
+                <a href="5-13.html">돌봄동향리포트 관리</a>
+              </div>
+            </li>
+            <li class="notifi">
+              <a href="6-1.html">전체 공고</a>
+              <div class="linkWrap">
+                <a href="6-1.html">돌봄 서비스</a>
+                <a href="6-2.html">상담 서비스</a>
+              </div>
+            </li>
+            <li class="myInfo"><a href="7.html">내 정보</a></li>
+            <li class="logout"><a href="">로그아웃</a></li>
+          </ul>
+        </div>
+        <div class="loginUser">
+          <p>반갑습니다!</p>
+          <div class="loginUser__name">
+            <img src="../img/ic_logo_m.svg" alt="" aria-hidden />
+            <strong>홍길동 님</strong>
+          </div>
+          <div class="loginUser__btn">
+            <button type="button">내 정보</button>
+            <button type="button">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="content">
+        <div class="contDash">
+          <article class="contDash__head">
+            <div class="contDash__head--update">
+              <p>마지막 업데이트 일시 : YYYY-MM-DD hh:mm:ss</p>
+              <button type="button" class="updateBtn">업데이트</button>
+            </div>
+            <ul class="contDash__head--list">
+              <li class="user">
+                <h2>가입 회원 총 합계<small>(보호자/케어메이트/전문가)</small></h2>
+                <strong
+                  ><span>000,000</span>명 / <span>000,000</span>명 / <span>000,000</span>명</strong
+                >
+              </li>
+              <li class="post">
+                <h2>공고 총 합계<small>(전체 서비스)</small></h2>
+                <strong>000,000건</strong>
+              </li>
+              <li class="sales">
+                <h2>승인 금액 총 합계<small>(전체 서비스)</small></h2>
+                <strong>000,000,000,000원</strong>
+              </li>
+              <li class="account">
+                <h2>실 거래 금액 총 합계<small>(전체 서비스)</small></h2>
+                <strong>00,000,000,000원</strong>
+              </li>
+            </ul>
+          </article>
+          <article class="content__box">
+            <div class="content__box--tit">
+              <h2>거래 상세 정보</h2>
+            </div>
+            <div class="content__box--center">
+              <table class="defaultTable">
+                <caption class="a11y-hidden">
+                  서비스별 거래 정보
+                </caption>
+                <colgroup>
+                  <col style="width: 20%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>분류</th>
+                    <th>매칭 전 공고</th>
+                    <th>매칭 후 공고</th>
+                    <th>승인 금액</th>
+                    <th>실 거래 금액</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>간병</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 원</td>
+                    <td>0,000,000 원</td>
+                  </tr>
+                  <tr>
+                    <td>동행</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 원</td>
+                    <td>0,000,000 원</td>
+                  </tr>
+                  <tr>
+                    <td>가사돌봄</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 원</td>
+                    <td>0,000,000 원</td>
+                  </tr>
+                  <tr>
+                    <td>산후돌봄</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 원</td>
+                    <td>0,000,000 원</td>
+                  </tr>
+                  <tr>
+                    <td>내보상찾기</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 건</td>
+                    <td>0,000,000 원</td>
+                    <td>0,000,000 원</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="content__box">
+            <div class="content__box--tit">
+              <h2>커뮤니티 상담</h2>
+              <div class="tabMenu">
+                <button type="button" class="active">전체</button>
+                <button type="button">보호자</button>
+                <button type="button">케어메이트</button>
+              </div>
+            </div>
+            <div class="content__box--center">
+              <ul class="boardList comunity">
+                <li class="">
+                  <a href="" class="care">
+                    <div>
+                      <p>
+                        <span>간병</span> 간병비 입금 받으려면 어떻게 해야 하나요<small
+                          >(보호자)</small
+                        >
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="label">답변대기</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="" class="mate">
+                    <div>
+                      <p>
+                        <span>자유</span> 간병비 입금 받으려면 어떻게 해야 하나요<small
+                          >(케어메이트)</small
+                        >
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="label">답변대기</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="" class="care">
+                    <div>
+                      <p>
+                        <span>건강</span> 간병비 입금 받으려면 어떻게 해야 하나요<small
+                          >(보호자)</small
+                        >
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="label">답변대기</span>
+                  </a>
+                </li>
+                <li class="checked">
+                  <a href="" class="care">
+                    <div>
+                      <p>
+                        <span>증상</span> 간병비 입금 받으려면 어떻게 해야 하나요<small
+                          >(보호자)</small
+                        >
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="label">답변완료</span>
+                  </a>
+                </li>
+                <li class="checked">
+                  <a href="" class="mate">
+                    <div>
+                      <p>
+                        <span>치료</span> 간병비 입금 받으려면 어떻게 해야 하나요<small
+                          >(케어메이트)</small
+                        >
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="label">답변완료</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- <div class="noneDashItem">
+                <img src="../img/noneDashItem.svg" att="" aria-hidden />
+                <p>등록된 상담이 없습니다.</p>
+              </div> -->
+              <a href="" class="view">더보기</a>
+            </div>
+          </article>
+          <article class="content__box">
+            <div class="content__box--tit">
+              <h2>한 줄 평</h2>
+            </div>
+            <div class="content__box--center">
+              <ul class="boardList review">
+                <li class="">
+                  <a href="">
+                    <div>
+                      <p><span>간병</span> 너무 꼼꼼한 케어를 받았습니다.</p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="rating">5.0</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="">
+                    <div>
+                      <p>
+                        <span>동행</span> 덕분에 정말 잘 다녀왔습니다 앞으로 자주 이용해야겠어요
+                      </p>
+                      <small class="date">YYYY-MM-DD hh:mm:ss</small>
+                    </div>
+                    <span class="rating">5.0</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div>
+                      <p><span>가사돌봄</span> 자주 이용하고 있습니다 !</p>
+                      <small class="date">YYYY-MM-DD HH:MM:SS</small>
+                    </div>
+                    <span class="rating">5.0</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div>
+                      <p><span>간병</span> 간병서비스 너무 좋네요 덕분에 많이 회복했습니다.</p>
+                      <small class="date">YYYY-MM-DD HH:MM:SS</small>
+                    </div>
+                    <span class="rating">5.0</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div>
+                      <p>
+                        <span>내보상찾기</span> XXXXXXXXXXXXXXX / XXXXXXXXXXXXXXXX /
+                        XXXXXXXXXXXXXXXXX
+                      </p>
+                      <small class="date">YYYY-MM-DD HH:MM:SS</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <!-- <div class="noneDashItem">
+                <img src="../img/noneDashItem.svg" att="" aria-hidden />
+                <p>등록된 한 줄 평이 없습니다.</p>
+              </div> -->
+              <a href="" class="view">더보기</a>
+            </div>
+          </article>
+        </div>
+      </main>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script>
+      // 사이드바 폴딩
+      $(".navi .btnSide").click(function () {
+        if ($(".navi").hasClass("fold")) {
+          $(".commonWrap").toggleClass("fold");
+          $(".navi").toggleClass("fold");
+          setTimeout(function () {
+            $(".navi .listItem").toggleClass("fold");
+          }, 300);
+        } else {
+          $(".navi .listItem").toggleClass("fold");
+          setTimeout(function () {
+            $(".commonWrap").toggleClass("fold");
+            $(".navi").toggleClass("fold");
+          }, 200);
+        }
+      });
+      // 가로 스크롤 할 때 사이드바 버튼
+      // 회원 현황 차트
+      new Chart($("#userChart"), {
+        type: "bar",
+        data: {
+          labels: ["01-04", "01-05", "01-06", "01-07", "01-08", "01-09", "01-09"],
+          datasets: [
+            {
+              type: "line",
+              label: "전체 회원",
+              tension: 0,
+              backgroundColor: "#7e4f40",
+              pointBackgroundColor: "#7e4f40",
+              borderColor: "#7e4f40",
+              borderWidth: 0.8,
+              data: [110, 220, 330, 440, 550, 440, 330],
+              fill: false,
+            },
+            {
+              type: "bar",
+              label: "가입 회원",
+              backgroundColor: "#fdded4",
+              data: [100, 200, 300, 400, 500, 400, 300],
+              stack: "user",
+            },
+            {
+              type: "bar",
+              label: "탈퇴 회원",
+              backgroundColor: "#aaaaaa",
+              data: [10, 20, 30, 40, 50, 40, 30],
+              stack: "user",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  fontSize: 10,
+                },
+              },
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  fontSize: 10,
+                },
+              },
+            ],
+          },
+          maintainAspectRatio: false,
+          legend: {
+            position: "bottom",
+            labels: {},
+          },
+          tooltips: {
+            mode: "index",
+            callbacks: {
+              label: function (tooltipItem, data) {
+                var label = data.datasets[tooltipItem.datasetIndex].label || "";
+                return " " + label + " : " + Number(tooltipItem.yLabel) + "명";
+              },
+            },
+          },
+        },
+      });
+      // 거래 현황 차트
+      new Chart($("#tradeChart"), {
+        type: "bar",
+        data: {
+          labels: ["01-04", "01-05", "01-06", "01-07", "01-08", "01-09", "01-09"],
+          datasets: [
+            {
+              type: "line",
+              label: "거래 금액",
+              tension: 0,
+              backgroundColor: "#7e4f40",
+              pointBackgroundColor: "#7e4f40",
+              borderColor: "#7e4f40",
+              borderWidth: 0.8,
+              data: [110, 220, 330, 440, 550, 660, 550],
+              fill: false,
+            },
+            {
+              type: "bar",
+              label: "승인 금액",
+              backgroundColor: "#fdded4",
+              data: [100, 200, 300, 400, 500, 600, 500],
+            },
+            {
+              type: "bar",
+              label: "취소 금액",
+              backgroundColor: "#aaaaaa",
+              data: [10, 20, 30, 40, 50, 60, 50],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  fontSize: 10,
+                },
+              },
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  fontSize: 10,
+                },
+              },
+            ],
+          },
+          maintainAspectRatio: false,
+          legend: {
+            // display: false,
+            position: "bottom",
+            labels: {},
+          },
+          tooltips: {
+            mode: "index",
+            callbacks: {
+              label: function (tooltipItem, data) {
+                var label = data.datasets[tooltipItem.datasetIndex].label || "";
+                return " " + label + " : " + Number(tooltipItem.yLabel) + "명";
+              },
+            },
+          },
+        },
+      });
+
+      // tabMenu 의 버튼 너비 자동으로 조절
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabMenu = document.querySelector(".tabMenu");
+        const buttonCount = tabMenu.querySelectorAll("button").length;
+        tabMenu.style.setProperty("--button-count", buttonCount);
+      });
+    </script>
+  </body>
+</html>
