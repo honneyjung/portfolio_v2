@@ -1,0 +1,94 @@
+.adBanner {
+  a {
+    position: relative;
+    height: 80px;
+    border-radius: 12px;
+    strong {
+      @include font-style(15, $black-two);
+    }
+    ~ a {
+      margin-top: 12px;
+    }
+  }
+  .AD01 {
+    padding: 16px 18px 14px;
+    background-image: url(../img/img_ad01.png), url(../img/bg_ad01.png);
+    background-repeat: no-repeat;
+    background-position: right 44px bottom, center;
+    background-size: contain, cover;
+    button {
+      position: relative;
+      padding: 7px 18px 7px 8px;
+      margin-top: 5px;
+      width: auto;
+      border-radius: 12px;
+      background-color: $cocoa;
+      @include font-style(10, $white, med);
+      letter-spacing: normal;
+      line-height: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 5px;
+        height: 8px;
+        background: url(../img/arrowRight-w.svg) no-repeat center / cover;
+      }
+    }
+  }
+  .AD02 {
+    padding: 18px;
+    background-image: url(../img/img_ad02.png), url(../img/bg_ad02.png);
+    background-repeat: no-repeat;
+    background-position: right 38px bottom, center;
+    background-size: 110px, cover;
+    strong {
+      @include font-style(15, #484848, bol);
+      span {
+        color: $cocoa;
+      }
+    }
+    p {
+      @include flexbox(start, center);
+      @include font-style(15, #7b7b7b, med);
+      img {
+        margin-top: 3px;
+        width: 5px;
+        margin-left: 6px;
+      }
+    }
+  }
+  .AD03 {
+    padding: 19px 16px;
+    background-image: url(../img/icon_compensa.png);
+    background-color: $white-five;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 65px;
+    strong {
+      @include font-style(14, $cocoa, bol);
+    }
+    p {
+      @include font-style(14, $black-two, med);
+      strong {
+        color: $black-two;
+      }
+      img {
+        display: inline-block;
+        width: 6px;
+        margin-left: 6px;
+      }
+    }
+  }
+  .ad {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px 6px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.34);
+    @include font-style(10, $white, med);
+    line-height: 1;
+  }
+}

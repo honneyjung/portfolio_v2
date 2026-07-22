@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>장소 확인 - 주소 상세 확인 (지도와 같이 나오는)</title>
+  </head>
+  <body>
+    <!-- 
+      기본값 : headerComu / h1에 a11y-hidden 추가
+      스크롤 됐을 때 : headerComu 와 a11y-hidden 삭제 (carenation 헤더와 동일)
+    -->
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">간병 장소</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <!-- 
+          기본 : notifiPlaceDet
+          병원 직접 등록 시 : notifiPlaceDet pb92
+        -->
+          <section class="notifiPlaceDet pb92">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
+            <div class="pageTit">
+              <h2>간병 장소를 확인해 주세요.</h2>
+              <p>매칭된 케어메이트가 입력한 주소로 찾아갑니다.</p>
+            </div>
+            <article class="notifiSearch">
+              <div class="notifiSearch__form--input">
+                <input type="text" value="xxxxx시 xxxxxx구 xxx동 xxx-xxx" disabled />
+                <input type="text" value="xxxxxxxxxxxxxxxxxxxx" disabled />
+
+                <!-- 사용자 병원 등록 input 1개 추가 -->
+                <input type="text" value="xxxxxxxxxxxxxxxxxxxx" disabled />
+              </div>
+            </article>
+            <article class="notifiPlaceDet__map">
+              <h3 class="a11y-hidden">지도 자세히</h3>
+              <div>지도 들어가는 자리</div>
+            </article>
+          </section>
+        </div>
+        <!-- 
+          기본 : btnWrap
+          병원 직접 등록 시 : btnWrap fixed02 
+        -->
+        <div class="btnWrap fixed02">
+          <button type="button" class="outlineTxtBtn">수정하기</button>
+          <button type="button" class="solidBtn">다음</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼 (1-3.html로 페이지 이동)
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", function () {
+            window.location.href = "1-3.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

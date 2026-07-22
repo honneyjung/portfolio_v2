@@ -1,0 +1,309 @@
+%standard-btn {
+  padding: 16px 0;
+  min-height: 46px;
+  border-radius: 8px;
+  @include font-style(18, $white, med);
+  line-height: 1;
+  text-align: center;
+}
+.backBtn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: url(../img/ic_back_btn.svg) no-repeat center;
+  @extend %text-hidden;
+  cursor: pointer;
+}
+.searchBtn {
+  width: 22px;
+  height: 22px;
+  background: url(../img/iconSearch-3.svg) no-repeat center;
+  @extend %text-hidden;
+}
+.resetBtn {
+  width: 24px;
+  height: 24px;
+  background: url(../img/icon_x_grey.svg) no-repeat center;
+  @extend %text-hidden;
+}
+.outlineRouBtn {
+  padding: 9px 12px;
+  @include border-box($white-three, 18px, $white-four);
+  @include font-style(14, color, med);
+  line-height: 1;
+  &:before {
+    content: "";
+    display: inline-block;
+    background: no-repeat center;
+  }
+  // 초기화 버튼
+  &.intial {
+    @include flexbox(between, center);
+    padding: 8px 10px;
+    width: 82px;
+    &:before {
+      flex-shrink: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background-image: url(../img/iconIntial.svg);
+      background-size: 16px;
+    }
+  }
+  // 수정하기 버튼
+  &.edit {
+    @include flexbox(center, center);
+    margin-left: auto;
+    width: auto;
+    background-color: $white-five;
+    &:before {
+      margin-right: 4px;
+      width: 14px;
+      height: 14px;
+      background-image: url(../img/iconCarePati.svg);
+      background-size: 14px;
+    }
+  }
+}
+.outlineTxtBtn {
+  padding: 15px 0;
+  min-height: 46px;
+  @include border-box($cocoa, 8px, $white);
+  @include font-style(18, $cocoa, med);
+  line-height: 1;
+  text-align: center;
+}
+.solidBtn {
+  @extend %standard-btn;
+  margin: 0 auto;
+  max-width: 760px;
+  background-color: $brownish !important;
+  &:disabled {
+    background-color: $cool-grey !important;
+  }
+  &.call {
+    @include flexbox(center, center);
+    &:before {
+      content: "";
+      display: inline-block;
+      margin-right: 8px;
+      width: 18px;
+      height: 18px;
+      background: url(../img/iconCall.svg) no-repeat center / contain;
+    }
+  }
+  &.grey {
+    padding: 15px 0;
+    border: solid 1px $white-three;
+    background-color: $white-five !important;
+    color: $black-two;
+  }
+}
+.arrowBtn {
+  border: solid 1px $white-three;
+  border-radius: 8px;
+}
+.delBtn {
+  width: 24px;
+  height: 24px;
+  background: url(../img/iconX-e.svg) no-repeat center;
+  @extend %text-hidden;
+}
+.btnClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  background: url(../img/iconX.svg) no-repeat center;
+  @extend %text-hidden;
+}
+/* 우측 화살표 있는 모달 띄우는 버튼 */
+.btnDiag {
+  padding: 10px 30px 10px 12px;
+  border: 1px solid $white-three;
+  border-radius: 8px;
+  @include font-style(16, $warm-grey-two);
+  @include ellipsis;
+  background: url(../img/arrowRight-a.svg) no-repeat right 12px center / 6px;
+  &.beB {
+    @include font-style(16, $black);
+  }
+  &.delete {
+    background-image: url(../img/icon_x_grey.svg);
+    background-size: 16px;
+  }
+}
+/* 고객센터 플로팅 버튼 */
+.floatingBtn {
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  z-index: 2;
+  bottom: 74px;
+  width: 100%;
+  height: 88px;
+  max-width: 600px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  &.scroll {
+    button {
+      right: -36px;
+      animation: flash 1.2s linear infinite;
+      @keyframes flash {
+        0% {
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), -1px 0px 16px #7d6253;
+        }
+        50% {
+          box-shadow: none;
+        }
+        100% {
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), -1px 0px 16px #7d6253;
+        }
+      }
+    }
+  }
+  button {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: linear-gradient(134deg, #616161 28%, #3e3837 62%, #825c4f 86%);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    transition: all 1s ease;
+    pointer-events: auto;
+    span {
+      position: absolute;
+      top: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: url(../img/ic_csBtn.svg) no-repeat;
+      @extend %text-hidden;
+      animation: spriteAni 5s ease-in-out infinite;
+      @keyframes spriteAni {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: -56px 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+    }
+  }
+}
+
+/* 이 위로 수정 금지 */
+.outlineRouBtn {
+  @media screen and (max-width: 321px) {
+    padding: 8px;
+  }
+}
+
+.outlineArwBtn {
+  width: fit-content;
+  padding: 8px 26px 8px 12px;
+  border: 1px solid $cocoa;
+  border-radius: 16px;
+  background: url(../img/arrowRight-br.svg) no-repeat right 10px center, $white;
+  @include font-style(14, $cocoa, med);
+  line-height: 1;
+}
+
+.iconBtn {
+  @include flexbox(center, center);
+  padding: 10px 0;
+  @include border-box($white-three, 8px, $white);
+  @include font-style(16, color, med);
+  text-align: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    background: no-repeat center / 16px;
+  }
+  &.reRegi:before {
+    background-image: url(../img/iconReRegi.svg);
+  }
+  &.cancel:before {
+    background-image: url(../img/iconCanCel.svg);
+  }
+  &.withDrawal:before {
+    background-image: url(../img/iconWithDrawal.svg);
+  }
+  &.reReque:before {
+    background-image: url(../img/iconReReque.svg);
+  }
+  &.exten:before {
+    background-image: url(../img/iconExten.svg);
+  }
+  &.view:before {
+    background-image: url(../img/iconView.svg);
+  }
+  &.select:before {
+    background-image: url(../img/iconSelect.svg);
+  }
+  &.review01:before {
+    background-image: url(../img/iconReview01.svg);
+  }
+  &.review02:before {
+    background-image: url(../img/iconReview02.svg);
+  }
+  &.edit:before {
+    background-image: url(../img/iconCarePati.svg);
+  }
+}
+.reset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  background: url(../img/icon_x_grey.svg) no-repeat right 8px center / 16px;
+  @extend %text-hidden;
+  @media screen and (max-width: 321px) {
+    width: 43px;
+    height: 43px;
+  }
+}
+.arrowBtn {
+  padding: 14px 0;
+  background: url(../img/arrowRight-3.svg) no-repeat right 12px center / 8px $white;
+  @include font-style(16, color, med);
+  line-height: 1;
+  text-align: center;
+}
+.outlineTxtBtn.reSearch {
+  background-color: $very-light-pink;
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 17px;
+    background: url(../img/iconReSearch.svg) no-repeat center;
+  }
+}
+
+/* pdf 다운로드 버튼 */
+.outlineTxtBtn {
+  &.download {
+    @include flexbox(center, center);
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      background: url(../img/ic_download_brw.svg) no-repeat center / 20px;
+    }
+  }
+}

@@ -1,0 +1,246 @@
+/* 자동 결제 카드 등록 레이아웃 */
+.cardBox {
+  h3 {
+    @include font-style(16, color, bol);
+  }
+  p {
+    margin-top: 2px;
+    @include font-style(14, $greyish-brown, nor);
+  }
+  &__form {
+    position: relative;
+    padding: 16px;
+    margin: 22px 0 26px;
+    border: 1px solid $cocoa;
+    border-radius: 12px;
+    background: no-repeat right 16px top 24px #fff;
+    strong,
+    span {
+      display: block;
+      padding-right: 48px;
+    }
+    strong {
+      @include font-style(16, $black-two, bol);
+    }
+    span {
+      margin-top: 2px;
+      @include font-style(14, $warm-grey, nor);
+      line-height: 1.71;
+    }
+    button {
+      padding: 13px 0;
+      margin-top: 12px;
+      background-color: $white-five;
+      @include font-style(14);
+      line-height: 1;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 16px;
+      width: 32px;
+      height: 4px;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+  &__noCard {
+    padding: 84px 0 36px;
+    margin: 22px 0 26px;
+    min-height: 140px;
+    border: 1px solid $cocoa;
+    border-radius: 12px;
+    background: url(../img/icon_add.svg) no-repeat center 36px $white;
+    text-align: center;
+    @include font-style(16, $cocoa, med);
+    line-height: 1;
+  }
+  &__total {
+    padding-top: 20px;
+    border-top: 1px dotted $white-three;
+    dl {
+      div {
+        @include flexbox(between, center);
+        margin-top: 8px;
+        dt {
+          @include font-style(14, $greyish-brown, nor);
+        }
+        dd {
+          @include font-style(16, $black, med);
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          dt {
+            @include font-style(16, $black-two, bol);
+          }
+          dd {
+            @include font-style(16, $black, bol);
+          }
+        }
+      }
+    }
+    &--desc {
+      padding: 12px 12px 12px 34px;
+      margin-top: 20px;
+      border: 1px solid $white-three;
+      border-radius: 12px;
+      background: url(../img/iconNoti-grey.svg) no-repeat 12px 16px/16px $white-five;
+      p {
+        @include font-style(14, $black-two, nor);
+      }
+    }
+  }
+}
+
+.payCard01 {
+  background-image: url(../img/ic_cardInfo01.svg) !important;
+  &:after {
+    background-color: #009090;
+  }
+}
+.payCard02 {
+  background-image: url(../img/ic_cardInfo02.svg) !important;
+  &:after {
+    background-color: #e44b4b;
+  }
+}
+.payCard03 {
+  background-image: url(../img/ic_cardInfo03.svg) !important;
+  &:after {
+    background-color: #9badc4;
+  }
+}
+.payCard04 {
+  background-image: url(../img/ic_cardInfo04.svg) !important;
+  &:after {
+    background-color: #ffcc00;
+  }
+}
+.payCard05 {
+  background-image: url(../img/ic_cardInfo05.svg) !important;
+  &:after {
+    background-color: #dc3a49;
+  }
+}
+.payCard06 {
+  background-image: url(../img/ic_cardInfo06.svg) !important;
+  &:after {
+    background-color: #0c4ca3;
+  }
+}
+.payCard07 {
+  background-image: url(../img/ic_cardInfo07.svg) !important;
+  &:after {
+    background-color: #0046ff;
+  }
+}
+.payCard08 {
+  background-image: url(../img/ic_cardInfo08.svg) !important;
+  &:after {
+    background-color: #1434cb;
+  }
+}
+.payCard09 {
+  background-image: url(../img/ic_cardInfo09.svg) !important;
+  &:after {
+    background-color: #eb001b;
+  }
+}
+.payCard10 {
+  background-image: url(../img/ic_cardInfo10.svg) !important;
+  &:after {
+    background-color: #006fbc;
+  }
+}
+.payCard11 {
+  background-image: url(../img/ic_cardInfo11.svg) !important;
+  &:after {
+    background-color: #006a65;
+  }
+}
+.payCard12 {
+  background-image: url(../img/ic_cardInfo12.svg) !important;
+  &:after {
+    background-color: #002258;
+  }
+}
+.payCard13 {
+  background-image: url(../img/ic_cardInfo13.svg) !important;
+  &:after {
+    background-color: #002258;
+  }
+}
+.payCard14 {
+  background-image: url(../img/ic_cardInfo14.svg) !important;
+  &:after {
+    background-color: #00367f;
+  }
+}
+.payCard15 {
+  background-image: url(../img/ic_cardInfo15.svg) !important;
+  &:after {
+    background-color: #62bbb8;
+  }
+}
+.payCard16 {
+  background-image: url(../img/ic_cardInfo16.svg) !important;
+  &:after {
+    background-color: #056dae;
+  }
+}
+.payCard17 {
+  background-image: url(../img/ic_cardInfo17.svg) !important;
+  &:after {
+    background-color: #0067ac;
+  }
+}
+.payCard18 {
+  background-image: url(../img/ic_cardInfo18.svg) !important;
+  &:after {
+    background-color: #0056a7;
+  }
+}
+.payCard19 {
+  background-image: url(../img/ic_cardInfo19.svg) !important;
+  &:after {
+    background-color: #0069b4;
+  }
+}
+.payCard20 {
+  background-image: url(../img/ic_cardInfo20.svg) !important;
+  &:after {
+    background-color: #0046ff;
+  }
+}
+.payCard21 {
+  background-image: url(../img/ic_cardInfo21.svg) !important;
+  &:after {
+    background-color: #44c7f4;
+  }
+}
+.payCard22 {
+  background-image: url(../img/ic_cardInfo22.svg) !important;
+  &:after {
+    background-color: #140064;
+  }
+}
+.payCard23 {
+  background-image: url(../img/ic_cardInfo23.svg) !important;
+  &:after {
+    background-color: #ffdc00;
+  }
+}
+.payCard24 {
+  background-image: url(../img/ic_cardInfo24.svg) !important;
+  &:after {
+    background-color: #e72410;
+  }
+}
+.payCard25 {
+  background-image: url(../img/ic_cardInfo25.svg) !important;
+  &:after {
+    background-color: #85c51b;
+  }
+}

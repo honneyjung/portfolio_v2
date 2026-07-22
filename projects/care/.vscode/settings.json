@@ -1,0 +1,63 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.ignoreFiles": ["**/.vscode/**", "**/node_modules/**", "**/.git/**"],
+  "liveServer.settings.file": "index.html",
+  "liveServer.settings.root": "/",
+
+  "editor.tokenColorCustomizations": {
+    "comments": "#a3a3a3"
+  },
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "postcss": "css",
+    "scss": "css",
+    "sass": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+
+  "prettier.useEditorConfig": false,
+  "prettier.trailingComma": "all",
+  "prettier.arrowParens": "always",
+  "prettier.printWidth": 100,
+  "prettier.tabWidth": 2,
+
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.sourceMap": true,
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.forceBaseDirectory": "/css/scss",
+  "liveSassCompile.settings.fileExtensions": [".scss", ".sass"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": "/css/"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions", "not dead"],
+
+  "liveSassCompile.settings.excludeList": ["/**/index.scss"],
+
+  "git.openRepositoryInParentFolders": "never",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.port": 5503
+}

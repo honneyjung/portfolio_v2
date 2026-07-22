@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pc.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css" />
+
+    <title>고객센터 - 문의사항</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap clear">
+        <h1>
+          <a href="">
+            <img src="../img/img_logo01.png" alt="케어네이션" />
+          </a>
+        </h1>
+        <nav>
+          <!-- 
+            기본 : mobileBtn
+            mobileBtn 클릭 : mobileBtn open
+          -->
+          <button type="button" class="mobileBtn">전체 메뉴</button>
+          <ul class="headerWrap__menu clear">
+            <li><a href="../html/1.html" target="_self">간병인 찾기</a></li>
+            <li><a href="../html/2.html" target="_self">간병일감 찾기</a></li>
+            <li><a href="../html/3.html" target="_self">병원회원</a></li>
+            <li><a href="../html/4.html" target="_self">고객센터</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article class="subBan qna">
+        <div class="basicWrap">
+          <h2>문의사항</h2>
+          <p>
+            케어네이션 관련하여 궁금하신 점이 있으신가요?<br />
+            케어네이션 관련 문의사항을 남겨주세요.
+          </p>
+        </div>
+      </article>
+      <section class="question">
+        <!-- 
+          기본 : question__mobileTab clear
+          스크롤시 : question__mobileTab clear scroll
+         -->
+        <div class="question__mobileTab clear">
+          <button type="button" class="active">카카오톡</button>
+          <button type="button">유선</button>
+          <button type="button">이메일</button>
+        </div>
+        <div class="basicWrap">
+          <div class="question__list clear">
+            <div>
+              <!-- 
+                모바일 : question__mobileTab 각 버튼 클릭시
+                question__list--item 에 active 클래스 추가
+              -->
+              <div class="question__list--item active">
+                <small>01</small>
+                <h3>카카오톡으로 상담하기</h3>
+                <p>
+                  카카오톡 상담 시간에는 카카오톡으로도 상담을 신청하실 수
+                  있습니다.
+                </p>
+                <div class="greyBgBox">
+                  <h4>카카오톡 상담시간</h4>
+                  <dl>
+                    <div class="clear">
+                      <dt>월~토요일 :</dt>
+                      <dd>오전 10시 ~ 오후 5시 30분</dd>
+                    </div>
+                    <div class="clear">
+                      <dt>금요일 :</dt>
+                      <dd>오전 10시 ~ 오후 5시</dd>
+                    </div>
+                    <div class="clear">
+                      <dt>휴무일 :</dt>
+                      <dd>일요일, 명절, 근로자의 날</dd>
+                    </div>
+                  </dl>
+                </div>
+                <a href="" class="contactBtn kakao">카카오톡으로 상담하기</a>
+              </div>
+              <div class="question__list--item">
+                <small>02</small>
+                <h3>유선으로 상담하기</h3>
+                <p>
+                  고객센터 운영시간에는 유선 상담을 신청하실 수 있습니다.<br />
+                  <b>케어네이션 고객센터 1811 - 5949</b>로 전화를 걸어보세요!
+                </p>
+                <div class="greyBgBox">
+                  <h4>고객센터 상담시간</h4>
+                  <dl>
+                    <div class="clear">
+                      <dt>월~토요일 :</dt>
+                      <dd>오전 10시 ~ 오후 5시 30분</dd>
+                    </div>
+                    <div class="clear">
+                      <dt>금요일 :</dt>
+                      <dd>오전 10시 ~ 오후 5시</dd>
+                    </div>
+                    <div class="clear">
+                      <dt>휴무일 :</dt>
+                      <dd>일요일, 명절, 근로자의 날</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <div class="question__list--item">
+              <small>03</small>
+              <h3>이메일로 상담하기</h3>
+              <div class="contactForm">
+                <ul class="contactForm__list clear">
+                  <li>
+                    <label for="txt1_1">이름<span>(필수)</span></label>
+                    <input
+                      type="text"
+                      id="txt1_1"
+                      placeholder="이름을 입력해주세요"
+                    />
+                  </li>
+                  <li>
+                    <label for="txt2_1">연락처<span>(필수)</span></label>
+                    <input
+                      type="text"
+                      id="txt2_1"
+                      placeholder="연락처를 입력해주세요"
+                    />
+                  </li>
+                  <li>
+                    <label for="txt3_1">이메일<span>(필수)</span></label>
+                    <input
+                      type="text"
+                      id="txt3_1"
+                      placeholder="이메일을 입력해주세요"
+                    />
+                  </li>
+                  <li>
+                    <label for="txt4_1">문의사항<span>(필수)</span></label>
+                    <textarea
+                      id="txt4_1"
+                      placeholder="문의사항을 입력해주세요"
+                    ></textarea>
+                  </li>
+                </ul>
+                <button type="button" class="contactBtn submit">
+                  접수하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footerWrap">
+        <div class="footerWrap__provLink">
+          <div class="basicWrap">
+            <ul class="footerWrap__provLink--list clear">
+              <li><a href="">회사소개</a></li>
+              <li><a href="">보호자 이용약관</a></li>
+              <li><a href="">보호자 개인정보 처리방침</a></li>
+              <li><a href="">간병인 이용약관</a></li>
+              <li><a href="">간병인 개인정보 처리방침</a></li>
+              <li><a href="">위치기반 서비스 이용약관</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerWrap__corpInfo clear">
+          <div class="footerWrap__corpInfo--aco on">
+            <img src="../img/img_logo02.png" alt="케어네이션" />
+            <h2><button type="button">케어네이션 회사 정보 더보기</button></h2>
+            <div>
+              <p>서비스명 : 케어네이션</p>
+              <p>주소지 : 서울 강남구 테헤란로8길 37, 한동빌딩 5층</p>
+              <p>회사명 : 케어네이션 주식회사</p>
+              <p>사업자등록번호 : 212-86-05451</p>
+              <p>대표자명 : 김견원, 서대건 │ 개인정보관리책임자 : 서대건</p>
+              <p>통신판매업신고 : 제 2024-서울강남-04074 호</p>
+              <p>제휴문의 : 070-4681-0443</p>
+              <p>제휴 이메일 : carenation@carenation.kr</p>
+              <p>고객센터 이메일 : help@carenation.kr</p>
+              <p>호스팅 사업자 : Naver Cloud Platform</p>
+              <p>유료직업소개소 등록번호 : 제 2024-3220250-14-5-00030 호</p>
+              <small>
+                케어네이션 주식회사는 통신판매중개자로서 거래에 필요한 시스템을
+                운영 및 제공합니다.<br />
+                보호자와 케어메이트 사이에 발생 분쟁에 대한 책임은 보호자와
+                케어메이트에게 있습니다.
+              </small>
+            </div>
+          </div>
+          <div class="footerWrap__corpInfo--right">
+            <ul class="snsLink clear">
+              <li><a href="" class="blog">네이버 블로그</a></li>
+              <li><a href="" class="youtube">유튜브</a></li>
+              <li><a href="" class="facebook">페이스북</a></li>
+              <li><a href="" class="kakao">카카오톡 채널</a></li>
+              <li><a href="" class="insta">인스타그램</a></li>
+            </ul>
+            <div class="csWrap">
+              <div class="csWrap__csCenter">
+                <p>고객센터<b>1811-5949</b></p>
+                <span><b>월~토요일</b> : 오전 10시 ~ 오후 5시 30분</span>
+                <span
+                  ><b>금요일</b> : 오전 10시 ~ 오후 5시
+                  <small>(채팅상담 동일)</small></span
+                >
+                <span><b>휴무일</b> : 일요일, 명절, 근로자의 날</span>
+                <span>카카오톡 상담시간 : 고객센터와 동일합니다</span>
+              </div>
+              <div class="csWrap__familySite">
+                <button type="button">Family site</button>
+                <!-- 
+                  기본값 : csWrap__familySite--list
+                  버튼 선택시 : csWrap__familySite--list open
+                -->
+                <ul class="csWrap__familySite--list open">
+                  <li><a href="" target="_blank">DATA LAB.</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="topBtn">맨위로</button>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+.noticeGrey {
+  padding: 20px;
+  border-top: solid 1px $white-three;
+  background-color: $white-two;
+  &:has(.btnWrap.fixed) {
+    padding-bottom: 92px;
+  }
+  &__aco {
+    margin-top: 16px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:nth-of-type(2) {
+      margin-top: 8px;
+    }
+    summary {
+      position: relative;
+      padding: 14px 16px 14px 54px;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      background: url(../img/acoOpen.svg) no-repeat right 16px center $white-five;
+      @include font-style(14, $black-two, med);
+      line-height: 1;
+      cursor: pointer;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        padding: 4px 5px;
+        margin-right: 8px;
+        border: solid 1px $faded-red;
+        border-radius: 20px;
+        @include font-style(10, $faded-red);
+        line-height: 1;
+        transform: translateY(-50%);
+      }
+      &::marker {
+        display: inline-block;
+        content: "";
+      }
+      &::-webkit-details-marker {
+        display: none !important;
+      }
+    }
+    > div {
+      p {
+        margin: 4px 0;
+        @include font-style(14, $greyish-brown);
+        line-height: 1.57;
+        word-break: break-all;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        span {
+          display: inline;
+          font-weight: $med-w;
+        }
+      }
+      ol {
+        padding-left: 9px;
+      }
+      i {
+        padding-left: 20px;
+        margin-top: 2px;
+        @include font-style(14, $greyish-brown, med);
+        font-style: $nor-w;
+      }
+    }
+    &[open] {
+      > div {
+        padding: 11.5px 16px 20px;
+        border: solid 1px $white-three;
+        border-top: 0;
+        border-radius: 0 0 8px 8px;
+        background-color: $white-five;
+      }
+      summary {
+        border-bottom: 0;
+        border-radius: 8px 8px 0 0;
+        background-image: url(../img/acoClose.svg);
+        &:after {
+          content: "";
+          position: absolute;
+          right: 16px;
+          bottom: 0;
+          width: calc(100% - 32px);
+          height: 1px;
+          background-color: $white-three;
+        }
+      }
+    }
+    + .btnWrap {
+      padding-top: 32px;
+    }
+  }
+  ol {
+    margin-top: 4px;
+    &.noNum {
+      li {
+        padding-left: 8px;
+        counter-increment: none;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    li {
+      position: relative;
+      padding-left: 14px;
+      @include font-style(14, $greyish-brown);
+      counter-increment: noticeNum;
+      &:before {
+        content: counter(noticeNum) ") ";
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  > ol li {
+    font-weight: $med-w;
+  }
+  > h2 {
+    padding-left: 24px;
+    margin-bottom: 8px;
+    background: url(../img/iconNoti-grey.svg) no-repeat 0 2px / 16px;
+    @include font-style(14, $black-two);
+    ~ h2 {
+      margin-top: 12px;
+    }
+  }
+  > p {
+    margin-top: 4px;
+    @include font-style(14, $greyish-brown);
+    word-break: break-all;
+  }
+  .btnWrap {
+    padding: 20px 0 0;
+  }
+}

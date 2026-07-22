@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <path data-name="사각형 4901" style="fill:none" d="M0 0h16v16H0z"/>
+    <g data-name="그룹 24742">
+        <g data-name="그룹 24740">
+            <g data-name="그룹 24737">
+                <path data-name="선 996" style="stroke:#dc3545;stroke-linecap:round;stroke-linejoin:round;fill:none" d="M0 0v1.127" transform="translate(7.871 .63)"/>
+            </g>
+            <g data-name="그룹 24738">
+                <path data-name="선 997" style="stroke:#dc3545;stroke-linecap:round;stroke-linejoin:round;fill:none" d="m0 0 .797.797" transform="translate(3 1.758)"/>
+            </g>
+            <g data-name="그룹 24739">
+                <path data-name="선 998" style="stroke:#dc3545;stroke-linecap:round;stroke-linejoin:round;fill:none" d="M0 .797.797 0" transform="translate(11.944 1.819)"/>
+            </g>
+        </g>
+        <g data-name="그룹 24741">
+            <path data-name="패스 29746" d="M189.766 225.616a4.946 4.946 0 0 0-4.946 4.946v5.511a1.413 1.413 0 0 0 1.413 1.413h7.067a1.413 1.413 0 0 0 1.413-1.413v-5.511a4.946 4.946 0 0 0-4.947-4.946z" transform="translate(-181.712 -222.181)" style="fill:#fff;stroke:#dc3545;stroke-linecap:round;stroke-linejoin:round"/>
+            <path data-name="패스 29747" d="M191.123 234.6a2.688 2.688 0 0 1 2.684-2.684" transform="translate(-185.754 -226.222)" style="fill:#fff;stroke:#dc3545;stroke-linecap:round;stroke-linejoin:round"/>
+        </g>
+    </g>
+</svg>

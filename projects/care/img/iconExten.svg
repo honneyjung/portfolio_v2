@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.04" height="16.04" viewBox="0 0 16.04 16.04">
+    <path data-name="사각형 2613" transform="translate(.02 .022)" style="fill:none" d="M0 0h16v16H0z"/>
+    <g transform="translate(.125 .125)">
+        <circle data-name="타원 767" cx="7" cy="7" r="7" transform="translate(.895 .897)" style="fill:#fff"/>
+        <path data-name="패스 16597" d="M370.895 563.5a7.895 7.895 0 1 1 7.895-7.9 7.9 7.9 0 0 1-7.895 7.9zm0-15.038a7.143 7.143 0 1 0 7.143 7.143 7.151 7.151 0 0 0-7.143-7.141z" transform="translate(-363 -547.712)" style="fill:#333;stroke:#333;stroke-width:.25px"/>
+        <path data-name="패스 16598" d="M-.278 6a.379.379 0 0 1-.265-.11.376.376 0 0 1 0-.531l5.9-5.9a.376.376 0 0 1 .531 0 .376.376 0 0 1 0 .532l-5.9 5.9A.372.372 0 0 1-.278 6z" transform="rotate(-45 11.588 -1.02)" style="fill:#333;stroke:#333;stroke-width:.25px"/>
+        <path data-name="패스 16599" d="M6.254 6.71a.344.344 0 0 1-.282-.093L.053.7A.423.423 0 0 1 .11.11.422.422 0 0 1 .7.053l5.917 5.918a.422.422 0 0 1-.057.588.511.511 0 0 1-.306.151z" transform="rotate(-45 11.12 .11)" style="fill:#333;stroke:#333;stroke-width:.25px"/>
+    </g>
+</svg>

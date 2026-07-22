@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <g transform="translate(-210 -136)">
+        <circle data-name="타원 525" cx="18" cy="18" r="18" transform="translate(210 136)" style="fill:#002258"/>
+        <g data-name="그룹 5171">
+            <path data-name="사각형 2258" transform="translate(221.003 147)" style="fill:#fff" d="M0 0h13.993v13.993H0z"/>
+            <path data-name="패스 15883" d="m380.651 596.39 3.5 3.5 3.5-3.5z" transform="translate(-159.648 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15884" d="M380.651 596.39v7l3.5-3.5z" transform="translate(-159.648 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15885" d="m387.647 617-3.5-3.5-3.5 3.5z" transform="translate(-159.647 -463)" style="fill:#fff"/>
+            <path data-name="패스 15886" d="M401.268 603.386v-7l-3.5 3.5z" transform="translate(-173.269 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15887" d="M414.88 596.39v7l3.5-3.5z" transform="translate(-186.88 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15888" d="m421.876 617-3.5-3.5-3.5 3.5z" transform="translate(-186.879 -463)" style="fill:#fff"/>
+            <path data-name="패스 15889" d="m380.651 630.618 3.5 3.5 3.5-3.5z" transform="translate(-159.648 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15890" d="M380.651 630.618v7l3.5-3.5z" transform="translate(-159.648 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15891" d="m387.647 651.225-3.5-3.5-3.5 3.5z" transform="translate(-159.647 -490.232)" style="fill:#fff"/>
+            <path data-name="패스 15892" d="M401.268 637.615v-7l-3.5 3.5z" transform="translate(-173.269 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15893" d="m414.88 630.618 3.5 3.5 3.5-3.5z" transform="translate(-186.88 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15894" d="M414.88 630.618v7l3.5-3.5z" transform="translate(-186.88 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15895" d="m421.876 651.225-3.5-3.5-3.5 3.5z" transform="translate(-186.879 -490.232)" style="fill:#fff"/>
+            <path data-name="패스 15896" d="M435.5 637.615v-7l-3.5 3.5z" transform="translate(-200.501 -476.621)" style="fill:#fff"/>
+            <path data-name="패스 15897" d="m414.88 596.39 3.5 3.5 3.5-3.5z" transform="translate(-186.88 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15898" d="M435.5 603.386v-7l-3.5 3.5z" transform="translate(-200.501 -449.389)" style="fill:#fff"/>
+            <path data-name="패스 15899" d="m405.209 622.571-4.48-4.267-6.8 6.816 2.48 2.48 4.319-4.253 4.48 4.455z" transform="translate(-170.213 -466.824)" style="fill:#002258"/>
+        </g>
+    </g>
+</svg>

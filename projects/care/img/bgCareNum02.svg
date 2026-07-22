@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+    <defs>
+        <style>
+            .cls-2{fill:#333}
+        </style>
+    </defs>
+    <g id="iconCarenum" transform="translate(-40 -404)">
+        <path id="사각형_2707" data-name="사각형 2707" transform="translate(40 404)" style="fill:none" d="M0 0h16v16H0z"/>
+        <g id="icon_doc" transform="translate(-370.8 -240.628)">
+            <g id="그룹_4748" data-name="그룹 4748" transform="translate(415.072 648.931)">
+                <path id="패스_14567" data-name="패스 14567" class="cls-2" d="M422.726 651.5H416.1a.437.437 0 0 1 0-.873h6.626a.437.437 0 0 1 0 .873z" transform="translate(-415.685 -650.626)"/>
+                <path id="패스_14568" data-name="패스 14568" class="cls-2" d="M422.726 655.717H416.1a.438.438 0 0 1 0-.874h6.626a.438.438 0 0 1 0 .874z" transform="translate(-415.685 -651.582)"/>
+                <path id="패스_14569" data-name="패스 14569" class="cls-2" d="M422.726 659.934H416.1a.437.437 0 0 1 0-.873h6.626a.437.437 0 0 1 0 .873z" transform="translate(-415.685 -652.538)"/>
+            </g>
+            <path id="패스_14570" data-name="패스 14570" class="cls-2" d="M425.17 660.278h-12.741a.422.422 0 0 1-.429-.414v-14.47a.422.422 0 0 1 .429-.414h12.741a.422.422 0 0 1 .429.414v14.47a.422.422 0 0 1-.429.414zm-12.311-.829h11.882v-13.641h-11.882z"/>
+        </g>
+    </g>
+</svg>

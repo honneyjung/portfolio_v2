@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>케어메이트 매칭 방법</title>
+  </head>
+  <body>
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">매칭 방법</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <section class="notifiRegis">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li>1</li>
+                <li>2</li>
+                <li class="active">3</li>
+              </ul>
+            </div>
+            <div class="pageTit">
+              <h2>
+                케어메이트 매칭 방법을<br />
+                선택해 주세요.
+              </h2>
+            </div>
+            <article class="autoMatch">
+              <div class="autoMatch__pickBox">
+                <ul class="autoMatch__pickBox--list">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="autoPick01" name="autoPick" checked />
+                    <label for="autoPick01">
+                      <p>일반 매칭</p>
+                      <span>
+                        환자 상태를 확인하고 케어메이트들이 보호자님께
+                        <b>직접 간병비를 제시</b>합니다.<br />
+                        프로필, 돌봄 경력, 후기를 보고 <b>케어메이트를 선택</b>해 보세요.
+                      </span>
+                      <div class="payBox">
+                        <h3><img src="../img/smallDataLogo.svg" alt="CARENAITON DATA LAB." /></h3>
+                        <p class="coinTxt">
+                          빅데이터 통계를 통한 현재 공고와 비슷한 공고의 지원 금액은
+                        </p>
+                        <p><strong>0,000,000원 ~ 0,000,000원</strong>입니다.</p>
+                      </div>
+                      <div class="chartBox">
+                        <h3><img src="../img/smallDataLogo.svg" alt="CARENAITON DATA LAB." /></h3>
+                        <p class="chartBox__subtit coinTxt">빅데이터 통계를 통한 예상 지원 금액</p>
+                        <div class="chartBox__chart">
+                          <div class="chartBox__chart--legend">기준 : 일 간병비</div>
+                          <div class="chartBox__chart--wrap">
+                            그래프 넣는 자리(추가 후 수정 예정)
+                          </div>
+                          <div class="chartBox__chart--axis">
+                            <span>80,000</span>
+                            <span>115,000</span>
+                          </div>
+                          <p class="chartBox__chart--rangeInfo">
+                            현재 공고와 비슷한 공고의 지원 금액은<br />
+                            <strong>80,000원 ~ 115,000원</strong> 입니다.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bubbleBox">
+                        <p>
+                          예상 지원 금액 정보는 참고용 자료입니다. 실제 지원 금액과 다를 수
+                          있습니다.
+                        </p>
+                      </div>
+                    </label>
+                  </li>
+                  <!-- 일반 매칭 선택 시 switchBox 보이기 -->
+                  <li class="switchBox">
+                    <p class="infoTxt">
+                      <mark class="markBrw">기간 임박 시 자동 매칭 전환 동의</mark>
+                    </p>
+                    <span>
+                      간병 시작 48시간 전까지 지원한 케어메이트가 없는 경우, 자동 매칭으로 전환되는
+                      서비스입니다.
+                    </span>
+                    <dl class="switchBox__money">
+                      <dt class="coinTxt">간병비 확정</dt>
+                      <dd>일급 000,000,000원</dd>
+                    </dl>
+                    <div class="bubbleBox">
+                      <p>
+                        위 금액은 <strong>수수료가 포함되지 않은 금액</strong>입니다. 총 결제 예정
+                        금액을 확인해 주세요.
+                      </p>
+                    </div>
+                    <div class="switchBox__agree">
+                      <div class="switchBox__agree--rad">
+                        <input type="radio" id="autoSwitch01" name="autoSwitch" />
+                        <label for="autoSwitch01">네, 동의합니다.</label>
+                      </div>
+                      <div class="switchBox__agree--rad">
+                        <input type="radio" id="autoSwitch02" name="autoSwitch" />
+                        <label for="autoSwitch02">아니요. 괜찮습니다.</label>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- 자동 매칭 선택칸 위에 간격,라인 생길 때 bdt 클래스 추가 -->
+                  <li class="radioCheckSel bdt">
+                    <input type="radio" id="autoPick02" name="autoPick" />
+                    <label for="autoPick02">
+                      <p>자동 매칭</p>
+                      <span>
+                        간병 시작까지 일정이 촉박하다면,
+                        <b>AI 매칭 알고리즘</b>을 통해 환자 정보, 일정에 맞는 케어메이트를 찾아주는
+                        <b>자동 매칭</b>을 선택해 보세요.<br />
+                      </span>
+                      <div class="payBox">
+                        <p class="coinTxt">간병비 확정</p>
+                        <span>시급 000,000,000원</span>
+                        <div class="bubbleBox">
+                          <p>
+                            위 금액은 <strong>수수료가 포함되지 않은 금액</strong>입니다. 총 결제
+                            예정 금액을 확인해 주세요.
+                          </p>
+                        </div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="cardBox">
+                    <h3><mark class="markBrw">자동 결제를 위한 카드를 선택해 주세요.</mark></h3>
+                    <p>자동 매칭되면 자동 결제로 진행돼요!</p>
+                    <!-- 
+                      카드사별 클래스 (cardBox__form에 추가)
+                      하나(구.외환)카드 : payCard01
+                      롯데카드 : payCard02
+                      현대카드 : payCard03
+                      국민카드 : payCard04
+                      비씨카드 : payCard05
+                      삼성카드 : payCard06
+                      신한(구.LG) 카드 : payCard07
+                      해외VISA : payCard08
+                      해외MASTER : payCard09
+                      해외JCB : payCard10
+                      중국은련 : payCard11
+                      광주카드 : payCard12
+                      전북카드 : payCard13
+                      산업카드 : payCard14
+                      NH카드 : payCard15
+                      씨티카드 : payCard16
+                      우리카드 : payCard17
+                      신협체크 : payCard18
+                      수협카드 : payCard19
+                      제주카드 : payCard20
+                      새마을금고체크 : payCard21
+                      케이뱅크 : payCard22
+                      카카오뱅크 : payCard23
+                      우체국체크 : payCard24
+                      저축은행체크 : payCard25
+                    -->
+                    <div class="cardBox__form payCard05">
+                      <strong>비씨카드</strong>
+                      <span>**** 5425 1234 ****</span>
+                      <button type="button" class="iconBtn edit">결제카드 변경</button>
+                    </div>
+                    <button class="cardBox__noCard">카드 등록하기</button>
+                    <div class="cardBox__total">
+                      <dl>
+                        <div>
+                          <dt>총 간병 기간</dt>
+                          <dd>0000일 00시간</dd>
+                        </div>
+                        <div class="strong">
+                          <dt>총 결제 예정 금액</dt>
+                          <dd>000,000,000,000원</dd>
+                        </div>
+                      </dl>
+                      <div class="cardBox__total--desc">
+                        <p>
+                          총 결제 예정 금액은 수수료 및 부가세가 포함된 금액입니다. 케어메이트 매칭
+                          완료 시 자동 결제가 진행됩니다.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- 가족간병 선택 후 진입했을시 노출 -->
+                  <li class="radioCheckSel">
+                    <input type="radio" id="autoPick03" name="autoPick03" disabled />
+                    <label for="autoPick03"
+                      >자동 매칭 <small>가족이 간병을 할 경우 일반 매칭만 가능합니다.</small></label
+                    >
+                  </li>
+                  <!-- // 가족간병 선택 후 진입했을시 노출 -->
+                </ul>
+              </div>
+            </article>
+          </section>
+        </div>
+        <div class="btnWrap pt0">
+          <button type="button" class="outlineTxtBtn">이전</button>
+          <button type="button" class="solidBtn">다음</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", function () {
+            window.location.href = "2.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+/* 공고 등록 - 장소 상세 확인 */
+.notifiPlaceDet {
+  .notifiSearch {
+    padding-bottom: 10px;
+    &__form {
+      &--input {
+        flex-wrap: wrap;
+        input:nth-child(n + 2) {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  &__map {
+    padding: 0 20px;
+    > div {
+      margin-top: 6px;
+      min-height: calc(100vh - 349px);
+      border-radius: 12px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "정현희 포트폴리오 — 정적 HTML/CSS/JS + 실행 가능한 프로젝트 데모",
+  "scripts": {
+    "build:hemily-health": "npm --prefix react-source/hemily-health install && npm --prefix react-source/hemily-health run build && rm -rf projects/hemily-health && mkdir -p projects/hemily-health && cp -r react-source/hemily-health/dist/. projects/hemily-health/",
+    "build": "npm run build:hemily-health"
+  }
+}

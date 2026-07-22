@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>보호자 후기</title>
+  </head>
+  <body>
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">보호자님이 남긴 후기</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <section class="mainViwList">
+            <div class="pageTit">
+              <h2>보호자님이 남긴 후기</h2>
+            </div>
+            <article class="mainViwList__list">
+              <h2 class="a11y-hidden">후기 목록</h2>
+              <ul>
+                <li class="focus">
+                  <div class="mainViwList__list--txt">
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>2020.05.16</i>
+                    <p>
+                      엄마가 너무 마음 편해 하셨어요.감사합니다 다음에 도 이용할게요. 엄마가 너무
+                      마음 편해 하셨고 그여 엄마가 너무 마음 편해 하셨어요. 감사합니다 다음에 도
+                      이용할게요. 엄마가 너무 마음 편해 하셨어여
+                    </p>
+                    <small><span>김*자</span> 케어메이트에게</small>
+                  </div>
+                  <div class="mainViwList__list--asol">
+                    <strong>4.2</strong>
+                    <button type="button">차단 & 신고하기</button>
+                    <div class="">
+                      <button type="button" class="blockBtn">차단하기</button>
+                      <button type="button" class="reportBtn">신고하기</button>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="mainViwList__list--txt">
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>2020.05.16</i>
+                    <p>
+                      엄마가 너무 마음 편해 하셨어요.감사합니다 다음에 도 이용할게요. 엄마가 너무
+                      마음 편해 하셨고 그여 엄마가 너무 마음 편해 하셨어요. 감사합니다 다음에 도
+                      이용할게요. 엄마가 너무 마음 편해 하셨어여
+                    </p>
+                    <small><span>김*자</span> 케어메이트에게</small>
+                  </div>
+                  <div class="mainViwList__list--asol">
+                    <strong>4.2</strong>
+                    <button type="button">차단 & 신고하기</button>
+                    <div class="on">
+                      <button type="button" class="blockBtn">차단하기</button>
+                      <button type="button" class="reportBtn">신고하기</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="block">
+                  <div class="mainViwList__list--txt">
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>2020.05.16</i>
+                    <p>
+                      차단 된 회원의 글입니다.
+                      <span>
+                        차단 된 회원의 모든 글은 <br />
+                        해제 전까지 보실 수 없습니다.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="mainViwList__list--asol">
+                    <strong>4.2</strong>
+                    <button type="button">차단 & 신고하기</button>
+                    <div class="on">
+                      <button type="button" class="unlockBtn">차단해제</button>
+                      <button type="button" class="reportBtn">신고하기</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

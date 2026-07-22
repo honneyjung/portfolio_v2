@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <clipPath id="hksbli7q1a">
+            <path data-name="사각형 10803" transform="translate(76.74 210)" style="fill:none" d="M0 0h16v16H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 297" transform="translate(-76.74 -210)" style="clip-path:url(#hksbli7q1a)">
+        <g data-name="그룹 33414">
+            <path data-name="패스 54374" d="M7.9.179A7.725 7.725 0 1 1 .171 7.9 7.725 7.725 0 0 1 7.9.179z" transform="rotate(-66.879 205.43 54.794)" style="fill:#ffe354"/>
+            <g data-name="그룹 33411" transform="translate(78.565 211.874)">
+                <path data-name="패스 54371" d="M3361.306 605.581a6.175 6.175 0 0 0-5.513-6.139 6.241 6.241 0 0 1 .661-.036 6.174 6.174 0 1 1-.661 12.313 6.175 6.175 0 0 0 5.513-6.138z" transform="translate(-3350.28 -599.407)" style="fill:#ffbc14"/>
+                <ellipse data-name="타원 1317" cx="5.513" cy="6.139" rx="5.513" ry="6.139" transform="translate(0 .036)" style="fill:#ffd523"/>
+            </g>
+            <g data-name="그룹 33413">
+                <g data-name="그룹 33412">
+                    <path data-name="패스 54372" d="m3362.03 618.958-1.342 5.152-1.3-5.152" transform="translate(-3274.644 -403.485)" style="stroke:#ffb023;stroke-linecap:round;stroke-linejoin:round;stroke-width:.9px;fill:none"/>
+                    <path data-name="패스 54373" d="m3347.662 618.958-1.342 5.152-1.3-5.152" transform="translate(-3262.921 -403.485)" style="stroke:#ffb023;stroke-linecap:round;stroke-linejoin:round;stroke-width:.9px;fill:none"/>
+                </g>
+                <path data-name="선 1041" transform="translate(81.031 217.465)" style="stroke:#ffb023;stroke-linecap:round;stroke-linejoin:round;stroke-width:.9px;fill:none" d="M7.418 0H0"/>
+            </g>
+        </g>
+    </g>
+</svg>

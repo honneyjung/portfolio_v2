@@ -1,0 +1,38 @@
+/* 지원한 케어메이트 목록 */
+.alyCagiv {
+  padding: 68px 20px 40px;
+  h2 {
+    margin-bottom: 12px;
+    @include font-style(18);
+  }
+  // 공고 전달
+  &__send {
+    padding-top: 75px;
+    min-height: calc(100vh - 140px);
+    text-align: center;
+    h2 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 10px;
+      @include font-style(16, $black-two);
+    }
+    img {
+      margin: 0 auto 12px;
+    }
+  }
+  &__list {
+    li {
+      ~ li {
+        margin-top: 20px;
+      }
+    }
+    .profileCare__total {
+      padding-top: 10px;
+      &--trade {
+        padding: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+}

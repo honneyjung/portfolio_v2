@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="18" viewBox="0 0 26 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_14200" data-name="사각형 14200" width="26" height="18" transform="translate(75 680)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="말풍선_꼬리만" transform="translate(-75 -680)">
+    <g id="마스크_그룹_338" data-name="마스크 그룹 338" clip-path="url(#clip-path)">
+      <g id="말풍선" transform="translate(62 680.498)">
+        <rect id="사각형_2608" data-name="사각형 2608" width="258" height="60" rx="12" transform="translate(0 11.502)" fill="#f6f6f6" stroke="#e1e1e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text id="예상_지원_금액_정보는_참고용_자료입니다._실제_지원_금액과_다를_수_있습니다." data-name="예상 지원 금액 정보는 참고용 자료입니다.
+실제 지원 금액과 다를 수 있습니다." transform="translate(12 21.502)" fill="#333" font-size="14" font-family="NotoSansKR-Regular, Noto Sans KR" letter-spacing="-0.05em"><tspan x="0" y="16">예상 지원 금액 정보는 참고용 자료입니다.</tspan><tspan x="0" y="36">실제 지원 금액과 다를 수 있습니다.</tspan></text>
+        <g id="img_word_bubble_actilve" data-name="img word bubble_actilve" transform="translate(-332.733 -658.354)">
+          <path id="합치기_52" data-name="합치기 52" d="M9771.734,1941.369v-1.184h.044v-11.329a31.029,31.029,0,0,0,3.556,4.239,35.331,35.331,0,0,0,9.783,7.09h.456v1.184Z" transform="translate(-9421.584 -1270.519)" fill="#f6f6f6" stroke="rgba(225,225,225,0)" stroke-miterlimit="10" stroke-width="1"/>
+          <g id="그룹_57415" data-name="그룹 57415">
+            <path id="패스_63203" data-name="패스 63203" d="M350.194,670.351a.48.48,0,0,1-.481-.479V658.338a.481.481,0,0,1,.876-.275,30.61,30.61,0,0,0,3.5,4.173,34.7,34.7,0,0,0,10.081,7.2.481.481,0,1,1-.368.889l-.042-.02a35.684,35.684,0,0,1-10.355-7.4,31.838,31.838,0,0,1-2.732-3.105v10.067a.48.48,0,0,1-.476.484Z" fill="#e1e1e1" stroke="rgba(225,225,225,0)" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

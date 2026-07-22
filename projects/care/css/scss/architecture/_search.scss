@@ -1,0 +1,180 @@
+/* 메인 검색 페이지 */
+.search {
+  min-height: 300px;
+  .searchBtn {
+    background-image: url(../img/iconSearch-3.svg);
+  }
+  &:after {
+    content: "";
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    width: 100%;
+    max-width: 600px;
+    height: 1px;
+    background-color: $white-three;
+    transform: translateX(-50%);
+  }
+  .noneItem {
+    min-height: calc(100vh - 50px);
+    background-color: transparent;
+  }
+
+  /* 검색창 */
+  &__input {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 23;
+    width: 100%;
+    max-width: 600px;
+    background-color: $white;
+    transform: translateX(-50%);
+    &--wrap {
+      position: relative;
+      margin: 0 auto;
+      max-width: 600px;
+      height: 50px;
+      .backBtn {
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+      input {
+        padding: 14px 78px 14px 44px;
+        height: 50px;
+        @include font-style(16);
+        @media screen and (max-width: 319px) {
+          padding-left: 42px;
+          padding-top: 15px;
+        }
+        &.noBd {
+          border: 0;
+        }
+      }
+      .resetBtn,
+      .searchBtn {
+        position: absolute;
+        top: 0;
+        height: 50px;
+        cursor: pointer;
+      }
+      .resetBtn {
+        right: 52px;
+        @media screen and (max-width: 319px) {
+          right: 44px;
+        }
+      }
+      .searchBtn {
+        right: 20px;
+      }
+    }
+    &--filter {
+      position: fixed;
+      top: 51px;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      background-color: $white-five;
+      > div {
+        @include flexbox(between, center);
+        margin: 0 auto;
+        padding: 10px 20px;
+        max-width: 600px;
+      }
+      dl {
+        @include flexbox(inherit, center);
+        padding-left: 20px;
+        background: url(../img/iconPin02.svg) no-repeat left / 16px;
+        dt,
+        dd {
+          @include font-style(14, $black-two, med);
+        }
+        dd {
+          margin-left: 2px;
+        }
+      }
+      button {
+        padding-right: 18px;
+        width: auto;
+        background: url(../img/arrowDown-a.svg) no-repeat right / 10px;
+        @include font-style(14, $warm-grey);
+      }
+    }
+  }
+  /* 최근검색어 */
+  &__recent {
+    padding: 24px 20px;
+    &--tit {
+      h2 {
+        @include font-style(16);
+      }
+      @include flexbox(inherit, center);
+      button {
+        margin-left: 8px;
+        @include font-style(12, $cool-grey);
+        line-height: 1;
+      }
+    }
+    &--list {
+      margin-top: 16px;
+      li {
+        @include flexbox(between, center);
+        position: relative;
+        padding-left: 32px;
+        padding-right: 32px;
+        height: 24px;
+        background: url(../img/iconSearch-cir.svg) no-repeat left;
+        @include font-style(16);
+        a {
+          margin-right: 4px;
+          width: 100%;
+          @include font-style(16, $greyish-brown);
+          @include ellipsis;
+        }
+        time {
+          flex-shrink: 0;
+          @include font-style(12, $cool-grey);
+        }
+        &:nth-child(n + 2) {
+          margin-top: 20px;
+        }
+        &.noneRecent {
+          color: $greyish-brown;
+        }
+      }
+      .delBtn {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -12px;
+      }
+    }
+  }
+  /* 현재검색 */
+  &__now {
+    background-color: $white;
+    &--list {
+      li {
+        position: relative;
+        padding: 16px 34px 16px 52px;
+        background: url(../img/iconSearch-cir.svg) no-repeat 20px center / 24px;
+        @include font-style(16, $greyish-brown);
+        @include ellipsis;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 10px;
+          background: url(../img/arrowRight-a.svg) no-repeat center / cover;
+        }
+        &:hover {
+          background-color: $white-five;
+        }
+      }
+    }
+  }
+}

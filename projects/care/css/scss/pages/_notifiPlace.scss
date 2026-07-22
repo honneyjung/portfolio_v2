@@ -1,0 +1,76 @@
+.notifiSearch {
+  &.scrolled {
+    .notifiSearch__wrap--txt {
+      display: none;
+    }
+  }
+  &__wrap {
+    &--txt {
+      margin-top: 12px;
+      span {
+        display: block;
+        padding-left: 22px;
+        @include font-style(14, $greyish-brown);
+        background: url(../img/iconNoti-grey.svg) no-repeat 0 center / 16px;
+      }
+    }
+  }
+}
+
+/* 등록되지 않은 병·의원 */
+.notifiPlace {
+  &__result {
+    &--info {
+      @include column-flexbox(inherit, center);
+      padding: 20px;
+      margin: 16px auto;
+      width: calc(100% - 40px);
+      background-color: $white-five;
+      border: 1px solid $white-three;
+      border-radius: 12px;
+      > div {
+        max-width: 272px;
+      }
+      h4 {
+        padding-left: 22px;
+        background: url(../img/iconSelect_br.svg) no-repeat 0 4px / 16px;
+        @include font-style(16, $black-two);
+      }
+      ol {
+        margin: 8px 0 12px;
+        counter-reset: list-number;
+        li {
+          position: relative;
+          padding-left: 20px;
+          @include font-style(14, $greyish-brown);
+          counter-increment: list-number;
+          b {
+            font-weight: $med-w;
+          }
+          span {
+            @include font-style(12);
+          }
+          &:before {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            content: counter(list-number);
+            width: 16px;
+            height: 16px;
+            border: 1px solid $greyish-brown;
+            border-radius: 50%;
+            @include font-style(12, $greyish-brown, med);
+            line-height: 13px;
+            text-align: center;
+          }
+          ~ li {
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+    .noneItem:has(.notifiPlace__result--info) {
+      padding-top: 72px;
+    }
+  }
+}

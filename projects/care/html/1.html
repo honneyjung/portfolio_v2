@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>공고 등록</title>
+  </head>
+  <body>
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">공고 등록</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap bgGrey">
+        <div class="basicWrap__flex">
+          <section class="notifiCustom">
+            <div class="pageTit">
+              <h2>공고 등록</h2>
+            </div>
+            <article class="notifiCustom__sel first">
+              <h3>
+                <span>Q1</span>
+                보호자님에게 필요한<br />
+                간병 서비스는 무엇인가요?
+              </h3>
+              <ul class="radioSelectCheck">
+                <li class="radioSelectCheck__box">
+                  <input type="radio" id="timeCare02" name="timeCare" />
+                  <label for="timeCare02" class="dayCare">
+                    기간제 간병
+                    <span>
+                      24시간 이상의 <br />
+                      간병이 필요해요.
+                    </span>
+                  </label>
+                </li>
+                <li class="radioSelectCheck__box timeCare">
+                  <input type="radio" id="timeCare01" name="timeCare" />
+                  <label for="timeCare01" class="timeCare">
+                    시간제 간병
+                    <span>
+                      24시간 미만의 <br />
+                      간병이 필요해요.
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </article>
+            <article class="notifiCustom__sel second">
+              <h3>
+                <span>Q2</span>
+                보호자님이 원하는<br />
+                간병장소를 선택해 주세요!
+              </h3>
+              <ul class="radioSelectCheck">
+                <li class="radioSelectCheck__box">
+                  <input type="radio" id="placeCare01" name="placeCare" />
+                  <label for="placeCare01" class="hospital">병, 의원</label>
+                </li>
+                <li class="radioSelectCheck__box">
+                  <input type="radio" id="placeCare02" name="placeCare" />
+                  <label for="placeCare02" class="home">집</label>
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
+        <div class="btnWrap">
+          <button type="button" class="solidBtn">다음</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (0.html 등 이전 페이지로 이동)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼 (1-1-P1.html 팝업 띄우기)
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", async function () {
+            try {
+              const response = await fetch("1-1-P1.html");
+              const htmlText = await response.text();
+
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(htmlText, "text/html");
+
+              const popupElement = doc.querySelector(".popup");
+
+              if (popupElement) {
+                // 1.html 화면에 팝업 붙이기
+                document.body.appendChild(popupElement);
+
+                // --- [여기서부터 새로 추가/수정된 부분입니다] ---
+
+                // 팝업 내 닫기 버튼 동작
+                const btnClose = popupElement.querySelector(".btnClose");
+                if (btnClose) {
+                  btnClose.addEventListener("click", function () {
+                    popupElement.remove();
+                  });
+                }
+
+                // 어두운 배경(오버레이) 클릭 시 닫기
+                popupElement.addEventListener("click", function (e) {
+                  if (e.target === popupElement) {
+                    popupElement.remove();
+                  }
+                });
+
+                // 팝업 내 '등록하기' 버튼 동작 (1-2.html로 이동)
+                const submitBtn = popupElement.querySelector(".txtCocoa");
+                if (submitBtn) {
+                  submitBtn.addEventListener("click", function () {
+                    // 팝업 안의 버튼을 누르면 현재 창을 1-2.html로 이동시킵니다.
+                    window.location.href = "1-2.html";
+                  });
+                }
+
+                // --- [추가/수정 끝] ---
+              }
+            } catch (error) {
+              console.error("팝업을 불러오는데 실패했습니다.", error);
+              alert("팝업을 불러올 수 없습니다. 로컬 서버(Live Server) 환경인지 확인해 주세요.");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

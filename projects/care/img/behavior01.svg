@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.992" height="42.999" viewBox="0 0 32.992 42.999">
+  <g id="_13.거동_스스로가능" data-name="13.거동 스스로가능" transform="translate(0.491 0.5)">
+    <g id="그룹_980" data-name="그룹 980" transform="translate(11.37 9.844)">
+      <path id="패스_939" data-name="패스 939" d="M1471.984,621.991a1.719,1.719,0,1,1,0-3.438H1482.1c.156,0,3.537-.14,4.373-6.608l.992-7.735a1.719,1.719,0,1,1,3.417.378l-.994,7.767c-1.258,9.712-7.575,9.644-7.839,9.633Z" transform="translate(-1470.265 -602.678)" fill="#bc8877" stroke="#555" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <line id="선_171" data-name="선 171" y2="12.083" transform="translate(13.424 29.576)" fill="#fff" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="선_172" data-name="선 172" y2="12.083" transform="translate(24.176 29.576)" fill="#fff" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="그룹_981" data-name="그룹 981" transform="translate(5.217 23.177)">
+      <path id="패스_940" data-name="패스 940" d="M1468.674,628.042a1.584,1.584,0,0,1-1.557-1.3c-2.177-11.916,2.909-14.373,3.5-14.615.047-.018,9.343-2.837,9.343-2.837a1.586,1.586,0,1,1,.919,3.036l-9.079,2.749c-.285.186-3.171,2.263-1.558,11.1a1.587,1.587,0,0,1-1.276,1.845A1.543,1.543,0,0,1,1468.674,628.042Z" transform="translate(-1466.578 -609.22)" fill="#fff" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <circle id="타원_99" data-name="타원 99" cx="2.929" cy="2.929" r="2.929" transform="translate(16.987 0)" fill="#fff" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1081" data-name="패스 1081" d="M1475.138,618.518h3.112a2.484,2.484,0,0,0,2.476-2.477l.5-11.343a2.484,2.484,0,0,0-2.477-2.477h-3.467a2.484,2.484,0,0,0-2.477,2.477l-.14,11.343A2.484,2.484,0,0,0,1475.138,618.518Z" transform="translate(-1456.789 -593.47)" fill="#fff" stroke="#555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <rect id="사각형_687" data-name="사각형 687" width="7.021" height="3.807" rx="1.061" transform="translate(2.581 16.488)" fill="#bc8877" stroke="#555" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="선_173" data-name="선 173" x1="4.152" y2="21.328" transform="translate(0 20.672)" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

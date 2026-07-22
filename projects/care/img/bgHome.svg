@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <path data-name="사각형 4917" style="fill:none" d="M0 0h50v50H0z"/>
+    <g data-name="그룹 32896" transform="translate(-40.919 -724.18)">
+        <path data-name="패스 48671" d="m50.152 741.651-5.2 4.241a3.066 3.066 0 0 0-.433 4.3h0a3.064 3.064 0 0 0 4.3.434l16.771-13.694a.234.234 0 0 1 .3 0l16.77 13.695a3.064 3.064 0 0 0 4.3-.434h0a3.065 3.065 0 0 0-.434-4.3L67.557 730.4a2.971 2.971 0 0 0-3.631 0L52.1 740.06" style="stroke-linecap:round;stroke-linejoin:round;fill:#fff0eb;stroke:#8e6051;stroke-width:1.5px"/>
+        <path data-name="패스 48673" d="M63.71 734.832v-1.759a3.147 3.147 0 0 1 3.137-3.137h0a3.147 3.147 0 0 1 3.137 3.137v6.865" transform="translate(9.493 .074)" style="stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px;fill:none"/>
+        <path data-name="패스 48675" d="M79.016 743.155v17s.2 2.824-2.354 2.824h-26.2c-2.556 0-2.354-2.824-2.354-2.824v-17" transform="translate(2.04 6.388)" style="stroke-miterlimit:10;stroke:#8e6051;stroke-width:1.5px;fill:none"/>
+        <g data-name="그룹 32898" transform="translate(8.275 290.851)">
+            <rect data-name="사각형 4925" width="11" height="12" rx="1" transform="translate(52.144 463.33)" style="fill:#fff0eb"/>
+            <path data-name="패스 48661" d="M60.247 466.031v6.11a1.872 1.872 0 0 1-1.977 1.747h-6.624a1.872 1.872 0 0 1-1.977-1.747" transform="translate(2.675 1.344)" style="stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px;fill:none"/>
+            <path data-name="패스 48662" d="M49.669 470.247v-5.614a1.807 1.807 0 0 1 1.977-1.564h6.624a1.807 1.807 0 0 1 1.977 1.564" transform="translate(2.675 -.174)" style="stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px;fill:none"/>
+            <path data-name="선 797" transform="translate(57.633 462.895)" style="stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px;fill:none" d="M0 0v12.337"/>
+        </g>
+        <rect data-name="사각형 4921" width="10.187" height="4.187" rx=".688" transform="translate(60.374 745.47)" style="fill:#fff;stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px"/>
+        <path data-name="선 798" transform="translate(47.419 769.367)" style="stroke-linecap:round;stroke-linejoin:round;stroke:#8e6051;stroke-width:1.5px;fill:none" d="M0 0h37"/>
+    </g>
+</svg>

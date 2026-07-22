@@ -1,0 +1,567 @@
+/* 지원한 케어메이트 목록 */
+.alyCagiv {
+  &__status {
+    > div {
+      @include border-box($white-three, 12px, $white);
+    }
+    &--chart {
+      position: relative;
+      padding: 77px 26px 12px;
+      margin-bottom: 12px;
+      min-height: 211px;
+      .chartWrap {
+        position: relative;
+        &__line {
+          padding: 0 18px;
+          canvas {
+            height: 84px !important;
+          }
+        }
+        &__bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          .vertiChartWrap {
+            justify-content: space-between;
+            padding: 0 18px;
+          }
+        }
+        @media screen and (max-width: 321px) {
+          padding: 0;
+          .vertiChartWrap {
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+    &--account {
+      padding: 16px 16px 16px 38px;
+      margin-bottom: 32px;
+      background: url(../img/iconCoinApply.svg) no-repeat 16px 20px;
+      h3 {
+        @include font-style(16);
+        margin-bottom: 4px;
+      }
+      p {
+        @include font-style(14, $greyish-brown, med);
+        span {
+          padding-left: 6px;
+          @include font-style(16, $black-two, bol);
+        }
+        em {
+          margin: 0 8px;
+          font-size: 16px;
+          font-weight: $bol-w;
+        }
+      }
+    }
+  }
+  // 지원한 케어메이트 AI (따로 분리처리 필요)
+  &__list {
+    &--ai {
+      padding: 18px;
+      margin-bottom: 20px;
+      border: solid 1.5px $brownish;
+      border-radius: 12px;
+      background: url(../img/bg_ai02.png) no-repeat right bottom / contain #fffcfb;
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+      &.scroll {
+        position: fixed;
+        top: 50px;
+        left: 50%;
+        z-index: 5;
+        width: 100%;
+        max-width: 600px;
+        border: none;
+        border-radius: 0;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+        transform: translateX(-50%);
+        + ul:before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 82px;
+        }
+      }
+      p {
+        @include font-style(16, color);
+      }
+      strong {
+        @include font-style(18, color);
+      }
+    }
+  }
+}
+
+/* 지원한 케어메이트 프로필 상세 */
+.alyCagivDet {
+  article:nth-child(n + 2) {
+    padding: 32px 20px;
+    h2 {
+      margin-bottom: 16px;
+      @include font-style(18);
+    }
+  }
+  .noneBox {
+    @include column-flexbox(center, center);
+    height: 100px;
+    min-height: auto;
+    @include border-box($white-three, 12px, $white-five);
+    img {
+      width: 44px;
+    }
+    p {
+      margin-top: 4px;
+      @include font-style(14, $black-two);
+    }
+  }
+  &__profile {
+    padding: 20px;
+    background-color: $white-four;
+    &--first,
+    &--passion {
+      padding: 7px 12px 7px 39px;
+      margin: 0 auto 20px;
+      max-width: 276px;
+      border: solid 1px #fd0;
+      border-radius: 20px;
+      background: url(../img/bgProfiFirst.png) no-repeat 5px center / 30px $egg-shell;
+      p {
+        @include font-style(14, color, med);
+      }
+    }
+    &--passion {
+      max-width: 287px;
+      background-image: url(../img/bgProfiPassion.png);
+    }
+    .profileCare {
+      position: relative;
+      padding: 30px 16px 16px;
+      text-align: center;
+      &__info {
+        padding-bottom: 12px;
+        border-top: 0;
+      }
+      /* 케어메이트 프로필 - 프로필 정보 */
+      h3 {
+        @include font-style(14, $black-two);
+        text-align: left;
+      }
+    }
+    &--mes {
+      position: relative;
+      padding: 16px;
+      margin-top: 30px;
+      @include border-box($white-three, 12px, $white);
+      &:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        z-index: 1;
+        width: 40px;
+        height: 25px;
+        background-image: url(../img/bgCareOpin.svg);
+      }
+      h3 {
+        padding-left: 22px;
+        background: url(../img/bgCareOpinTxt_gr.svg) no-repeat 0 3px / 16px;
+        @include font-style(16, color, med);
+      }
+      p {
+        margin-top: 6px;
+        @include font-style(16, $black-two);
+        &.caution {
+          padding: 8px 8px 8px 23px;
+          margin-top: 8px;
+          border-radius: 8px;
+          background: url(../img/icon_check.svg) no-repeat 7px 11px / 14px, $white-five;
+          @include font-style(12, $black-two);
+          word-break: break-all;
+        }
+      }
+    }
+  }
+  /* 케어메이트 소개 */
+  &__int {
+    &--box {
+      overflow-y: auto;
+      padding: 16px;
+      height: 132px;
+      @include border-box($white-three, 12px, $white-five);
+      p {
+        @include font-style(16);
+        word-break: break-all;
+      }
+    }
+  }
+  /* 케어메이트가 등록한 자격증 */
+  &__certi {
+    h2 {
+      margin-bottom: 0;
+      + p {
+        margin: 4px 0 14px 0;
+        @include font-style(16, $black-two);
+        span {
+          @include font-style(16, $cocoa, med);
+        }
+      }
+    }
+    ul {
+      @include flexbox(start, center);
+      flex-wrap: wrap;
+      padding: 12px 12px 4px;
+    }
+    li {
+      flex-shrink: 0;
+      padding: 10px 12px 10px 34px;
+      margin: 0 8px 8px 0;
+      border: solid 1px $white-three;
+      border-radius: 18px;
+      background: no-repeat 10px center $white;
+      @include font-style(14, $black-two, med);
+      line-height: 1;
+      small {
+        margin-left: 2px;
+        @include font-style(12, $black-two, med);
+        line-height: 1;
+      }
+      span {
+        margin-left: 4px;
+        @include font-style(14, $cocoa, bol);
+        line-height: 1;
+      }
+    }
+    .certifi01 {
+      background-image: url(../img/ic_certifi01.svg);
+    }
+    .certifi02 {
+      background-image: url(../img/ic_certifi02.svg);
+    }
+    .certifi04 {
+      background-image: url(../img/ic_certifi04.svg);
+    }
+    .certifi08 {
+      background-image: url(../img/ic_certifi08.svg);
+    }
+    .certifi16 {
+      background-image: url(../img/ic_certifi16.svg);
+    }
+    .certifi32 {
+      background-image: url(../img/ic_certifi32.svg);
+    }
+    > a {
+      margin-top: 20px;
+    }
+    > p {
+      margin-top: 16px;
+      @include font-style(14, $warm-grey);
+    }
+  }
+  /* 케어메이트만의 강점 */
+  &__streng {
+    &--list {
+      @include flexbox(start, inherit);
+      flex-wrap: wrap;
+      padding: 0 10px;
+      margin-top: 20px;
+      text-align: center;
+      li {
+        flex: 0 0 33.3333%;
+        @media screen and (min-width: 600px) {
+          flex: 0 0 80px;
+          margin-right: 30px;
+        }
+        &:nth-child(3n - 2) {
+          figure,
+          span {
+            margin-right: auto;
+            margin-left: 0;
+          }
+        }
+        &:nth-child(3n) {
+          figure,
+          span {
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
+        figure {
+          margin: 0 auto 10px;
+          width: 80px;
+          height: 80px;
+          border: solid 1px $cocoa;
+          border-radius: 50%;
+          background: no-repeat center $white;
+          flex-shrink: 0;
+        }
+        span {
+          display: block;
+          margin: 0 auto;
+          width: 80px;
+          @include font-style(16, inherit, med);
+        }
+        &.streng01 {
+          figure {
+            background-image: url(../img/ic_kind.svg);
+          }
+        }
+        &.streng02 {
+          figure {
+            background-image: url(../img/ic_responsibility.svg);
+          }
+        }
+        &.streng03 {
+          figure {
+            background-image: url(../img/ic_careful.svg);
+          }
+        }
+        &.streng04 {
+          figure {
+            background-image: url(../img/ic_time.svg);
+          }
+        }
+        &.streng05 {
+          figure {
+            background-image: url(../img/ic_communication.svg);
+          }
+        }
+        &.streng06 {
+          figure {
+            background-image: url(../img/ic_thoughtful.svg);
+          }
+        }
+        &.streng07 {
+          figure {
+            background-image: url(../img/ic_clean.svg);
+          }
+        }
+        &.streng08 {
+          figure {
+            background-image: url(../img/ic_passion.svg);
+          }
+        }
+        &.streng09 {
+          figure {
+            background-image: url(../img/ic_patience.svg);
+          }
+        }
+      }
+    }
+  }
+  /* 케어네이션 DATA LAB. */
+  &__data {
+    position: relative;
+    &--chart {
+      height: 268px;
+    }
+    &--loading {
+      position: absolute;
+      left: 20px;
+      bottom: 32px;
+      padding-top: 70px;
+      width: calc(100% - 40px);
+      height: 268px;
+      background: rgba(255, 255, 255, 0.6);
+      figure {
+        margin-bottom: 8px;
+        animation: dataLoading 3s infinite;
+        img {
+          margin: auto;
+        }
+      }
+      @keyframes dataLoading {
+        0% {
+          transform: rotate(-180deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+      p {
+        @include font-style(16, color, med);
+        text-align: center;
+      }
+    }
+  }
+  /* 케어메이트 거래 정보 */
+  &__trade {
+    .shadowBox {
+      padding-bottom: 24px;
+      margin-bottom: 20px;
+    }
+    &--tabBtn {
+      @include flexbox(start, center);
+      margin-bottom: 16px;
+      button {
+        padding: 6px 12px;
+        margin-right: 8px;
+        width: fit-content;
+        border: solid 1px $white-three;
+        border-radius: 16px;
+        @include font-style(14, $warm-grey);
+        &.active {
+          border-color: #666;
+          background-color: #666;
+          color: $white;
+        }
+      }
+    }
+    &--info {
+      @include flexbox(around, center);
+      margin-top: 20px;
+      div {
+        position: relative;
+        width: calc(100% / 3);
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 12px;
+          width: 1px;
+          height: 24px;
+          background-color: $white-two;
+        }
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      dt {
+        @include font-style(14, $greyish-brown);
+      }
+      dd {
+        @include flexbox(center, center);
+        background: no-repeat left;
+        @include font-style(16, $black-two, med);
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    > div:last-child {
+      margin-top: 6px;
+    }
+  }
+  /* 케어메이트가 경험한 환자 상태 */
+  &__expri {
+    .shadowBox {
+      padding-bottom: 32px;
+      margin-bottom: 4px;
+      p {
+        strong:first-child {
+          margin-left: 8px;
+        }
+      }
+    }
+    &--list {
+      @include flexbox(inherit, start);
+      flex-wrap: wrap;
+      li {
+        @include column-flexbox(inherit, center);
+        margin-top: 16px;
+        width: 25%;
+        &.disabled {
+          span {
+            border: dashed 1px $white-three;
+            background-color: $white-five;
+            color: $cool-grey;
+          }
+          p {
+            color: $cool-grey;
+          }
+        }
+      }
+      span {
+        @include flexbox(center, center);
+        flex-shrink: 0;
+        width: 19vmin;
+        height: 19vmin;
+        max-height: 80px;
+        max-width: 80px;
+        @include border-box($cocoa, 50%, $very-light-pink);
+        @include font-style(20, $cocoa, med);
+      }
+      p {
+        margin-top: 4px;
+        @include font-style(16, $black-two);
+        text-align: center;
+      }
+    }
+
+    /* 돌봄 유형 */
+    &--first {
+      ul {
+        @include flexbox(inherit, center);
+        flex-wrap: wrap;
+        li {
+          padding: 7px 16px;
+          margin-right: 4px;
+          margin-bottom: 8px;
+          border: solid 1px $cocoa;
+          border-radius: 20px;
+          @include font-style(16, $cocoa, med);
+          background-color: $very-light-pink;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        @media screen and (max-width: 321px) {
+          li {
+            padding: 4px 8px;
+          }
+        }
+      }
+      div {
+        padding: 12px 12px 12px 40px;
+        margin-top: 16px;
+        border-radius: 12px;
+        background: url(../img/iconNoti-greyWh.svg) no-repeat 12px 12px $white-five;
+        @include font-style(14, $black-two, med);
+      }
+    }
+  }
+}
+
+/* ai 맞춤 케어메이트 */
+.alyCagiv.ai {
+  padding: 20px 20px 40px;
+  .profileCare {
+    padding: 16px 16px 20px;
+    &__listTit {
+      align-items: center;
+      padding-bottom: 16px;
+      .profileTitLabel {
+        h3 {
+          @include font-style(20);
+        }
+        span {
+          @include font-style(16, $warm-grey, med);
+        }
+        .awardsLabel {
+          @include font-style(14, $cocoa, med);
+        }
+      }
+    }
+    &__btn {
+      padding: 16px 0 0;
+      button {
+        padding: 11px 0;
+        @include font-style(16);
+        &.arrow {
+          background: url(../img/arrowRight-w.svg) no-repeat right 16px center / 8px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,436 @@
+/* 기본 팝업 */
+.popup {
+  @include flexbox(center, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+  &.active {
+    z-index: 99;
+    visibility: visible;
+    opacity: 1;
+    .popupWrap {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .popupWrap {
+    overflow: hidden auto;
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    max-height: calc(100vh - 40px);
+    border-radius: 12px;
+    background-color: $white;
+    transform: scale(0.7);
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    &__tit {
+      padding: 32px 20px;
+      text-align: center;
+      &.img {
+        figure {
+          margin: 8px auto 20px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: url(../img/iconCheck.svg) no-repeat center #ffd241;
+        }
+      }
+      .compleCheck {
+        margin-bottom: 16px;
+      }
+      img,
+      figure {
+        margin: 0 auto 16px;
+      }
+      h2 {
+        @include font-style(18);
+      }
+      p {
+        margin-top: 12px;
+        @include font-style(16, $black-two);
+        &.awards {
+          small {
+            display: block;
+            margin-top: 8px;
+            @include font-style(14, $warm-grey-two, nor);
+          }
+        }
+      }
+    }
+    &__box {
+      padding: 16px;
+      margin: -12px auto 32px;
+      width: calc(100% - 32px);
+      @include border-box($white-three, 12px, $white-five);
+      @media screen and (max-width: 321px) {
+        &:has(.popupWrap__box--cs) {
+          padding: 12px;
+        }
+      }
+      h3 {
+        margin-bottom: 8px;
+        @include font-style(14);
+        &.txtCt {
+          text-align: center;
+        }
+      }
+      ol {
+        &.parentheses {
+          li {
+            position: relative;
+            padding-left: 14px;
+            @include font-style(14, $black-two);
+            counter-increment: custom-counter;
+            &:before {
+              position: absolute;
+              left: 0;
+              content: counter(custom-counter) ")";
+            }
+            ~ li {
+              margin-top: 4px;
+            }
+          }
+          ~ p {
+            margin-top: 4px;
+          }
+        }
+      }
+      p {
+        @include font-style(14, $black-two);
+        text-align: center;
+        &.dash,
+        &.reference {
+          text-align: left;
+        }
+        ~ p {
+          margin-top: 4px;
+        }
+      }
+      span {
+        display: block;
+        @include font-style(16, $black-two, bol);
+        text-align: center;
+      }
+      dt,
+      dd {
+        display: inline-flex;
+        @include font-style(14, $black-two);
+      }
+      dd {
+        margin-left: 2px;
+        font-weight: $bol-w;
+      }
+      &--cs {
+        div {
+          dt,
+          dd {
+            display: inline-flex;
+          }
+          dt {
+            font-weight: $bol-w;
+          }
+          dd {
+            margin-left: 2px;
+            font-weight: $nor-w;
+            &:before {
+              content: ":";
+              margin-right: 2px;
+              width: 4px;
+              height: auto;
+            }
+            br {
+              @media screen and (min-width: 400px) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__txt {
+      margin-bottom: 32px;
+      text-align: center;
+      p {
+        @include font-style(16, $black-two);
+      }
+    }
+    &__btn {
+      @include flexbox(inherit, center);
+      border-top: solid 1px $white-three;
+      button {
+        padding: 20px 0;
+        @include font-style(16, $black-two);
+        line-height: 1;
+        text-align: center;
+        &:nth-child(2) {
+          border-left: solid 1px $white-three;
+        }
+        &:first-child {
+          &:nth-last-child(1) {
+            background-color: $white-five;
+            font-weight: $med-w;
+          }
+          &:nth-last-child(2) {
+            background-color: $white;
+            ~ button {
+              flex-shrink: 0;
+              width: 50%;
+              background-color: $white-five;
+              color: $cocoa;
+              font-weight: $med-w;
+            }
+          }
+        }
+        &.call {
+          span {
+            padding-left: 24px;
+            background: url(../img/iconTel.svg) no-repeat left center / 16px;
+          }
+        }
+      }
+    }
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+/* 하단 팝업 */
+.bottomPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.1s cubic-bezier(0.86, 0, 0.07, 1);
+  visibility: hidden;
+  opacity: 0;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    .bottomPopupWrap {
+      transform: translateY(0);
+    }
+  }
+  .bottomPopupWrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px 12px 0 0;
+    background-color: $white;
+    transform: translateY(100%);
+    transition: all 0.7s cubic-bezier(0.8, 0, 0.33, 1);
+    @media screen and (min-width: 600px) {
+      left: 50% !important;
+      margin-left: -300px;
+    }
+    .scrollTabWrap {
+      position: static;
+      border-radius: 20px 20px 0 0;
+      transform: none;
+      .scrollTab li button {
+        padding: 24px 0 12px;
+        height: auto;
+        white-space: nowrap;
+      }
+    }
+    /* 리스트 체크 박스 */
+    .listCheck {
+      &__check {
+        &:last-child {
+          input + label {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+      input {
+        @extend %input-hidden;
+        & + label {
+          position: relative;
+          padding: 16px 0;
+          width: 100%;
+          @include font-style(16, $black-two);
+          text-align: center;
+          transition: ease 0.2s background;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+          }
+          &:before {
+            left: 20px;
+            bottom: -1px;
+            width: calc(100% - 40px);
+            height: 1px;
+            background-color: $white-three;
+          }
+        }
+        &:checked {
+          & + label {
+            background-color: $white-five;
+            font-weight: $bol-w;
+            color: $black;
+            &:after {
+              top: 50%;
+              right: 20px;
+              margin-top: -8px;
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background: url(../img/iconCheck.svg) no-repeat center / 8px $cocoa;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__titClose {
+    @include flexbox(between, center);
+    border-bottom: solid 1px $white-two;
+    h2 {
+      padding: 17px 0 17px 20px;
+      @include font-style(22, color, nor);
+      line-height: 1;
+    }
+  }
+  &__txtInfo {
+    padding: 20px 20px 16px;
+    p {
+      @include font-style(16, $black-two);
+      line-height: 1.38;
+      ~ p {
+        margin-top: 8px;
+      }
+    }
+  }
+  &__tit {
+    padding: 40px 20px 0;
+    text-align: center;
+    figure {
+      margin-bottom: 16px;
+      width: 60px;
+      height: 60px;
+    }
+    h2 {
+      margin: 20px 0 12px;
+      @include font-style(18);
+    }
+    p {
+      @include font-style(16, $black-two);
+    }
+  }
+  &__vac {
+    padding: 30px 20px 16px;
+    &--tit {
+      padding: 10px 0 30px;
+      border-bottom: solid 1px $white-two;
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
+      h2 {
+        margin: 16px 0 8px;
+        @include font-style(20);
+      }
+      p {
+        @include font-style(16, $black-two);
+      }
+    }
+    &--list {
+      h2 {
+        margin-bottom: 16px;
+        @include font-style(20);
+        text-align: center;
+      }
+      > div {
+        padding: 16px 36px 16px 20px;
+        border: solid 1px $white-three;
+        border-radius: 8px;
+        background: url(../img/bgVac.svg) no-repeat right 20px center $white;
+        @media screen and (max-width: 321px) {
+          padding: 12px 28px 12px 16px;
+          background-position: right 12px center;
+        }
+        h3 {
+          @include flexbox(inherit, center);
+          margin-bottom: 8px;
+          @include font-style(18, $black-two);
+          span {
+            padding: 2px 6px;
+            margin-left: 12px;
+            @include border-box(#1bb480, 2px, $white);
+            @include font-style(14, #1bb480, med);
+          }
+        }
+      }
+      dl {
+        div {
+          @include flexbox(inherit, center);
+          margin-bottom: 2px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          dt,
+          dd {
+            @include font-style(14);
+          }
+          dt {
+            flex-shrink: 0;
+            width: 80px;
+            color: $greyish-brown;
+            @media screen and (max-width: 321px) {
+              width: 68px;
+            }
+          }
+          dd {
+            color: $black-two;
+            font-weight: $med-w;
+          }
+        }
+      }
+    }
+    &--info {
+      padding-top: 16px;
+      p {
+        padding-left: 22px;
+        background: url(../img/iconNoti-grey.svg) no-repeat 0 2px;
+        @include font-style(14, $greyish-brown);
+      }
+    }
+  }
+  &__noTrans {
+    padding: 29.5px 20px;
+    background: url(../img/img_notrans.svg) no-repeat right 32px center/ contain #ffeec4;
+    h3 {
+      @include font-style(20);
+      line-height: 1.3;
+    }
+    span {
+      display: block;
+      margin-top: 4px;
+      @include font-style(10, #d3bd85);
+      @media screen and (max-width: 281px) {
+        max-width: 50%;
+      }
+    }
+  }
+}

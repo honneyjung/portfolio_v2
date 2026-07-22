@@ -1,0 +1,140 @@
+.license {
+  &__alertTxt {
+    padding: 0 20px;
+    margin-top: 24px;
+    p {
+      padding: 9px 12px 9px 34px;
+      border: solid 1px #ffdd00;
+      border-radius: 16px;
+      background: url(../img/iconNoti.svg) no-repeat 12px center / 16px $egg-shell;
+      @include font-style(14, $black);
+      line-height: 1;
+    }
+  }
+  &__list {
+    @include flexbox(start, inherit);
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-top: 24px;
+    li {
+      margin-bottom: 12px;
+      width: calc(33.3333% - 7px);
+      &:nth-child(3n) {
+        margin-left: 10px;
+      }
+      &:nth-child(3n + 1) {
+        margin-right: 10px;
+      }
+      figure {
+        border: solid 1px $white-three;
+        border-radius: 12px;
+        background: no-repeat center / cover;
+        aspect-ratio: 1;
+      }
+      h3 {
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        @include font-style(14, $black-two);
+        @include ellipsis(2);
+        text-align: center;
+        word-break: break-all;
+        small {
+          padding-left: 2px;
+          @include font-style(12, inherit, nor);
+        }
+      }
+    }
+  }
+  .noneItem {
+    height: calc(100vh - 50px);
+  }
+}
+
+// 케어메이트 자격증 상세
+.licenseDet {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 126px);
+  .noneItem {
+    padding-top: 29vh;
+    height: 100vh;
+    background-color: #000;
+    p {
+      color: $white;
+    }
+  }
+  .slideImgWrap {
+    background-color: #000;
+    &__list {
+      @include flexbox(center, center);
+      width: 100%;
+      height: 100vh;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    &__btn {
+      position: fixed;
+      top: 50%;
+      @include flexbox(between, center);
+      width: 100vw;
+      max-width: 600px;
+      transform: translateY(-50%);
+      button {
+        width: 56px;
+        height: 56px;
+        background: no-repeat center;
+        @extend %text-hidden;
+        &.left {
+          background-image: url(../img/ic_slideBtn_left.svg);
+        }
+        &.right {
+          background-image: url(../img/ic_slideBtn_right.svg);
+        }
+      }
+    }
+    &__tit {
+      position: fixed;
+      bottom: 0;
+      padding: 27px 20px 31px;
+      width: 100vw;
+      max-width: 600px;
+      background-color: rgba(0, 0, 0, 0.5);
+      p {
+        @include font-style(18, $white, med);
+        line-height: 1;
+        text-align: center;
+        word-break: break-all;
+      }
+    }
+  }
+  .slick-track {
+    height: 100vh;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+/* 케어메이트 자격증 상세 헤더 */
+.transparent {
+  border: none;
+  background-color: transparent;
+  transition: opacity 0.5s ease;
+  .headerWrap {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .backBtn {
+    background-image: url(../img/ic_back_btn_wh.svg);
+  }
+  .pageNum {
+    p {
+      @include font-style(16, $white-three);
+      span {
+        @include font-style(16, $white, med);
+      }
+    }
+  }
+}

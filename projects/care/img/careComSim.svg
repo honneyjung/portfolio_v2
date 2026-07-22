@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g transform="translate(-36 -1182)">
+        <circle data-name="타원 399" cx="24" cy="24" r="24" transform="translate(36 1182)" style="fill:none"/>
+        <g transform="translate(-265.001 991.018)">
+            <path data-name="패스 13362" d="M319.753 240.937v-1.793h16.6v1.793" transform="translate(-2.856 -14.874)" style="stroke:#333;stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+            <rect data-name="사각형 1544" width="24.232" height="16.35" rx="3" transform="translate(313.001 207.92)" style="fill:#fff;stroke:#333;stroke-linecap:round;stroke-linejoin:round"/>
+            <path data-name="사각형 1545" transform="translate(320.605 203.983)" style="stroke:#333;stroke-linecap:round;stroke-linejoin:round;fill:none" d="M0 0h9.024v3.938H0z"/>
+        </g>
+        <g data-name="source">
+            <path data-name="패스 54558" d="M396.091 374.535h-2.474v-2.474a.643.643 0 0 0-.644-.644h-1.854a.644.644 0 0 0-.644.644v2.474H388a.644.644 0 0 0-.644.644v1.854a.644.644 0 0 0 .644.644h2.474v2.474a.644.644 0 0 0 .644.644h1.854a.643.643 0 0 0 .644-.644v-2.474h2.474a.644.644 0 0 0 .644-.644v-1.854a.644.644 0 0 0-.643-.644z" transform="translate(-331.527 831.605)" style="fill:#7e4f40;opacity:.7"/>
+            <path data-name="패스 54559" d="M393.736 373.558h-1.127v-2.473a.643.643 0 0 0-.644-.644h-1.854a.643.643 0 0 0-.644.644v2.473h-2.474a.644.644 0 0 0-.644.644v1.855a.643.643 0 0 0 .644.643h2.474v2.474a.644.644 0 0 0 .644.644h1.854a.644.644 0 0 0 .644-.644V376.7h2.474a.643.643 0 0 0 .644-.643V374.2a.644.644 0 0 0-.644-.644h-.383" style="stroke-width:.7px;stroke:#333;stroke-linecap:round;stroke-linejoin:round;fill:none" transform="translate(-331.324 831.802)"/>
+        </g>
+    </g>
+</svg>

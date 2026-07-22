@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="30" viewBox="0 0 42 30">
+    <g transform="translate(-269.76 -564.947)">
+        <path data-name="사각형 251" d="M6 2a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h30a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4H6m0-2h30a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6V6a6 6 0 0 1 6-6z" transform="translate(269.76 564.947)" style="fill:#85c51b"/>
+        <path data-name="사각형 252" transform="translate(271.76 572.947)" style="fill:#85c51b" d="M0 0h39v5H0z"/>
+        <rect data-name="사각형 253" width="9" height="2" rx="1" transform="translate(274.76 582.947)" style="fill:#85c51b"/>
+        <rect data-name="사각형 1533" width="14" height="2" rx="1" transform="translate(274.76 585.947)" style="fill:#85c51b"/>
+        <rect data-name="사각형 254" width="4" height="2" rx="1" transform="translate(284.76 582.947)" style="fill:#85c51b"/>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.289" height="16.289">
+    <defs>
+        <style>
+            .cls-2{fill:#f1f1f1}.cls-2,.cls-3,.cls-4{stroke:#999;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px}.cls-3{fill:#fff}.cls-4{fill:#c3e0fc}
+        </style>
+    </defs>
+    <g id="iconNovac" transform="translate(-140.903 -356.903)">
+        <path id="사각형_2709" data-name="사각형 2709" transform="translate(141 357)" style="fill:none" d="M0 0h16v16H0z"/>
+        <g id="그룹_7380" data-name="그룹 7380" transform="translate(56.492 156.268)">
+            <path id="사각형_2894" data-name="사각형 2894" class="cls-2" transform="rotate(135 5.233 127.392)" d="M0 0h2.074v2.991H0z"/>
+            <path id="사각형_2895" data-name="사각형 2895" class="cls-3" transform="rotate(135 5.206 125.652)" d="M0 0h4.441v10.13H0z"/>
+            <path id="사각형_2896" data-name="사각형 2896" class="cls-2" transform="rotate(135 2.516 120.832)" d="M0 0h2.074v2.371H0z"/>
+            <path id="선_611" data-name="선 611" class="cls-4" transform="translate(85.26 201.483)" d="M2.067 2.067 0 0"/>
+            <path id="선_612" data-name="선 612" class="cls-3" transform="translate(96.711 212.935)" d="M3.14 0 0 3.14"/>
+            <path id="선_613" data-name="선 613" class="cls-4" transform="translate(92.58 210.963)" d="M0 .981.981 0"/>
+            <path id="선_614" data-name="선 614" class="cls-4" transform="translate(91.448 209.831)" d="M0 .981.981 0"/>
+            <path id="선_615" data-name="선 615" class="cls-4" transform="translate(90.316 208.699)" d="M0 .981.981 0"/>
+            <path id="선_616" data-name="선 616" class="cls-4" transform="translate(89.184 207.567)" d="M0 .981.981 0"/>
+        </g>
+    </g>
+</svg>

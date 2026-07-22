@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11">
+    <defs>
+        <linearGradient id="kktc1m2adb" y1=".5" x2="1" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#a2670c"/>
+            <stop offset=".034" stop-color="#a56b10"/>
+            <stop offset=".075" stop-color="#af781f"/>
+            <stop offset=".119" stop-color="#c08d37"/>
+            <stop offset=".166" stop-color="#d8ab58"/>
+            <stop offset=".214" stop-color="#f6d282"/>
+            <stop offset=".226" stop-color="#ffdd8f"/>
+            <stop offset=".342" stop-color="#e6b449"/>
+            <stop offset=".472" stop-color="#e5af3a"/>
+            <stop offset=".48" stop-color="#e5af3a"/>
+            <stop offset=".618" stop-color="#e9b143"/>
+            <stop offset=".638" stop-color="#ebb648"/>
+            <stop offset=".717" stop-color="#f3c75b"/>
+            <stop offset=".839" stop-color="#c9983d"/>
+            <stop offset=".92" stop-color="#b27827"/>
+            <stop offset="1" stop-color="#99560f"/>
+        </linearGradient>
+        <clipPath id="n1y22p8hra">
+            <path data-name="사각형 3345" transform="translate(150 206)" style="fill:none" d="M0 0h12v11H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 121" transform="translate(-150 -206)" style="clip-path:url(#n1y22p8hra)">
+        <g data-name="그룹 24716">
+            <path data-name="패스 29726" d="M1187.558 1261.751a.5.5 0 0 0-.464.7l-2.339 1.891-1.9-4.5a.682.682 0 1 0-.53 0l-1.9 4.5-2.305-1.864a.5.5 0 0 0 .055-.224.506.506 0 1 0-.4.491l1.365 5.829h6.888l1.368-5.843a.5.5 0 0 0 .154.026.5.5 0 0 0 0-1.007z" style="fill:url(#kktc1m2adb)" transform="translate(-1026.671 -1051.996)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,465 @@
+/* extend */
+%input-hidden {
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* 공통 */
+main {
+  margin: 50px auto 0;
+  max-width: 600px;
+  &.mt0 {
+    .basicWrap {
+      min-height: 100vh;
+    }
+  }
+}
+input {
+  &::placeholder {
+    color: $warm-grey-two;
+  }
+  &:focus {
+    border-color: $black;
+    background-color: $white !important;
+  }
+  &:has(+ .reset:last-child, + .resetBtn:last-child) {
+    padding-right: 46px;
+  }
+}
+
+// input type="number" 일때 기본 화살표 속성 제거
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox  */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  padding: 10px 12px;
+  border: solid 1px $white-three;
+  border-radius: 8px;
+  @include font-style(16);
+  resize: none;
+  &::placeholder {
+    color: $warm-grey-two;
+  }
+  &:focus {
+    color: $black;
+    border-color: $black;
+  }
+}
+.basicWrap {
+  @include flexbox(between, inherit);
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+}
+.bgGrey {
+  background-color: $white-four;
+}
+.bgWhite {
+  background-color: $white !important;
+}
+.btnWrap {
+  @include flexbox(inherit, center);
+  padding: 20px;
+  button {
+    &:nth-child(2) {
+      margin-left: 12px;
+    }
+  }
+  &:has(button:nth-child(3)) {
+    flex-wrap: wrap;
+    button {
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: calc((100% / 2) - 6px);
+      }
+      &:nth-child(2) {
+        background-color: $very-light-pink;
+      }
+      &:last-child {
+        margin-top: 8px;
+      }
+    }
+  }
+  &.fixed,
+  &.tranFixed {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 21;
+    padding: 10px 20px 12px !important;
+    width: 100%;
+    max-width: 600px;
+    transform: translateX(-50%);
+    button {
+      margin: 0 auto;
+      max-width: 760px;
+      &:nth-child(2) {
+        margin-left: 12px;
+      }
+    }
+    @media screen and (min-width: 600px) {
+      justify-content: center;
+      button:first-child:nth-last-child(2),
+      button:first-child:nth-last-child(2) ~ button {
+        max-width: 374px;
+        margin: 0;
+      }
+      button:first-child:nth-last-child(2) {
+        margin-right: 12px;
+      }
+    }
+  }
+  &.fixed {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.8) 8%,
+      $white 20%
+    );
+  }
+}
+.breakLine {
+  position: relative;
+  border-bottom: solid 10px $white-two;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $white-three;
+  }
+}
+
+.b0 {
+  border-bottom: 0 !important;
+}
+
+/* 간격 */
+.pt0 {
+  padding-top: 0 !important;
+}
+.pb0 {
+  padding-bottom: 0 !important;
+}
+.mt0 {
+  margin-top: 0px !important;
+}
+.mb0 {
+  margin-bottom: 0 !important;
+}
+.mt4 {
+  margin-top: 4px !important;
+}
+
+/* 실패 & 완료 */
+.failX,
+.compleCheck {
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: no-repeat center;
+}
+
+.failX {
+  background-image: url(../img/iconX-w.svg);
+  background-color: $faded-red;
+  background-size: 20px;
+}
+
+.compleCheck {
+  background-image: url(../img/iconCheck_yw.svg);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: #e7e7e7;
+  }
+  main {
+    background-color: $white;
+  }
+}
+
+/* 이 위로 수정 금지 */
+input {
+  padding: 10px 12px;
+  border: solid 1px $white-three;
+  border-radius: 8px;
+  @include font-style(16);
+  line-height: 1;
+  &:disabled {
+    color: $greyish-brown !important;
+    background-color: $white-five !important;
+  }
+}
+textarea {
+  &:disabled {
+    background-color: $white-five;
+    font-weight: $med-w;
+  }
+}
+select {
+  padding: 10px 12px;
+  border: solid 1px $white-three;
+  border-radius: 8px;
+  @include font-style(16);
+}
+.home {
+  background: url(../img/bgHome.svg) no-repeat;
+}
+.hospital {
+  background: url(../img/bgHospital.svg) no-repeat;
+}
+.timeCare {
+  background: url(../img/bgTimeCare.svg) no-repeat;
+}
+.dayCare {
+  background: url(../img/bgDayCare.svg) no-repeat;
+}
+.none {
+  display: none !important;
+}
+.basicInfoSt {
+  @include border-box($white-three, 12px, $white-five !important);
+  dd {
+    margin-top: 2px;
+  }
+  &.titSM {
+    dt {
+      @include font-style(14, $black-two);
+    }
+    dd {
+      @include font-style(16, color, med);
+    }
+  }
+  &.titNor {
+    dt {
+      @include font-style(16, color, med);
+    }
+    dd {
+      @include font-style(14, $black-two);
+    }
+  }
+}
+
+/* 가로스크롤 */
+%none-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 간격 */
+.pt10 {
+  padding-top: 10px !important;
+}
+.pt20 {
+  padding-top: 20px !important;
+}
+.pt24 {
+  padding-top: 24px !important;
+}
+.pt30 {
+  padding-top: 30px !important;
+}
+.pt32 {
+  padding-top: 32px !important;
+}
+.pt40 {
+  padding-top: 40px !important;
+}
+.pt42 {
+  padding-top: 42px !important;
+}
+.pt50 {
+  padding-top: 50px !important;
+}
+.pt60 {
+  padding-top: 60px !important;
+}
+.pt66 {
+  padding-top: 66px !important;
+}
+.pt70 {
+  padding-top: 70px !important;
+}
+.pt100 {
+  padding-top: 100px !important;
+}
+.pt120 {
+  padding-top: 120px !important;
+}
+.pt138 {
+  padding-top: 138px !important;
+}
+.pb2 {
+  padding-bottom: 2px !important;
+}
+.pb16 {
+  padding-bottom: 16px !important;
+}
+.pb20 {
+  padding-bottom: 20px !important;
+}
+.pb30 {
+  padding-bottom: 30px !important;
+}
+.pb32 {
+  padding-bottom: 32px !important;
+}
+.pb40 {
+  padding-bottom: 40px !important;
+}
+.pb50 {
+  padding-bottom: 50px !important;
+}
+.pb60 {
+  padding-bottom: 60px !important;
+}
+.pb70 {
+  padding-bottom: 70px !important;
+}
+.pb80 {
+  padding-bottom: 80px !important;
+}
+.pb90 {
+  padding-bottom: 90px !important;
+}
+.pb92 {
+  padding-bottom: 92px !important;
+}
+.pb100 {
+  padding-bottom: 100px !important;
+}
+.pb110 {
+  padding-bottom: 110px !important;
+}
+.mt6 {
+  margin-top: 6px !important;
+}
+.mt10 {
+  margin-top: 10px !important;
+}
+.mt16 {
+  margin-top: 16px !important;
+}
+.mt18 {
+  margin-top: 18px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mt22 {
+  margin-top: 22px !important;
+}
+.mt24 {
+  margin-top: 24px !important;
+}
+.mt28 {
+  margin-top: 28px !important;
+}
+.mt30 {
+  margin-top: 30px !important;
+}
+.mt32 {
+  margin-top: 32px !important;
+}
+.mt40 {
+  margin-top: 40px !important;
+}
+.mt50 {
+  margin-top: 50px !important;
+}
+.mt60 {
+  margin-top: 60px !important;
+}
+.mt70 {
+  margin-top: 70px !important;
+}
+.mt80 {
+  margin-top: 80px !important;
+}
+.mb16 {
+  margin-bottom: 16px !important;
+}
+.mb20 {
+  margin-bottom: 20px !important;
+}
+.mb30 {
+  margin-bottom: 30px !important;
+}
+.mb40 {
+  margin-bottom: 40px !important;
+}
+.mb50 {
+  margin-bottom: 50px !important;
+}
+.mb60 {
+  margin-bottom: 60px !important;
+}
+.mb70 {
+  margin-bottom: 70px !important;
+}
+.mb80 {
+  margin-bottom: 80px !important;
+}
+.mb90 {
+  margin-bottom: 90px !important;
+}
+.ml8 {
+  margin-left: 8px !important;
+}
+
+/* 이 위로 수정 금지 */
+/* 하단은 care(간병 서비스) 에만 적용 */
+
+.btnWrap {
+  &.fixed02 {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 21;
+    justify-content: center;
+    padding: 10px 20px 12px !important;
+    width: 100%;
+    max-width: 600px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.8) 8%,
+      $white 20%
+    );
+    transform: translateX(-50%);
+    button {
+      width: calc(50% - 6px);
+    }
+    @media screen and (min-width: 600px) {
+      justify-content: center;
+      button:first-child:nth-last-child(2),
+      button:first-child:nth-last-child(2) ~ button {
+        max-width: 380px;
+        margin: 0;
+      }
+      button:first-child:nth-last-child(2) {
+        margin-right: 12px;
+      }
+    }
+  }
+}

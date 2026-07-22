@@ -1,0 +1,284 @@
+/* 라디오 버튼 셀렉트 */
+.radioSelectCheck {
+  @include flexbox(between, center);
+  &__box {
+    position: relative;
+    width: calc(50% - 4px);
+  }
+  input {
+    @extend %input-hidden;
+    &[type="radio"] {
+      + label {
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+        }
+        &:before {
+          top: 12px;
+          right: 12px;
+          width: 16px;
+          height: 16px;
+          border: solid 1px $white-three;
+        }
+      }
+      &:checked + label {
+        border: solid 1px $cocoa;
+        background-color: $very-light-pink;
+        &:before {
+          border-color: $cocoa;
+        }
+        &:after {
+          top: 16px;
+          right: 16px;
+          width: 8px;
+          height: 8px;
+          background-color: $cocoa;
+        }
+      }
+    }
+  }
+  label {
+    width: 100%;
+    @include border-box($white-three, 12px, $white);
+    @include font-style(16, color, med);
+    text-align: center;
+    span {
+      display: block;
+      margin-top: 4px;
+      @include font-style(14, $black-two, nor);
+    }
+  }
+}
+
+/* 기본 체크박스 스타일 */
+.checkBoxSel {
+  position: relative;
+  ~ .checkBoxSel {
+    margin-top: 8px;
+  }
+  label {
+    @include flexbox(inherit, center);
+    width: 100%;
+    @include font-style(16, $black-two);
+  }
+  input[type="checkbox"] {
+    @extend %input-hidden;
+    & + label {
+      position: relative;
+      padding: 10px 16px;
+      @include border-box($white-three, 8px, $white);
+      @media screen and (max-width: 321px) {
+        padding: 10px 12px;
+      }
+      &:before {
+        content: "";
+        flex-shrink: 0;
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: url(../img/iconCheck.svg) no-repeat center / 8.6px $white-three;
+        transition: all 0.2s ease-in;
+        @media screen and (max-width: 321px) {
+          width: 12px;
+          height: 12px;
+          background-size: 6px;
+        }
+      }
+    }
+    &:checked {
+      & + label {
+        color: $cocoa;
+        border-color: $cocoa;
+        font-weight: $med-w;
+        background-color: $very-light-pink;
+        &:before {
+          color: $white;
+          background-color: $cocoa;
+        }
+      }
+    }
+  }
+}
+
+/* 사각 체크박스 */
+.checkSquare {
+  display: block !important;
+  position: relative;
+  input[type="checkbox"] {
+    @extend %input-hidden;
+    & + label {
+      @include flexbox(inherit, center);
+      margin: 0;
+      @include font-style(16, $black-two, nor);
+      cursor: pointer;
+      &:before {
+        content: " ";
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background: url(../img/iconCheck.svg) no-repeat center / 11.7px $white-three;
+        transform: translateY(1px);
+        transition: all 0.2s ease-in;
+      }
+    }
+    &:checked {
+      & + label {
+        &:before {
+          background-color: $cocoa;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+/* 라디오 체크 버튼 */
+.radioCheckSel {
+  ~ .radioCheckSel {
+    margin-top: 8px;
+  }
+  input {
+    &[type="radio"] {
+      @extend %input-hidden;
+      & + label {
+        position: relative;
+        padding: 14px 16px 14px 42px;
+        width: 100%;
+        @include border-box($white-three, 8px, $white);
+        @include font-style(16);
+        line-height: 1;
+        transition: background 0.2s ease-in;
+        @media screen and (max-width: 321px) {
+          padding: 13.5px 8px 13.5px 28px;
+        }
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          border-radius: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &:before {
+          left: 16px;
+          border: 1px solid $white-three;
+          width: 16px;
+          height: 16px;
+          @media screen and (max-width: 321px) {
+            left: 10px;
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+      &:checked {
+        & + label,
+        & + label:before {
+          border: 1px solid $cocoa;
+          background-color: $very-light-pink;
+          color: $cocoa;
+          font-weight: $med-w;
+        }
+        & + label:after {
+          left: 20px;
+          width: 8px;
+          height: 8px;
+          background-color: $cocoa;
+          @media screen and (max-width: 321px) {
+            left: 13px;
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 라디오 박스 선택시 */
+.radioBoxSel {
+  width: 100%;
+  &:nth-child(n + 2) {
+    margin-left: 8px;
+  }
+  input {
+    @extend %input-hidden;
+    & + label {
+      padding: 14px 0;
+      margin-bottom: 0;
+      width: 100%;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      @include font-style(16);
+      line-height: 1;
+      text-align: center;
+      &:before {
+        border: 1px solid $white-three;
+      }
+    }
+    &:checked {
+      & + label,
+      & + label:before {
+        border: 1px solid $cocoa;
+        background-color: $very-light-pink;
+        color: $cocoa;
+        transition: all 0.2s ease-in;
+      }
+      & + label {
+        font-weight: $med-w;
+      }
+    }
+  }
+}
+
+/* 체크박스나 라디오 클릭시 나오는 텍스트 내용 */
+.checkSelTxt01 {
+  position: relative;
+  padding: 16px;
+  margin-top: 30px;
+  @include border-box($white-three, 12px, $white);
+  @media screen and (max-width: 321px) {
+    padding: 12px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    z-index: 1;
+    width: 40px;
+    height: 25px;
+    background-image: url(../img/bgCompOpin.svg);
+  }
+  label {
+    padding-left: 22px;
+    background: url(../img/icon_text.svg) no-repeat 0 3px / 16px;
+    @include font-style(14, color, bol);
+    @media screen and (max-width: 321px) {
+      padding-left: 18px;
+      background-size: 12px;
+    }
+    span {
+      margin-left: 8px;
+      @include font-style(12, color, nor);
+      vertical-align: 1px;
+    }
+  }
+  textarea {
+    padding: 12px;
+  }
+  p {
+    padding: 8px 12px 8px 32px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background: url(../img/icon_check.svg) no-repeat 12px 11px / 14px $white-five;
+    @include font-style(12, $black-two);
+    @media screen and (max-width: 321px) {
+      background-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,454 @@
+.profileCare {
+  @include border-box($white-three, 12px, $white);
+  a {
+    padding: 20px 16px 0;
+  }
+  .label {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 5px 8px;
+    border-radius: 12px;
+  }
+  &__img {
+    margin: 0 auto 12px;
+    width: 90px;
+    height: 90px;
+    border: solid 1px $white-three;
+    border-radius: 50%;
+    background: no-repeat center / cover $white-five;
+  }
+  &__detTit {
+    button {
+      @include flexbox(center, center);
+      margin-bottom: 3px;
+      padding-left: 20px;
+      &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-image: url(../img/ic_quest_brown.svg);
+        transform: translateY(3px);
+      }
+    }
+    h2 {
+      @include font-style(20);
+    }
+    p {
+      margin-top: 4px;
+      @include font-style(14, $warm-grey);
+    }
+  }
+  &__listTit {
+    @include flexbox(between, start);
+    padding-bottom: 8px;
+    &--person {
+      .profileTitLabel {
+        .awardsLabel {
+          margin-bottom: 18px;
+        }
+      }
+      h3 {
+        @include flexbox(inherit, center);
+        @include font-style(18);
+        word-break: break-all;
+        span {
+          margin-left: 8px;
+          @include font-style(14, $warm-grey, med);
+        }
+      }
+      dl {
+        @include flexbox(inherit, center);
+        margin: 8px 0 12px;
+      }
+      dt {
+        padding: 4px 8px;
+        border-radius: 4px;
+        background-color: #f9f0ed;
+        @include font-style(14, $cocoa, med);
+      }
+      dd {
+        margin-left: 8px;
+        @include font-style(20, color, bol);
+      }
+      p {
+        position: relative;
+        padding: 4px 8px;
+        @include border-box($white-three, 6px, $white-four);
+        @include font-style(14, $greyish-brown, med);
+        line-height: 1.43;
+        &:after {
+          content: "";
+          position: absolute;
+          top: -11.5px;
+          left: 46px;
+          width: 34px;
+          height: 16.1px;
+          background-image: url(../img/bgProfileTxt02.svg);
+        }
+        strong {
+          color: $brownish;
+        }
+        @media screen and (max-width: 321px) {
+          padding: 3px 8px;
+          margin: 0;
+          &:after {
+            top: -6px;
+            width: 15px;
+            height: 12.5px;
+            background-size: 15px;
+          }
+        }
+      }
+    }
+    &--img {
+      overflow: hidden;
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border: solid 1px #e1e1e1;
+      border-radius: 50%;
+      background: no-repeat center / cover $white-five;
+      @media screen and (max-width: 321px) {
+        width: 55px;
+        height: 55px;
+      }
+    }
+    + .profileCare__desc {
+      margin: -4px 0 16px;
+      padding: 12px;
+      width: 100%;
+      background: none;
+      background-color: $white-five;
+      border-radius: 12px;
+      p {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  &__info {
+    @include flexbox(inherit, center);
+    padding: 10px 0;
+    border-top: solid 1px $white-two;
+    border-bottom: solid 1px $white-two;
+    div {
+      position: relative;
+      width: calc(100% / 3);
+      text-align: center;
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 0;
+        width: 1px;
+        height: 24px;
+        background-color: $white-two;
+      }
+      dt {
+        @include font-style(14, $greyish-brown);
+      }
+      dd {
+        @include flexbox(center, center);
+        @include font-style(16, $black-two, med);
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+          background: no-repeat left / 16px;
+        }
+      }
+    }
+    .age {
+      dd {
+        &:before {
+          background-image: url(../img/iconAge.svg);
+        }
+      }
+    }
+    .gender {
+      &01 {
+        dd {
+          &:before {
+            background-image: url(../img/iconGender01.svg);
+          }
+        }
+      }
+      &02 {
+        dd {
+          &:before {
+            background-image: url(../img/iconGender02.svg);
+          }
+        }
+      }
+    }
+    .nation {
+      &01 {
+        dd {
+          &:before {
+            background-image: url(../img/iconNation01.svg);
+          }
+        }
+      }
+      &02 {
+        dd {
+          &:before {
+            background-image: url(../img/iconNation02.svg);
+          }
+        }
+      }
+    }
+  }
+  &__total {
+    padding-top: 14px;
+    &--trade {
+      @include flexbox(inherit, center);
+      flex-wrap: wrap;
+      padding: 4px 0 14px;
+      border-bottom: solid 1px $white-two;
+      div {
+        margin: 6px 16px 0 0;
+      }
+    }
+    &--vacine {
+      @include flexbox(inherit, center);
+      flex-wrap: wrap;
+      padding-top: 16px;
+      dt {
+        @include font-style(14, $greyish-brown);
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      button {
+        position: relative;
+        margin-left: 4px;
+        @include font-style(14, $black-two, med);
+        text-decoration: underline;
+        span {
+          position: absolute;
+          right: -24px;
+          bottom: 3px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-image: url(../img/iconVacDet.svg);
+          @extend %text-hidden;
+        }
+      }
+    }
+    div {
+      @include flexbox(inherit, center);
+      dt {
+        @include flexbox(inherit, center);
+        @include font-style(14, $greyish-brown);
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      dd {
+        margin-left: 4px;
+        @include font-style(14, $black-two, med);
+      }
+    }
+    h3 {
+      padding: 0 12px 0 21px;
+      background: url(../img/icon_total.svg) no-repeat left top 3px / 16px;
+      @media screen and (max-width: 321px) {
+        background-size: 14px;
+      }
+    }
+  }
+  &__btn {
+    @include flexbox(between, center);
+    padding: 16px;
+    button {
+      &:first-child:nth-last-child(1) {
+        width: 100%;
+      }
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ button {
+        width: calc(50% - 4px);
+      }
+    }
+    @media screen and (max-width: 339px) {
+      flex-wrap: wrap;
+      button {
+        &:nth-child(n + 2) {
+          margin-top: 4px;
+        }
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__pay {
+    @include flexbox(between, center);
+    padding: 11px 11px;
+    margin-top: 16px;
+    @include border-box($white-three, 8px, $white-five);
+    @media screen and (max-width: 281px) {
+      flex-wrap: wrap;
+    }
+    dt,
+    dd {
+      @include flexbox(inherit, center);
+    }
+    dt {
+      @include font-style(16, $black-two, med);
+      span {
+        padding: 2px 6px;
+        margin-right: 6px;
+        @include border-box($cocoa, 4px, $white);
+        @include font-style(14, $cocoa);
+      }
+    }
+    dd {
+      @include font-style(22, color, bol);
+      @media screen and (max-width: 281px) {
+        padding-left: 40px;
+        margin-top: 2px;
+        width: 100%;
+      }
+      &:after {
+        content: "원";
+        margin-left: 2px;
+        @include font-style(14, color, nor);
+      }
+    }
+  }
+  &__desc {
+    padding-left: 20px;
+    margin-top: 12px;
+    background: url(../img/iconNoti-black.svg) no-repeat left top 3px / 14.2px;
+    p {
+      @include font-style(14);
+      word-break: break-all;
+      text-align: left;
+      strong {
+        font-weight: $med-w;
+      }
+    }
+  }
+  &:has(.awardsLabel) &__img {
+    margin: 0 auto 8px;
+  }
+}
+
+.shadowBox {
+  padding-top: 32px;
+  @include border-box($white-three, 12px, $white);
+  text-align: center;
+  h3 {
+    margin-bottom: 2px;
+    @include font-style(16, $black-two, med);
+  }
+  p {
+    @include font-style(20, color, med);
+    strong {
+      margin-left: 8px;
+      margin-right: 4px;
+      @include font-style(26);
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/* 거래 정보 - 아이콘 */
+.careCom {
+  &:before {
+    background-image: url(../img/iconCareCom.svg);
+  }
+}
+.certifi {
+  &:before {
+    background-image: url(../img/iconCertifi.svg);
+  }
+}
+.careTime {
+  &:before {
+    background-image: url(../img/iconCareTime.svg);
+  }
+}
+.carVac {
+  &:before {
+    background-image: url(../img/iconVac.svg);
+  }
+  button {
+    margin-left: 4px;
+    color: $greyish-brown !important;
+  }
+}
+.careCan {
+  &:before {
+    background-image: url(../img/iconCareCan.svg);
+  }
+}
+.careAcd {
+  &:before {
+    background-image: url(../img/iconCareAcd.svg);
+  }
+}
+.disabled {
+  dt,
+  dd,
+  button {
+    color: $greyish-brown !important;
+  }
+  .careCom {
+    &:before {
+      background-image: url(../img/iconCareCom-dis.svg);
+    }
+  }
+  .certifi {
+    &:before {
+      background-image: url(../img/iconCertifi-dis.svg);
+    }
+  }
+  .careTime {
+    &:before {
+      background-image: url(../img/iconCareTime-dis.svg);
+    }
+  }
+  .carVac {
+    &:before {
+      background-image: url(../img/iconVac-dis.svg);
+    }
+  }
+  .careCan {
+    &:before {
+      background-image: url(../img/iconCareCan-dis.svg);
+    }
+  }
+  .careAcd {
+    &:before {
+      background-image: url(../img/iconCareAcd-dis.svg);
+    }
+  }
+}

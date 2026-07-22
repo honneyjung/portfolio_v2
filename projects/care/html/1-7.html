@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>환자 상세 정보 선택</title>
+  </head>
+  <body>
+    <!-- 
+      기본값 : headerComu / h1에 a11y-hidden 추가
+      스크롤 됐을 때 : headerComu 와 a11y-hidden 삭제 (carenation 헤더와 동일)
+    -->
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">환자 상세 정보</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap bgGrey">
+        <div class="basicWrap__flex">
+          <section class="notifiRegis">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li>1</li>
+                <li>2</li>
+                <li class="active">3</li>
+              </ul>
+            </div>
+            <div class="pageTit pb32">
+              <h2>
+                환자 상세 정보를<br />선택해 주세요.
+                <span class="progressNum"><small>1</small>/5</span>
+              </h2>
+            </div>
+
+            <!-- 간병장소 : 병/의원 (1/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q1</span>입원하신 이유를 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z01.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="adReason01" name="adReason" />
+                    <label for="adReason01">수술</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="adReason02" name="adReason" />
+                    <label for="adReason02">검사</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="adReason03" name="adReason" />
+                    <label for="adReason03">치료</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="adReason04" name="adReason" />
+                    <label for="adReason04">요양</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="adReason05" name="adReason" />
+                    <label for="adReason05">기타</label>
+                  </li>
+                  <!-- 
+                    1글자 이상 입력시 : span 에 txtGrey
+                    제한글자수 전부 입력시 : p 에 txtGrey
+                  -->
+                  <li class="limitTextarea">
+                    <textarea placeholder="기타 입원 사유를 입력해 주세요."></textarea>
+                    <p><span>0</span>/10자</p>
+                  </li>
+                </ul>
+                <div class="notifiRegis__paitDet--btn">
+                  <button type="button"><u>설명이 필요하다면 눌러주세요!</u></button>
+                </div>
+              </div>
+              <div class="notifiRegisListWrap">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3>
+                    <span>Q2</span>
+                    간병이 필요한 병실을 선택해 주세요.
+                  </h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_B01.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom01" name="sickroom" />
+                    <label for="sickroom01">일반실</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom02" name="sickroom" />
+                    <label for="sickroom02">중환자실</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom03" name="sickroom" />
+                    <label for="sickroom03">격리실</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom04" name="sickroom" />
+                    <label for="sickroom04">호스피스</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom05" name="sickroom" />
+                    <label for="sickroom05">보호 병동</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="sickroom06" name="sickroom" />
+                    <label for="sickroom06">기타</label>
+                  </li>
+                  <!-- 
+                    1글자 이상 입력시 : span 에 txtGrey
+                    제한글자수 전부 입력시 : p 에 txtGrey
+                  -->
+                  <li class="limitTextarea">
+                    <textarea placeholder="기타 다른 병실을 입력해 주세요."></textarea>
+                    <p><span>0</span>/10자</p>
+                  </li>
+                </ul>
+                <div class="notifiRegis__paitDet--btn">
+                  <button type="button"><u>설명이 필요하다면 눌러주세요!</u></button>
+                </div>
+              </div>
+            </article>
+            <!-- //간병장소 : 병/의원 (1/5) -->
+
+            <!-- 간병장소 : 집 (1/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q1</span>환자와 함께 사는 동거인과 반려동물 정보를 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z02.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList imgSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="cohabit01" name="cohabit" />
+                    <label for="cohabit01">독거</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="cohabit02" name="cohabit" />
+                    <label for="cohabit02">2~3인 <small>(환자 포함)</small></label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="cohabit03" name="cohabit" />
+                    <label for="cohabit03">4인 이상 <small>(환자 포함)</small></label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="cohabit04" name="cohabit" />
+                    <label for="cohabit04">반려동물 <em>선택</em></label>
+                  </li>
+                  <li class="addSel">
+                    <p>
+                      <small>Q1-1</small>
+                      반려동물 종류와 유의사항을 작성해 주세요.<span class="txtRed">필수</span>
+                    </p>
+                    <!-- 
+                      1글자 이상 입력시 : span 에 txtGrey
+                      제한글자수 전부 입력시 : p 에 txtGrey
+                    -->
+                    <div class="limitTextarea">
+                      <textarea
+                        placeholder="반려동물 종류 및 마릿수 또는 조심해야 하는 내용을 입력해 주세요."
+                      ></textarea>
+                      <p><span>0</span>/30자</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="notifiRegisListWrap">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3>
+                    <span>Q2</span>
+                    집 내부에 홈캠 또는 CCTV 유무를 선택해 주세요.
+                  </h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_I01.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="cctv01" name="cctv" />
+                    <label for="cctv01">없음</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="cctv02" name="cctv" />
+                    <label for="cctv02">있음</label>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!-- //간병장소 : 집 (1/5) -->
+
+            <!-- 환자 상태 (2/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3>
+                    <span>Q3</span>환자에게 해당되는 증상을 선택해 주세요.<em>(중복 선택 가능)</em>
+                  </h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z03.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom01" name="symptom" />
+                    <label for="symptom01">치매</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom02" name="symptom" />
+                    <label for="symptom02">섬망</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom03" name="symptom" />
+                    <label for="symptom03">욕창</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom04" name="symptom" />
+                    <label for="symptom04">하반신 마비</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom05" name="symptom" />
+                    <label for="symptom05">전신 마비</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom06" name="symptom" />
+                    <label for="symptom06">와상 환자</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom07" name="symptom" />
+                    <label for="symptom07">기저귀 케어</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom08" name="symptom" />
+                    <label for="symptom08">의식 없음</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom09" name="symptom" />
+                    <label for="symptom09">석션</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom10" name="symptom" />
+                    <label for="symptom10">피딩</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom11" name="symptom" />
+                    <label for="symptom11">소변줄</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom12" name="symptom" />
+                    <label for="symptom12">장루</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom13" name="symptom" />
+                    <label for="symptom13">야간 집중 돌봄</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom14" name="symptom" />
+                    <label for="symptom14">전염성 질환</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom15" name="symptom" />
+                    <label for="symptom15">파킨슨</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom16" name="symptom" />
+                    <label for="symptom16">정신 질환</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom17" name="symptom" />
+                    <label for="symptom17">투석</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom18" name="symptom" />
+                    <label for="symptom18">재활</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="symptom19" name="symptom" />
+                    <label for="symptom19">해당 사항 없음</label>
+                  </li>
+                </ul>
+                <div class="notifiRegis__paitDet--btn">
+                  <button type="button"><u>설명이 필요하다면 눌러주세요!</u></button>
+                </div>
+              </div>
+              <div class="notifiRegis__paitDet--careNoti">
+                <label for="careNoti">상세 증상 기재<span>선택</span></label>
+                <!-- 
+                  1글자 이상 입력시 : span 에 txtGrey
+                  제한글자수 전부 입력시 : p 에 txtGrey
+                -->
+                <div class="limitTextarea">
+                  <textarea
+                    placeholder="환자의 상세 증상을 입력해 주세요."
+                    id="careNoti"
+                  ></textarea>
+                  <p class=""><span class="">0</span>/100자</p>
+                </div>
+              </div>
+            </article>
+            <!-- //환자 상태 (2/5) -->
+
+            <!-- 거동상태, 성별 (3/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q4</span>환자의 거동 상태를 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z04.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="motion01" name="motion" />
+                    <label for="motion01">자가 보행</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="motion02" name="motion" />
+                    <label for="motion02">거동 불가</label>
+                  </li>
+                  <li class="addSel">
+                    <p>보조 기구를 사용하신다면 선택해 주세요.<em>(중복 선택 가능)</em></p>
+                    <ul>
+                      <li class="checkBoxSel">
+                        <input type="checkbox" id="assist01" name="assist" />
+                        <label for="assist01">지팡이</label>
+                      </li>
+                      <li class="checkBoxSel">
+                        <input type="checkbox" id="assist02" name="assist" />
+                        <label for="assist02">휠체어</label>
+                      </li>
+                      <li class="checkBoxSel">
+                        <input type="checkbox" id="assist03" name="assist" />
+                        <label for="assist03">기타</label>
+                      </li>
+                      <!-- 
+                        1글자 이상 입력시 : span 에 txtGrey
+                        제한글자수 전부 입력시 : p 에 txtGrey
+                      -->
+                      <li class="limitTextarea">
+                        <textarea
+                          placeholder="거동 시 사용하시는 보조 기구를 입력해 주세요."
+                        ></textarea>
+                        <p><span>0</span>/30자</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="notifiRegis__paitDet--btn">
+                  <button type="button"><u>설명이 필요하다면 눌러주세요!</u></button>
+                </div>
+              </div>
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q5</span>환자 식사 보조 여부를 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_J02.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="helpMeal01" name="helpMeal" />
+                    <label for="helpMeal01">네</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="helpMeal02" name="helpMeal" />
+                    <label for="helpMeal02">아니요</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="notifiRegisListWrap breakLine">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q6</span>케어메이트 식사 제공 여부를 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z05.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="provideMeal01" name="provideMeal" />
+                    <label for="provideMeal01">미제공</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="provideMeal02" name="provideMeal" />
+                    <label for="provideMeal02">제공</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="notifiRegisListWrap">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3><span>Q7</span>선호하는 케어메이트 성별을 선택해 주세요.</h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_E03.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="gender01" name="gender" />
+                    <label for="gender01">남성</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="gender02" name="gender" />
+                    <label for="gender02">여성</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="gender03" name="gender" />
+                    <label for="gender03">성별 무관</label>
+                  </li>
+                </ul>
+                <div class="notifiRegis__paitDet--btn">
+                  <button type="button"><u>설명이 필요하다면 눌러주세요!</u></button>
+                </div>
+              </div>
+            </article>
+            <!-- //거동상태, 성별 (3/5)-->
+
+            <!-- 코로나 검사 (4/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3>
+                    <span>Q6</span>케어메이트의 병원 입실 시 필요한 코로나 검사 종류를 선택해
+                    주세요.
+                  </h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_F01.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList halfSel">
+                  <li class="radioCheckSel">
+                    <input type="radio" id="corona01" name="corona" />
+                    <label for="corona01">필요 없음</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="corona02" name="corona" />
+                    <label for="corona02">PCR</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="corona03" name="corona" />
+                    <label for="corona03">신속항원검사</label>
+                  </li>
+                  <li class="radioCheckSel">
+                    <input type="radio" id="corona04" name="corona" />
+                    <label for="corona04">자가진단키트</label>
+                  </li>
+                </ul>
+                <!-- 간병 장소가 병/의원일때만 노출 -->
+                <ul class="notifiRegis__grey--info">
+                  <li>
+                    <h3>
+                      <span>잘 모르겠다면?</span><br />
+                      <u>입원 병원의 코로나 19 검사 정책</u> 확인
+                    </h3>
+                    <p class="dash">케어메이트 검사 의무 등 출입 정책</p>
+                    <p class="dash">필수 검사 종류 등</p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!-- //코로나 검사 (4/5) -->
+
+            <!-- 요청사항 (5/5) -->
+            <article class="notifiRegis__paitDet">
+              <div class="notifiRegisListWrap">
+                <div class="notifiRegis__paitDet--tit">
+                  <h3>
+                    <span>Q7</span>케어메이트에게 전하고 싶은 말을 선택하거나 입력해 주세요.
+                    <em>(중복 선택 가능)</em>
+                  </h3>
+                  <figure>
+                    <img src="../img/ic_patiStat_Z06.svg" alt="" aria-hidden />
+                  </figure>
+                </div>
+                <ul class="notifiRegisList">
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="request01" name="request" />
+                    <label for="request01">위생/청결 관리에 신경 써주세요.</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="request02" name="request" />
+                    <label for="request02">보호자 및 환자와의 의사소통을 중요하게 생각해요.</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="request03" name="request" />
+                    <label for="request03">의료인의 지시에 잘 따라주세요.(처방약 복용 등)</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="request04" name="request" />
+                    <label for="request04">간병 일지를 꼼꼼하게 작성해 주세요.</label>
+                  </li>
+                  <li class="checkBoxSel">
+                    <input type="checkbox" id="request05" name="request" />
+                    <label for="request05">기타</label>
+                    <!-- 
+                      1글자 이상 입력시 : span 에 txtGrey
+                      제한글자수 전부 입력시 : p 에 txtGrey
+                    -->
+                    <div class="limitTextarea h175">
+                      <textarea
+                        placeholder="선택 항목 이외에 케어메이트에게 전하고 싶은 말을 적어주세요."
+                        id="request"
+                      ></textarea>
+                      <p><span>0</span>/200자</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!-- //요청사항 (5/5) -->
+          </section>
+        </div>
+
+        <!-- 
+          ## 프로그레스 스텝별 하단 버튼 노출 조건
+          (1/5) , (2/5) , (3/5) , (5/5) : btnWrap pt0 노출
+          (4/5) : noticeGrey 노출
+        -->
+
+        <!-- 코로나 회색 안내 사항 -->
+        <!-- <section class="noticeGrey">
+          <h2>코로나 19 검사 비용 안내</h2>
+          <p class="dash">
+            <b>검사 비용은 보호자 부담</b>이며, 케어메이트의 개인 비용으로 선 검사 후 현장에서
+            지급합니다.
+          </p>
+          <p class="dash">
+            검사 완료 이후 <b>보호자님이 간병을 취소할 경우, 검사 비용은 보호자님께서 지급</b>해
+            주셔야 합니다.
+          </p>
+
+          <p class="dash">
+            간병이 24시간 이내 시작되는 경우 코로나 검사 소요 시간에 따라 매칭이 어려울 수 있습니다.
+          </p>
+
+          <p class="dash">
+            <b>검사 비용은 보호자 부담</b>이며, 케어메이트의 개인 비용으로 선 검사 후 현장에서
+            지급합니다.
+          </p>
+          <p class="dash">
+            검사 완료 이후 <b>보호자님이 간병을 취소할 경우, 검사 비용은 보호자님께서 지급</b>해
+            주셔야 합니다.
+          </p>
+          <div class="btnWrap">
+            <button type="button" class="outlineTxtBtn">이전</button>
+            <button type="button" class="solidBtn">다음</button>
+          </div>
+        </section> -->
+        <!-- // 코로나 회색 안내 사항 -->
+
+        <div class="btnWrap pt0">
+          <button type="button" class="outlineTxtBtn">이전</button>
+          <button type="button" class="solidBtn">다음</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", function () {
+            window.location.href = "1-9.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

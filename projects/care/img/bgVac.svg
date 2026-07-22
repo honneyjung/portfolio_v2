@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <g data-name="타원 793" style="fill:#fbfbfb;stroke:#f1f1f1">
+        <circle cx="30" cy="30" r="30" style="stroke:none"/>
+        <circle cx="30" cy="30" r="29.5" style="fill:none"/>
+    </g>
+    <g data-name="그룹 7380">
+        <path data-name="사각형 2894" transform="rotate(135 13.346 29.197)" style="stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px;fill:#affce2" d="M0 0h4.276v6.166H0z"/>
+        <path data-name="사각형 2895" transform="rotate(135 13.289 25.609)" style="fill:#fff;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M0 0h9.154v20.882H0z"/>
+        <path data-name="사각형 2896" transform="rotate(135 7.744 15.673)" style="stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px;fill:#affce2" d="M0 0h4.276v4.888H0z"/>
+        <path data-name="선 611" style="fill:#c3e0fc;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M4.26 4.26 0 0" transform="translate(15.074 15.074)"/>
+        <path data-name="선 612" transform="translate(38.68 38.68)" style="fill:#fff;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M6.473 0 0 6.473"/>
+        <path data-name="선 613" transform="translate(30.165 34.616)" style="fill:#c3e0fc;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M0 2.022 2.022 0"/>
+        <path data-name="선 614" transform="translate(27.831 32.282)" style="fill:#c3e0fc;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M0 2.022 2.022 0"/>
+        <path data-name="선 615" transform="translate(25.497 29.948)" style="fill:#c3e0fc;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M0 2.022 2.022 0"/>
+        <path data-name="선 616" transform="translate(23.163 27.614)" style="fill:#c3e0fc;stroke:#1bb480;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px" d="M0 2.022 2.022 0"/>
+    </g>
+</svg>

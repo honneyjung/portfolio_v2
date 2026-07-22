@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+    <g transform="translate(-1444 -4111)">
+        <circle data-name="타원 801" cx="48" cy="48" r="48" transform="translate(1444 4111)" style="fill:#fff7f1"/>
+        <g data-name="그룹 25210">
+            <g data-name="그룹 25208">
+                <g data-name="그룹 25207">
+                    <path data-name="패스 31326" d="M638.4 555.15v-24.828a3.418 3.418 0 0 1 3.419-3.418h11.35a3.418 3.418 0 0 1 3.419 3.418v24.828" transform="translate(844.464 3618.096)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"/>
+                    <path data-name="선 854" transform="translate(1488.366 4161.519)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px" d="M0 0h7.659"/>
+                    <path data-name="선 855" transform="translate(1488.366 4166.544)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px" d="M0 0h7.659"/>
+                </g>
+                <path data-name="패스 31327" d="M636.617 538.57h-2.129a3.417 3.417 0 0 0-3.418 3.418v12.556a3.418 3.418 0 0 0 3.418 3.418h23.077a3.418 3.418 0 0 0 3.418-3.418v-12.556a3.417 3.417 0 0 0-3.418-3.418h-1.871" transform="translate(845.93 3615.763)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"/>
+            </g>
+            <g data-name="그룹 25209">
+                <path data-name="선 856" transform="translate(1491.957 4150.161)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px" d="M0 0v5.041"/>
+                <path data-name="선 857" transform="translate(1489.437 4152.681)" style="fill:none;stroke:#7e4f40;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px" d="M0 0h5.041"/>
+            </g>
+        </g>
+    </g>
+</svg>

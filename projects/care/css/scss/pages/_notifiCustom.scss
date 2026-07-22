@@ -1,0 +1,183 @@
+.notifiCustom {
+  .pageTit {
+    padding-bottom: 32px;
+    border-bottom: 1px solid $white-three;
+  }
+  h3 {
+    margin-bottom: 16px;
+    @include font-style(18);
+    span {
+      display: block;
+      margin-bottom: 2px;
+      @include font-style(14, $brownish, bol);
+    }
+  }
+  &__sel {
+    .radioSelectCheck__box {
+      label {
+        height: 174px;
+        background-size: 50px;
+      }
+    }
+    &.first {
+      padding: 24px 20px 0;
+      .radioSelectCheck__box {
+        label {
+          padding-top: 82px;
+          background-position: center 24px;
+        }
+      }
+    }
+    &.second {
+      padding: 24px 20px;
+      .radioSelectCheck__box {
+        label {
+          padding-top: 104px;
+          background-position: center 46px;
+        }
+      }
+    }
+  }
+  &__popup {
+    padding: 120px 20px 0;
+    text-align: center;
+    background-size: 64px;
+    background-position: center 40px;
+    h3 {
+      @include font-style(20);
+    }
+    > p {
+      margin-top: 8px;
+      @include font-style(16, $black-two);
+      @media screen and (max-width: 321px) {
+        br {
+          display: none;
+        }
+      }
+    }
+    h4 {
+      @include font-style(16, $black-two);
+    }
+    &--det {
+      margin-top: 24px;
+      text-align: left;
+      p {
+        padding: 8px 12px 8px 34px;
+        margin: 0 auto;
+        border-radius: 18px;
+        background: url(../img/icon_bulb_y.svg) no-repeat calc(50% - 141px) 10px / 16px $egg-shell;
+        text-align: center;
+        @include font-style(14, $black-two, med);
+      }
+      @media screen and (max-width: 400px) {
+        p {
+          text-align: left;
+          background-position: 14px 10px;
+        }
+      }
+    }
+  }
+  &__personInfo {
+    padding: 24px 20px 40px;
+    &--fetch {
+      h3 {
+        margin-bottom: 8px;
+        @include font-style(16, color, med);
+      }
+      > div {
+        @include flexbox(start, center);
+        gap: 8px;
+        button {
+          width: auto;
+          padding: 8px 12px;
+          @include font-style(14, $warm-grey);
+          line-height: 1;
+          background-color: $white;
+          border: solid 1px $white-three;
+          border-radius: 20px;
+          &.active {
+            font-weight: $med-w;
+            color: $white;
+            background-color: #666;
+            border-color: #666;
+          }
+          &:disabled {
+            background-color: $white-five;
+            color: $cool-grey;
+          }
+        }
+      }
+    }
+    &--form {
+      margin-top: 20px;
+      padding: 20px 16px;
+      @include border-box($white-three, 12px, $white);
+      li {
+        > label {
+          margin-bottom: 8px;
+          @include font-style(18, color, med);
+          span {
+            @include font-style(12, $warm-grey-two, nor);
+          }
+        }
+        > div {
+          position: relative;
+          @include flexbox(center, center);
+          div {
+            position: relative;
+            width: 100%;
+          }
+          span {
+            flex-shrink: 0;
+            width: 35px;
+            @include font-style(16, $cocoa, med);
+            text-align: right;
+          }
+          .reset {
+            background-position: center;
+          }
+          &.half {
+            @include flexbox(between, center);
+            div {
+              width: calc(50% - 4px);
+            }
+          }
+        }
+        em {
+          margin-top: 8px;
+          @include font-style(14, $faded-red);
+          font-style: normal;
+        }
+        ~ li {
+          margin-top: 24px;
+        }
+      }
+      ~ .notifiCustom__personInfo--radio {
+        margin-top: 24px;
+        > div {
+          @include flexbox(center, center);
+        }
+      }
+    }
+    &--radio {
+      label {
+        margin-bottom: 8px;
+        @include font-style(18, color, med);
+      }
+      .radioBoxSel {
+        label {
+          background-color: $white;
+        }
+        input {
+          &:disabled {
+            + label {
+              background-color: $white-five;
+              color: $cool-grey;
+              font-weight: $nor-w;
+            }
+          }
+        }
+      }
+    }
+  }
+}

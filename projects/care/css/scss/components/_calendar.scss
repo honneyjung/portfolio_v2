@@ -1,0 +1,197 @@
+.calendar {
+  text-align: center;
+  &:has(.calendar__tit button) {
+    .calendar__tit {
+      padding-bottom: 16px;
+      h4 {
+        @include font-style(18);
+      }
+    }
+    .calendar__detail {
+      padding-top: 10px;
+    }
+  }
+  ~ .calendar {
+    margin-top: 8px;
+  }
+  &.time {
+    .calendar__tit {
+      justify-content: center;
+    }
+  }
+  &__tit {
+    @include flexbox(between, center);
+    position: relative;
+    padding-bottom: 8px;
+    h4 {
+      @include font-style(16, $black-two);
+    }
+  }
+  .prev,
+  .next {
+    @include font-style(14, $black-two, bol);
+    width: 75px;
+    height: 34px;
+    border: solid 1px $white-three;
+    border-radius: 18px;
+    background: no-repeat 12px center / 6px $white-four;
+    flex-shrink: 0;
+    &:disabled {
+      color: $cool-grey;
+      background-color: $white-two;
+    }
+    @media screen and (max-width: 321px) {
+      width: 62px;
+      height: 28px;
+    }
+  }
+  .prev {
+    padding-right: 12px;
+    background-image: url(../img/arrowLeft-7.svg);
+    text-align: right;
+    &:disabled {
+      background-image: url(../img/arrowLeft-a.svg);
+    }
+    @media screen and (max-width: 321px) {
+      background-position: 10px;
+      padding-right: 8px;
+    }
+  }
+  .next {
+    padding-left: 12px;
+    background-image: url(../img/arrowRight-7.svg);
+    background-position: right 12px center;
+    &:disabled {
+      background-image: url(../img/arrowRight-a.svg);
+    }
+    @media screen and (max-width: 321px) {
+      padding-left: 8px;
+      background-position: right 10px center;
+    }
+  }
+  &__head {
+    @include flexbox(inherit, center);
+    span {
+      padding: 10px 0;
+      width: 14.285%;
+      @include font-style(14, $black-two, med);
+    }
+  }
+  &__detail {
+    border-top: solid 1px $white-three;
+    &--col {
+      @include flexbox(inherit, center);
+      span {
+        position: relative;
+        z-index: 1;
+        margin: 4px 0;
+        width: 14.285%;
+        height: 32px;
+        @include font-style(14, $greyish-brown, med);
+        line-height: 32px;
+      }
+      .ing {
+        background-color: #fff2ed;
+        font-weight: $med-w;
+        color: $greyish-brown !important;
+
+        &.sun:after,
+        &.sat:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: -1;
+          margin-top: -16px;
+          margin-left: -16px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: #fff2ed;
+        }
+        &.sun:before,
+        &.sat:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          z-index: -2;
+          margin-top: -16px;
+          width: 50%;
+          height: 32px;
+          background-color: #fff2ed;
+        }
+        &.sun:before {
+          right: 0;
+        }
+        &.sat:before {
+          left: 0;
+        }
+        &.sun,
+        &.sat {
+          background-color: transparent;
+        }
+      }
+      .sel {
+        z-index: 2;
+        color: $white !important;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: -1;
+          margin-top: -16px;
+          margin-left: -16px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: $brownish;
+        }
+      }
+      .start,
+      .finish {
+        z-index: 2;
+        background-color: transparent;
+        color: $white !important;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: -1;
+          margin-top: -16px;
+          margin-left: -16px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: $brownish;
+        }
+        &.ing {
+          &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            z-index: -2;
+            margin-top: -16px;
+            width: 50%;
+            height: 32px;
+            background-color: #fff2ed;
+          }
+        }
+      }
+      .start.ing {
+        &:before {
+          right: 0;
+        }
+      }
+      .finish.ing {
+        &:before {
+          left: 0;
+        }
+      }
+      .disabled {
+        color: transparent !important;
+      }
+    }
+  }
+}

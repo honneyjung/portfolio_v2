@@ -1,5 +1,7 @@
-images/
-project/care/
-project/carenation_v2/
-project/hemily-health/*
-!project/hemily-health/frontend
+node_modules/
+dist-ssr/
+*.local
+.DS_Store
+
+# 해밀리헬스 백엔드/관리자 소스 — 회사 비공개 코드, 포트폴리오 배포 대상 아님
+project/

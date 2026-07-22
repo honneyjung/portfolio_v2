@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>메인</title>
+  </head>
+  <body>
+    <header class="mainHeader">
+      <div class="headerWrap">
+        <div>
+          <h1><img src="../img/carenationLogo.svg" alt="케어네이션" /></h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <section class="careMain">
+            <article class="careMain__ban">
+              <!-- Swiper 슬라이드 래퍼 -->
+              <div class="swiper careMain__ban--swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="careMain__ban--item01">
+                      <h2>차승원이 소개하는 <strong>간병 서비스</strong></h2>
+                      <span>동영상 보기</span>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="careMain__ban--item02">
+                      <img src="../img/careMainLogo.svg" alt="대한민국 1등 간병앱" />
+                      <h2>
+                        <strong>서울</strong>에서 <strong>제주</strong>까지 <br />
+                        24시간 <strong>실시간</strong> 매칭 중!
+                      </h2>
+                      <p>가장 많은 간병인이 선택했어요!</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="careMain__ban--item03">
+                      <p>보험 가입 자동화</p>
+                      <h2>
+                        삼성화재<br />
+                        간병인배상책임보험 출시
+                      </h2>
+                      <img src="../img/careMainLogo02.svg" alt="케어네이션 X 삼성화재" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="careMain__ban--item04">
+                      <p>교통사고보상금·산재보상금·장해보험금</p>
+                      <h2>
+                        <strong>놓친 보상금</strong>
+                        <br />
+                        있는지 궁금하다면?
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 슬라이드 번호 표시 -->
+              <div class="careMain__ban--num">
+                <span class="ban-current">1</span> / <span class="ban-total">4</span>
+              </div>
+            </article>
+            <button type="button" class="careMain__btn">간병 서비스 신청하기</button>
+            <!-- <article class="careMain__regiSta breakLine">
+              <h3>최저가 지원 현황</h3>
+              <ul>
+                <li>
+                  <a href="" class="notifiItems">
+                    <img src="../img/noticeItemsLabel01.svg" alt="시간제 간병" />
+                    <div class="notifiItems__label">
+                      <span class="label RD">마감 <strong>00 : 00 : 00 </strong> </span>
+                      <span class="label GY">지원한 케어메이트 : 5명</span>
+                    </div>
+                    <dl class="notifiItems__info">
+                      <div>
+                        <dt>간병일</dt>
+                        <dd>YYYY.MM.DD ~ YYYY.MM.DD</dd>
+                      </div>
+                      <div>
+                        <dt>현재 최저가</dt>
+                        <dd>80,000원</dd>
+                      </div>
+                    </dl>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="notifiItems">
+                    <img src="../img/noticeItemsLabel02.svg" alt="기간제 간병" />
+                    <div class="notifiItems__label">
+                      <span class="label RD">마감 <strong>00 : 00 : 00 </strong> </span>
+                      <span class="label GY">지원한 케어메이트 : 5명</span>
+                    </div>
+                    <dl class="notifiItems__info">
+                      <div>
+                        <dt>간병일</dt>
+                        <dd>YYYY.MM.DD ~ YYYY.MM.DD</dd>
+                      </div>
+                      <div>
+                        <dt>현재 최저가</dt>
+                        <dd>80,000원</dd>
+                      </div>
+                    </dl>
+                  </a>
+                </li>
+              </ul>
+              <button type="button" class="active"><span>00</span>건의 간병 현황 더 보기</button>
+            </article> -->
+            <article class="careMain__datSta">
+              <h3>케어네이션 이용 현황</h3>
+              <p>서비스 출시부터 현재까지의 기록입니다.</p>
+              <dl class="careMain__datSta--join">
+                <dt>가입 케어메이트</dt>
+                <dd><strong>91,700</strong>명</dd>
+              </dl>
+              <ul>
+                <li class="mainDataInfo">
+                  <h4><mark class="markBrw">케어네이션 케어메이트 정보</mark></h4>
+                  <div class="mainDataInfo__chart">
+                    <div class="mainDataInfo__chart--canvas">
+                      <canvas id="caremateChart"></canvas>
+                    </div>
+                    <div class="mainDataInfo__chart--legend">
+                      <dl>
+                        <div>
+                          <dt>내국인</dt>
+                          <dd>80.1</dd>
+                        </div>
+                        <div>
+                          <dt>외국인</dt>
+                          <dd>20.2</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="mainDataInfo__line">
+                    <div class="mainDataInfo__line--bar">
+                      <div style="width: 41%"></div>
+                    </div>
+                    <div class="mainDataInfo__line--info">
+                      <p>여성 : <span>41.2</span></p>
+                      <p>남성 : <span>59.1</span></p>
+                    </div>
+                  </div>
+                  <span>* 인증 케어메이트 기준</span>
+                </li>
+                <li class="mainDataUse">
+                  <p>23,881</p>
+                  <h4>누적 이용 건수</h4>
+                </li>
+                <li class="mainDataTime">
+                  <p><span>24</span><span>154</span></p>
+                  <h4>누적 간병시간</h4>
+                </li>
+                <li class="mainDataAccou">
+                  <h4>누적 승인 금액</h4>
+                  <p>5,104,291,700</p>
+                </li>
+              </ul>
+              <div class="adBanner">
+                <a href="" class="AD01">
+                  <strong>케어네이션 장기요양 서비스</strong>
+                  <button type="button">더 알아보기</button>
+                  <span class="ad">AD</span>
+                </a>
+                <!-- <a href="" class="AD02">
+                  <strong>케어네이션 <span>유니폼 출시!</span></strong>
+                  <p>유니폼 보러가기<img src="../img/arrowRight-7.svg" alt="" /></p>
+                  <span class="ad">AD</span>
+                </a>
+                <a href="" class="AD03">
+                  <strong>교통사고보상금·산재보상금·장해보험금</strong>
+                  <p>
+                    <strong>놓친 보상금</strong> 있는지 궁금하다면?<img
+                      src="../img/arrowRight-c.svg"
+                      alt=""
+                    />
+                  </p>
+                </a> -->
+              </div>
+            </article>
+            <article class="careMain__review">
+              <h3>보호자님이 남긴 후기</h3>
+              <p>새롭게 올라오는 후기를 확인해 보세요!</p>
+              <div class="careMain__review--list">
+                <a href="">
+                  <div>
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>1분 전</i>
+                  </div>
+                  <p>
+                    <span>김*자 케어메이트에게</span>별 바람은 내 나 나 그리고 일로도 아무것도 내
+                    목란배 사막으로 것은 생각이다. 때​ 하늘에는 오매불망 마른 봅니다. 내게 쓸쓸함과
+                    같이 박명의 올라와 백골이 시절 했다.
+                  </p>
+                  <small>4.2</small>
+                </a>
+                <a href="">
+                  <div>
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>1분 전</i>
+                  </div>
+                  <p>
+                    <span>김*자 케어메이트에게</span> 강 소멸시키는 그러나 하염없이 말없이 하나에
+                    당신은 그리하여 나 위에 봅니다. 먼지와 드러냈다.
+                  </p>
+                  <small>4.2</small>
+                </a>
+                <a href="">
+                  <div>
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>1분 전</i>
+                  </div>
+                  <p>
+                    <span>김*자 케어메이트에게</span> 오는 언제나 푸른 오, 번을 저녁 우리가 대지에
+                    보네 다하지 마음 파란 됐다.
+                  </p>
+                  <small>4.2</small>
+                </a>
+                <a href="">
+                  <div>
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>1분 전</i>
+                  </div>
+                  <p>
+                    <span>김*자 케어메이트에게</span> 대지의 못하는 갈라놓는 꽃을 사람들의 사막으로
+                    함께 걸 마음 날에 너를 부드럽게, 한다
+                  </p>
+                  <small>4.2</small>
+                </a>
+                <a href="">
+                  <div>
+                    <span><strong>홍*동</strong>보호자</span>
+                    <i>1분 전</i>
+                  </div>
+                  <p>
+                    <span>김*자 케어메이트에게</span> 생명이 별 가거라 모습 죽은 위에 청명한 노새,
+                    새워 잠자야 있다 거리가 말했다.
+                  </p>
+                  <small>4.2</small>
+                </a>
+                <button type="button">전체 더보기</button>
+              </div>
+            </article>
+            <article class="careMain__info">
+              <h3>케어네이션 간병정보</h3>
+              <div class="swiper careMain__info--swiper">
+                <div class="swiper-wrapper careMain__info--list">
+                  <div class="swiper-slide">
+                    <a href="" class="slide01">
+                      <p>보호자 아보카도님의 사연</p>
+                      <h4>
+                        간병인과 따로<br />
+                        직거래하면 안되나요?
+                      </h4>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="" class="slide02">
+                      <p>정답 확인해보세요!</p>
+                      <h4>
+                        간병인 구하기 전<br />
+                        필수로 확인해야할 이것은?
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <ul class="careMain__info--dot swiper-pagination"></ul>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
