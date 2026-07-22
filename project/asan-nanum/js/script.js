@@ -300,3 +300,32 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
+
+/* ==============================
+         main__pagenation : 스크롤 위치에 맞춰 active 버튼 전환
+         – 뷰포트 중앙이 위치한 섹션을 찾아 해당 버튼에 active 부여
+      ============================== */
+(function () {
+  const pagenation = $(".main__pagenation");
+  if (!pagenation) return;
+
+  const buttons = $$("button", pagenation);
+  const sections = $$(
+    ".main__visual, .mainNews, .mainBiz, .mainStartup, .mainInno, .mainEco, footer"
+  );
+  if (buttons.length !== sections.length) return;
+
+  function setActive() {
+    const centerY = window.scrollY + window.innerHeight / 2;
+    let idx = 0;
+    sections.forEach((section, i) => {
+      if (section.offsetTop <= centerY) idx = i;
+    });
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    buttons[idx].classList.add("active");
+  }
+
+  window.addEventListener("scroll", setActive, { passive: true });
+  window.addEventListener("resize", setActive);
+  setActive();
+})();
