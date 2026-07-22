@@ -1,0 +1,140 @@
+/* 한 줄 평 남기기 - 유니폼 */
+.review {
+  &__uniform {
+    padding: 32px 20px;
+    h3 {
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* 보호자님이 남긴 후기 */
+.mainViwList {
+  .pageTit {
+    padding-bottom: 32px;
+    border-bottom: solid 1px $white-three;
+  }
+  &__list {
+    padding: 0 20px 16px;
+    li {
+      position: relative;
+      padding: 24px 0;
+      border-bottom: solid 1px $white-three;
+      &:last-child {
+        border-bottom: 0;
+      }
+      &.focus {
+        padding: 24px 20px 28px;
+        margin-top: 24px;
+        border-bottom: 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+        .mainViwList__list--asol {
+          right: -4px;
+        }
+      }
+      &.block {
+        padding-bottom: 12px;
+        p {
+          padding: 12px 0;
+          margin-bottom: 0;
+          border-radius: 8px;
+          background-color: rgba(246, 246, 246, 0.9);
+          text-align: center;
+          span {
+            display: block;
+            margin-top: 2px;
+            @include font-style(14, $warm-grey);
+          }
+        }
+      }
+    }
+    &--txt {
+      > span,
+      > i {
+        display: block;
+        padding-right: 86px;
+      }
+      > span {
+        @include flexbox(inherit, center);
+        flex-wrap: wrap;
+        @include font-style(14, $warm-grey, med);
+        strong {
+          margin-right: 8px;
+          @include font-style(16, $black);
+        }
+      }
+      i {
+        margin: 4px 0 8px;
+        @include font-style(12, $warm-grey);
+        line-height: 1;
+      }
+      p {
+        margin-bottom: 12px;
+        @include font-style(16);
+        word-break: break-all;
+      }
+      small {
+        padding: 4px 10px;
+        border-radius: 20px;
+        background-color: $white-five;
+        @include font-style(14, $black-two);
+        line-height: 1;
+      }
+    }
+    &--asol {
+      @include flexbox(inherit, center);
+      position: absolute;
+      top: 24px;
+      right: -20px;
+      z-index: 1;
+      strong {
+        padding: 9px 10px 9px 34px;
+        border-radius: 20px;
+        background: url(../img/bgStarOne.svg) no-repeat 10px center / 16px $egg-shell;
+        @include font-style(16);
+        line-height: 1;
+      }
+      > button {
+        width: 44px;
+        height: 34px;
+        background: url(../img/iconDotVer-3.svg) no-repeat right 20px center / 16px;
+        @extend %text-hidden;
+      }
+      > div {
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: 20px;
+        z-index: 2;
+        padding: 5px 0;
+        @include border-box($white-three, 12px, $white);
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+        &.on {
+          display: block;
+        }
+        button {
+          display: block;
+          padding: 6px 12px 6px 32px;
+          background: no-repeat 12px center / 16px;
+          @include font-style(14, $black-two);
+        }
+        .blockBtn {
+          background-image: url(../img/iconBlock.svg);
+        }
+        .reportBtn {
+          background-image: url(../img/iconReport.svg);
+        }
+        .unlockBtn {
+          background-image: url(../img/iconUnlock.svg);
+        }
+      }
+    }
+  }
+}

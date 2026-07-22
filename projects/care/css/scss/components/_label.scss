@@ -1,0 +1,51 @@
+/* 라벨 스타일 */
+%label-style {
+  display: inline-block;
+  padding: 7px 8px;
+  border-radius: 4px;
+  @include font-style(14, color, med);
+  line-height: 1;
+}
+.label {
+  @extend %label-style;
+  &.RD {
+    background-color: #ffecee;
+    color: $faded-red;
+  }
+  &.YW {
+    background-color: #ffffb9;
+    color: #b37200;
+  }
+  &.BU {
+    background-color: #edf5fd;
+    color: #0a6cd8;
+  }
+  &.GY {
+    background-color: $white-five;
+    color: $greyish-brown;
+  }
+  &.GN {
+    background-color: #e5fae5;
+    color: #3f9b3f;
+  }
+  &.auto {
+    padding-left: 24px;
+    background: url(../img/ic_auto_cocoa.svg) no-repeat 8px center / 14px $white-five;
+    color: $cocoa;
+  }
+  span {
+    color: $black-two;
+  }
+}
+.awardsLabel {
+  padding: 9px 13px 1px;
+  background: url(../img/img_awards_label01.svg) no-repeat 0 bottom,
+    url(../img/img_awards_label02.svg) no-repeat 13px 0,
+    url(../img/img_awards_label03.svg) no-repeat right bottom;
+  @include font-style(14, $cocoa, med);
+
+  @media screen and (max-width: 321px) {
+    padding: 8px 9px 1px;
+    background-size: 8px, 10px, 8px;
+  }
+}

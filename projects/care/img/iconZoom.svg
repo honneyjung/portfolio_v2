@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <filter id="prefix__사각형_715" width="48" height="48" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".141"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .prefix__cls-2{fill:#303030}
+        </style>
+    </defs>
+    <g id="prefix__그룹_1491" data-name="그룹 1491" transform="translate(-293 -290)">
+        <g filter="url(#prefix__사각형_715)" transform="translate(293 290)">
+            <g id="prefix__사각형_715-2" fill="#fff" stroke="#e1e1e1" data-name="사각형 715">
+                <path stroke="none" d="M0 0H30V30H0z" transform="translate(9 7)"/>
+                <path fill="none" d="M0.5 0.5H29.5V29.5H0.5z" transform="translate(9 7)"/>
+            </g>
+        </g>
+        <g id="prefix__그룹_1490" data-name="그룹 1490" transform="translate(307 302)">
+            <path id="prefix__패스_1413" d="M285.061 884.331a.359.359 0 0 0 .359-.358v-6.106h6.105a.358.358 0 1 0 0-.717h-6.464a.358.358 0 0 0-.358.358v6.464a.358.358 0 0 0 .358.359z" class="prefix__cls-2" data-name="패스 1413" transform="translate(-284.704 -877.149)"/>
+            <path id="prefix__패스_1414" d="M291.15 886.123a.455.455 0 0 0 .322-.777l-8.062-8.063a.456.456 0 0 0-.645.644l8.063 8.063a.453.453 0 0 0 .322.133z" class="prefix__cls-2" data-name="패스 1414" transform="translate(-282.632 -877.149)"/>
+            <path id="prefix__패스_1415" d="M275.822 892.852a.359.359 0 0 0-.358.359v6.105h-6.105a.359.359 0 0 0 0 .718h6.463a.359.359 0 0 0 .359-.359v-6.463a.359.359 0 0 0-.359-.36z" class="prefix__cls-2" data-name="패스 1415" transform="translate(-256.182 -880.033)"/>
+            <path id="prefix__패스_1416" d="M269.456 890.781a.456.456 0 0 0-.322.778l8.062 8.063a.456.456 0 0 0 .645-.645l-8.063-8.063a.453.453 0 0 0-.322-.133z" class="prefix__cls-2" data-name="패스 1416" transform="translate(-257.975 -879.754)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>간병 기간 선택 - 시간제</title>
+  </head>
+  <body>
+    <!-- 
+      기본값 : headerComu / h1에 a11y-hidden 추가
+      스크롤 됐을 때 : headerComu 와 a11y-hidden 삭제 (carenation 헤더와 동일)
+    -->
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">간병 시간</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <section class="notifiRegis">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+              </ul>
+            </div>
+            <div class="pageTit">
+              <h2>간병 시간을 선택해 주세요.</h2>
+            </div>
+            <article class="notifiRegis__daySel">
+              <div class="notifiRegis__daySel--cal breakLine">
+                <h3 class="a11y-hidden">달력</h3>
+                <div class="calendarTimeSel">
+                  <div class="calendarTimeSel__info">
+                    <h4>
+                      간병이 필요한 날짜를<br />
+                      모두 선택해 주세요!
+                    </h4>
+                    <p>
+                      오늘 기준으로 <span class="txtRed">최대 45일</span>까지만 선택할 수 있어요.
+                    </p>
+                    <button type="button" class="outlineRouBtn intial">초기화</button>
+                  </div>
+                </div>
+                <div class="calendar">
+                  <div class="calendar__tit pb2">
+                    <h4>2024. 08</h4>
+                  </div>
+                  <div class="calendar__head">
+                    <span class="txtRed">일</span>
+                    <span>월</span>
+                    <span>화</span>
+                    <span>수</span>
+                    <span>목</span>
+                    <span>금</span>
+                    <span>토</span>
+                  </div>
+                  <div class="calendar__detail">
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">16</span>
+                      <span>17</span>
+                      <span>18</span>
+                      <span>19</span>
+                      <span class="sel">20</span>
+                      <span>21</span>
+                      <span>22</span>
+                    </div>
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">23</span>
+                      <span>24</span>
+                      <span>25</span>
+                      <span>26</span>
+                      <span class="sel">28</span>
+                      <span>29</span>
+                      <span>30</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar">
+                  <div class="calendar__tit">
+                    <h4>2024. 09</h4>
+                  </div>
+                  <div class="calendar__detail">
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span class="">4</span>
+                      <span class="">5</span>
+                      <span class="">6</span>
+                      <span class="">7</span>
+                    </div>
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">8</span>
+                      <span class="">9</span>
+                      <span class="">10</span>
+                      <span class="">11</span>
+                      <span class="sel">12</span>
+                      <span class="">13</span>
+                      <span class="">14</span>
+                    </div>
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">15</span>
+                      <span class="sel">16</span>
+                      <span class="">17</span>
+                      <span class="">18</span>
+                      <span class="">19</span>
+                      <span class="sel">20</span>
+                      <span class="sel">21</span>
+                    </div>
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">22</span>
+                      <span>23</span>
+                      <span>24</span>
+                      <span>25</span>
+                      <span class="sel">26</span>
+                      <span>27</span>
+                      <span>28</span>
+                    </div>
+                    <div class="calendar__detail--col">
+                      <span class="txtRed">29</span>
+                      <span>30</span>
+                      <span>31</span>
+                      <span class="disabled">1</span>
+                      <span class="disabled">2</span>
+                      <span class="disabled">3</span>
+                      <span class="disabled">4</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar">
+                  <div class="calendar__tit">
+                    <h4>2024. 10</h4>
+                  </div>
+                  <div class="calendar__detail">
+                    <div class="calendar__detail--col">
+                      <span class="disabled">29</span>
+                      <span class="disabled">30</span>
+                      <span class="disabled">31</span>
+                      <span class="">1</span>
+                      <span class="">2</span>
+                      <span class="">3</span>
+                      <span class="">4</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notifiRegis__daySel--form time">
+                <div>
+                  <label for="startDate">간병 시작 시간</label>
+                  <div class="date-start">
+                    <span class="rc-time-picker">
+                      <input
+                        class="rc-time-picker-input"
+                        id="startDate"
+                        type="text"
+                        placeholder="00:00"
+                        readonly
+                      />
+                    </span>
+                  </div>
+                </div>
+                <div class="ml8">
+                  <label for="finishDate">간병 종료 시간</label>
+                  <div class="date-start">
+                    <span class="rc-time-picker">
+                      <input
+                        class="rc-time-picker-input"
+                        id="finishDate"
+                        type="text"
+                        placeholder="00:00"
+                        readonly
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <dl class="notifiRegis__daySel--total time">
+                <div>
+                  <dt>해당 간병은 선택한 날짜의</dt>
+                  <dd>
+                    <strong>hh시 mm분</strong>부터<br />
+                    <strong>다음날 hh시 mm분</strong>까지 진행됩니다.
+                  </dd>
+                </div>
+                <div>
+                  <dt>총 간병 횟수</dt>
+                  <dd>
+                    <strong>NN회 (일 NN시간)</strong>
+                  </dd>
+                </div>
+              </dl>
+            </article>
+            <!-- // 간병 시간 선택 -->
+          </section>
+        </div>
+        <section class="noticeGrey">
+          <h2>지난 날짜를 시작일로 설정할 수 있나요?</h2>
+          <p>
+            불가합니다. 케어네이션은 보호자와 케어메이트 매칭을 알선하는 플랫폼입니다. 지난 날짜를
+            간병 시작일로 설정하는 것은 케어네이션과 무관하게 진행된 간병을 케어네이션을 통해 매칭된
+            것처럼 가장하는 행위이므로 금지됩니다.
+          </p>
+          <h2>간병 일정 변경 가능한가요?</h2>
+          <p class="dash">지원자가 있거나 결제가 완료된 이후에는 변경이 불가합니다.</p>
+          <p class="dash">
+            지원자가 있는 경우 : 공고 재등록<br />결제 완료 이후 : 결제 취소 후 신규 신청 (취소
+            시점에 따라 위약금 발생 가능)
+          </p>
+          <!-- 조건 미충족 시 다음 버튼 disabled -->
+          <div class="btnWrap">
+            <button type="button" class="outlineTxtBtn">이전</button>
+            <button type="button" class="solidBtn">다음</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", function () {
+            window.location.href = "1-5.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

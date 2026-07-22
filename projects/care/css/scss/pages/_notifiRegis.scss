@@ -1,0 +1,778 @@
+.notifiRegis {
+  padding-bottom: 40px;
+  &:has(.notifiRegis__paitDet) {
+    padding-bottom: 8px;
+  }
+  &:has(.notifiRegis__family) {
+    padding-bottom: 20px;
+  }
+  &__grey {
+    padding: 0 20px 32px;
+    .notifiRegisList {
+      padding-top: 16px;
+      input {
+        &:checked + label {
+          font-weight: $bol-w;
+        }
+        &[type="radio"] + label {
+          padding-top: 16px;
+          line-height: 1.5;
+          &:before {
+            top: 20px;
+            transform: none;
+          }
+          &:after {
+            top: 24px;
+            transform: none;
+            @media screen and (max-width: 321px) {
+              top: 23px;
+            }
+          }
+          small {
+            display: block;
+            margin-top: 2px;
+            @include font-style(14, $black, nor);
+          }
+        }
+      }
+    }
+    &--info {
+      padding: 20px;
+      margin-top: 24px;
+      @include border-box($white-three, 12px, $white-five);
+      li {
+        &:nth-child(2) {
+          padding-top: 20px;
+          margin-top: 20px;
+          border-top: solid 1px $white-three;
+        }
+      }
+      h3 {
+        margin-bottom: 12px;
+        @include font-style(16, $black-two);
+        span {
+          padding: 4px 10px;
+          margin-bottom: 8px;
+          border-radius: 20px;
+          background-color: $white;
+          @include font-style(14, $cocoa);
+        }
+      }
+      p {
+        @include font-style(14, $black-two);
+      }
+    }
+  }
+  &__family {
+    padding: 40px 20px 0;
+    &--question {
+      h2 {
+        margin-bottom: 16px;
+        @include font-style(20);
+      }
+      ul {
+        &:has(#familyCare02:checked) + .basicInfoSt {
+          display: block;
+        }
+        .radioCheckSel input {
+          &:checked + label {
+            font-weight: $bol-w;
+          }
+          &[type="radio"] + label {
+            padding-top: 16px;
+            line-height: 1.5;
+            &:before {
+              top: 20px;
+              transform: none;
+            }
+            &:after {
+              top: 24px;
+              transform: none;
+              @media screen and (max-width: 321px) {
+                top: 23px;
+              }
+            }
+            small {
+              display: block;
+              margin-top: 2px;
+              @include font-style(14, $black, nor);
+            }
+          }
+        }
+      }
+      .basicInfoSt {
+        display: none;
+        padding: 12px 16px;
+        margin-top: 8px;
+        border-radius: 8px;
+        strong {
+          display: block;
+          margin-bottom: 8px;
+          @include font-style(14, $black-two);
+        }
+        p {
+          margin-top: 2px;
+          @include font-style(14, $greyish-brown);
+        }
+      }
+      .alertTxt {
+        padding: 20px 0 0 22px;
+        margin-top: 40px;
+        border-top: solid 1px $white-three;
+        background: url(../img/iconNoti-grey.svg) no-repeat 0 23px;
+        @include font-style(14, $black-two);
+      }
+    }
+  }
+
+  /* 기간 선택 */
+  &__daySel {
+    padding: 0 20px;
+    &--form {
+      margin-top: 32px;
+      &.day {
+        .date-start {
+          margin-left: 8px;
+          width: 94px !important;
+        }
+      }
+      &.time {
+        @include flexbox(between, center);
+        > div {
+          width: 50%;
+        }
+        .ml8 {
+          select {
+            background: url(../img/bgTime.svg) no-repeat right 8px center;
+          }
+        }
+      }
+      li {
+        &:last-child {
+          margin-top: 20px;
+        }
+        > div {
+          @include flexbox(between, center);
+          position: relative;
+          input {
+            padding-right: 44px;
+          }
+        }
+        > span {
+          margin: 8px 0 16px 0;
+          @include font-style(14, $warm-grey);
+        }
+      }
+      label {
+        margin-bottom: 10px;
+        @include font-style(18, color, med);
+      }
+    }
+    &--total {
+      padding: 20px 16px;
+      margin-top: 16px;
+      @include border-box($white-three, 12px, $white-five);
+      div {
+        padding-left: 26px;
+        background: no-repeat 0 5px;
+        &:nth-child(n + 1) {
+          padding-bottom: 16px;
+          margin-bottom: 16px;
+          border-bottom: solid 1px $white-three;
+        }
+        &:last-child {
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+        &:nth-child(-n + 2) {
+          background-image: url(../img/iconClock.svg);
+        }
+      }
+      dt {
+        @include font-style(16, $black-two);
+      }
+      dd {
+        margin-top: 2px;
+        @include font-style(16);
+        strong {
+          margin-top: 2px;
+          @include font-style(18);
+        }
+      }
+      &.warning {
+        border: 1px solid $faded-red;
+      }
+    }
+    &--warning {
+      padding: 0 6px 0 18px;
+      margin-top: 12px;
+      background: url(../img/bgWaring.svg) no-repeat left 4px / 12px;
+      @include font-style(14, $faded-red);
+    }
+    &--cal {
+      padding: 32px 20px 26px;
+      margin-left: -20px;
+      width: calc(100% + 40px);
+      .calendarTimeSel {
+        &__info {
+          position: relative;
+          padding: 18px 16px 16px;
+          margin-bottom: 12px;
+          border: solid 1px $white-three;
+          border-radius: 12px;
+          background-color: $white-five;
+          &:after {
+            content: "";
+            position: absolute;
+            right: 38px;
+            bottom: -16px;
+            width: 32.6px;
+            height: 34.7px;
+            background: url(../img/bgCalInfo.svg) no-repeat;
+          }
+          h4 {
+            @include font-style(16);
+          }
+          p {
+            margin-top: 4px;
+            @include font-style(14, $greyish-brown);
+          }
+          .outlineRouBtn {
+            position: absolute;
+            top: 16px;
+            right: 12px;
+          }
+        }
+      }
+      .calendar__tit {
+        justify-content: center;
+      }
+      .calendar__detail--col span {
+        color: $greyish-brown;
+      }
+    }
+  }
+  /* 환자 상세 정보 입력 */
+  &__paitDet {
+    border-top: 1px solid $white-three;
+    textarea {
+      margin-top: 8px;
+      height: 84px;
+    }
+    .notifiRegisList {
+      /* 너비값 1/2 인 라디오박스 */
+      &.halfSel {
+        @include flexbox(between, center);
+        flex-wrap: wrap;
+        .radioCheckSel,
+        .checkBoxSel {
+          margin-top: 8px;
+          label {
+            padding: 14px 16px;
+            text-align: center;
+            &:before,
+            &:after {
+              display: none;
+            }
+          }
+        }
+        .checkBoxSel {
+          label {
+            display: inline-block;
+            transition: background 0.2s ease-in;
+            line-height: 1;
+          }
+        }
+        .addSel {
+          display: block;
+          margin-top: 14px;
+          width: 100%;
+          &:before {
+            display: none;
+          }
+          > p {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            background: url(../img/ic_infoBox_b.svg) no-repeat 0 2px / 16px;
+            @include font-style(14, $black-two, bol);
+            em {
+              margin-left: 2px;
+              @include font-style(12, $faded-red, nor);
+              font-style: normal;
+            }
+          }
+          ul {
+            @include flexbox(between, center);
+            flex-wrap: wrap;
+            li {
+              width: calc(33.3333% - 5px);
+            }
+            &:has(li:nth-last-child(2) input:checked) .limitTextarea {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+        li {
+          width: calc(50% - 4px);
+        }
+        // 기타 선택시 textarea 노출
+        &:has(li:nth-last-child(2) input:checked) > .limitTextarea,
+        &:has(li:nth-last-child(2) input:checked) .addSel {
+          display: block;
+          width: 100%;
+        }
+      }
+      /* 반려동물 선택하는 이미지 선택 박스 */
+      &.imgSel {
+        @include flexbox(between, center);
+        flex-wrap: wrap;
+        .radioCheckSel {
+          margin-top: 0;
+          width: calc(33.3333% - 5px);
+          text-align: center;
+          label {
+            padding: 76px 16px 14px;
+            height: 129px;
+            font-weight: $med-w;
+            background: no-repeat center 18px / 54px $white;
+            @media screen and (max-width: 336px) {
+              padding: 76px 8px 14px;
+            }
+            &:after {
+              display: none;
+            }
+            &:before {
+              top: 12px;
+              left: auto;
+              right: 12px;
+              background: url(../img/iconCheck.svg) no-repeat center / 8.6px $white-three;
+              transform: none;
+            }
+            small {
+              display: block;
+              @include font-style(14, $black-two, nor);
+            }
+          }
+          &:has(input:checked) ~ .checkBoxSel {
+            display: block;
+          }
+          input:checked + label {
+            background-color: $very-light-pink;
+            color: $black;
+            &:before {
+              border: none;
+              background-color: $cocoa;
+            }
+          }
+          &:first-child label {
+            background-image: url(../img/ic_patiStat_G01.svg);
+          }
+          &:nth-child(2) label {
+            background-image: url(../img/ic_patiStat_G02.svg);
+          }
+          &:nth-child(3) label {
+            background-image: url(../img/ic_patiStat_G03.svg);
+          }
+        }
+        .checkBoxSel {
+          display: none;
+          margin-top: 24px;
+          width: 100%;
+          &:before {
+            content: "";
+            position: absolute;
+            top: -17px;
+            left: 50%;
+            z-index: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: solid 1px $white-three;
+            background: url(../img/ic_add_bk.svg) no-repeat center $white-four;
+            transform: translateX(-50%);
+          }
+          &:has(input:checked) {
+            margin-top: 14px;
+            + .addSel {
+              display: block;
+            }
+            &:before {
+              display: none;
+            }
+          }
+          label {
+            justify-content: center;
+            padding: 8px 16px;
+            font-weight: $med-w;
+            transition: background 0.2s ease-in;
+            em {
+              margin-left: 8px;
+              @include font-style(12, $cool-grey);
+              font-style: normal;
+            }
+            &:before {
+              margin-right: 0;
+              width: 54px;
+              height: 54px;
+              border-radius: 0;
+              background: url(../img/ic_patiStat_H01.svg) no-repeat center / 54px;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 12px;
+              right: 12px;
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background: url(../img/iconCheck.svg) no-repeat center / 8.6px $white-three;
+            }
+          }
+          input:checked + label {
+            color: $black;
+            &:after {
+              background-color: $cocoa;
+            }
+          }
+        }
+        .addSel {
+          width: 100%;
+          > p {
+            padding-left: 0;
+            background: none;
+            font-weight: $bol-w;
+            @media screen and (max-width: 321px) {
+              max-width: 160px;
+            }
+            small {
+              display: block;
+              margin-bottom: 2px;
+              @include font-style(14, $brownish, bol);
+            }
+            span {
+              font-weight: $nor-w;
+            }
+          }
+          .limitTextarea {
+            display: block;
+          }
+        }
+      }
+      /* 선택박스 클릭시 텍스트 박스 나오게 */
+      textarea {
+        display: none;
+      }
+      input:checked ~ textarea {
+        display: block;
+      }
+      .addSel {
+        display: none;
+        position: relative;
+        padding: 16px 12px;
+        margin-top: 28px;
+        border: 1px solid $white-three;
+        border-radius: 8px;
+        background-color: $white;
+        &:before {
+          content: "";
+          position: absolute;
+          top: -15px;
+          left: 20px;
+          z-index: 1;
+          width: 40px;
+          height: 25px;
+          background-image: url(../img/bgCareOpin.svg);
+        }
+        > p {
+          padding-left: 18px;
+          background: url(../img/icon_bulb_y.svg) no-repeat 0 / 16px;
+          @include font-style(14, $black-two, med);
+          span {
+            margin-left: 8px;
+            @include font-style(12, $cool-grey);
+            vertical-align: 1px;
+          }
+        }
+      }
+      #isolation02:checked ~ .addSel {
+        display: block;
+        label {
+          margin-top: 16px;
+        }
+      }
+      #request05:checked ~ .limitTextarea {
+        display: block;
+      }
+    }
+    .limitTextarea {
+      display: none;
+      overflow: hidden;
+      position: relative;
+      margin-top: 8px;
+      height: 120px;
+      @include border-box($white-three, 8px, $white);
+      &.h175 {
+        height: 175px;
+        textarea {
+          height: 139px;
+        }
+      }
+      &:has(textarea:focus) {
+        border: solid 1px $black;
+      }
+      textarea {
+        display: block;
+        margin-top: 0;
+        padding: 12px 12px 0;
+        border: none;
+        word-break: break-all;
+      }
+      p {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 0 12px 12px 0;
+        @include font-style(14, $warm-grey-two, nor);
+        line-height: 18px;
+        text-align: right;
+      }
+    }
+    &--tit {
+      @include flexbox(between, inherit);
+      margin-bottom: 16px;
+      &:has(+ .halfSel) {
+        margin-bottom: 8px;
+      }
+      /* '기존 환자 상세' : h4 (나중에 지울것)
+        '개편된 환자 상세' : h3 
+      */
+      h3,
+      h4 {
+        padding-right: 20px;
+        @include font-style(18);
+        line-height: 1.44;
+        span {
+          display: block;
+          margin-bottom: 2px;
+          @include font-style(14, $brownish);
+        }
+        em {
+          display: inline-block;
+          margin-left: 4px;
+          @include font-style(12, $faded-red, nor);
+          font-style: normal;
+          vertical-align: 3px;
+        }
+      }
+      figure {
+        flex-shrink: 0;
+        align-self: flex-end;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $white-three;
+        border-radius: 6px;
+        background-color: $white-five;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 44px;
+          max-height: 44px;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    &--btn {
+      margin-top: 16px;
+      button {
+        @include flexbox(inherit, center);
+        width: auto;
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 7px;
+          width: 16px;
+          height: 16px;
+          background: url(../img/iconHelp.svg) no-repeat center / 16px;
+        }
+      }
+      u {
+        @include font-style(14, $black-two, med);
+      }
+    }
+    &--careNoti {
+      padding: 32px 20px;
+      background-color: $white-four;
+      label {
+        @include flexbox(inherit, center);
+        @include font-style(18, color, bol);
+        span {
+          margin-left: 8px;
+          @include font-style(12, $cool-grey, nor);
+        }
+      }
+      .limitTextarea {
+        display: block;
+      }
+    }
+  }
+  &__helpPopup {
+    padding: 40px 20px 0;
+    text-align: center;
+    p {
+      @include flexbox(center, center);
+      &.tal {
+        text-align: left;
+        word-break: break-all;
+        @media screen and (min-width: 601px) {
+          display: inline-flex;
+        }
+      }
+    }
+    figure {
+      position: relative;
+      margin: 0 auto;
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+      background-color: $white-five;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        max-height: 50px;
+        transform: translate(-50%, -50%);
+      }
+    }
+    h2 {
+      margin: 16px 0 8px;
+      @include font-style(20);
+    }
+    p {
+      @include font-style(16, $black-two);
+    }
+    .addCaution {
+      padding-top: 16px;
+      padding-left: 22px;
+      margin-top: 24px;
+      border-top: 1px solid $white-two;
+      background: url(../img/iconNoti-grey.svg) no-repeat 0 19px / 16px;
+      text-align: left;
+      @include font-style(14, $greyish-brown);
+    }
+    .addTxt {
+      display: block;
+      margin: 24px auto 0;
+      padding: 14px 0 0 22px;
+      border-top: 1px solid $white-two;
+      background: url(../img/iconHelp.svg) no-repeat left top 16px / 16px;
+      text-align: left;
+      @include font-style(14, $black-two, meds);
+    }
+    &.scroll {
+      overflow-y: auto;
+      @include column-flexbox(center, center);
+      padding: 40px 0 0;
+      margin: 0 20px;
+      height: 210px;
+      figure {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.notifiRegisListWrap {
+  padding: 32px 20px;
+  width: 100%;
+  background-color: $white-four;
+}
+
+/* 공고 등록 절차 (스텝) */
+.notifiStep {
+  position: absolute;
+  top: 62px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 100%;
+  max-width: 600px;
+  &__list {
+    @include flexbox(end, inherit);
+    position: relative;
+    padding: 0 20px;
+    li {
+      @include flexbox(center, center);
+      padding-right: 1px;
+      margin-left: 6px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $cool-grey;
+      border-radius: 50%;
+      @include font-style(12, $cool-grey, bol);
+      &.active {
+        border: 1px solid $cocoa;
+        background-color: $very-light-pink;
+        @include font-style(12, $cocoa);
+      }
+    }
+  }
+}
+
+/* 데이터 피커 */
+.react-datepicker__input-container {
+  width: 100%;
+  input {
+    background: url(../img/bgCal.svg) no-repeat right 12px center;
+  }
+}
+.date-start {
+  flex-shrink: 0;
+  .rc-time-picker {
+    width: 100%;
+    .rc-time-picker-input {
+      padding: 10px 12px;
+      height: auto;
+      border-radius: 8px;
+      background: url(../img/bgTime.svg) no-repeat right 12px center;
+      @include font-style(16, $black);
+      &::placeholder {
+        color: $black;
+      }
+    }
+  }
+}
+.rc-time-picker-icon,
+.rc-time-picker-clear {
+  display: none;
+}
+
+.react-datepicker__navigation-icon--previous::before,
+.react-datepicker__navigation-icon--next::before {
+  top: 13px !important;
+  border-color: #a6a6a6 !important;
+}
+
+/* 당구장 표시 있을 때 & 없을 때 */
+.reference {
+  display: block;
+  margin-top: 8px;
+  @include font-style(14, $warm-grey);
+  &.mark {
+    position: relative;
+    padding-left: 18px;
+    &:before {
+      content: "※";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 20px;
+    }
+  }
+  &.greyish {
+    color: $greyish-brown;
+  }
+}

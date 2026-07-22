@@ -1,0 +1,90 @@
+.chartUnit {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 6px;
+  @include border-box($white-three, 8px, $white-four);
+  @include font-style(12);
+}
+
+.axis {
+  @include flexbox(between, center);
+  padding: 4px 2px 0;
+  border-top: solid 1px $white-three;
+  span {
+    @include font-style(12);
+    text-align: center;
+  }
+}
+
+.rangeInfo {
+  padding-top: 16px;
+  padding-left: 24px;
+  border-top: solid 1px $white-two;
+  background: url(../img/iconNoti-grey.svg) no-repeat 0 18px;
+  @include font-style(14, $black-two);
+  strong {
+    @include font-style(16);
+  }
+}
+
+/* 세로 차트 */
+.vertiChartWrap {
+  @include flexbox(around, inherit);
+  height: 84px;
+  &__bar {
+    align-self: flex-end;
+    flex-shrink: 0;
+    position: relative;
+    width: 34px;
+    border-bottom: 0;
+    border: solid 1px #fc560d;
+    background-color: rgba(252, 86, 13, 0.3);
+    @media screen and (max-width: 321px) {
+      margin-right: 4px;
+      width: 30px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    span {
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      width: 30px;
+      height: 26px;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      background-color: $white;
+      @include font-style(12, color, med);
+      line-height: 24px;
+      text-align: center;
+      transform: translateX(-50%);
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        margin-left: -7px;
+        width: 14px;
+        height: 7px;
+        background-image: url(../img/bgChartSpan01.svg);
+      }
+    }
+    &.zero {
+      border: 0;
+      span {
+        display: none;
+      }
+    }
+    &.max {
+      span {
+        color: $white;
+        background: #fc560d;
+        &:after {
+          background-image: url(../img/bgChartSpan02.svg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>장소 검색 상세 팝업 - 집</title>
+  </head>
+  <body>
+    <aside class="popup active">
+      <div class="popupWrap">
+        <button type="button" class="btnClose">팝업 닫기</button>
+        <div class="notifiSearch__form">
+          <div class="notifiSearch__form--tit home">
+            <label for="search01">간병 장소 : 집</label>
+          </div>
+          <div class="notifiSearch__form--input">
+            <div class="detBox">
+              <!-- ios 에서 disabled 상태 스크롤 안되는 이슈로 input 사용 x -->
+              <span>xxxxxxxx 시 xxxxxxxxx 구 xxxxxxxxx 동</span>
+            </div>
+            <!-- 기타 상세 주소 미입력 후 등록하기 눌렀을 때 : div에 warning 클래스 추가 -->
+            <div class="warning">
+              <input type="text" placeholder="기타 상세 주소를 입력해 주세요." />
+            </div>
+          </div>
+        </div>
+        <div class="popupWrap__btn mt32">
+          <!-- 상세주소 입력하지 않거나 틀렸을 경우 button에 disabled 추가 -->
+          <button type="button" class="txtCocoa">등록하기</button>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" viewBox="0 0 34 24">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_4163" data-name="사각형 4163" class="cls-1" d="M0 0h4.313v4.313H0z"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#a16f5e}.cls-3,.cls-7{fill:none}.cls-3{stroke:#434343}.cls-3,.cls-7{stroke-linecap:round;stroke-linejoin:round}.cls-4{fill:#fff}.cls-7{stroke:#a16f5e}
+        </style>
+    </defs>
+    <g id="icon_pay_normal" transform="translate(-80 -556)">
+        <path id="사각형_4899" data-name="사각형 4899" transform="translate(80 556)" style="fill:none" d="M0 0h34v24H0z"/>
+        <g id="그룹_23205" data-name="그룹 23205" transform="translate(-2568.876 21.495)">
+            <path id="패스_24792" data-name="패스 24792" class="cls-1" d="M2652.594 557.222v-11.844a2.325 2.325 0 0 1 2.324-2.325h21.915a2.325 2.325 0 0 1 2.325 2.325v11.844a2.325 2.325 0 0 1-2.325 2.325h-21.915a2.325 2.325 0 0 1-2.324-2.325" transform="translate(0 -4.069)"/>
+            <rect id="사각형_4161" data-name="사각형 4161" class="cls-3" width="26.564" height="16.493" rx="3" transform="translate(2652.594 538.984)"/>
+            <path id="패스_24793" data-name="패스 24793" class="cls-4" d="M2652.594 551.7v-11.843a2.325 2.325 0 0 1 2.324-2.325h21.915a2.325 2.325 0 0 1 2.325 2.325V551.7a2.325 2.325 0 0 1-2.325 2.325h-21.915a2.325 2.325 0 0 1-2.324-2.325"/>
+            <rect id="사각형_4162" data-name="사각형 4162" class="cls-3" width="26.564" height="16.493" rx="3" transform="translate(2652.594 537.532)"/>
+            <g id="그룹_23204" data-name="그룹 23204" transform="translate(2655.759 542.753)" style="mix-blend-mode:darken;isolation:isolate">
+                <g id="그룹_23203" data-name="그룹 23203">
+                    <g id="그룹_23202" data-name="그룹 23202" style="clip-path:url(#clip-path)">
+                        <path id="패스_24794" data-name="패스 24794" class="cls-1" d="M2668.175 561.7h-2.78a.766.766 0 0 1-.766-.766v-2.781a.766.766 0 0 1 .766-.766h2.78a.766.766 0 0 1 .767.766v2.781a.767.767 0 0 1-.767.766" transform="translate(-2664.627 -557.382)"/>
+                    </g>
+                </g>
+            </g>
+            <path id="선_961" data-name="선 961" class="cls-4" transform="translate(2664.196 549.573)" d="M0 0h1.159"/>
+            <path id="선_963" data-name="선 963" class="cls-4" transform="translate(2667.278 549.573)" d="M0 0h1.159"/>
+            <path id="선_965" data-name="선 965" class="cls-4" transform="translate(2670.361 549.573)" d="M0 0h1.159"/>
+            <path id="선_967" data-name="선 967" class="cls-4" transform="translate(2673.444 549.573)" d="M0 0h1.159"/>
+            <g id="그룹_23761" data-name="그룹 23761" transform="translate(2664.196 549.573)">
+                <path id="선_962" data-name="선 962" class="cls-7" d="M0 0h1.159"/>
+                <path id="선_964" data-name="선 964" class="cls-7" transform="translate(3.083)" d="M0 0h1.159"/>
+                <path id="선_966" data-name="선 966" class="cls-7" transform="translate(6.165)" d="M0 0h1.159"/>
+                <path id="선_968" data-name="선 968" class="cls-7" transform="translate(9.248)" d="M0 0h1.159"/>
+            </g>
+        </g>
+    </g>
+</svg>

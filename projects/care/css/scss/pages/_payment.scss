@@ -1,0 +1,316 @@
+.paymentInfo,
+.paymentIng {
+  h2 {
+    @include flexbox(inherit, center);
+    @include font-style(18);
+    span {
+      margin-left: 4px;
+      @include font-style(14, $faded-red, nor);
+    }
+  }
+  &__profile {
+    padding: 20px;
+    background-color: $white-four;
+    .profileCare {
+      &__btn {
+        padding: 2px 16px 16px;
+      }
+      &__total {
+        padding: 6px 0 0 0;
+        &--trade {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  &__det {
+    &--time,
+    &--day {
+      dl {
+        padding: 20px 16px;
+        margin-top: 16px;
+        border: solid 1px $white-three;
+        border-radius: 12px;
+      }
+    }
+    &--day {
+      dl {
+        div {
+          @include flexbox(between, center);
+          margin-bottom: 6px;
+          dt {
+            @include font-style(16, $black-two);
+            flex-shrink: 0;
+          }
+          &:nth-child(n + 1):nth-child(-n + 2) {
+            dd {
+              @include font-style(16, color, med);
+            }
+          }
+          &:last-child {
+            padding-top: 16px;
+            margin: 16px 0 0;
+            border-top: solid 1px $white-three;
+            dt {
+              padding-left: 26px;
+              background: url(../img/iconPayInfo.svg) no-repeat left;
+              font-weight: $med-w;
+              @media screen and (max-width: 321px) {
+                padding-left: 18px;
+                background-size: 14px;
+              }
+            }
+            dd {
+              @include font-style(18, color, bol);
+            }
+          }
+        }
+      }
+    }
+    &--time {
+      margin-top: 20px;
+      .calendar {
+        &__tit {
+          display: block;
+        }
+        span {
+          color: $greyish-brown;
+        }
+      }
+      dl {
+        background-color: $white-five;
+        div {
+          padding-left: 26px;
+          &:nth-child(n + 1) {
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom: solid 1px $white-three;
+          }
+          &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+          &:nth-child(-n + 2) {
+            background: url(../img/iconClock.svg) no-repeat 0 5px;
+          }
+          &:nth-child(3) {
+            background: url(../img/iconPayInfo.svg) no-repeat 0 5px;
+            dd {
+              @include font-style(18, color, bol);
+            }
+          }
+          dt {
+            margin-bottom: 2px;
+            @include font-style(16, $black-two);
+          }
+          dd {
+            @include font-style(16);
+          }
+        }
+      }
+    }
+  }
+}
+.paymentInfo {
+  padding-top: 44px;
+  &__insur,
+  &__det {
+    padding: 32px 20px;
+  }
+  &__insurContract {
+    padding: 32px 20px;
+  }
+  &__insur {
+    a {
+      @include flexbox(inherit, center);
+      &:first-of-type {
+        padding: 16px 0 24px;
+      }
+      &:nth-of-type(2) {
+        padding-top: 24px;
+      }
+      &:only-of-type {
+        padding-bottom: 0;
+      }
+      ~ a {
+        border-top: solid 1px $white-three;
+      }
+    }
+    i {
+      flex-shrink: 0;
+      margin-right: 16px;
+      width: 64px;
+      height: 64px;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      background: no-repeat center / 40px $white-four;
+    }
+    h3 {
+      display: inline-block;
+      padding-right: 14px;
+      background: url(../img/arrowRight-7.svg) no-repeat right center / 6px;
+      @include font-style(16, color, med);
+    }
+    p {
+      margin-top: 4px;
+      @include font-style(14, $warm-grey);
+    }
+    &--view i {
+      background-image: url(../img/icon_insurCertifi.svg);
+    }
+    &--subs i {
+      background-image: url(../img/icon_insurSubs.svg);
+    }
+  }
+  &__payer {
+    padding: 32px 20px 40px;
+    b {
+      margin-left: 4px;
+      font-weight: $nor-w;
+    }
+  }
+}
+
+/* 결제하기 */
+.paymentIng {
+  &__det {
+    padding: 32px 20px;
+    &--info {
+      padding: 16px;
+      margin-bottom: 32px;
+      border: solid 1px $white-three;
+      border-radius: 12px;
+      div {
+        @include flexbox(between, inherit);
+        margin-bottom: 6px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      dt {
+        flex-shrink: 0;
+        width: 92px;
+        @include font-style(16, $black-two);
+      }
+      dd {
+        margin-top: 1px;
+        @include font-style(16, color, med);
+        text-align: right;
+        word-break: break-all;
+      }
+    }
+  }
+  &__how {
+    padding: 20px;
+    h3 {
+      @include font-style(18);
+    }
+    > p {
+      margin: 6px 0 16px;
+      @include font-style(14, $black-two);
+    }
+    &--btn {
+      @include flexbox(between, center);
+      margin: 16px 0;
+      button {
+        width: calc(50% - 4px);
+        border: solid 1px $white-three;
+        border-radius: 8px;
+        background-repeat: no-repeat;
+        @include font-style(16, color, bol);
+        text-align: center;
+        &:hover {
+          border-color: $cocoa;
+        }
+        &:nth-child(1) {
+          @include column-flexbox(center, center);
+          padding: 16px 0 20px;
+        }
+        &:nth-child(2) {
+          padding: 16px 0 56px;
+          background-image: url(../img/iconFastPay.svg);
+          background-position: center bottom 20px;
+        }
+        &.active {
+          border-color: $cocoa;
+        }
+        span {
+          margin-top: 8px;
+          width: 100px;
+          height: 28px;
+          background: url(../img/iconNorPay01.svg) no-repeat left,
+            url(../img/iconNorPay02.svg) no-repeat 36px center,
+            url(../img/iconNorPay03.svg) no-repeat right;
+        }
+      }
+    }
+    &--info {
+      padding: 16px;
+      border-radius: 8px;
+      background-color: $white-four;
+      div {
+        &:last-child {
+          margin-top: 8px;
+        }
+      }
+      h4 {
+        margin-bottom: 4px;
+        @include font-style(14, $black-two);
+      }
+      p {
+        @include font-style(12, $greyish-brown);
+      }
+    }
+  }
+}
+
+.paymentBan {
+  padding: 13px 20px;
+  background: url(../img/bgPayBan.svg) no-repeat right / contain #fff5ee;
+  h3 {
+    @include font-style(16);
+    span {
+      display: block;
+      @include font-style(12, $black-two, med);
+    }
+  }
+  p {
+    margin-top: 4px;
+    @include font-style(10, $warm-grey);
+  }
+}
+
+/* 결제자 정보 */
+.paymentPayerList {
+  margin-top: 16px;
+  li {
+    @include flexbox(between, center);
+    padding: 16px;
+    border: solid 1px $white-three;
+    border-radius: 12px;
+    h3 {
+      margin-bottom: 2px;
+      @include font-style(16, $black-two, med);
+      word-break: break-all;
+    }
+    p {
+      @include font-style(14, $greyish-brown);
+    }
+    span {
+      @include flexbox(center, center);
+      @include font-style(14);
+      width: 84px;
+      height: 36px;
+      flex-shrink: 0;
+      @include border-box($white-three, 8px, $white-five);
+      @media screen and (max-width: 321px) {
+        width: 60px;
+      }
+      &.fail {
+        color: $faded-red;
+        border-color: $faded-red;
+      }
+    }
+  }
+}

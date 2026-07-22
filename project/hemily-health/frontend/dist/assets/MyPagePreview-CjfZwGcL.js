@@ -1,1 +1,0 @@
-import{c as e,l as t}from"./index-4NZOehG4.js";import"./HomePagePreview-DKBeVND-.js";var n=e();function r(){return(0,n.jsx)(t,{to:`/preview/mypage/view`,replace:!0})}export{r as default};

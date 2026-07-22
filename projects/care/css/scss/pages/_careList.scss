@@ -1,0 +1,53 @@
+.careList {
+  &__item {
+    padding-top: 44px;
+    @media screen and (max-width: 321px) {
+      padding-top: 41px;
+    }
+    .checkSquare {
+      padding: 0 20px;
+      margin: 84px 0 20px;
+      + ul {
+        padding-top: 0px;
+      }
+    }
+    ul {
+      padding: 77px 20px 22px;
+      .notifiItems {
+        ~ li {
+          margin: 18px 0;
+        }
+        a {
+          padding: 16px 16px 10px;
+        }
+        &__info {
+          dt {
+            flex-shrink: 0;
+            width: 102px;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+    .noneItem {
+      padding: 20vh 0 34vh;
+      min-height: calc(100vh - 94px);
+      @media screen and (max-width: 321px) {
+        min-height: calc(100vh - 91px);
+      }
+    }
+  }
+  .headerFilter {
+    padding-bottom: 0;
+    background-color: $white-four;
+    &.scroll {
+      padding-bottom: 16px;
+      + .careList__item ul {
+        padding-top: 86px;
+      }
+      + .careList__item .checkSquare + ul {
+        padding-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/* 신고하기 */
+.report {
+  padding: 24px 20px 45px;
+  h2 {
+    margin-bottom: 16px;
+    @include font-style(18);
+  }
+  &__target {
+    margin-bottom: 24px;
+    .basicInput__box--list {
+      @include flexbox(inherit, center);
+      label {
+        @include flexbox(center, center);
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 6px;
+          width: 16px;
+          height: 16px;
+          border: 0 !important;
+          background: no-repeat center / 16px;
+        }
+      }
+      .radioBoxSel {
+        &.target01 {
+          label {
+            &:before {
+              background-image: url(../img/iconTarget01.svg);
+            }
+          }
+          input:checked ~ label {
+            &:before {
+              background-image: url(../img/iconTarget01-a.svg);
+            }
+          }
+        }
+        &.target02 {
+          label {
+            &:before {
+              background-image: url(../img/iconTarget02.svg);
+            }
+          }
+          input:checked ~ label {
+            &:before {
+              background-image: url(../img/iconTarget02-a.svg);
+            }
+          }
+        }
+        &.target03 {
+          label {
+            &:before {
+              background-image: url(../img/iconTarget03.svg);
+            }
+          }
+          input:checked ~ label {
+            &:before {
+              background-image: url(../img/iconTarget03-a.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__reason {
+    .radioCheckSel {
+      margin-bottom: 8px;
+      textarea {
+        display: none;
+        margin-top: 8px;
+        height: 120px;
+      }
+      input:checked ~ textarea {
+        display: block;
+      }
+    }
+  }
+}

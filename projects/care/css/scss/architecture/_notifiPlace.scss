@@ -1,0 +1,174 @@
+/* 공고 등록 - 검색 */
+.notifiSearch {
+  padding: 16px 20px;
+  min-height: 88px;
+  background-color: $white;
+  &.scrolled {
+    .notifiSearch__wrap {
+      position: fixed;
+      top: 50px;
+      right: 50%;
+      z-index: 10;
+      padding: 12px 20px;
+      width: 100%;
+      max-width: 600px;
+      background-color: $white;
+      transform: translateX(50%);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+    }
+  }
+  &__form {
+    padding: 16px;
+    border: solid 1px $white-three;
+    border-radius: 12px;
+    &--input {
+      display: flex;
+      position: relative;
+      > div {
+        position: relative;
+        width: 100%;
+        &.warning {
+          input {
+            &::placeholder {
+              color: $faded-red;
+            }
+          }
+        }
+      }
+      input {
+        height: 46px;
+        background-color: $white;
+        color: $black;
+        @media screen and (max-width: 321px) {
+          height: 43px;
+        }
+        &:focus ~ .searchBtn {
+          background-color: $cocoa;
+        }
+      }
+      > .reset {
+        right: 44px;
+      }
+      .searchBtn {
+        flex-shrink: 0;
+        width: 44px;
+        height: 46px;
+        background: url(../img/iconSearch.svg) no-repeat center #a1a1a1;
+        border-radius: 0 8px 8px 0;
+        @extend %text-hidden;
+        @media screen and (max-width: 321px) {
+          width: 43px;
+          height: 43px;
+        }
+      }
+    }
+  }
+  &.breakLine {
+    .notifiSearch__form--input {
+      input {
+        padding-right: 36px;
+        border-radius: 8px 0 0 8px;
+        border-right: 0;
+        background-color: $white-five;
+        &:focus {
+          border: 1px solid $cocoa;
+        }
+      }
+    }
+  }
+}
+
+/* 공고 등록 - 장소 */
+.notifiPlace {
+  &__result {
+    .noneItem {
+      padding: 120px 0 20px;
+      min-height: auto;
+      @media screen and (max-width: 281px) {
+        min-height: calc(100vh - 338px);
+      }
+    }
+    ul {
+      background-color: $white;
+      li {
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          width: calc(100% - 40px);
+          height: 1px;
+          background-color: $white-two;
+        }
+        button {
+          padding: 16px 20px;
+        }
+        p {
+          @include font-style(16, color, med);
+          @include ellipsis;
+        }
+        span {
+          display: block;
+          margin-top: 4px;
+          @include font-style(14, $greyish-brown);
+          @include ellipsis;
+        }
+      }
+    }
+  }
+}
+
+/* 공고 등록 - 검색 팝업 */
+.popupWrap {
+  .notifiSearch {
+    &__form {
+      padding: 30px 16px 0;
+      border: 0;
+      &--tit {
+        padding: 60px 0 20px;
+        background-position: center 0;
+        text-align: center;
+        label {
+          @include font-style(18, $black, bol);
+        }
+      }
+      &--input {
+        flex-wrap: wrap;
+        div {
+          &:first-child {
+            margin-bottom: 8px;
+          }
+          &.detBox {
+            span {
+              display: flex;
+              overflow-x: auto;
+              overflow-y: hidden;
+              padding: 10px 12px;
+              width: 100%;
+              height: 46px;
+              border: 1px solid $white-three;
+              border-radius: 8px;
+              background-color: $white-five;
+              @include font-style(16);
+              white-space: nowrap;
+              @media screen and (max-width: 321px) {
+                height: 43px;
+              }
+              &::-webkit-scrollbar {
+                width: 0; /* 스크롤바의 너비 */
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .checkBoxSel {
+        padding-top: 16px;
+        margin-top: 16px;
+        border-top: solid 1px $white-three;
+      }
+    }
+  }
+}

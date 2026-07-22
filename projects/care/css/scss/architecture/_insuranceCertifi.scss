@@ -1,0 +1,218 @@
+/* 간병인배상책임보험 가입증명서 */
+.insurance {
+  position: relative;
+  padding: 12px;
+  margin: 26px auto 20px;
+  width: calc(100% - 40px);
+  border: solid 1px $white-two;
+  border-radius: 0 0 12px 12px;
+  background-color: $white;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background-image: url(../img/bgPunch02.svg);
+  }
+  &__tit {
+    padding-top: 44px;
+    background: url(../img/titBronzeBg.svg) no-repeat center 12px;
+    text-align: center;
+    h2 {
+      margin-bottom: 2px;
+      @include font-style(24);
+    }
+    h3 {
+      @include font-style(16, $warm-grey-two, med);
+    }
+  }
+  &__colorBox {
+    padding: 16px 12px;
+    margin: 20px 0;
+    @include border-box(#f9d6ca, 12px, #fffcfb);
+    div {
+      display: flex;
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    dt,
+    dd {
+      @include font-style(16);
+    }
+    dt {
+      flex-shrink: 0;
+      width: 84px;
+      color: $black-two;
+      @media screen and (max-width: 321px) {
+        width: 62px;
+      }
+    }
+    dd {
+      font-weight: $med-w;
+      word-break: break-all;
+    }
+  }
+  &__str {
+    padding-bottom: 24px;
+    margin-top: -4px;
+    margin-bottom: 24px;
+    border-bottom: solid 1px $white-three;
+    p {
+      @include font-style(14, $black-two);
+    }
+  }
+  &__txt {
+    p {
+      @include font-style(14, $warm-grey);
+      &:nth-child(n + 2) {
+        margin-top: 8px;
+      }
+    }
+  }
+  &__det {
+    padding-top: 32px;
+    margin-top: 32px;
+    border-top: solid 1px $white-three;
+    &.usage {
+      padding-top: 0;
+      border: 0;
+      dt {
+        width: 90px;
+        font-weight: $med-w;
+        @media screen and (max-width: 321px) {
+          width: 64px;
+        }
+      }
+      dd {
+        text-align: left;
+      }
+    }
+    h4 {
+      @include font-style(16, $black-two);
+    }
+    &--warr {
+      overflow: hidden;
+      margin: 10px 0 12px;
+      border: solid 1px $white-three;
+      border-radius: 8px;
+      div {
+        @include flexbox(between, inherit);
+        &:nth-child(1) {
+          dt,
+          dd {
+            padding-top: 12px;
+          }
+        }
+        &:last-child {
+          dt,
+          dd {
+            padding-bottom: 12px;
+          }
+        }
+      }
+      dt,
+      dd {
+        padding: 2px 12px;
+        @include font-style(14);
+        line-height: 1.57;
+      }
+      dt {
+        flex-shrink: 0;
+        width: 72px;
+        background-color: $white-five;
+        color: $greyish-brown;
+        @media screen and (max-width: 321px) {
+          width: 66px;
+        }
+      }
+      dd {
+        width: 100%;
+        color: $black-two;
+        text-align: right;
+      }
+    }
+    &--terms {
+      overflow: hidden;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: solid 1px $white-three;
+      background: url(../img/bgLogo-lightGr.svg) no-repeat center;
+      h5 {
+        padding: 12px;
+        background-color: $white-five;
+        @include font-style(16, $black-two);
+      }
+      ol {
+        padding: 16px 12px;
+        li,
+        p {
+          @include font-style(14, $greyish-brown);
+        }
+        li {
+          position: relative;
+          padding-left: 12px;
+          margin-bottom: 2px;
+          counter-increment: num;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &:nth-child(n + 10) {
+            padding-left: 20px;
+          }
+          &:before {
+            content: counter(num) ")";
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+        ol {
+          padding: 0;
+          li {
+            counter-increment: circleNum;
+            padding-left: 16px;
+            &:before {
+              content: counter(circleNum);
+              position: absolute;
+              top: 2px;
+              left: 3px;
+              @include font-style(12);
+              @media screen and (max-width: 321px) {
+                top: 1px;
+              }
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 5px;
+              left: 0;
+              width: 13px;
+              height: 13px;
+              border: solid 1px $greyish-brown;
+              border-radius: 50%;
+              @media screen and (max-width: 321px) {
+                top: 4px;
+                width: 11px;
+                height: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__logo {
+    padding: 21px 0;
+    margin-top: 32px;
+    border: solid 1px $white-three;
+    border-radius: 8px;
+    img {
+      margin: 0 auto;
+      max-width: 99px;
+    }
+  }
+}

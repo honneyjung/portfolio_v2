@@ -1,0 +1,913 @@
+/* 노란색 알림 안내 */
+.patientWarning {
+  @include flexbox(between, center);
+  padding: 10px 8px 10px 26px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background: url(../img/icon_bulb_y.svg) no-repeat 8px 12px $egg-shell;
+  @include font-style(14, $black-two, med);
+  span {
+    padding: 4px 8px;
+    border-radius: 14px;
+    background-color: #fd0;
+    @include font-style(14);
+  }
+  &:has(span) {
+    background-position: 8px 16px;
+  }
+  @media screen and (max-width: 321px) {
+    padding-left: 36px;
+    background-position: 12px 14px;
+    background-size: 16px;
+    span {
+      padding: 4px 6px;
+    }
+  }
+  &.red {
+    padding: 12px 16px 12px 40px;
+    @include font-style(16, $faded-red, bol);
+    @include border-box($faded-red, 12px, #ffecee);
+    background: url(../img/icon_error.svg) no-repeat left 16px top 19px / 16px #ffecee;
+    span {
+      background-color: $faded-red;
+      color: $white;
+      font-weight: $med-w;
+    }
+  }
+}
+
+/* 간병 상세 본문 시작 */
+.patientInfo {
+  padding-top: 96px;
+  h2 {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: solid 2px $cocoa;
+    @include font-style(18, $cocoa, med);
+  }
+  /* 수정하기 버튼 관련 */
+  .carePati {
+    &__tit {
+      @include flexbox(between, center);
+      position: relative;
+      margin-bottom: 8px;
+      min-height: 34px;
+      h3 {
+        @include font-style(18, color, med);
+      }
+    }
+  }
+  /* 간병 정보 */
+  &__care {
+    padding: 0 20px 40px;
+    &--tit {
+      padding-bottom: 8px;
+      margin-top: 32px;
+      background-position: right 0;
+      background-size: 44px;
+    }
+    &:has(.patientWarning) .patientInfo__care--tit {
+      margin-top: 0;
+    }
+    /* 간병 정보  - 지도 */
+    &--map {
+      position: relative;
+      z-index: 2;
+      margin: 12px 0 20px;
+      height: 200px;
+      .map__wrap {
+        min-height: 200px;
+        border-radius: 12px;
+      }
+      .zoom {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        z-index: 2;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: url(../img/icon_zoom.svg) no-repeat center;
+        background-color: $white;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        @extend %text-hidden;
+      }
+    }
+    /* 간병 정보  - 상세 주소 */
+    &--place {
+      .careNum {
+        margin-bottom: 8px;
+        .basicInfoSt {
+          padding: 10px 16px 10px 42px;
+          background: url(../img/bgCareNum.svg) no-repeat 16px center;
+          @include font-style(16, color, med);
+        }
+      }
+      .carePlace {
+        .basicInfoSt {
+          padding: 16px 16px 20px;
+          margin-top: 8px;
+          div {
+            &:nth-child(1) {
+              padding-bottom: 8px;
+            }
+            dd {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+    /* 간병 정보 - AI 추천 케어메이트 */
+    &--ai {
+      position: relative;
+      padding: 16px 16px 25px 16px;
+      margin-top: 20px;
+      border: solid 1.5px $brownish;
+      border-radius: 12px;
+      background: url(../img/bg_ai01.png) no-repeat right bottom / auto 167px #fffcfb;
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+      & + .patientInfo__care--cal {
+        padding-top: 0;
+        border: 0;
+      }
+      h3 {
+        display: inline-block;
+        padding: 7px 8px 7px 22px;
+        border-radius: 5px;
+        background: url(../img/iconCheck-b.svg) no-repeat 8px center $very-light-pink;
+        @include font-style(14, $brownish, med);
+        line-height: 1;
+      }
+      p {
+        margin-top: 7px;
+        @include font-style(18, color);
+      }
+      mark {
+        display: inline-block;
+        padding-right: 2px;
+        margin-top: 16px;
+        @include font-style(16, $cocoa, bol);
+        @media screen and (max-width: 321px) {
+          margin-top: 12px;
+        }
+        &:after {
+          content: "";
+          display: inline-block;
+          margin-left: 7px;
+          width: 6px;
+          height: 11px;
+          background: url(../img/arrowRight-b.svg) no-repeat center;
+        }
+      }
+      ul {
+        position: absolute;
+        @include flexbox(center, center);
+        right: 16px;
+        bottom: 16px;
+        li {
+          width: 42px;
+          height: 42px;
+          &:not(:last-child) {
+            margin-right: 2px;
+          }
+          @media screen and (max-width: 321px) {
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+    }
+    /* 간병 정보 - 달력 */
+    &--cal {
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: solid 1px $white-two;
+      .careType {
+        span {
+          display: block;
+          @include font-style(14, color, med);
+          text-align: right;
+          margin-bottom: 8px;
+        }
+        .basicInfoSt {
+          padding: 15px 16px 15px 42px;
+          background: url(../img/bgCareType.svg) no-repeat 16px 20px;
+        }
+      }
+      .careCalWrap {
+        text-align: right;
+        &__info {
+          overflow: visible;
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+          padding: 6px 16px;
+          margin-bottom: 26px;
+          border: 1px solid #ffdd00;
+          border-radius: 20px;
+          background-color: $egg-shell;
+          @include font-style(14, color, bol);
+          text-align: right;
+          &:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            right: 19px;
+            bottom: -10px;
+            width: 18px;
+            height: 10px;
+            background: url(../img/bgBalloonArr02.svg) center / cover;
+          }
+          @media screen and (max-width: 359px) {
+            text-align: left;
+            word-break: break-all;
+          }
+        }
+        &.day {
+          padding-top: 40px;
+          .calendar__tit {
+            padding-bottom: 10px;
+          }
+          .calendar__detail--col span {
+            margin: 7px 0;
+            color: $cool-grey;
+            .ing {
+              color: $greyish-brown;
+            }
+          }
+        }
+        &.time {
+          padding-top: 32px;
+        }
+        .carePati__tit {
+          margin-bottom: 8px;
+        }
+        .careTime {
+          margin-top: 16px;
+        }
+      }
+      /* 간병 정보  - 기간제 */
+      .careDay {
+        margin-top: 20px;
+        .basicInfoSt {
+          padding: 16px;
+          text-align: left;
+          div {
+            padding-left: 26px;
+            background: no-repeat 0 4px;
+            &:nth-child(1) {
+              background-image: url(../img/bgCareDay01.svg);
+            }
+            &:nth-child(2) {
+              padding-bottom: 16px;
+              margin: 8px 0 16px;
+              border-bottom: solid 1px $white-three;
+              background-image: url(../img/bgCareDay02.svg);
+            }
+            &:nth-child(3) {
+              background-image: url(../img/bgCareDay03.svg);
+              dd {
+                font-weight: $bol-w;
+              }
+            }
+          }
+        }
+        ~ .careTime {
+          margin-top: 32px;
+        }
+      }
+      /* 간병 정보  - 시간제 */
+      .careTime {
+        .basicInfoSt {
+          padding: 20px 16px;
+          text-align: left;
+          div {
+            padding-left: 26px;
+            background: no-repeat 0 4px;
+            &:nth-child(1) {
+              padding-bottom: 16px;
+              margin-bottom: 16px;
+              border-bottom: solid 1px $white-three;
+            }
+            &:nth-child(-n + 2) {
+              background-image: url(../img/bgCareDay03.svg);
+            }
+            dt {
+              @include font-style(16);
+              margin-bottom: 5px;
+            }
+            dd {
+              @include font-style(16);
+              strong {
+                @include font-style(18);
+              }
+            }
+          }
+        }
+        ~ .careTime {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+  /* 환자 정보 */
+  &__detail {
+    padding: 40px 20px;
+    /* 환자 정보 - 개인 정보 */
+    .carePers {
+      margin-top: 8px;
+      .basicInfoSt {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px;
+        div {
+          @include flexbox(inherit, start);
+          margin-bottom: 6px;
+          width: 100%;
+          dt {
+            flex-shrink: 0;
+            margin-top: 2px;
+          }
+          dd {
+            margin-top: 0;
+            margin-left: 10px;
+            word-break: break-all;
+          }
+          &:nth-child(n + 2) {
+            width: 50%;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &.w100 {
+            width: 100%;
+          }
+        }
+      }
+    }
+    /* 간병 유의사항 */
+    &--notice {
+      margin-top: 32px;
+      label {
+        display: block;
+        @include font-style(18, color, med);
+      }
+      textarea {
+        margin-top: 8px;
+        height: 135px;
+        &::placeholder {
+          font-weight: $nor-w;
+        }
+      }
+    }
+    /* 환자 상태 개편 */
+    &--status {
+      margin-top: 32px;
+      .basicInfoSt {
+        padding: 16px;
+        &.halfSel {
+          li {
+            @include flexbox(between, center);
+            flex-wrap: wrap;
+            .statItem {
+              &:last-child {
+                width: 46%;
+              }
+              &:only-child,
+              &:first-child {
+                width: 54%;
+              }
+            }
+            figure {
+              margin-right: 10px;
+              @media screen and (max-width: 345px) {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+        li {
+          position: relative;
+          padding: 16px 0;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background-image: linear-gradient(
+              90deg,
+              #e1e1e1,
+              #e1e1e1 30%,
+              transparent 30%,
+              transparent 100%
+            );
+            background-size: 9px 1px;
+          }
+          &.divideLine {
+            padding-top: 20px;
+            border-top: solid 1px $white-three;
+            &:before {
+              display: none;
+            }
+            &:only-child {
+              border-top: none;
+            }
+          }
+          &.brownLine {
+            &:before {
+              display: none;
+            }
+            textarea {
+              border-color: $cocoa;
+            }
+          }
+          &.mt4 {
+            &:before {
+              display: none;
+            }
+          }
+          &:has(textarea) {
+            flex-wrap: wrap;
+            padding-top: 0;
+            border: 0;
+            h4 {
+              margin-bottom: 10px;
+              font-weight: $med-w;
+            }
+            textarea {
+              background-color: $white-four;
+              @include font-style(16, $black-two, nor);
+              word-break: break-all;
+            }
+          }
+          &:nth-child(1) {
+            padding-top: 0;
+            &:before {
+              display: none;
+            }
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+          figure {
+            flex-shrink: 0;
+            position: relative;
+            margin-right: 12px;
+            width: 64px;
+            height: 64px;
+            @include border-box($white-three, 50%, $white);
+            @media screen and (max-width: 345px) {
+              margin-right: 8px;
+              width: 40px;
+              height: 40px;
+            }
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 44px;
+              max-height: 44px;
+              transform: translate(-50%, -50%);
+              @media screen and (max-width: 345px) {
+                width: 30px;
+                max-height: 35px;
+              }
+            }
+            button {
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              width: 64px;
+              height: 64px;
+              @media screen and (max-width: 345px) {
+                width: 40px;
+                height: 40px;
+              }
+              span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 2;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: url(../img/iconDetai.svg) no-repeat center / contain;
+                @extend %text-hidden;
+                @media screen and (max-width: 345px) {
+                  width: 14px;
+                  height: 14px;
+                }
+              }
+            }
+          }
+          h4 {
+            min-width: 60px;
+            @include font-style(16);
+            small {
+              display: block;
+              @include font-style(14, color, nor);
+            }
+            span {
+              font-weight: $nor-w;
+            }
+          }
+          p {
+            @include font-style(14, $black-two);
+            line-height: 1.57;
+            &:nth-child(2) {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+      .statItem {
+        @include flexbox(inherit, center);
+      }
+    }
+    .txtRequest {
+      p {
+        padding: 12px;
+        @include border-box($white-three, 10px, $white-four);
+        @include font-style(16, $black-two);
+        word-break: break-all;
+        small {
+          @include font-style(14);
+          display: block;
+        }
+      }
+    }
+  }
+  /* 빅테이터 */
+  &__bigData {
+    padding: 0 20px 40px;
+    background-color: #edf5fd;
+    &--tit {
+      position: relative;
+      padding: 50px 20px 16px;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      background: url(../img/bgBigdata.svg) no-repeat right 0;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        width: 60px;
+        height: 3px;
+        background: #1073ba;
+      }
+      img {
+        width: 200px;
+      }
+      p {
+        margin-top: 8px;
+        @include font-style(14);
+      }
+    }
+    &--chart {
+      position: relative;
+      padding: 58px 20px 20px;
+      margin-top: 40px;
+      border-radius: 12px;
+      background-color: $white;
+      box-shadow: 0 4px 10px 0 rgba(8, 47, 90, 0.14);
+      .chartUnit {
+        background-color: #f1f1f1;
+      }
+      .axis {
+        margin: 0 auto 16px;
+        width: calc(100% - 18px);
+        span {
+          font-weight: $med-w;
+          color: #111;
+        }
+      }
+      @media screen and (max-width: 321px) {
+        padding: 50px 16px 16px;
+      }
+    }
+    &--info {
+      position: relative;
+      padding: 10px 16px;
+      margin-top: 36px;
+      border: solid 1.2px #0a6cd8;
+      border-radius: 12px;
+      @include font-style(14, $black-two);
+      &:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        z-index: 1;
+        width: 40px;
+        height: 19.5px;
+        background-image: url(../img/bgBigdataInfo.svg);
+      }
+    }
+  }
+  /* 개인정보 제3자 제공 동의서, 간병인 중개 계약서 */
+  &__agree,
+  &__insurContract {
+    position: relative;
+    padding: 40px 20px;
+    border-top: solid 10px $white-two;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -11px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $white-three;
+    }
+    &--tit {
+      @include flexbox(between, center);
+      margin-bottom: 16px;
+      h3 {
+        @include flexbox(inherit, center);
+        @include font-style(18, color, med);
+        span {
+          margin-left: 8px;
+          @include font-style(12, $faded-red, nor);
+        }
+      }
+    }
+  }
+  &__insurContract {
+    &--view {
+      padding: 16px;
+      background: url(../img/arrowRight-7.svg) no-repeat right 16px center;
+      @include border-box($white-three, 12px, $white);
+      @include flexbox(inherit, center);
+      figure {
+        padding: 12px;
+        @include border-box($white-three, 12px, $white-four);
+      }
+      figcaption {
+        margin-left: 16px;
+        @include font-style(16, inherit, med);
+      }
+      ~ p,
+      ~ div {
+        margin-top: 8px;
+      }
+    }
+    &--info {
+      padding: 12px 12px 12px 34px;
+      background: url(../img/iconNoti-grey.svg) no-repeat 12px 14px / 16px $white-five;
+      border-radius: 12px;
+      @include font-style(14, $black-two);
+    }
+    &--ansewer {
+      p {
+        padding: 11px 16px 11px 42px;
+        border: 1px solid $white-three;
+        border-radius: 8px;
+        background: url(../img/icon_chk_green.svg) no-repeat 16px center / 16px $white-five;
+        @include font-style(16, $black, nor);
+      }
+    }
+  }
+  /* 가족 간병 */
+  &__family {
+    padding: 40px 20px;
+    .carePati__tit:nth-child(3) {
+      margin-top: 32px;
+    }
+    &--answer {
+      p {
+        padding: 11px 16px 11px 42px;
+        border: 1px solid $white-three;
+        border-radius: 8px;
+        background: url(../img/icon_chk_green.svg) no-repeat 16px center / 16px $white-five;
+        @include font-style(16, $black, nor);
+      }
+    }
+  } /* 매칭 방법 */
+  &__autoMatch {
+    padding: 40px 20px;
+    &--tit {
+      margin-bottom: 8px;
+      @include flexbox(between, center);
+      h3 {
+        @include font-style(18, $black, med);
+      }
+    }
+    &--wrap {
+      padding: 16px;
+      border: 1px solid $white-three;
+      border-radius: 12px;
+      background-color: $white-five;
+      h4 {
+        padding-left: 26px;
+        background: url(../img/bgCareType.svg) no-repeat left 6px;
+        @include font-style(16, $black-two, med);
+        @media screen and (max-width: 321px) {
+          padding-left: 22px;
+          background: url(../img/bgCareType.svg) no-repeat left 3px;
+        }
+      }
+      p {
+        padding-left: 26px;
+        margin-top: 2px;
+        @include font-style(14, $black-two);
+      }
+      .addBox {
+        padding-top: 16px;
+        margin-top: 16px;
+        border-top: 1px solid $white-three;
+        h4 {
+          background: url(../img/ic_auto.svg) no-repeat left 6px;
+          @media screen and (max-width: 321px) {
+            background: url(../img/ic_auto.svg) no-repeat left 3px;
+          }
+        }
+      }
+    }
+    &--card {
+      padding: 16px;
+      border: 1px solid $white-three;
+      border-radius: 12px;
+      background-color: $white-five;
+      .cardInfo {
+        position: relative;
+        padding: 16px;
+        border: 1px solid $white-three;
+        border-radius: 12px;
+        background: no-repeat right 16px center / 35px $white;
+        span {
+          @include font-style(16, $black-two, bol);
+        }
+        p {
+          margin-top: 4px;
+          @include font-style(14, $warm-grey, nor);
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: 16px;
+          width: 32px;
+          height: 4px;
+          border-radius: 0 0 4px 4px;
+        }
+        &.blue:after {
+          background-color: #3d5eab;
+        }
+      }
+      .payInfo {
+        padding: 16px 0;
+        border-bottom: 1px solid $white-three;
+        div {
+          margin-bottom: 6px;
+          @include flexbox(between, center);
+          dt {
+            @include font-style(14, $greyish-brown, nor);
+            strong {
+              @include font-style(16, $black-two, bol);
+            }
+          }
+          dd {
+            @include font-style(16, $black, med);
+            strong {
+              @include font-style(16, $black, bol);
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .txtInfo {
+        padding: 12px 0 0 22px;
+        background: url(../img/iconNoti-grey.svg) no-repeat left 14px / 16px;
+        @include font-style(14, $greyish-brown, nor);
+      }
+    }
+  }
+}
+
+/* 환자 목록 */
+.patientList {
+  padding-bottom: 40px;
+  .noneItem {
+    padding: 15vh 20px 20px;
+    min-height: auto;
+    background-color: transparent;
+    p {
+      margin-top: 4px;
+    }
+    .arrowBtn {
+      margin-top: 16px;
+    }
+  }
+  .arrowBtn {
+    margin-top: 16px;
+    background-position: right 12px center;
+  }
+  &__items {
+    padding-top: 16px;
+    margin: 16px auto 0;
+    width: calc(100% - 40px);
+    border-top: solid 1px $white-three;
+    .radioCheckSel {
+      position: relative;
+      input {
+        &[type="radio"] + label {
+          @include flexbox(inherit, center);
+          padding: 21px 12px 21px 42px;
+          word-break: break-all;
+          span {
+            margin-left: 8px;
+            @include font-style(12, $cool-grey);
+            line-height: 1;
+          }
+        }
+        &:checked ~ .patientList__items--btn button {
+          background-color: $white;
+        }
+        &:disabled {
+          ~ label {
+            padding-left: 12px;
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &--btn {
+      @include flexbox(center, center);
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      z-index: 1;
+      transform: translateY(-50%);
+      button {
+        margin-left: 8px;
+        width: 41px;
+        height: 26px;
+        border-radius: 18px;
+        background-color: $white-two;
+        @include font-style(12, color, med);
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* 환자 목록 삭제 업데이트 안내 */
+.updateNoti {
+  @include column-flexbox(between, center);
+  padding: 24px 20px 0;
+  height: 100vh;
+  background: url(../img/bg_appUpdate.jpg) no-repeat center / cover;
+  &__tit {
+    width: 100%;
+    text-align: center;
+    button {
+      position: relative;
+      z-index: 22;
+      padding: 9px 32px 9px 12px;
+      margin-left: auto;
+      width: auto;
+      border-radius: 20px;
+      background: url(../img/ic_cancle_wh.svg) no-repeat right 12px center rgba(0, 0, 0, 0.4);
+      @include font-style(14, $white);
+      line-height: 1;
+    }
+    h2 {
+      padding-top: 64px;
+      margin-top: 36px;
+      @include font-style(22, $cocoa);
+      background: url(../img/img_megaphone.png) no-repeat top center / 60px;
+    }
+    p {
+      margin-top: 8px;
+      @include font-style(16, $black-two);
+    }
+  }
+  &__btn {
+    padding: 0 20px 48px;
+    .whiteRouBtn {
+      padding: 15px 12px;
+      margin: 0 auto;
+      border-radius: 40px;
+      background-color: $white;
+      width: 100%;
+      max-width: 320px;
+      @include font-style(16, $cocoa, bol);
+      line-height: 1;
+      text-align: center;
+    }
+    p {
+      margin-top: 24px;
+      @include font-style(14, $white);
+      text-align: center;
+    }
+  }
+}

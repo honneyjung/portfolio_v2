@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/pc.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>메인</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap clear">
+        <h1>
+          <a href="">
+            <img src="../img/img_logo01.png" alt="케어네이션" />
+          </a>
+        </h1>
+        <nav>
+          <!-- 
+            기본 : mobileBtn
+            mobileBtn 클릭 : mobileBtn open
+          -->
+          <button type="button" class="mobileBtn">전체 메뉴</button>
+          <ul class="headerWrap__menu clear">
+            <li><a href="../html/1.html" target="_self">간병인 찾기</a></li>
+            <li><a href="../html/2.html" target="_self">간병일감 찾기</a></li>
+            <li><a href="../html/3.html" target="_self">병원회원</a></li>
+            <li><a href="../html/4.html" target="_self">고객센터</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="main">
+        <article class="main__video">
+          <div class="basicWrap">
+            <div class="main__video--tit">
+              <h2>
+                진료부터 간병, 요양까지<br />
+                <p>모든 <b>헬스케어</b>를 <b>연결</b>하다</p>
+              </h2>
+              <div class="storeBtnWrap clear">
+                <button type="button" class="google">구글 플레이</button>
+                <button type="button" class="apple">애플 스토어</button>
+              </div>
+            </div>
+          </div>
+          <video autoplay muted loop width="100%"
+          src="https://s3.ap-northeast-2.amazonaws.com/img.carenation.kr/carenation2.0-homepage/carenation/video/top_video.mp4"
+          type=“video/mp4” />
+        </article>
+        <div class="main__ban swiper">
+          <div class="swiper-wrapper">
+            <div class="ban01 swiper-slide">
+              <p>4년 연속 <span>대한민국소비자만족도</span> 1위 수상</p>
+            </div>
+            <div class="ban02 swiper-slide">
+              <p>3년 연속 <span>대한민국 최고브랜드대상</span> 수상</p>
+            </div>
+            <div class="ban03 swiper-slide">
+              <p>3년 연속 <span>앱어워드코리아 올해의 앱</span> 대상 수상</p>
+            </div>
+            <div class="ban04 swiper-slide">
+              <p>2년 연속 <span>대한민국 산업대상</span> 수상</p>
+            </div>
+            <div class="ban05 swiper-slide">
+              <small>케어네이션 X 삼성화재</small>
+              <p>
+                국내 최초 모바일 전용<br />
+                간병인배상책임보험
+              </p>
+            </div>
+          </div>
+        </div>
+        <article class="main__txtBg">
+          <h2>
+            4년 연속 소비자만족도 1위<br />
+            돌봄 플랫폼<br />
+            <span>
+              내 가족이니까 믿고 맡길 수 있게<br />
+              케어네이션이 그 여정을 함께 합니다
+            </span>
+          </h2>
+        </article>
+        <article class="main__careCalc clear">
+          <div class="main__careCalc--tit">
+            <h2>
+              한눈에 알아보는<br />
+              예상 간병비
+            </h2>
+            <p>
+              진단명과 환자 상태를 입력해 간편하게<br />
+              예상 간병비를 계산할 수 있습니다.
+            </p>
+            <a href="">예상 간병비 계산하러 가기</a>
+          </div>
+          <div class="main__careCalc--img">
+            <div class="topBox">
+              <p>진단명</p>
+              <span>치매</span>
+            </div>
+            <div class="bottomBox">
+              <div class="bottomBox__tit">
+                <p>하루 예상 간병비</p>
+                <span>138,701원</span>
+                <small>( 내국인 식대 포함 기준 )</small>
+              </div>
+              <div class="bottomBox__chart">
+                <div class="graph">
+                  차트 넣는 곳
+                  <p class="graph__label">
+                    <span class="amount">최소 금액</span>
+                    <span class="amount">평균 금액</span>
+                    <span class="amount">최대 금액</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <span class="caution">* YYYY.MM 기준</span>
+          </div>
+        </article>
+        <article class="main__tabSlide">
+          <div class="basicWrap">
+            <h2 class="a11y-hidden">주요 서비스</h2>
+            <ul class="main__tabSlide--btnWrap clear">
+              <li>
+                <h3><button type="button" class="active">간병 서비스</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">동행 서비스</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">가사돌봄 서비스</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">방문요양 서비스</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">비대면 결제</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">의료용품 스토어</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">병원·약국 찾기</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">복약 관리</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">요양원 찾기</button></h3>
+              </li>
+              <li>
+                <h3><button type="button">상조·장례</button></h3>
+              </li>
+            </ul>
+            <div class="scrolling">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="slideWrap swiper clear">
+              <div class="swiper-wrapper">
+              <div class="slideWrap__item slide01 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>간병 서비스</strong>
+                  <p>
+                    간병인 프로필/후기/간병비 확인 후,<br />
+                    카드로 간편 결제하세요
+                  </p>
+                  <small
+                    >4년 연속 소비자만족도 1위 간병인 찾기<br />
+                    오늘도 더 좋은 간병 문화를 만들어갑니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide02 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>동행 서비스</strong>
+                  <p>
+                    집부터 병원까지,<br />
+                    든든한 동행인을 찾아보세요
+                  </p>
+                  <small
+                    >부모님 동행, 마음까지 함께 해 줄 사람<br />
+                    케어네이션에 있습니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide03 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>가사돌봄 서비스</strong>
+                  <p>
+                    가사부터 돌봄까지<br />
+                    필요한 만큼 편리하게 이용해 보세요
+                  </p>
+                  <small
+                    >맞춤형 가사돌봄을 통해<br />
+                    케어메이트가 따뜻한 일상을 함께 합니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide04 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>방문요양 서비스</strong>
+                  <p>
+                    방문요양, 주야간보호, 방문간호, 방문목욕,<br />
+                    단기보호, 복지용구 시설들을 편하게 찾아보세요
+                  </p>
+                  <small
+                    >기관평가와 함께<br />
+                    집근처 센터까지 확인할 수 있어요</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide05 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>간병비·병원비 비대면 결제</strong>
+                  <p>
+                    병원에 갈 필요 없이 간병비 따로 병원비 따로!<br />
+                    이제 앱으로 편하게 결제하세요
+                  </p>
+                  <small>*병원비 결제 서비스는 추후 업데이트 될 예정입니다</small>
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide06 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>의료용품 스토어</strong>
+                  <p>
+                    매번 구매해야 하는 의료용품,<br />
+                    합리적인 가격에 간편하게 구매하세요
+                  </p>
+                  <small
+                    >원하는 제품을 손쉽게<br />
+                    검색할 수 있습니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide07 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>병원·약국 찾기</strong>
+                  <p>
+                    근처 병원·약국의<br />
+                    영업시간, 진료과목을 확인하세요
+                  </p>
+                  <small
+                    >케어네이션 맵으로 병원 찾기가<br />
+                    더욱 편리해졌습니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide08 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>복약 정보 검색·알림 관리</strong>
+                  <p>
+                    잊기 쉬운 약 복용 방법<br />
+                    대신 챙겨드릴게요
+                  </p>
+                  <small
+                    >처방받은 약, 매일 챙겨 먹어야 하는 영양제<br />
+                    모두 깜빡하지 않도록 복약 알림을 설정하세요</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide09 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>요양원 찾기</strong>
+                  <p>
+                    우리 부모님 더욱 편안하게 모실 수 있도록<br />
+                    원하는 등급의 시설을 찾아보세요
+                  </p>
+                  <small
+                    >요양원, 노인공동생활 가정 등을<br />
+                    빠르게 검색할 수 있어요</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              <div class="slideWrap__item slide10 swiper-slide">
+                <div class="slideWrap__item--tit">
+                  <strong>부고장 관리·상조·장례</strong>
+                  <p>
+                    장례 시설 찾기, 부고장 작성 및 관리,<br />
+                    상조가입 등이 가능해요
+                  </p>
+                  <small
+                    >갑작스럽게 준비해야 하는 장례 여정을<br />
+                    케어네이션이 함께 합니다</small
+                  >
+                </div>
+                <div class="slideWrap__item--img">
+                  <figure></figure>
+                </div>
+              </div>
+              </div><!-- /swiper-wrapper -->
+            </div><!-- /slideWrap -->
+            <div class="main__tabSlide--pcBtn">
+              <button type="button" class="">이전</button>
+              <button type="button">다음</button>
+            </div>
+            <ul class="main__tabSlide--mobileBtn clear">
+              <li><button type="button" class="active">1</button></li>
+              <li><button type="button">2</button></li>
+              <li><button type="button">3</button></li>
+              <li><button type="button">4</button></li>
+              <li><button type="button">5</button></li>
+              <li><button type="button">6</button></li>
+              <li><button type="button">7</button></li>
+              <li><button type="button">8</button></li>
+              <li><button type="button">9</button></li>
+              <li><button type="button">10</button></li>
+            </ul>
+          </div>
+        </article>
+        <article class="main__security">
+          <div class="main__secirity--layout clear">
+            <figure></figure>
+            <div class="main__security--tit">
+              <h2>
+                안심할 수 있는<br />
+                개인정보 보호와 정보 보안
+              </h2>
+              <p>
+                앱 내의 모든 정보는 고도화된 암호화 알고리즘으로<br />
+                철저하게 보호하고 있어 개인정보 유출 우려가 없습니다
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="main__cycle">
+          <div class="main__cycle--tit">
+            <h2>
+              라이프 사이클에 맞는<br />
+              모든 헬스케어 서비스를 상황별로 제공합니다
+            </h2>
+            <p>
+              케어네이션은 빅데이터를 활용하여 의료산업 서비스의 혁신을 이끌고자 합니다<br />
+              가벼운 경증 환자부터 만성질환 환자 모두가 편하게 이용할 수 있는<br />
+              최고의 의료 서비스를 제공하기 위해 노력하겠습니다
+            </p>
+          </div>
+          <figure></figure>
+        </article>
+        <article class="main__slogan">
+          <div class="main__slogan--wrap clear">
+            <h2>
+              모든 헬스케어를 연결하다<br />
+              케어네이션
+            </h2>
+            <img src="../img/icon_logo_wh.png" alt="" aria-hidden />
+          </div>
+          <!-- 스크롤 시 main__slogan 하단에 도착한 경우, sticky 클래스 추가 -->
+          <div class="main__slogan--btn">
+            <button type="button" class="mobileDown">앱 다운로드</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="footerWrap">
+        <div class="footerWrap__provLink">
+          <div class="basicWrap">
+            <ul class="footerWrap__provLink--list clear">
+              <li><a href="">회사소개</a></li>
+              <li><a href="">보호자 이용약관</a></li>
+              <li><a href="">보호자 개인정보 처리방침</a></li>
+              <li><a href="">간병인 이용약관</a></li>
+              <li><a href="">간병인 개인정보 처리방침</a></li>
+              <li><a href="">위치기반 서비스 이용약관</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerWrap__corpInfo clear">
+          <div class="footerWrap__corpInfo--aco on">
+            <img src="../img/img_logo02.png" alt="케어네이션" />
+            <h2><button type="button">케어네이션 회사 정보 더보기</button></h2>
+            <div>
+              <p>서비스명 : 케어네이션</p>
+              <p>주소지 : 서울 강남구 테헤란로8길 37, 한동빌딩 5층</p>
+              <p>회사명 : 케어네이션 주식회사</p>
+              <p>사업자등록번호 : 212-86-05451</p>
+              <p>대표자명 : 김견원, 서대건 │ 개인정보관리책임자 : 서대건</p>
+              <p>통신판매업신고 : 제 2024-서울강남-04074 호</p>
+              <p>제휴문의 : 070-4681-0443</p>
+              <p>제휴 이메일 : carenation@carenation.kr</p>
+              <p>고객센터 이메일 : help@carenation.kr</p>
+              <p>호스팅 사업자 : Naver Cloud Platform</p>
+              <p>유료직업소개소 등록번호 : 제 2024-3220250-14-5-00030 호</p>
+              <small>
+                케어네이션 주식회사는 통신판매중개자로서 거래에 필요한 시스템을 운영 및
+                제공합니다.<br />
+                보호자와 케어메이트 사이에 발생 분쟁에 대한 책임은 보호자와 케어메이트에게 있습니다.
+              </small>
+            </div>
+          </div>
+          <div class="footerWrap__corpInfo--right">
+            <ul class="snsLink clear">
+              <li><a href="" class="blog">네이버 블로그</a></li>
+              <li><a href="" class="youtube">유튜브</a></li>
+              <li><a href="" class="facebook">페이스북</a></li>
+              <li><a href="" class="kakao">카카오톡 채널</a></li>
+              <li><a href="" class="insta">인스타그램</a></li>
+            </ul>
+            <div class="csWrap">
+              <div class="csWrap__csCenter">
+                <p>고객센터<b>1811-5949</b></p>
+                <span><b>월~토요일</b> : 오전 10시 ~ 오후 5시 30분</span>
+                <span><b>금요일</b> : 오전 10시 ~ 오후 5시 <small>(채팅상담 동일)</small></span>
+                <span><b>휴무일</b> : 일요일, 명절, 근로자의 날</span>
+                <span>카카오톡 상담시간 : 고객센터와 동일합니다</span>
+              </div>
+              <div class="csWrap__familySite">
+                <button type="button">Family site</button>
+                <!-- 
+                  기본값 : csWrap__familySite--list
+                  버튼 선택시 : csWrap__familySite--list open
+                -->
+                <ul class="csWrap__familySite--list open">
+                  <li><a href="" target="_blank">DATA LAB.</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="topBtn">맨위로</button>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

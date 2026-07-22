@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+    <path data-name="사각형 10579" style="fill:none" d="M0 0h44v44H0z"/>
+    <g data-name="그룹 57946">
+        <path data-name="패스 64815" d="M20.758 12.507a1.491 1.491 0 1 1-1.49-1.493 1.492 1.492 0 0 1 1.49 1.493" style="fill:#7e4f40;opacity:.7" transform="translate(3.611 4.303)"/>
+        <path data-name="패스 64816" d="m28.979 27 5.1-.015 2.7 7.912H0l2.7-7.912 5.3.039.023 1.145 1.6 1.416 6.222.625 7.625-.083 2.93-.327 1.583-.569.986-1.806z" style="fill:#7e4f40;opacity:.7" transform="translate(3.611 4.303)"/>
+        <path data-name="선 3356" transform="translate(6.691 31.049)" style="stroke-miterlimit:10;stroke-linecap:round;stroke:#333;fill:none" d="M0 0h4.487"/>
+        <path data-name="선 3357" transform="translate(33.053 31.049)" style="stroke-miterlimit:10;stroke-linecap:round;stroke:#333;fill:none" d="M0 0h4.545"/>
+        <path data-name="패스 64817" d="M19.869 11.671a1.491 1.491 0 1 1-1.49-1.493 1.492 1.492 0 0 1 1.49 1.493z" style="stroke-linejoin:round;stroke-linecap:round;stroke:#333;fill:none" transform="translate(3.611 4.303)"/>
+        <path data-name="패스 64818" d="M23.444 11.673a5.063 5.063 0 1 1 0-.006z" style="stroke-linejoin:round;stroke-linecap:round;stroke:#333;fill:none" transform="translate(3.611 4.303)"/>
+        <path data-name="패스 64819" d="M12.478 21.165a2.759 2.759 0 0 0-1.837.7 9.707 9.707 0 0 0-2.774 4.118 2.9 2.9 0 0 0 1.811 3.68c.068.023.138.044.208.062 1.632.38 4.253.379 8.406.379h.173c4.153 0 6.774 0 8.406-.379a2.9 2.9 0 0 0 2.081-3.534 3.094 3.094 0 0 0-.062-.208 9.713 9.713 0 0 0-2.773-4.116 2.759 2.759 0 0 0-1.837-.7" style="stroke-linejoin:round;stroke-linecap:round;stroke:#333;fill:none" transform="translate(3.611 4.303)"/>
+        <path data-name="패스 64820" d="M26.7 4.229a11.129 11.129 0 1 1-3.639-2.7" style="stroke-linejoin:round;stroke-linecap:round;stroke:#333;fill:none" transform="translate(3.611 4.303)"/>
+        <path data-name="선 3358" transform="translate(18.896 30.069)" style="stroke:#7e4f40;stroke-linejoin:round;stroke-linecap:round;fill:none" d="M6.187 0H0"/>
+    </g>
+</svg>

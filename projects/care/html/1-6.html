@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>환자 개인 정보 입력</title>
+  </head>
+  <body>
+    <!-- 
+      기본값 : headerComu / h1에 a11y-hidden 추가
+      스크롤 됐을 때 : headerComu 와 a11y-hidden 삭제 (carenation 헤더와 동일)
+    -->
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">환자 정보</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap">
+        <div class="basicWrap__flex">
+          <section class="notifiRegis">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+              </ul>
+            </div>
+            <div class="pageTit">
+              <h2>환자 정보를 입력해 주세요.</h2>
+            </div>
+            <article class="notifiRegis__pait">
+              <ul class="notifiRegis__pait--form">
+                <li class="warning">
+                  <label for="name">이름</label>
+                  <div>
+                    <input type="text" id="name" placeholder="환자 이름을 입력해 주세요." />
+                    <button type="button" class="reset">초기화</button>
+                  </div>
+                  <em>한글만 입력하실 수 있습니다.</em>
+                  <p class="reference mark">
+                    서비스 증명서 발급 예정인 경우, 환자 이름을 정확하게 기입해 주세요. 추후 수정은
+                    불가합니다.
+                  </p>
+                </li>
+                <li>
+                  <label for="gender">성별</label>
+                  <div>
+                    <div class="radioBoxSel">
+                      <input type="radio" id="gender01" name="gender" />
+                      <label for="gender01">남성</label>
+                    </div>
+                    <div class="radioBoxSel">
+                      <input type="radio" id="gender02" name="gender" />
+                      <label for="gender02">여성</label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <label for="age">나이</label>
+                  <div>
+                    <div>
+                      <input type="number" id="age" placeholder="환자 나이를 입력해 주세요." />
+                    </div>
+                    <span>세</span>
+                  </div>
+                </li>
+                <li>
+                  <label for="tall">키</label>
+                  <div>
+                    <div>
+                      <input type="number" id="tall" placeholder="환자 키를 입력해 주세요." />
+                    </div>
+                    <span>cm</span>
+                  </div>
+                </li>
+                <li>
+                  <label for="weight">몸무게</label>
+                  <div>
+                    <div>
+                      <input type="number" id="weight" placeholder="환자 몸무게를 입력해 주세요." />
+                    </div>
+                    <span>kg</span>
+                  </div>
+                </li>
+                <li>
+                  <label for="diagnosis">진단명</label>
+                  <!-- <div>
+                    <textarea
+                      id="diagnosis"
+                      placeholder="진단명을 입력해 주세요. (30자 이내)"
+                    ></textarea>
+                  </div> -->
+                  <!-- 진단명 입력 시 btnDiag에 beB 클래스 추가 (폰트색상변경) -->
+                  <button type="button" class="btnDiag">환자 진단명을 선택해 주세요.</button>
+                  <!-- noDiag 체크 후 다시 진단명 입력 시 체크 해제 -->
+                  <div class="checkSquare mt16">
+                    <input type="checkbox" id="noDiag" name="noDiag" />
+                    <label for="noDiag">현재 진단명이 없는 상태에요.</label>
+                  </div>
+                </li>
+                <li>
+                  <!-- 
+                    기본값 : btnDiag
+                    진료 과목 선택 후 : btnDiag delete
+                  -->
+                  <label for="">진료 과목 <span>선택</span></label>
+                  <button type="button" class="btnDiag delete">진료 과목을 입력해 주세요.</button>
+                </li>
+                <li class="warning">
+                  <label for="name">담당의 이름 <span>선택</span></label>
+                  <div>
+                    <input type="text" id="name" placeholder="담당의 이름을 입력해 주세요." />
+                    <button type="button" class="reset">초기화</button>
+                  </div>
+                  <em>한글만 입력하실 수 있습니다.</em>
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
+        <section class="noticeGrey mt28">
+          <h2>보호자의 환자 상태 고지 의무</h2>
+          <p class="dash">
+            보호자님께서 고지한 환자 정보와 실제 상태가 상이할 경우,
+            <b>
+              케어메이트는 간병 진행을 거부할 수 있으며 보호자님께 위약금이 부과될 수 있습니다.
+            </b>
+          </p>
+          <p class="dash">
+            보호자 회원이 환자의 개인정보를 제공하는 경우, 보호자 회원은 환자의 개인정보를 제공할
+            정당한 권한을 보유하고 있어야 합니다.
+          </p>
+          <!-- 조건 미충족 시 다음 버튼 disabled -->
+          <div class="btnWrap">
+            <button type="button" class="outlineTxtBtn">이전</button>
+            <button type="button" class="solidBtn">다음</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. 뒤로가기 버튼 (이전 팝업창 상태나 1.html로 돌아가기)
+        const backBtn = document.querySelector(".backBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function () {
+            window.history.back();
+          });
+        }
+
+        // 2. 다음 버튼
+        const solidBtn = document.querySelector(".solidBtn");
+        if (solidBtn) {
+          solidBtn.addEventListener("click", function () {
+            window.location.href = "1-7.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

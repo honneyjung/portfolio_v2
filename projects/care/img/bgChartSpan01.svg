@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="7.813" viewBox="0 0 14 7.813">
+    <g data-name="그룹 33417">
+        <g data-name="그룹 33415">
+            <g data-name="그룹 33416">
+                <g data-name="다각형 13" style="fill:#fff">
+                    <path d="M11.586 6.5H2.414a.49.49 0 0 1-.462-.309.49.49 0 0 1 .109-.545l4.585-4.585a.497.497 0 0 1 .708 0l4.585 4.585a.49.49 0 0 1 .109.545.49.49 0 0 1-.462.309z" style="stroke:none" transform="rotate(180 7 3.906)"/>
+                    <path d="M7 1.414 2.414 6h9.172L7 1.414H7m0-1c.256 0 .512.098.707.293l4.586 4.586c.63.63.184 1.707-.707 1.707H2.414c-.89 0-1.337-1.077-.707-1.707L6.293.707A.997.997 0 0 1 7 .414z" style="fill:#e1e1e1;stroke:none" transform="rotate(180 7 3.906)"/>
+                </g>
+            </g>
+        </g>
+        <path data-name="패스 54375" d="M2470.036-12959h1.5l1.177 1.208 6.709-.062 1.083-1.146h1.989v-1.812h-12.458z" transform="translate(-2469 12960.812)" style="fill:#fff"/>
+    </g>
+</svg>

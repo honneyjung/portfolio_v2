@@ -1,0 +1,188 @@
+.notifiComple {
+  &__txt {
+    padding: 204px 20px 40px;
+    text-align: center;
+    h2 {
+      position: relative;
+      @include font-style(18);
+    }
+    p {
+      margin-top: 4px;
+      @include font-style(16, $black-two);
+    }
+    .compleCheck {
+      position: absolute;
+      top: 73px;
+      left: 50%;
+      width: 166px;
+      height: 166px;
+      transform: translateX(-50%);
+      animation: complete 1.2s ease-in-out;
+      @keyframes complete {
+        0% {
+          background-size: 24px;
+        }
+        50% {
+          background-size: 100%;
+        }
+        100% {
+          background-size: 72px;
+        }
+      }
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        width: 203px;
+        height: 120px;
+        transform: translateX(-50%);
+        animation: confetti 1s ease-in-out;
+        animation-delay: 0.2s;
+        @keyframes confetti {
+          0% {
+            background: url(../img/ic_confetti01.svg) no-repeat center;
+          }
+          50% {
+            background: url(../img/ic_confetti02.svg) no-repeat center / 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__progress {
+    padding: 0 20px;
+    ul {
+      @include flexbox(between, inherit);
+      li {
+        position: relative;
+        width: 33.3333%;
+        text-align: center;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          /*  right: -28.75%; */
+          left: 71.25%;
+          top: 11px;
+          width: 57.5%;
+          height: 1px;
+          border-bottom: 1px dashed $cool-grey;
+        }
+        &:last-child:before,
+        &:last-child:after {
+          display: none;
+        }
+        .numCircle {
+          margin: auto;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: no-repeat center / cover;
+          @include font-style(14, $warm-grey, med);
+          &.two {
+            background-image: url(../img/icon_step_2.svg);
+          }
+          &.three {
+            background-image: url(../img/icon_step_3.svg);
+          }
+        }
+        h3 {
+          margin-top: 12px;
+          @include font-style(14, $greyish-brown, med);
+        }
+        p {
+          margin-top: 4px;
+          @include font-style(12, $warm-grey);
+        }
+        &.active {
+          .numCircle {
+            background-image: url(../img/icon_step_chk_brw.svg);
+            animation: flashImage 1s 3 1.2s forwards;
+            @keyframes flashImage {
+              0% {
+                background-image: url(../img/icon_step_chk_brw.svg);
+              }
+              50% {
+                background-image: url(../img/icon_step_chk.svg);
+              }
+              100% {
+                background-image: url(../img/icon_step_chk_brw.svg);
+              }
+            }
+          }
+          &:after {
+            animation: flashLine 1s 3 1.2s forwards;
+            @keyframes flashLine {
+              0% {
+                border-color: $cocoa;
+                width: 0;
+              }
+              50% {
+                border-color: transparent;
+              }
+              100% {
+                border-color: $cocoa;
+                width: 57.5%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 공고 등록 완료 - 하단 알림 */
+.botWrap {
+  margin-top: 40px;
+  // 손해보상찾기 배너
+  &__ban {
+    padding: 19px 16px;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    background: url(../img/bg_notifiComBan.png) no-repeat right 16px center / 62px $white-five;
+    strong {
+      display: block;
+      @include font-style(14, $cocoa, bol);
+      ~ p {
+        margin-top: 2px;
+      }
+    }
+    p {
+      display: inline-flex;
+      padding-right: 12px;
+      @include font-style(14, $black-two, med);
+      background: url(../img/arrowRight-c.svg) no-repeat right;
+    }
+  }
+}
+
+.doneCaution {
+  padding: 0 20px;
+  &__wrap {
+    padding-top: 12px;
+    border-top: 1px solid $white-three;
+    p {
+      @include font-style(14, $greyish-brown);
+    }
+  }
+  &__titWrap {
+    padding-top: 20px;
+    border-top: 1px solid $white-three;
+    h4 {
+      padding-left: 22px;
+      margin-bottom: 8px;
+      background: url(../img/iconNoti-grey.svg) no-repeat 0 2px / 16px;
+      @include font-style(14, $black-two);
+      &:nth-child(n + 2) {
+        margin-top: 12px;
+      }
+    }
+    p {
+      @include font-style(14, $black-two);
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <title>장소 검색</title>
+  </head>
+  <body>
+    <!-- 
+      기본값 : headerComu / h1에 a11y-hidden 추가
+      스크롤 됐을 때 : headerComu 와 a11y-hidden 삭제 (carenation 헤더와 동일)
+    -->
+    <header class="headerComu">
+      <div class="headerWrap">
+        <div>
+          <button type="button" class="backBtn">뒤로가기</button>
+          <h1 class="a11y-hidden">간병 장소</h1>
+        </div>
+      </div>
+    </header>
+    <main class="mt0">
+      <div class="basicWrap bgGrey">
+        <div class="basicWrap__flex">
+          <section class="notifiPlace">
+            <div class="notifiStep">
+              <h2 class="a11y-hidden">공고 절차</h2>
+              <ul class="notifiStep__list">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
+            <div class="pageTit">
+              <h2>간병 장소를 검색해 주세요.</h2>
+              <p>매칭된 케어메이트가 입력한 주소로 찾아갑니다.</p>
+            </div>
+            <!-- 스크롤시 notifiSearch에 scrolled 추가 -->
+            <article class="notifiSearch breakLine">
+              <div class="notifiSearch__wrap">
+                <div class="notifiSearch__form--input">
+                  <input type="text" id="search01" placeholder="집 주소를 입력해 주세요." />
+                  <button type="button" class="searchBtn">검색</button>
+                  <button type="button" class="reset">초기화</button>
+                </div>
+                <div class="notifiSearch__wrap--txt">
+                  <span>띄어쓰기 없이 입력해 주세요.</span>
+                </div>
+              </div>
+            </article>
+            <article class="notifiPlace__result">
+              <h3 class="a11y-hidden">장소 검색 결과</h3>
+              <!-- 병·의원 -->
+              <div class="noneItem">
+                <img src="../img/noneNotifiResult-hos.svg" alt="" aria-hidden />
+                <p>등록되지 않은 병·의원입니다.</p>
+                <div class="notifiPlace__result--info">
+                  <div>
+                    <h4>원하는 병원을 찾기 위한 방법이에요.</h4>
+                    <ol>
+                      <li><b>입력 방식</b>을 바꿔보세요. <span>(예시: 카이스트 > KAIST)</span></li>
+                      <li>아래 버튼을 눌러 <b>직접 병원을 등록</b>해 보세요.</li>
+                    </ol>
+                  </div>
+                  <button type="button" class="outlineArwBtn">주소로 병원 등록</button>
+                </div>
+              </div>
+              <!-- // 병·의원 -->
+
+              <!-- 집 -->
+              <!-- <div class="noneItem">
+                <img src="../img/noneNotifiResult-hom.svg" alt="" aria-hidden />
+                <p>주소가 존재하지 않습니다.</p>
+              </div> -->
+              <!-- // 집 -->
+
+              <!-- 검색 결과 -->
+              <!-- <ul>
+                <li>
+                  <button type="button">
+                    <p>서울시 강남구 테헤란로 8길 37, 한동빌딩 5층</p>
+                    <span>서울시 강남구 테헤란로 8길 37, 한동빌딩 5층</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <p>서울시 강남구 테헤란로 8길 37, 한동빌딩 5층</p>
+                    <span>서울시 강남구 테헤란로 8길 37, 한동빌딩 5층</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <p>
+                      서울시 강남구 테헤란로 8길 37, 한동빌딩 5층 서울시 강남구 테헤란로 8길 37,
+                      한동빌딩 5층서울시 강남구 테헤란로 8길 37, 한동빌딩 5층서울시 강남구 테헤란로
+                      8길 37, 한동빌딩 5층
+                    </p>
+                    <span>
+                      서울시 강남구 테헤란로 8길 37, 한동빌딩 5층 서울시 강남구 테헤란로 8길 37,
+                      한동빌딩 5층서울시 강남구 테헤란로 8길 37, 한동빌딩 5층
+                    </span>
+                  </button>
+                </li>
+              </ul> -->
+              <!-- // 검색 결과 -->
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- 스크롤시에만 : floatingBtn scroll -->
+    <div class="floatingBtn">
+      <button type="button">
+        <span>고객상담</span>
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+.notifiItems {
+  position: relative;
+  @include border-box($white-three, 12px, $white);
+  img {
+    position: absolute;
+    right: 12px;
+    width: 40px;
+  }
+  &__label {
+    @include flexbox(inherit, center);
+    flex-wrap: wrap;
+    margin-top: -4px;
+    .label {
+      margin-top: 4px;
+      margin-right: 6px;
+    }
+  }
+  &__tit {
+    padding: 12px 56px 12px 0;
+    border-bottom: solid 1px $white-two;
+    background-position: right;
+    background-size: 40px;
+    h3 {
+      @include font-style(18);
+      @include ellipsis;
+    }
+  }
+  &__info {
+    margin-top: 12px;
+  }
+  &__insur {
+    @include flexbox(between, center);
+    margin: 0 auto 12px;
+    width: calc(100% - 32px);
+    border-top: solid 1px $white-two;
+    border-bottom: solid 1px $white-two;
+  }
+  &__btn {
+    @include flexbox(between, center);
+    flex-wrap: wrap;
+    padding: 0 16px 16px;
+    margin-top: 6px;
+    button {
+      @media screen and (max-width: 281px) {
+        width: 100% !important;
+        &:nth-child(n + 2) {
+          margin-top: 4px !important;
+        }
+      }
+      &:first-child:nth-last-child(1) {
+        width: 100%;
+      }
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ button {
+        width: calc(50% - 4px);
+      }
+      &:first-child:nth-last-child(3),
+      &:first-child:nth-last-child(3) ~ button:nth-last-child(2) {
+        width: calc(50% - 4px);
+      }
+      &:nth-child(3) {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+/* 이 위로 수정 금지 */
+.notifiItems {
+  img {
+    top: -6px;
+  }
+  &__number {
+    margin: -16px -16px 16px;
+    padding: 8px 14px;
+    background-color: rgba(255, 249, 245, 0.6);
+    border-radius: 12px 12px 0 0;
+    p {
+      @include font-style(14, $cocoa, med);
+    }
+  }
+  &__info {
+    div {
+      @include flexbox(between, center);
+      &:nth-child(n + 2) {
+        margin-top: 4px;
+      }
+    }
+    dt,
+    dd {
+      @include font-style(16);
+    }
+    dt {
+      color: $greyish-brown;
+    }
+    dd {
+      @include ellipsis;
+    }
+  }
+  &__insur {
+    padding: 18px 0;
+    p,
+    button {
+      @include font-style(16);
+    }
+    p {
+      flex-shrink: 0;
+      color: $greyish-brown;
+      font-weight: $bol-w;
+    }
+    button {
+      width: auto;
+      font-weight: $bol-w;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="101" viewBox="0 0 360 101">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_1734" data-name="사각형 1734" transform="translate(1240 90)" style="fill:#eef9ff" d="M0 0h360v101H0z"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:#d8e7ef}.cls-4{fill:#cde3ef}
+        </style>
+    </defs>
+    <g id="마스크_그룹_28" data-name="마스크 그룹 28" transform="translate(-1240 -90)" style="clip-path:url(#clip-path)">
+        <g id="그룹_5384" data-name="그룹 5384" transform="translate(1061.095 -210.303)">
+            <path id="패스_15035" data-name="패스 15035" class="cls-3" d="M554.09 366.866h-15.884l-12.851-12.851h-8.547v-1.872h9.322l12.851 12.851h15.11z" transform="translate(-14.728 -2.09)"/>
+            <path id="패스_15036" data-name="패스 15036" class="cls-3" d="M551.515 393.811H532.2l-6.986-6.986 1.323-1.323 6.438 6.438h18.545z" transform="translate(-12.151 -18.155)"/>
+            <path id="패스_15037" data-name="패스 15037" class="cls-3" d="M535.372 424.171h-29.046V422.3H534.6l7.162-7.162 1.323 1.323z" transform="translate(-3.057 -32.427)"/>
+            <path id="패스_15038" data-name="패스 15038" class="cls-4" d="M517.033 350.988a3.186 3.186 0 1 1-3.186-3.186 3.186 3.186 0 0 1 3.186 3.186z" transform="translate(-11.768)"/>
+            <circle id="타원_426" data-name="타원 426" class="cls-4" cx="3.186" cy="3.186" r="3.186" transform="translate(510.533 364.822)"/>
+            <path id="패스_15039" data-name="패스 15039" class="cls-4" d="M506.552 427.8a3.186 3.186 0 1 1-3.186-3.186 3.186 3.186 0 0 1 3.186 3.186z" transform="translate(-.098 -36.99)"/>
+        </g>
+        <g id="그룹_5385" data-name="그룹 5385" transform="translate(925.547 -365.752)">
+            <path id="패스_15040" data-name="패스 15040" class="cls-3" d="M675.87 487.592h-2.235v-10.21l-15.351-15.351v-18.976h2.235V461.1l15.351 15.351z" transform="translate(-21.458)"/>
+            <path id="패스_15041" data-name="패스 15041" class="cls-3" d="m645.641 487.251-8.345-8.345v-23.079h2.235v22.153l7.691 7.69z" transform="translate(-13.467 -4.863)"/>
+            <path id="패스_15042" data-name="패스 15042" class="cls-3" d="M608.5 498.459h-2.236v-34.7l9.211-9.211 1.581 1.581-8.556 8.556z" transform="translate(-1.652 -4.377)"/>
+            <path id="패스_15043" data-name="패스 15043" class="cls-4" d="M682.538 508.826a3.806 3.806 0 1 0 3.806 3.806 3.806 3.806 0 0 0-3.806-3.806z" transform="translate(-29.243 -25.04)"/>
+            <circle id="타원_427" data-name="타원 427" class="cls-4" cx="3.806" cy="3.806" r="3.806" transform="translate(629.158 477.792)"/>
+            <path id="패스_15044" data-name="패스 15044" class="cls-4" d="M605.727 519.308a3.806 3.806 0 1 0 3.806 3.805 3.805 3.805 0 0 0-3.806-3.805z" transform="translate(0 -29.031)"/>
+        </g>
+    </g>
+</svg>

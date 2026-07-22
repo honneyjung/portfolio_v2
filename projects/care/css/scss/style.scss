@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+// base
+@import "base/_color.scss"; //# 컬러
+@import "base/_mixinStyle.scss"; //# 믹스인 스타일
+@import "base/_typoStyle.scss"; //# 타이포그래피
+
+// layout
+@import "layout/_layout.scss"; //# 기본 레이아웃
+@import "layout/_header.scss"; //# 헤더
+@import "layout/_popup.scss"; //# 팝업
+@import "layout/_noticeGrey.scss"; //# 아래에 나오는 알립니다.
+
+// components
+@import "components/_button.scss"; //# 버튼
+@import "components/_calendar.scss"; //# 달력
+@import "components/_chart.scss"; //# 차트
+@import "components/_checkBox.scss"; //# 체크박스
+@import "components/_label.scss"; //# 라벨
+@import "components/_noneItem.scss"; //# 항목 없을 때
+@import "components/_notifiItems.scss"; //# 공고 리스트 아이템
+@import "components/_payCard.scss"; //# 자동 결제 카드 등록
+@import "components/_profileCare.scss"; //# 케어메이트 프로필
+
+// architecture
+@import "architecture/_loading.scss"; //# 로딩중
+@import "architecture/_report.scss"; //# 신고하기
+@import "architecture/_adBanner.scss"; //# 광고배너
+@import "architecture/_notifiRegisPait.scss"; //# 환자 정보 입력
+@import "architecture/_notifiPlace.scss"; //# 장소 검색, 팝업
+@import "architecture/_notifiPlaceDet.scss"; //# 장소 확인
+@import "architecture/_notifiComple.scss"; //# 공고 등록 완료
+@import "architecture/_alyCagiv.scss"; //# 지원한 케어메이트 목록
+@import "architecture/_license.scss"; //# 케어메이트 자격증
+@import "architecture/_payment.scss"; //# 결제 정보
+@import "architecture/_review.scss"; //# 한 줄 평
+@import "architecture/_search.scss"; //# 검색
+@import "architecture/_insuranceCertifi.scss"; //# 간병인배상책임보험 가입증명서
+@import "architecture/_notifiCancel.scss"; //# 공고취소
+
+// page
+@import "pages/_alyCagiv.scss"; //# 지원한 케어메이트
+@import "pages/_autoMatch.scss"; //# 자동 매칭
+@import "pages/_careComple.scss"; //# 지원한 케어메이트 - 완료한 간병일
+@import "pages/_careList.scss"; //# 간병내역
+@import "pages/_fullSlide.scss"; //# 슬라이드 컨텐츠 페이지
+@import "pages/_insurance.scss"; //# 간병인 계약서
+@import "pages/_main.scss"; //# 메인
+@import "pages/_notifiCustom.scss"; //# 공고 등록 (맞춤형 간병 설정)
+@import "pages/_notifiPlace.scss"; //# 공고 등록 (장소 선택 + 공고 절차)
+@import "pages/_notifiRegis.scss"; //# 공고 등록 (환자 정보 입력)
+@import "pages/_patientInfo.scss"; //# 환자 정보 - 간병 상세
+@import "pages/_payment.scss"; //# 결제 정보
+@import "pages/_review.scss"; //# 한 줄 평
+
+// popup
+@import "popup/_popupInList.scss"; //# 공고 재매칭 팝업
+@import "popup/_popupDesc.scss"; //# ※ 매칭 내용 팝업
+@import "popup/_popupAi.scss"; //# ※ AI 팝업
+@import "popup/_popupToast.scss"; //# 토스트 팝업
+@import "popup/_botPopFull.scss"; //# 아래서 나오는 풀페이지 팝업
+@import "popup/_botPopCard.scss"; //# 카드 등록 팝업

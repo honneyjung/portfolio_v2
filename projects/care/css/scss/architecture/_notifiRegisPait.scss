@@ -1,0 +1,84 @@
+.notifiRegis {
+  /* 환자 정보 입력 */
+  &__pait {
+    padding: 0 20px;
+    h3 {
+      display: inline-block;
+      padding-bottom: 9px;
+      border-bottom: solid 3px $brownish;
+      @include font-style(18, $brownish, med);
+    }
+    &--form {
+      margin-top: 32px;
+      li {
+        margin-bottom: 24px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        > label {
+          margin-bottom: 10px;
+          @include font-style(18, color, med);
+          span {
+            @include font-style(12, $warm-grey-two, nor);
+          }
+          &.half {
+            width: calc(50% + 4px);
+          }
+          button {
+            margin-left: 8px;
+            width: auto;
+            @include font-style(12, $warm-grey-two, nor);
+            text-decoration: underline;
+          }
+        }
+        > div {
+          position: relative;
+          @include flexbox(center, center);
+          div {
+            position: relative;
+            width: 100%;
+          }
+          span {
+            flex-shrink: 0;
+            width: 35px;
+            @include font-style(16, $cocoa, med);
+            text-align: right;
+          }
+          .reset {
+            background-position: center;
+          }
+          &.half {
+            @include flexbox(between, center);
+            div {
+              width: calc(50% - 4px);
+            }
+          }
+        }
+        em {
+          margin-top: 8px;
+          @include font-style(14, $faded-red);
+          font-style: normal;
+        }
+        &.checkBoxSel {
+          p {
+            @include font-style(16, $black-two, nor);
+          }
+          input[type="checkbox"]:checked + label {
+            border-color: $white-three;
+            background-color: $white;
+          }
+        }
+        .btnSel {
+          padding: 10px 34px 10px 12px;
+          border: 1px solid $white-three;
+          border-radius: 8px;
+          @include font-style(16, $black, nor);
+          background: url(../img/icon_arrowDown_c1.svg) no-repeat right 12px center / 10px;
+        }
+      }
+      textarea {
+        height: 120px;
+      }
+    }
+  }
+}

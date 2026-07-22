@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="38.002">
+    <defs>
+        <style>
+            .cls-1{fill:#e1e1e1}
+        </style>
+    </defs>
+    <g id="icon_license" transform="translate(-412 -644.979)">
+        <g id="그룹_4780" data-name="그룹 4780" transform="translate(418.216 655.267)">
+            <path id="패스_14625" data-name="패스 14625" class="cls-1" d="M432.274 652.683h-15.61a1.03 1.03 0 0 1 0-2.057h15.61a1.03 1.03 0 0 1 0 2.057z" transform="translate(-415.685 -650.626)"/>
+            <path id="패스_14626" data-name="패스 14626" class="cls-1" d="M432.274 656.9h-15.61a1.031 1.031 0 0 1 0-2.059h15.61a1.031 1.031 0 0 1 0 2.059z" transform="translate(-415.685 -647.16)"/>
+            <path id="패스_14627" data-name="패스 14627" class="cls-1" d="M432.274 661.118h-15.61a1.03 1.03 0 0 1 0-2.057h15.61a1.03 1.03 0 0 1 0 2.057z" transform="translate(-415.685 -643.693)"/>
+        </g>
+        <path id="패스_14628" data-name="패스 14628" class="cls-1" d="M441.053 682.981h-28.106a.99.99 0 0 1-.947-1.029v-35.944a.99.99 0 0 1 .947-1.029h28.106a.99.99 0 0 1 .947 1.029v35.943a.99.99 0 0 1-.947 1.03zm-27.159-2.059h26.212v-33.884h-26.212z"/>
+    </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="icon_search" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+    <defs>
+        <style>
+            .cls-1{fill:#3d3736}
+        </style>
+    </defs>
+    <path id="패스_653" data-name="패스 653" class="cls-1" d="M421.88 753.889a6.011 6.011 0 1 1 6.012-6.011 6.018 6.018 0 0 1-6.012 6.011zm0-10.672a4.661 4.661 0 1 0 4.661 4.661 4.666 4.666 0 0 0-4.661-4.66z" transform="translate(-415.868 -741.867)"/>
+    <path id="패스_654" data-name="패스 654" class="cls-1" d="M427.667 754.347a.678.678 0 0 1-.481-.2l-3.216-3.216a.681.681 0 0 1 .963-.962l3.215 3.216a.681.681 0 0 1-.481 1.162z" transform="translate(-414.348 -740.347)"/>
+</svg>

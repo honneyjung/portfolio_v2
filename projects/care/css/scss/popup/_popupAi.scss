@@ -1,0 +1,39 @@
+.popupWrap__tit--ai {
+  display: inline-block;
+  width: 80px;
+  height: 112px;
+  background: url(../img/icon_ai.svg) no-repeat -16px 0 / 912px;
+  animation: ai 1.4s infinite steps(1, start);
+  @keyframes ai {
+    0% {
+      background-position: -16px 0;
+    }
+    20% {
+      background-position: -16px 0;
+    }
+    30% {
+      background-position: -116px 0;
+    }
+    40% {
+      background-position: -216px 0;
+    }
+    50% {
+      background-position: -316px 0;
+    }
+    60% {
+      background-position: -416px 0;
+    }
+    70% {
+      background-position: -516px 0;
+    }
+    80% {
+      background-position: -616px 0;
+    }
+    90% {
+      background-position: -716px 0;
+    }
+    100% {
+      background-position: -816px 0;
+    }
+  }
+}
