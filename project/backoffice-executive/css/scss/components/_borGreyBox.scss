@@ -1,0 +1,29 @@
+.borGreyBox {
+  padding: 16px 20px;
+  @include border-box($white-three, 12px, $white-five);
+  @media screen and (max-width: 1023px) {
+    padding: 16px;
+  }
+  .checkView {
+    justify-content: start;
+    li {
+      background-image: url(../img/ic_check_faf.svg);
+      &:has(.inGreyBox) {
+        width: 100%;
+      }
+      &:only-child {
+        width: 100%;
+      }
+    }
+  }
+  .inGreyBox {
+    padding: 12px;
+    margin: 14px 0 0;
+    width: 100%;
+    @include border-box($white-three, 8px, $white-four);
+    p {
+      @include font-style(14);
+      word-break: break-all;
+    }
+  }
+}

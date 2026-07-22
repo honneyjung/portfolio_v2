@@ -1,0 +1,93 @@
+.noneItem {
+  width: 100%;
+  height: 307px;
+  background: url(../img/ic_noresult.svg) no-repeat center 90px / 92px $white-five;
+  p {
+    padding: 191px 0 90px;
+    @include font-style(18, $warm-grey);
+    text-align: center;
+  }
+}
+
+.noneChart {
+  position: relative;
+  @include flexbox(center, center);
+  svg {
+    flex-shrink: 0;
+    height: 240px;
+    circle {
+      stroke: #aaa;
+      stroke-width: 45;
+      fill: transparent;
+      stroke-dasharray: 155%;
+      transform: rotate(-90deg);
+      transform-origin: center;
+      animation: showChart 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+  p {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    padding: 6px 12px;
+    width: max-content;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    @include font-style(16, $white, med);
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes showChart {
+  from {
+    stroke-dashoffset: 232%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.noneDashItem {
+  @include column-flexbox(center, center);
+  background-color: $white-five;
+  min-height: 280px;
+  img {
+    margin: 0 auto;
+  }
+  p {
+    @include font-style(16, $black-two);
+  }
+}
+
+@media screen and (max-width: 1702px) {
+  .content .content__box--center .noneChart svg {
+    height: 190px;
+  }
+}
+@media screen and (max-width: 1282px) {
+  .content .content__box--center .chartWrap .noneChart svg {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .contDash {
+    .content__box--center {
+      .chartWrap {
+        .noneChart {
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      .noneQna {
+        min-height: 140px;
+      }
+    }
+  }
+  .content .noneChart {
+    overflow: hidden;
+    p {
+      font-size: 12px;
+    }
+  }
+}

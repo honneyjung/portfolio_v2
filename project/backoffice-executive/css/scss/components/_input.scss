@@ -1,0 +1,137 @@
+/* extend */
+%input-hidden {
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+input[type="checkbox"] {
+  @extend %input-hidden;
+  & + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: url(../img/ic_check_f6f.svg) no-repeat center / cover;
+      transform: translateY(-50%);
+    }
+  }
+  &:checked + label {
+    &:before {
+      background-image: url(../img/ic_check_7e4.svg);
+    }
+  }
+}
+
+input {
+  padding: 13px 46px 13px 20px;
+  border-radius: 8px;
+  @include font-style(16, $black);
+  &:disabled {
+    background-color: $white-five !important;
+    color: $greyish-brown !important;
+  }
+  &:focus {
+    border-color: $black;
+    background-color: $white !important;
+  }
+  @media screen and (max-width: 1023px) {
+    padding: 10px 12px;
+  }
+}
+
+/* 캘린더 */
+.dateSearch {
+  float: left;
+  width: calc(50% - 6px);
+  input {
+    width: 100%;
+    background: url(../img/ic_cal.svg) no-repeat right 20px center / 20px;
+    cursor: pointer;
+  }
+}
+
+/* 라디오 버튼 */
+.radioView {
+  @include flexbox(between, inherit);
+  flex-wrap: wrap;
+  &.three {
+    li {
+      width: calc(33.333% - 4px);
+    }
+  }
+  li {
+    position: relative;
+    padding: 2px 0 2px 22px;
+    width: calc(50% - 4px);
+    @include font-style(16, $cool-grey);
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+    }
+    &:before {
+      top: 6px;
+      left: -1px;
+      width: 16px;
+      height: 16px;
+      border: solid 1px $white-three;
+      background-color: $white;
+      @media screen and (max-width: 1023px) {
+        top: 4px;
+      }
+    }
+    &.active {
+      color: $black;
+      font-weight: $med-w;
+      &:before {
+        border-color: $cocoa;
+      }
+      &:after {
+        top: 11px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        background-color: $cocoa;
+        @media screen and (max-width: 1023px) {
+          top: 9px;
+        }
+      }
+    }
+  }
+}
+
+/* 체크박스 스타일 */
+.checkView {
+  @include flexbox(between, start);
+  flex-wrap: wrap;
+  &.widthAuto {
+    gap: 16px;
+    li {
+      width: auto;
+    }
+  }
+  li {
+    padding: 2px 0 2px 22px;
+    width: calc(50% - 4px);
+    background: url(../img/ic_check_f6f.svg) no-repeat 0 7px / 16px;
+    @include font-style(16, $cool-grey);
+    &.active {
+      background-image: url(../img/ic_check_7e4.svg) !important;
+      color: $black;
+      font-weight: $med-w;
+    }
+  }
+}

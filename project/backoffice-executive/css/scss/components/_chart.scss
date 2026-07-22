@@ -1,0 +1,53 @@
+.chartWrap {
+  .updateTxt {
+    margin-top: 8px;
+    text-align: center;
+    @include font-style(12, #c3c3c3);
+  }
+  &__txtList {
+    margin-top: 40px;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: 0 40px;
+      small {
+        position: relative;
+        @include font-style(14, $warm-grey-two, med);
+      }
+      p {
+        margin-top: 2px;
+        @include font-style(20, $black-two, bol);
+      }
+    }
+  }
+  &:has(.noneChart) canvas {
+    display: none !important;
+  }
+}
+.doughnutChart {
+  @include flexbox(center, center);
+  .chartWrap {
+    &:first-child:nth-last-child(2),
+    &:first-child:nth-last-child(2) ~ .chartWrap {
+      width: 50%;
+    }
+    width: 100%;
+    &__tit {
+      text-align: center;
+      span {
+        margin-bottom: 16px;
+        @include font-style(20, $black-two, med);
+      }
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .contDash {
+    .content__box {
+      &.doughnutChart .chartWrap {
+        margin-bottom: 50px;
+        max-height: 210px;
+      }
+    }
+  }
+}

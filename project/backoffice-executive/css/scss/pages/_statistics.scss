@@ -1,0 +1,122 @@
+.subWrap {
+  padding: 0 20px;
+}
+
+.contStat {
+  &:has(.chartWrap) {
+    overflow-x: auto;
+  }
+  input.cal {
+    padding: 18px 58px 18px 20px;
+    margin-top: 12px;
+    height: 64px;
+    background: url(../img/ic_cal.svg) no-repeat right 20px center / 20px;
+    @include font-style(18, $warm-grey-two);
+    cursor: pointer;
+  }
+  .tabList {
+    @include flexbox(inherit, center);
+    flex-wrap: wrap;
+    button {
+      padding: 12px 18px;
+      margin-bottom: 8px;
+      @include border-box(transparent, 26px, $white-five);
+      @include font-style(18, $warm-grey, med);
+      line-height: 1;
+      transition: all 0.4s ease;
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+      &:hover {
+        background-color: $very-light-pink;
+        color: $cocoa;
+      }
+      &.active {
+        border-color: $cocoa;
+        background-color: $very-light-pink;
+        color: $cocoa;
+        font-weight: $bol-w;
+      }
+    }
+  }
+  .chartWrap {
+    margin-top: 60px;
+    min-width: 770px;
+    canvas {
+      max-height: 200px;
+    }
+  }
+  .tableBox {
+    @include flexbox(center, center);
+    margin-top: 28px;
+    table {
+      border-top: solid 1px rgba(225, 225, 225, 0.4);
+      border-bottom: solid 1px rgba(225, 225, 225, 0.4);
+    }
+    tbody {
+      tr {
+        td:last-child {
+          font-weight: $bol-w;
+          color: $black;
+        }
+      }
+    }
+    // 누적 거래 통계
+    &.accumTrans {
+      tbody {
+        tr {
+          td:nth-last-child(2) {
+            font-weight: $bol-w;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  .doughnutChart {
+    .chartWrap {
+      margin-top: 0;
+      min-width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1281px) and (min-width: 1024px) {
+  .contStat .chartWrap svg {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .subWrap {
+    padding-top: 20px;
+  }
+  .contStat {
+    h2 {
+      small {
+        display: block;
+        margin-left: 0;
+      }
+    }
+    input {
+      &.cal {
+        padding: 10px 12px;
+        height: 46px;
+      }
+    }
+    .tabList {
+      button {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+    .chartWrap {
+      margin-top: 16px;
+      &__txtList {
+        margin-top: 16px;
+        li {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

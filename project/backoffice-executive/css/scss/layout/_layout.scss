@@ -1,0 +1,222 @@
+body,
+html {
+  background-color: $white-seven;
+}
+
+/* 간격 */
+.m0 {
+  margin: 0 !important;
+}
+.mt0 {
+  margin-top: 0 !important;
+}
+.mt28 {
+  margin-top: 28px !important;
+}
+.mt36 {
+  margin-top: 36px !important;
+}
+.mt40 {
+  margin-top: 40px !important;
+}
+.mt80 {
+  margin-top: 80px !important;
+}
+.mt140 {
+  margin-top: 140px !important;
+}
+.mb40 {
+  margin-bottom: 40px !important;
+}
+.pd0 {
+  padding: 0 !important;
+}
+
+/* 레이아웃 */
+.commonWrap {
+  // min-height: 1040px;
+  transition: 0.5s;
+  @media screen and (min-width: 1024px) {
+    padding-left: 258px;
+  }
+  &.fold {
+    padding-left: 92px;
+  }
+}
+
+.clear:before,
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content {
+  padding-bottom: 84px;
+  min-height: calc(100dvh - 164px);
+  @media screen and (min-width: 3500px) {
+    min-height: auto;
+  }
+  &__box {
+    position: relative;
+    padding: 32px 40px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background-color: $white;
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.05);
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--tit {
+      @include flexbox(between, center);
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      @include font-style(24, $black, bol);
+      &:only-child {
+        margin-bottom: 0;
+      }
+      &.noWrap {
+        flex-wrap: nowrap;
+        h2 {
+          padding-right: 17px;
+          flex-shrink: 0;
+          br {
+            display: none;
+          }
+        }
+        @media (min-width: 1023px) and (max-width: 1288px) {
+          h2 {
+            br {
+              display: block;
+            }
+          }
+        }
+        @media screen and (max-width: 480px) {
+          h2 {
+            br {
+              display: block;
+            }
+          }
+        }
+      }
+      .tabMenu {
+        @include flexbox;
+        gap: 4px;
+        // border-radius: 8px;
+        button {
+          flex-shrink: 0;
+          padding: 0 10px;
+          min-width: 56px;
+          height: 34px;
+          @include border-box($white-three, 8px, $white-four);
+          @include font-style(14);
+          text-align: center;
+          transition: background 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+          white-space: nowrap;
+          &:hover {
+            background-color: $white-five;
+            font-weight: $med-w;
+          }
+          &.active {
+            background-color: $cocoa;
+            font-weight: $bol-w;
+            color: $white;
+          }
+        }
+      }
+      .inTitSelect {
+        padding: 13px 46px 13px 20px;
+        width: auto;
+        border-radius: 8px;
+        background: url(../img/ic_arrowDown_b.svg) no-repeat right 20px center;
+        @include font-style(16, $black);
+        &:focus {
+          background-image: url(../img/ic_arrowUp_b.svg);
+        }
+        option {
+          @include font-style(16, $black);
+        }
+      }
+      h2 {
+        @include font-style(24, $black);
+        small {
+          margin-left: 16px;
+          @include font-style(20, #868686, med);
+        }
+        br {
+          display: none;
+        }
+        .user {
+          display: block;
+          margin-top: 8px;
+          @include font-style(12, $cocoa);
+          span {
+            padding: 4px 8px;
+            margin-left: 8px;
+            border: solid 1px $cocoa;
+            border-radius: 11px;
+            background-color: $white;
+            @include font-style(12, $cocoa);
+            line-height: 1;
+          }
+        }
+      }
+      h3 {
+        @include font-style(22, $greyish-brown, med);
+      }
+    }
+  }
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 1266px) {
+  .content__box--tit {
+    h2 {
+      font-size: 22px;
+      br {
+        display: block;
+      }
+    }
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .content {
+    padding-bottom: 20px;
+    &__box {
+      padding: 32px 20px 40px;
+      &--tit {
+        margin-bottom: 16px !important;
+        h2 {
+          font-size: 20px;
+          small {
+            display: block;
+            margin-left: 0;
+            font-size: 16px;
+          }
+        }
+        h3 {
+          font-size: 18px;
+        }
+        .tabMenu {
+          justify-content: space-between;
+          margin-top: 16px;
+          width: 100%;
+          --button-count: 1;
+          button {
+            padding: 0;
+            width: calc(100% / var(--button-count));
+          }
+        }
+      }
+    }
+  }
+}

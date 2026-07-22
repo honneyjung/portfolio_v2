@@ -1,0 +1,93 @@
+// 등록 공고
+.noticeInfo {
+  h4 {
+    @include font-style(20, color, med);
+  }
+  .borGreyBox {
+    margin-top: 8px;
+  }
+}
+
+.colTableListWrap {
+  margin-top: 32px;
+  h3 {
+    @include font-style(20);
+  }
+}
+.colTableList {
+  @include flexbox(start, start);
+  flex-wrap: wrap;
+  border-top: solid 1px $white-three;
+  border-bottom: solid 1px $white-three;
+  > li {
+    @include flexbox(start, center);
+    padding: 12px 0;
+    width: 100%;
+    &:not(:last-child) {
+      border-bottom: solid 1px $white-three;
+    }
+    &.w50 {
+      width: 50%;
+    }
+    strong {
+      flex-shrink: 0;
+      padding: 20px 0;
+      width: 130px;
+      @include font-style(16);
+    }
+  }
+  &__cell {
+    margin-right: 20px;
+    width: calc(100% - 130px);
+    ul {
+      width: 100%;
+    }
+    p {
+      @include font-style(16, $black-two);
+    }
+    .addTxt {
+      overflow-y: auto;
+      display: block;
+      padding: 8px;
+      margin-top: 8px;
+      width: 100%;
+      max-height: 200px;
+      @include border-box($white-three, 8px, $white-five);
+      p {
+        @include font-style(14, $black-two);
+        word-break: break-all;
+      }
+      span {
+        font-weight: $med-w;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .colTableList {
+    > li {
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      strong {
+        padding-top: 0;
+        width: 100%;
+      }
+    }
+    &__cell {
+      margin-right: 0;
+      width: 100%;
+      &:first-of-type {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: solid 1px $white-three;
+      }
+      &:only-of-type {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,272 @@
+// 사용자 정보 상세
+.userInfoDet {
+  &__infoStatus {
+    display: flex;
+    flex-wrap: wrap;
+    ~ .userInfoDet__infoStatus {
+      margin-top: 12px;
+    }
+    div {
+      @include flexbox(inherit, center);
+      dt {
+        @include font-style(18, $greyish-brown, med);
+      }
+      dd {
+        margin-left: 4px;
+        @include font-style(18, $warm-grey);
+        span {
+          color: $warm-grey;
+        }
+      }
+      @media screen and (max-width: 1266px) {
+        dt,
+        dd {
+          font-size: 16px;
+        }
+      }
+      @media screen and (max-width: 1023px) {
+        dt,
+        dd {
+          font-size: 14px;
+        }
+      }
+    }
+    &--war {
+      width: 100%;
+      dt {
+        color: #dc3545 !important;
+      }
+      dd {
+        position: relative;
+        padding-left: 20px;
+        &:before {
+          position: absolute;
+          content: "/";
+          left: 4px;
+        }
+      }
+      @media screen and (max-width: 1023px) {
+        flex-wrap: wrap;
+        margin-bottom: 4px;
+        dt,
+        dd {
+          width: 100%;
+        }
+      }
+    }
+    &--day {
+      margin-top: 2px;
+      &:last-child {
+        position: relative;
+        padding-left: 32px;
+        &:before {
+          position: absolute;
+          content: "~";
+          left: 11px;
+        }
+      }
+    }
+  }
+  &__wrap {
+    @include flexbox(between, inherit);
+    margin-top: 20px;
+    > .content__box {
+      width: calc(40% - 10px);
+      &:first-child {
+        padding-top: 20px;
+        @media screen and (max-width: 1023px) {
+          padding-top: 8px;
+        }
+      }
+    }
+    > div {
+      width: calc(60% - 10px);
+      .content__box {
+        &--center {
+          .more__wrap {
+            margin-top: 12px;
+            text-align: right;
+          }
+        }
+        .tableBox {
+          table {
+            tbody {
+              tr {
+                td.short {
+                  max-width: 160px;
+                  @include ellipsis;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &--info {
+      @include flexbox(between, inherit);
+      flex-wrap: wrap;
+      &.caremate {
+        .w100 {
+          &:nth-child(2),
+          &:nth-child(3) {
+            @include flexbox(between, center);
+            margin-top: 0;
+            dt {
+              min-width: 64px;
+            }
+            dd {
+              padding: 0;
+              margin-top: 0;
+              min-height: auto;
+              border: none;
+              background: none;
+            }
+          }
+          &:nth-child(3) {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: solid 1px $white-three;
+          }
+        }
+      }
+      > div {
+        margin-top: 12px;
+        width: calc(50% - 6px);
+        min-height: 56px;
+        &.w100 {
+          .imgAlign {
+            overflow: hidden;
+            @include flexbox(center, center);
+            padding: 0;
+            margin-bottom: 12px;
+            height: 300px;
+            img {
+              height: 100%;
+            }
+            @media screen and (max-width: 1023px) {
+              max-height: 200px;
+            }
+          }
+        }
+        > dt {
+          @include font-style(20, color, med);
+        }
+        > dd {
+          padding: 13px 20px;
+          margin-top: 12px;
+          min-height: 56px;
+          border: solid 1px $white-three;
+          border-radius: 8px;
+          background-color: $white-five;
+          @include font-style(16, $black-two);
+          word-break: break-all;
+        }
+        @media screen and (max-width: 1266px) {
+          > dt {
+            font-size: 18px;
+          }
+          > dd {
+            font-size: 16px;
+          }
+        }
+        @media screen and (max-width: 1023px) {
+          > dd {
+            padding: 10px 16px;
+            min-height: 46px;
+            font-size: 14px;
+          }
+        }
+      }
+      @media screen and (max-width: 1415px) {
+        .radioView {
+          li {
+            width: 100%;
+            ~ li {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1180px) {
+      display: block;
+      .content__box,
+      div {
+        width: 100% !important;
+      }
+      .content__box ~ div {
+        margin-top: 20px;
+      }
+      .radioView {
+        &.three {
+          li {
+            width: calc(33.333% - 4px);
+          }
+        }
+        li {
+          margin: 0 !important;
+          width: calc(50% - 4px);
+        }
+      }
+    }
+  }
+  .defaultTable.hover {
+    tbody tr {
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: $white-five;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.listStyle {
+  @include flexbox(between, inherit);
+  flex-wrap: wrap;
+  ~ dl {
+    margin-top: 8px;
+  }
+  dt {
+    width: 100%;
+    @include font-style(18, $black-two, med);
+  }
+  dd {
+    position: relative;
+    padding-left: 10px;
+    margin-top: 4px;
+    width: calc(50% - 4px);
+    @include font-style(16, $greyish-brown);
+    @include ellipsis;
+    &:before {
+      position: absolute;
+      content: "-";
+      left: 0;
+    }
+    &.none {
+      color: $cool-grey;
+    }
+  }
+  @media screen and (max-width: 1266px) {
+    dt {
+      font-size: 16px;
+    }
+    dd {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    dt {
+      font-size: 14px;
+    }
+    dd {
+      font-size: 12px;
+    }
+  }
+}
+
+.underlineLink {
+  display: inline-block;
+  @include font-style(14, color, med);
+  text-decoration: underline;
+}

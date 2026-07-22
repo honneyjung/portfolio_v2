@@ -1,0 +1,189 @@
+/* 사용자 정보 데이트 피커 */
+#ui-datepicker-div {
+  .ui-widget-header {
+    border: 0 !important;
+    background-color: $white !important;
+    font-size: 18px !important;
+    color: $black-two !important;
+    font-weight: $bol-w !important;
+  }
+  .ui-datepicker th {
+    color: $greyish-brown !important;
+    font-weight: $med-w !important;
+  }
+  .ui-datepicker-prev span {
+    background-image: url(../img/ic_doubleArrow_left.png) !important;
+    background-position: center !important;
+    background-size: 12px !important;
+  }
+  .ui-datepicker-next span {
+    background-image: url(../img/ic_doubleArrow_right.png) !important;
+    background-position: center !important;
+    background-size: 12px !important;
+  }
+
+  .ui-state-default {
+    padding-top: 6px !important;
+    width: 36px !important;
+    height: 36px !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: none !important;
+    text-align: center;
+    font-size: 18px !important;
+    color: $greyish-brown !important;
+  }
+  .ui-state-default:hover {
+    background-color: #f6f6f6 !important;
+  }
+  .ui-state-active,
+  .ui-state-active:hover {
+    background-color: $cocoa !important;
+    @include font-style(18, color, med);
+    color: $white !important;
+  }
+  .ui-state-highlight {
+    text-decoration: underline;
+    color: $greyish-brown !important;
+    font-weight: $bol-w !important;
+  }
+  .ui-state-highlight.ui-state-active,
+  .ui-state-highlight.ui-state-active:hover {
+    color: $white !important;
+  }
+}
+/* 사용자 통계 먼스 피커 */
+#ui-monthpicker-div {
+  .ui-widget-header {
+    border: 0 !important;
+    background-color: $white !important;
+    font-size: 18px !important;
+    color: $black-two !important;
+    font-weight: $bol-w !important;
+  }
+  .ui-datepicker th {
+    color: $greyish-brown !important;
+    font-weight: $med-w !important;
+  }
+  .ui-datepicker-prev span {
+    background-image: url(../img/ic_doubleArrow_left.png) !important;
+    background-position: center !important;
+    background-size: 12px !important;
+  }
+  .ui-datepicker-next span {
+    background-image: url(../img/ic_doubleArrow_right.png) !important;
+    background-position: center !important;
+    background-size: 12px !important;
+  }
+  .ui-state-default {
+    border: 0 !important;
+    background-color: $white !important;
+    text-align: center !important;
+    color: $greyish-brown !important;
+    font-weight: 500 !important;
+  }
+  .ui-state-default:hover {
+    background-color: #f6f6f6 !important;
+  }
+  .ui-state-highlight {
+    border: 0;
+    font-weight: $bol-w !important;
+    text-decoration: underline !important;
+  }
+  .ui-state-active,
+  .ui-state-active:hover {
+    border: 1px solid $cocoa !important;
+    background-color: $cocoa !important;
+    color: $white !important;
+  }
+}
+/* 통계 이어 피커 */
+.datepicker-years {
+  table tr td {
+    span.active {
+      background: $cocoa !important;
+    }
+  }
+}
+
+/* 통계 데이트 피커 */
+.dp__input {
+  padding: 18px 58px 18px 20px !important;
+  width: 100%;
+  height: 64px;
+  border: 1px solid #e1e1e1 !important;
+  border-radius: 8px !important;
+  color: #999 !important;
+  background: url(@/assets/img/ic_cal.svg) no-repeat right 20px center / 20px;
+  font-size: 18px !important;
+  line-height: 1.33 !important;
+  letter-spacing: -0.9px !important;
+  font-family: inherit !important;
+  &::placeholder {
+    color: #999 !important;
+  }
+}
+.dp__input_wrap svg {
+  display: none;
+}
+.dp__cell_inner {
+  color: #555 !important;
+}
+.dp__cell_offset {
+  color: #c0c4cc !important;
+}
+.dp__today {
+  position: relative;
+  border: none !important;
+  font-weight: bold;
+}
+.dp__today:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 50%;
+  height: 2px;
+  background-color: #555;
+  transform: translate(-50%);
+}
+.dp__today.dp__active_date:after {
+  background-color: #fff;
+}
+.dp__date_hover:hover {
+  background-color: #f6f6f6 !important;
+}
+.dp__active_date {
+  border-radius: 50% !important;
+  background-color: #7e4f40 !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+
+/* 일별,월별 거래정보 - 먼스,이어 피커 */
+.dp__overlay_cell {
+  color: #555 !important;
+}
+.dp__overlay_cell:hover {
+  background: #f6f6f6 !important;
+}
+.dp__overlay_cell_active {
+  position: relative;
+  background: none !important;
+  font-weight: 500;
+  background-color: #7e4f40 !important;
+}
+.dp__range_end,
+.dp__range_start,
+.dp__active_date {
+  background-color: #7e4f40 !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .dp__input {
+    height: 46px !important;
+    font-size: 16px !important;
+    letter-spacing: -0.8px !important;
+  }
+}

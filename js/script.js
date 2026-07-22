@@ -122,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let visibleCards = [...allCards]; // cards currently shown
     let currentIndex = 0; // index of first visible card in strip
     let perPage = getPerPage(); // cards visible at once
+    // 카드가 한 화면에 다 들어오면(perPage 이하) 루프/클론/오토플레이를 끈다.
+    let loopEnabled = visibleCards.length > perPage;
 
     function getPerPage() {
       const vw = viewport ? viewport.offsetWidth : window.innerWidth;
@@ -134,6 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function buildDots() {
       dotsWrap.innerHTML = "";
       const pages = Math.ceil(visibleCards.length / perPage);
+      if (pages <= 1) {
+        dotsWrap.style.display = "none"; // 한 페이지면 도트 숨김
+        return;
+      }
+      dotsWrap.style.display = "";
       for (let i = 0; i < pages; i++) {
         const dot = document.createElement("button");
         dot.className = "pf-dot" + (i === 0 ? " active" : "");
@@ -150,10 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
       dots.forEach((d, i) => d.classList.toggle("active", i === page));
     }
 
-    // ── Update arrow disabled state (5번: 무한루프이므로 항상 활성화) ──
+    // ── Update arrow disabled state (루프일 때만 활성화) ──
     function updateArrows() {
-      btnPrev.disabled = false;
-      btnNext.disabled = false;
+      btnPrev.disabled = !loopEnabled;
+      btnNext.disabled = !loopEnabled;
     }
 
     // ── Reorder track so only visibleCards appear, in order ─────
@@ -172,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ── 1번: 무한 루프를 위한 클론 생성 ────────────────────────
     function setupClones() {
       track.querySelectorAll(".pf-clone").forEach((c) => c.remove());
+      if (!loopEnabled) return; // 루프가 아니면 클론을 만들지 않는다 (중복 방지)
 
       const clonesBefore = visibleCards.map((c) => {
         const cl = c.cloneNode(true);
@@ -190,12 +198,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ── 2번: goTo — 무한 루프 버전 ─────────────────────────────
     function goTo(idx, animate = true) {
-      const cloneCount = visibleCards.length;
+      const cloneCount = loopEnabled ? visibleCards.length : 0;
       currentIndex = idx;
 
       const cardEl = track.querySelector(".pf-card");
       if (!cardEl) return;
-      const gap = 20;
+      const gap = parseFloat(getComputedStyle(track).gap) || 20.5;
       const cardW = cardEl.offsetWidth;
       const offset = (currentIndex + cloneCount) * (cardW + gap);
 
@@ -219,13 +227,14 @@ document.addEventListener("DOMContentLoaded", function () {
           : allCards.filter((c) =>
               c.dataset.category.split(" ").includes(filter),
             );
+      loopEnabled = visibleCards.length > perPage;
 
       rebuildTrack();
       buildDots();
       // 6번: 클론 재생성 + 위치 초기화 + 오토플레이 리셋
       setupClones();
       goTo(0, false);
-      startAuto();
+      startAuto(); // loopEnabled 아니면 내부에서 멈춘 상태 유지
     }
 
     // ── Filter buttons ──────────────────────────────────────────
@@ -238,13 +247,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // ── 3번: transitionend — 경계에서 순간이동 (무한루프 핵심) ──
-    track.addEventListener("transitionend", () => {
+    // 카드 수가 perPage 배수가 아니어도 화면상 동일 위치로 순간이동해야
+    // 되감기 없이 매끄럽게 이어진다. 0으로 리셋하지 않고 total 만큼 감아준다.
+    track.addEventListener("transitionend", (e) => {
+      if (!loopEnabled) return;
+      if (e.target !== track || e.propertyName !== "transform") return;
       const total = visibleCards.length;
-      if (currentIndex < 0) {
-        currentIndex = total - perPage;
-        goTo(currentIndex, false);
-      } else if (currentIndex >= total) {
-        currentIndex = 0;
+      if (currentIndex < 0 || currentIndex >= total) {
+        currentIndex = ((currentIndex % total) + total) % total;
         goTo(currentIndex, false);
       }
     });
@@ -266,11 +276,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const newPP = getPerPage();
       if (newPP !== perPage) {
         perPage = newPP;
+        loopEnabled = visibleCards.length > perPage;
         currentIndex = 0;
         buildDots();
         setupClones();
         goTo(0, false);
         updateArrows();
+        startAuto(); // loopEnabled 아니면 내부에서 멈춤
       }
     });
 
@@ -297,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function startAuto() {
       stopAuto();
+      if (!loopEnabled) return; // 루프가 아니면 오토플레이 안 함
       autoTimer = setInterval(() => {
         goTo(currentIndex + perPage);
       }, 5000);
@@ -448,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "carenation-web": {
         title: "케어네이션 홈페이지 리뉴얼",
         cat: "Web",
-        img: "./images/img_carenation_homepage.png",
+        img: "./images/img_project4.jpg",
         imgAlt: "케어네이션 홈페이지",
         meta: [
           { label: "역할", value: "Web Publisher" },

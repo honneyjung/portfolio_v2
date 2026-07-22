@@ -1,0 +1,556 @@
+.tableBox {
+  overflow-x: auto;
+  // 상담 서비스 > 상담 상세 표
+  &.consultTable {
+    overflow: hidden;
+    border-collapse: separate;
+    border: solid 1px $white-three;
+    border-radius: 8px;
+    tr {
+      height: 52px;
+      &:hover {
+        background-color: $white;
+      }
+      &:last-of-type {
+        background-color: $white-five;
+        th,
+        td {
+          border-left: 0;
+          border-bottom: 0;
+        }
+        td {
+          padding-left: 62px;
+          border-right: 0;
+          background: url(../img/ic_doc.svg) no-repeat 30px center;
+          @include font-style(18, $black, med);
+        }
+      }
+      &:first-child {
+        th:first-child {
+          border-top-left-radius: 8px;
+        }
+        td:last-child {
+          border-top-right-radius: 8px;
+        }
+      }
+      &:last-child {
+        th:first-child,
+        td:first-child {
+          border-bottom-left-radius: 8px;
+        }
+        td:last-child {
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+    th {
+      background-color: $white-five;
+      @include font-style(18, $black, med);
+      vertical-align: middle;
+      &:first-child {
+        border-left: 0;
+      }
+      + td {
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+    th,
+    td {
+      padding: 0 30px;
+      border: solid 1px $white-three;
+      border-top: 0;
+      text-align: left;
+    }
+    td {
+      @include font-style(16, color, nor);
+    }
+  }
+}
+
+.defaultTable {
+  thead {
+    background-color: $white-four;
+    tr {
+      border-bottom: solid 1px rgba(225, 225, 225, 0.4);
+      &:nth-child(2) th:first-child {
+        border-left: solid 1px rgba(225, 225, 225, 0.4);
+      }
+      &:nth-child(1) th:first-child {
+        border-left: 0;
+      }
+    }
+    th {
+      padding: 10.5px 4px 11px 4px;
+      height: 100%;
+      text-align: center;
+      border-left: solid 1px rgba(225, 225, 225, 0.4);
+      @include font-style(12, $warm-grey-two, med);
+      vertical-align: middle;
+    }
+  }
+  tbody {
+    background-color: $white;
+    tr {
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: $white-five;
+        cursor: default;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(225, 225, 225, 0.4);
+      }
+      td {
+        padding: 9.5px 6px;
+        @include font-style(14, $black-two, med);
+        text-align: center;
+        vertical-align: middle;
+        &.up {
+          color: $cerulean-blue;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: -2px;
+            background: url(../img/ic_up_blue.svg) no-repeat center;
+          }
+        }
+        &.down {
+          color: $faded-red;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: -2px;
+            background: url(../img/ic_down_red.svg) no-repeat center;
+          }
+        }
+        &:has(.tooltip) {
+          overflow: visible !important;
+          position: relative;
+          max-width: 480px;
+          word-break: break-all;
+          @include ellipsis;
+        }
+        &:has(.pcView, .mobileView) {
+          padding: 0;
+        }
+        .tooltip {
+          display: none;
+          position: absolute;
+          z-index: 3;
+          top: 40px;
+          right: 50%;
+          padding: 10px;
+          width: 100%;
+          max-width: 250px;
+          border-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.9);
+          white-space: wrap;
+          transform: translateX(50%);
+          span {
+            @include font-style(12, $white);
+            word-break: break-all;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid rgba(0, 0, 0, 0.9);
+            border-left: 10px solid transparent;
+            transform: translateX(-50%);
+          }
+        }
+        &:hover {
+          .tooltip {
+            display: block;
+          }
+        }
+      }
+      &.total {
+        td {
+          padding: 8px 0;
+          @include font-style(16, $black, bol);
+        }
+      }
+      &.noneItem {
+        border-bottom: none;
+        td {
+          padding: 191px 0 90px;
+          @include font-style(18);
+          font-weight: normal !important;
+          color: $warm-grey !important;
+        }
+      }
+      .pcView,
+      .mobileView {
+        padding: 9.5px 6px;
+        width: 100%;
+        height: 100%;
+        @include ellipsis;
+      }
+      .view {
+        width: 30px;
+        height: 30px;
+        border: solid 1px $white-three;
+        border-radius: 6px;
+        background: url(../img/iconSearch-bk.svg) no-repeat center / 18px;
+        text-indent: -9999px;
+        transition: all 0.2s ease;
+        &:hover {
+          border-color: $white-five;
+          background-color: $white-three;
+        }
+      }
+      a {
+        width: 100%;
+        @include ellipsis;
+        text-decoration: underline;
+      }
+    }
+  }
+  &.half {
+    thead {
+      height: 40px;
+    }
+    tbody {
+      td {
+        padding: 9.5px 0 10px;
+      }
+    }
+  }
+  &.full {
+    thead {
+      height: 60px;
+      tr {
+        th {
+          padding: 22px 0;
+        }
+      }
+    }
+    tbody {
+      td {
+        padding: 18px 0;
+      }
+    }
+  }
+  &.noneList {
+    border-bottom: none;
+    td {
+      padding: 191px 0 90px;
+      @include font-style(18);
+      font-weight: normal !important;
+      color: $warm-grey !important;
+    }
+  }
+  .noneList .noneItem td {
+    display: table-cell !important;
+  }
+}
+
+/* 페이지네이션 */
+.pagination {
+  margin-top: 54px;
+  ul {
+    @include flexbox(center, center);
+    li {
+      position: relative;
+      margin: 0 6px;
+      width: 40px;
+      height: 32px;
+      text-align: center;
+      &:first-child a,
+      &:last-child a {
+        background: no-repeat center / 10px 15px;
+        @extend %text-hidden;
+      }
+      &:first-child {
+        a {
+          background-image: url(../img/ic_prev_b.png);
+        }
+        &.disabled a {
+          background-image: url(../img/ic_prev_g.png);
+        }
+      }
+      &:last-child {
+        a {
+          background-image: url(../img/ic_next_b.png);
+        }
+        &.disabled a {
+          background-image: url(../img/ic_next_g.png);
+        }
+      }
+      &.disabled a {
+        cursor: default;
+        pointer-events: none;
+      }
+      &.active {
+        a {
+          color: $black;
+          font-weight: bold;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+            width: 16px;
+            height: 2px;
+            background-color: $black;
+            transform: translateX(-50%);
+          }
+        }
+      }
+      &.last {
+        margin-left: 50px;
+        &:before {
+          content: "···";
+          position: absolute;
+          top: 50%;
+          left: -44px;
+          width: 100%;
+          height: 24px;
+          transform: translateY(-50%);
+          color: $cool-grey;
+        }
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        @include font-style(16, $cool-grey);
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.content__box--center {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d1d0c9;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $white-two;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobileView {
+    display: none;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .pagination {
+    margin-top: 30px;
+  }
+  .content__box--center {
+    &::-webkit-scrollbar- {
+      display: none;
+    }
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+  }
+
+  .opinion .defaultTable thead th:nth-child(3),
+  .opinion .defaultTable tbody td:nth-child(3),
+  .opinion .defaultTable thead th:nth-child(8),
+  .opinion .defaultTable tbody td:nth-child(8) {
+    width: 20%;
+  }
+  .opinion .defaultTable thead th:nth-child(6),
+  .opinion .defaultTable tbody td:nth-child(6) {
+    max-width: 80px !important;
+  }
+  .qna .defaultTable thead th:nth-child(4),
+  .qna .defaultTable tbody td:nth-child(4) {
+    max-width: 100px !important;
+  }
+  .defaultTable .pcView {
+    display: none;
+  }
+  .consultTable {
+    overflow-x: auto !important;
+    .defaultTable {
+      tr {
+        height: 46px;
+      }
+      th {
+        padding: 10px 12px;
+        font-size: 16px;
+      }
+      td {
+        padding: 0 12px;
+        font-size: 16px;
+      }
+    }
+  }
+  // 1번째, 2번째, 3번째 칸만 보임
+  .view123 .defaultTable {
+    colgroup,
+    th:nth-child(n + 4),
+    td:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
+  // 1번째, 2번째 칸만 보임
+  .view12 .defaultTable {
+    colgroup,
+    th:nth-child(n + 3),
+    td:nth-child(n + 3) {
+      display: none;
+    }
+  }
+
+  // 1번째, 2번째, 5번째 칸만 보임
+  .view125 .defaultTable {
+    colgroup,
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(n + 6),
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(n + 6) {
+      display: none;
+    }
+  }
+
+  // 1번째, 2번째, 6번째 칸만 보임
+  .view126 .defaultTable {
+    colgroup,
+    th:nth-child(n + 3):nth-child(-n + 5),
+    th:nth-child(n + 7),
+    td:nth-child(n + 3):nth-child(-n + 5),
+    td:nth-child(n + 7) {
+      display: none;
+    }
+    td:nth-child(2) {
+      max-width: 100px;
+    }
+  }
+
+  // 1번째, 2번째, 마지막 칸만 보임
+  .view12End .defaultTable {
+    colgroup,
+    th:nth-child(n + 3):not(:last-child),
+    td:nth-child(n + 3):not(:last-child) {
+      display: none;
+    }
+  }
+
+  // 1번째, 3번째, 마지막 칸만 보임
+  .view13End .defaultTable {
+    colgroup,
+    th:nth-child(2),
+    th:nth-child(n + 4):not(:last-child),
+    td:nth-child(2),
+    td:nth-child(n + 4):not(:last-child) {
+      display: none;
+    }
+  }
+
+  // 1번째, 4번째, 6번째 칸만 보임
+  .view146 .defaultTable {
+    colgroup,
+    th:nth-child(n + 2):nth-child(-n + 3),
+    th:nth-child(5),
+    th:nth-child(n + 7),
+    td:nth-child(n + 2):nth-child(-n + 3),
+    td:nth-child(5),
+    td:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  // 1번째, 3번째, 4번째, 5번째 칸만 보임
+  .view1345 .defaultTable {
+    colgroup,
+    th:nth-child(2),
+    th:nth-child(n + 6),
+    td:nth-child(2),
+    td:nth-child(n + 6) {
+      display: none;
+    }
+  }
+
+  // 1번째, 3번째, 4번째 칸만 보임
+  .view134 .defaultTable {
+    colgroup,
+    th:nth-child(2),
+    th:nth-child(n + 5),
+    td:nth-child(2),
+    td:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
+  // 2번째, 3번째, 4번째 칸만 보임
+  .view234 .defaultTable {
+    colgroup,
+    th:nth-child(1),
+    th:nth-child(n + 5),
+    td:nth-child(1),
+    td:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
+  // 3번째, 4번째, 5번째 칸만 보임
+  .view345 .defaultTable {
+    colgroup,
+    th:nth-child(-n + 2),
+    th:nth-child(n + 6),
+    td:nth-child(-n + 2),
+    td:nth-child(n + 6) {
+      display: none;
+    }
+  }
+
+  // 3번째, 4번째, 6번째 칸만 보임
+  .view346 .defaultTable {
+    colgroup,
+    th:nth-child(-n + 2),
+    th:nth-child(5),
+    th:nth-child(n + 7),
+    td:nth-child(-n + 2),
+    td:nth-child(5),
+    td:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  // 3번째, 4번째, 5번째, 6번째, 7번째 칸만 보임
+  .view3to7 .defaultTable {
+    colgroup,
+    th:nth-child(-n + 2),
+    th:nth-child(n + 8),
+    td:nth-child(-n + 2),
+    td:nth-child(n + 8) {
+      display: none;
+    }
+  }
+
+  // 3번째, 6번째, 8번째 칸만 보임
+  .view368 .defaultTable {
+    colgroup,
+    th:nth-child(-n + 2),
+    th:nth-child(n + 4):nth-child(-n + 5),
+    th:nth-child(7),
+    th:nth-child(n + 9),
+    td:nth-child(-n + 2),
+    td:nth-child(n + 4):nth-child(-n + 5),
+    td:nth-child(7),
+    td:nth-child(n + 9) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+/* 404페이지 */
+.error {
+  padding: 220px 0 200px;
+  &__tit {
+    width: 50%;
+    span {
+      @include font-style(28, $warm-grey, bol);
+    }
+    h2 {
+      margin-top: 2px;
+      font-size: 46px;
+      letter-spacing: -2.5px;
+    }
+    p {
+      margin-top: 20px;
+      @include font-style(18);
+    }
+    a {
+      padding: 21px 20px;
+      margin-top: 40px;
+      width: 348px;
+      @include border-box($white-three, 4px, $white);
+      @include font-style(20, $black, bol);
+      line-height: 1;
+      text-align: center;
+      transition: background 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+      &:hover {
+        background-color: $white-five;
+      }
+      &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 8px;
+        width: 8px;
+        height: 14px;
+        background: url(../img/ic_arrow_right.png) no-repeat center / cover;
+      }
+    }
+  }
+  &__img {
+    width: 50%;
+    max-width: 660px;
+    height: 256px;
+    background: url(../img/img_404error.png) no-repeat center / cover;
+  }
+  .basicWrap {
+    @include flexbox(between, center);
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1320px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .error {
+    padding: 10em 0 150px;
+    min-height: calc(100dvh - 150px);
+    &__tit {
+      width: 100%;
+      span {
+        font-size: 24px;
+        letter-spacing: -1.6px;
+      }
+      h2 {
+        margin-top: 4px;
+        font-size: 32px;
+        letter-spacing: -1.6px;
+      }
+      p {
+        font-size: 18px;
+        letter-spacing: -0.9px;
+      }
+      a {
+        padding: 17px 20px 17px;
+        width: 100%;
+        background: url(../img/ic_arrow_right.png) no-repeat right 20px center/ 8px #fff;
+        font-size: 18px;
+        letter-spacing: -0.9px;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    &__img {
+      display: none;
+    }
+  }
+}
