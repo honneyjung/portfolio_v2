@@ -218,6 +218,12 @@
   .cardSlideWrap figure {
     margin-top: 32px;
   }
+  .cardSlideWrap__track > div {
+    margin-right: 16px;
+  }
+  .cardSlideWrap__track > div:last-child {
+    margin-right: 0;
+  }
   .cardSlideWrap h4 {
     margin-top: 27px;
     color: #003c1e;
@@ -259,6 +265,7 @@
   }
   .hashCardWrap {
     padding: 0 18%;
+    justify-content: center;
   }
   .hashCardWrap li {
     text-align: center;

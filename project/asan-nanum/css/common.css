@@ -174,7 +174,8 @@ h1 a {
 
 /* 메인 */
 .main__visual {
-  background: url(../img/bg_main01.png) no-repeat center / cover;
+  background: url(../img/bg_main01.jpg) no-repeat center / cover;
+  will-change: background-position; /* 리사이즈 시 cover 재계산으로 인한 흰 화면 깜빡임 완화 */
 }
 .mainBiz {
   background: url(../img/bg_main02.svg) no-repeat right center / cover #e9e9d6;
@@ -214,8 +215,22 @@ h1 a {
 .cardSlideWrap {
   position: relative;
 }
-.cardSlideWrap > div {
+.cardSlideWrap__viewport {
+  overflow: hidden;
+}
+.cardSlideWrap__track {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cardSlideWrap__track > div {
+  flex: 0 0 auto;
   text-align: center;
+}
+.centerInfo__arrowBtn button:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 .cardSlideWrap figure {
   overflow: hidden;
@@ -353,6 +368,27 @@ h1 a {
   top: 50%;
   right: 50px;
   background-image: url(../img/btn_arrow_rgn.svg);
+}
+/* leftInfo 슬라이더(mainBiz/mainStartup/mainInno/mainEco) — 카드 개수 고정, 폭만 유동적으로 축소 */
+.mainBiz .hashCardWrap__viewport,
+.mainStartup .hashCardWrap__viewport,
+.mainInno .hashCardWrap__viewport,
+.mainEco .hashCardWrap__viewport {
+  overflow: hidden;
+}
+.mainBiz .hashCardWrap,
+.mainStartup .hashCardWrap,
+.mainInno .hashCardWrap,
+.mainEco .hashCardWrap {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mainBiz .hashCardWrap > li,
+.mainStartup .hashCardWrap > li,
+.mainInno .hashCardWrap > li,
+.mainEco .hashCardWrap > li {
+  flex: 0 0 auto;
 }
 
 /* 재단 소개 */
