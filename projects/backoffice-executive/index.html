@@ -1,1397 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <script src="index/function.js" defer></script>
-
-    <title>목차 - 경영진 관리자</title>
+    <title>경영진 관리자 대시보드 · 퍼블리싱 인덱스</title>
     <style>
-      /* 공통 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --brown: #7e4f40;
+        --brown-deep: #5a382d;
+        --brown-light: #a47768;
+        --cream: #fffaf5;
+        --beige: #f6f6f6;
+        --peach: #fff1ec;
+        --ink: #333;
+        --gray: #aeb0b5;
+        --line: #e1e1e1;
+      }
       html {
-        -webkit-touch-callout: auto;
-        -ms-user-select: auto;
-        -moz-user-select: -moz-auto;
-        -khtml-user-select: auto;
-        -webkit-user-select: auto;
-        user-select: auto;
+        -webkit-text-size-adjust: 100%;
       }
       body {
-        letter-spacing: -0.8px;
+        font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+          "Malgun Gothic", "맑은 고딕", sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.5;
+        letter-spacing: -0.2px;
+        -webkit-font-smoothing: antialiased;
       }
-      mark {
-        font-weight: 500;
-        background: linear-gradient(to top, rgba(222, 141, 113, 0.5) 48%, transparent 48%);
-      }
-      .mark {
-        position: absolute;
-        z-index: 2;
-        top: 50%;
-        transform: translateY(-75%);
-        display: inline-block;
-        width: 30px;
-        height: 40px;
-        background: url(index/icn_map_bd.svg) no-repeat center / contain;
-      }
-      .btnFold {
-        position: relative;
-        margin-left: auto;
-        width: 25px;
-        height: 25px;
-        background-color: #f6f6f6;
-        border-radius: 5px;
-      }
-      .btnFold::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 2px;
-        height: 10px;
-        background-color: #333;
-        display: none;
-      }
-      .btnFold::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 10px;
-        height: 2px;
-        background-color: #333;
-      }
-      .btnAllFold {
-        width: 25px;
-        height: 25px;
-        background: url(index/ic_btnFull.svg) no-repeat center / 18px #f6f6f6;
-        border-radius: 5px;
-      }
-      .btnAllFold.active {
-        background-image: url(index/ic_btnList.svg);
-      }
-      .btnFilter {
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
-        background: url(index/icon_filter.png) no-repeat center / 18px #f6f6f6;
-      }
-      .filterWrap {
-        position: relative;
-      }
-      .filterWrap.active .filterWrap__list {
-        display: block;
-      }
-      .filterWrap__list {
-        overflow: hidden;
-        display: none;
-        position: absolute;
-        z-index: 2;
-        right: 0;
-        margin-top: 5px;
-        background-color: #fff;
-        border: solid 1px #e1e1e1;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
-      .filterWrap__list li ~ li {
-        border-top: 1px solid #e1e1e1;
-      }
-      .filterWrap__list li button {
-        padding: 8px 10px;
-        font-size: 14px;
-        line-height: 1;
-        font-weight: 500;
-      }
-      .filterWrap__list li:hover {
-        background-color: #fff3ee;
-        color: #7e4f40;
-        transition: all 0.2s ease;
-      }
-      .stickyWrap.sticky {
-        position: fixed;
-        padding: 0 20px;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 40px;
-        background-color: #f6f6f6;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.24);
-      }
-      .stickyWrap.sticky::after {
-        content: "";
-        position: absolute;
-        left: 33px;
-        bottom: -20px;
-        border-bottom: 10px solid transparent;
-        border-top: 10px solid #f6f6f6;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-      }
-      .stickyWrap.sticky h2 {
-        margin-top: 4px;
-      }
-      .floatingWrap {
-        position: fixed;
-        visibility: hidden;
-        z-index: 10;
-        right: 20px;
-      }
-      .floatingWrap.active {
-        visibility: visible;
-        animation: float 0.2s forwards ease-out;
-      }
-      @keyframes float {
-        0% {
-          opacity: 0;
-          bottom: 0;
-        }
-        100% {
-          opacity: 1;
-          bottom: 20px;
-        }
-      }
-      .btnTop {
-        padding: 8px 10px;
-        font-size: 12px;
-        font-weight: 500;
-        background-color: #f6f6f6;
-        line-height: 1;
-        color: #333;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
-      li.dash {
-        padding-left: 10px;
-      }
-      li.dash mark {
-        background: linear-gradient(to top, rgb(255, 249, 171) 48%, transparent 48%);
-      }
-      li.dash::before {
-        content: "-";
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-
-      /* 헤더 */
-      header {
-        padding: 10px 20px;
-        background-color: #fff;
-        border-bottom: solid 1px #f1f1f1;
-      }
-      .header__tit {
-        display: flex;
-        align-items: center;
-      }
-      .header__tit > div {
-        margin-left: auto;
-        display: flex;
-        gap: 8px;
-      }
-      header h1 {
-        font-size: 20px;
-        color: #7e4f40;
-        padding-left: 38px;
-        background: url(index/logo.png) no-repeat left top 5px / 29px;
-      }
-      header > ul {
-        margin: 10px -5px 0;
-        display: flex;
-        gap: 6px;
-      }
-      header > ul li {
-        display: flex;
-      }
-      header > ul li a {
-        position: relative;
-        padding: 5px 8px;
-        font-size: 16px;
-        color: #333;
-        font-weight: 500;
-      }
-
-      /* 메인 */
-      main {
-        padding: 60px 20px 100px;
-      }
-      .guideWrap {
-        display: flex;
-        margin-bottom: 60px;
-      }
-      .guideWrap .guideBox {
-        width: 50%;
-        max-height: 505px;
-        overflow-y: auto;
-      }
-      .guideWrap .guideBox::-webkit-scrollbar {
-        width: 5px;
-      }
-      .guideWrap .guideBox::-webkit-scrollbar-thumb {
-        background-color: rgba(126, 79, 64, 0.5);
-        border-radius: 5px;
-      }
-      .guideWrap .guideBox + .guideBox {
-        margin-left: 10px;
-      }
-      .guideBox {
-        padding: 20px;
-        background-color: #f6f6f6;
-        border-radius: 12px;
-      }
-      @media screen and (max-width: 600px) {
-        .guideWrap {
-          display: none;
-        }
-      }
-      .guideBox h2 {
-        font-size: 18px;
-      }
-      .guideBox ol {
-        padding-left: 25px;
-        margin-top: 20px;
-      }
-      .guideBox ol li {
-        list-style: georgians;
-        font-size: 16px;
-      }
-      .guideBox ol > li + li {
-        margin-top: 4px;
-      }
-      .guideBox ol li > ul {
-        margin-top: 4px;
-      }
-      .guideBox ol li > ul li {
-        position: relative;
-        list-style: none;
-        font-size: 14px;
-      }
-      .noticeBox {
-        padding: 10px 20px 10px 25px;
-        background: url(index/iconReport.svg) no-repeat top 10px left / 20px;
-      }
-      .noticeBox mark {
-        background: linear-gradient(to top, rgba(255, 162, 162, 0.5) 48%, transparent 48%);
-      }
-      .noticeBox h3 {
-        font-size: 16px;
-        color: #dc3545;
-      }
-      .noticeBox p {
-        font-size: 14px;
-      }
-      .boardBox {
-        margin-top: 20px;
-      }
-      .boardBox p {
-        padding-left: 33px;
-        font-size: 16px;
-        background: url(index/icon_tack.png) no-repeat left 10px top 3px / 18px;
-      }
-      .boardBox p ~ p {
-        margin-top: 4px;
-      }
-      .tableWrap {
-        width: 100%;
-      }
-      .tableWrap ~ .tableWrap {
-        margin-top: 100px;
-      }
-      .tableWrap__tit {
-        display: flex;
-        align-items: center;
-      }
-      .tableWrap__tit h2 {
-        display: inline-block;
-        padding: 8px 10px;
-        font-size: 16px;
-        font-weight: 500;
-        border-radius: 5px;
-        line-height: 1;
-        background-color: #f6f6f6;
-        color: #333;
-      }
-      .tableWrap table {
-        margin-top: 10px;
-        border-collapse: collapse;
-      }
-      .tableWrap table td,
-      th,
       a {
-        word-break: break-word;
+        text-decoration: none;
+        color: inherit;
       }
-      .tableWrap table tr.new {
-        background-color: rgb(204, 216, 197);
-      }
-      .tableWrap table tr.update {
-        background-color: rgb(183, 194, 209);
-      }
-      .tableWrap table tr.determined {
-        background-color: rgb(255, 218, 176);
-      }
-      .tableWrap table tr.delete {
-        background-color: #f6f6f6;
-      }
-      .tableWrap table tr.delete td {
-        opacity: 0.4;
-      }
-      .tableWrap table tr.delete::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-      .tableWrap.fold table tbody tr:nth-child(n + 2) {
-        display: none;
-      }
-      .tableWrap.fold table {
+
+      .hero {
         position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--brown) 0%, var(--brown-deep) 100%);
+        color: #fff;
+        padding: 56px 32px 60px;
       }
-      .tableWrap.fold table::after {
+      .hero::after {
         content: "";
         position: absolute;
-        z-index: 2;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: -1px;
-        background: linear-gradient(to bottom, transparent, #fff);
+        right: -80px;
+        top: -80px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(164, 119, 104, 0.55), transparent 70%);
       }
-      .tableWrap.fold .tableWrap__tit button::before {
-        display: block;
+      .hero__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1160px;
+        margin: 0 auto;
       }
-      .tableWrap table th {
-        padding: 5px;
+      .hero__tag {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .hero h1 span {
+        color: #f0d9cd;
+      }
+      .hero p {
+        margin-top: 12px;
         font-size: 15px;
-        font-weight: 500;
-        color: #333;
-        border: 1px solid #e1e1e1;
+        color: rgba(255, 255, 255, 0.82);
       }
-      .tableWrap table tr {
+      .hero__meta {
+        margin-top: 26px;
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .hero__meta div {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero__meta strong {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .hero__meta small {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.72);
+        margin-top: 2px;
+      }
+
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 48px 32px 80px;
+      }
+      .section {
+        margin-bottom: 44px;
+      }
+      .section__head {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--peach);
+      }
+      .section__head h2 {
         position: relative;
+        padding-left: 14px;
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--brown-deep);
       }
-      .tableWrap table td {
-        padding: 5px;
+      .section__head h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        bottom: 3px;
+        width: 5px;
+        border-radius: 3px;
+        background: var(--brown-light);
+      }
+      .section__head span {
+        font-size: 13px;
+        color: #808080;
+        font-weight: 500;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px 18px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(126, 79, 64, 0.12);
+        border-color: var(--brown-light);
+      }
+      .card__id {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--brown-deep);
+        background: var(--peach);
+        border-radius: 10px;
+        transition: background 0.18s ease, color 0.18s ease;
+      }
+      .card:hover .card__id {
+        background: var(--brown);
+        color: #fff;
+      }
+      .card__body {
+        min-width: 0;
+      }
+      .card__title {
+        display: block;
         font-size: 14px;
-        color: #333;
-        border: 1px solid #e1e1e1;
-        vertical-align: middle;
+        font-weight: 600;
+        color: var(--ink);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-      .tableWrap table td a {
-        text-decoration: underline;
-        width: 100%;
+      .card__file {
+        display: block;
+        margin-top: 3px;
+        font-size: 12px;
+        color: var(--gray);
+        font-variant-numeric: tabular-nums;
       }
-      .tableWrap table td.onlyPc {
-        padding-right: 30px;
-        background: url(index/onlyPc.png) no-repeat right center / 30px;
+      .card__arrow {
+        margin-left: auto;
+        flex-shrink: 0;
+        color: #d8d0cb;
+        transition: color 0.18s ease, transform 0.18s ease;
       }
-      .tableWrap table td.onlyMo {
-        padding-right: 30px;
-        background: url(index/onlyMo.png) no-repeat right center / 30px;
+      .card:hover .card__arrow {
+        color: var(--brown);
+        transform: translateX(3px);
       }
-      .tableWrap table td.onlyPcMo {
-        padding-right: 65px;
-        background: url(index/onlyMo.png) no-repeat right center / 30px,
-          url(index/onlyPc.png) no-repeat right 30px center / 30px;
+
+      footer {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 24px 32px 48px;
+        color: var(--gray);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
       }
-      .tableWrap table .tableWrap table td:has(.onlyPc) {
-        padding-right: 30px;
+
+      @media screen and (max-width: 600px) {
+        .hero {
+          padding: 40px 20px 44px;
+        }
+        .hero h1 {
+          font-size: 26px;
+        }
+        main {
+          padding: 32px 20px 60px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="header__tit">
-        <h1>경영진 관리자</h1>
-        <div>
-          <div class="filterWrap">
-            <button type="button" class="btnFilter"></button>
-            <ul class="filterWrap__list">
-              <li><button type="button">전체</button></li>
-              <li><button type="button">페이지</button></li>
-              <li><button type="button">팝업</button></li>
-            </ul>
+    <header class="hero">
+      <div class="hero__inner">
+        <span class="hero__tag">PUBLISHING INDEX</span>
+        <h1>경영진 관리자 <span>대시보드</span></h1>
+        <p>케어네이션 서비스 백오피스 관리자 대시보드. 카드를 클릭하면 새 창에서 열립니다.</p>
+        <div class="hero__meta">
+          <div>
+            <strong>66</strong>
+            <small>전체 페이지</small>
           </div>
-          <button type="button" class="btnAllFold"></button>
+          <div>
+            <strong>8</strong>
+            <small>카테고리</small>
+          </div>
+          <div>
+            <strong>Dashboard</strong>
+            <small>공통 컴포넌트 기반</small>
+          </div>
         </div>
       </div>
     </header>
+
     <main>
-      <!-- 가이드 및 공지사항 -->
-      <div class="guideWrap">
-        <div class="guideBox">
-          <h2>퍼블리싱 인덱스 가이드 안내</h2>
-          <ol>
-            <li>
-              <mark>Depth 1 ~ 4</mark> 항목으로 이루어져 있으며, <mark>Depth 1 ~ 3</mark>은 페이지,
-              <mark>Depth 4</mark>는 팝업입니다.
-              <ul>
-                <li class="dash">Depth는 서비스 플로우를 나타냅니다.</li>
-              </ul>
-            </li>
-            <li>
-              <mark>html</mark> 항목 <mark>&lt; td &gt;</mark> 태그에는
-              <mark>&lt; a &gt;</mark> 태그만 넣어주세요.
-            </li>
-            <li>
-              <mark>날짜</mark> 항목 <mark>&lt; td &gt;</mark> 태그에는 <mark>하단 텍스트</mark>만
-              기입해 주세요. (작업 완료 후 프론트 전달 전 날짜 기입 부탁드려요!)
-              <ul>
-                <li class="dash">날짜 : <mark>YYMMDD</mark> (사이 " - "는 필요 없습니다.)</li>
-                <li class="dash">작업 필요 : <mark>TBD</mark></li>
-                <li class="dash">미사용 : <mark>x</mark></li>
-              </ul>
-            </li>
-            <li>
-              <mark>상태</mark> 항목 <mark>&lt; td &gt;</mark> 태그는
-              <mark>날짜 항목 텍스트</mark>에 따라 자동 기입됩니다.
-              <ul>
-                <li class="dash">YYMMDD : <mark>작업 완료</mark></li>
-                <li class="dash">TBD : <mark>추후 작업 필요</mark></li>
-                <li class="dash">x : <mark>미사용</mark></li>
-              </ul>
-            </li>
-            <li>
-              <mark>comment</mark> 항목 <mark>&lt; td &gt;</mark> 태그에는
-              <mark>구두 합의된 내용</mark>이나 <mark>히스토리가 필요한 내용</mark>을
-              <mark>"[YYMMDD] 내용" 형식</mark>으로 기입해 주세요.
-              <ul>
-                <li class="dash">ex : [240710] homezone이 부릅니다. 책을 넘기는 듯한 마음으로</li>
-                <li class="dash">ex : [240710] 윤딴딴이 부릅니다. 겨울을 걷는다</li>
-                <li class="dash">ex : [240911] 빈센트블루가 부릅니다. 비가와</li>
-              </ul>
-            </li>
-          </ol>
-          <div class="noticeBox">
-            <h3>유의사항</h3>
-            <p>
-              <mark>&lt; colgroup &gt;</mark> 태그는 첫 번째 <mark>&lt; .tableWrap &gt;</mark> 안
-              <mark>&lt; table &gt;</mark>
-              태그에만 존재해야 합니다.
-            </p>
-          </div>
+      <section class="section">
+        <div class="section__head">
+          <h2>대시보드</h2>
+          <span>Dashboard</span>
         </div>
-        <div class="guideBox">
-          <h2>공지사항</h2>
-          <div class="boardBox">
-            <p>
-              반응형 화면인 경우 <mark>&lt; td &gt;</mark>태그에 <mark>.onlyPcMo</mark> 클래스 추가
-              필요
-            </p>
-            <p>
-              PC 화면인 경우 <mark>&lt; td &gt;</mark>태그에 <mark>.onlyPc</mark> 클래스 추가 필요
-            </p>
-            <p>
-              모바일 화면인 경우 <mark>&lt; td &gt;</mark>태그에 <mark>.onlyMo</mark> 클래스 추가
-              필요
-            </p>
-            <p>
-              페이지수가 늘어남에 따라 네비게이션 메뉴는 대시보드에서만 관리하고, 이외 페이지에서는
-              영역만 잡아둔다.
-            </p>
-          </div>
+        <div class="grid">
+          <a class="card" href="./html/0.html" target="_blank">
+            <span class="card__id">00</span>
+            <span class="card__body"><span class="card__title">로그인</span><span class="card__file">0.html</span></span>
+            <span class="card__arrow">→</span>
+          </a>
+          <a class="card" href="./html/1.html" target="_blank">
+            <span class="card__id">01</span>
+            <span class="card__body"><span class="card__title">대시보드 &amp; 네비게이션</span><span class="card__file">1.html</span></span>
+            <span class="card__arrow">→</span>
+          </a>
         </div>
-      </div>
-      <!-- // 가이드 및 공지사항 -->
-
-      <!-- 대시보드 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>대시보드</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
-        </div>
-        <table>
-          <!-- 전체 테이블 col width 조정 가능 - 첫번째 테이블에만 해당 colgroup 구조 넣어주세요 -->
-          <colgroup>
-            <col style="width: 17%" />
-            <col style="width: 17%" />
-            <col style="width: 17%" />
-            <col style="width: 18%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 6%" />
-            <col style="width: 15%" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">로그인</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/0.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">대시보드 & 네비게이션 메뉴</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/1.html" target="_blank"></a></td>
-              <td>250623</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
       </section>
-      <!-- // 대시보드 -->
 
-      <!-- 통계 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>통계</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+      <section class="section">
+        <div class="section__head">
+          <h2>통계</h2>
+          <span>Statistics</span>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">기간 통계 > 사용자 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-1.html" target="_blank"></a></td>
-              <td>250602</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">기간 통계 > 공고 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-2.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">기간 통계 > 거래 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-3.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">월별/일별 사용자 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-4.html" target="_blank"></a></td>
-              <td>250602</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">월별/일별 공고 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-5.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">월별/일별 거래 통계</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-6.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">일별 서비스 거래 비율</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/2-7.html" target="_blank"></a></td>
-              <td>x</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <!-- // 통계 -->
-
-      <!-- 사용자 정보 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>사용자 정보</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+        <div class="grid">
+          <a class="card" href="./html/2-1.html" target="_blank"><span class="card__id">2-1</span><span class="card__body"><span class="card__title">기간 통계 · 사용자</span><span class="card__file">2-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-2.html" target="_blank"><span class="card__id">2-2</span><span class="card__body"><span class="card__title">기간 통계 · 공고</span><span class="card__file">2-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-3.html" target="_blank"><span class="card__id">2-3</span><span class="card__body"><span class="card__title">기간 통계 · 거래</span><span class="card__file">2-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-4.html" target="_blank"><span class="card__id">2-4</span><span class="card__body"><span class="card__title">월별/일별 사용자 통계</span><span class="card__file">2-4.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-5.html" target="_blank"><span class="card__id">2-5</span><span class="card__body"><span class="card__title">월별/일별 공고 통계</span><span class="card__file">2-5.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-6.html" target="_blank"><span class="card__id">2-6</span><span class="card__body"><span class="card__title">월별/일별 거래 통계</span><span class="card__file">2-6.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/2-7.html" target="_blank"><span class="card__id">2-7</span><span class="card__body"><span class="card__title">일별 서비스 거래 비율</span><span class="card__file">2-7.html</span></span><span class="card__arrow">→</span></a>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">케어메이트</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-1.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">케어메이트 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-1-1.html" target="_blank"></a></td>
-              <td>250605</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">보호자</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-2.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">보호자 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-2-1.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">전문가</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-3.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">계정 정보</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-3-1.html" target="_blank"></a></td>
-              <td>250623</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">상담 이력</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-3-2.html" target="_blank"></a></td>
-              <td>250623</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">열람권 내역</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-3-3.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">한 줄 평 리스트</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/3-3-4.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
       </section>
-      <!-- // 사용자 정보 -->
 
-      <!-- 의견 접수 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>의견 접수</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+      <section class="section">
+        <div class="section__head">
+          <h2>사용자 정보</h2>
+          <span>Users</span>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">의견 접수</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/4-1.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">의견 접수 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/4-1-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <!-- // 의견 접수 -->
-
-      <!-- APP -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>APP</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+        <div class="grid">
+          <a class="card" href="./html/3-1.html" target="_blank"><span class="card__id">3-1</span><span class="card__body"><span class="card__title">케어메이트</span><span class="card__file">3-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-1-1.html" target="_blank"><span class="card__id">3-1-1</span><span class="card__body"><span class="card__title">케어메이트 상세</span><span class="card__file">3-1-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-2.html" target="_blank"><span class="card__id">3-2</span><span class="card__body"><span class="card__title">보호자</span><span class="card__file">3-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-2-1.html" target="_blank"><span class="card__id">3-2-1</span><span class="card__body"><span class="card__title">보호자 상세</span><span class="card__file">3-2-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-3.html" target="_blank"><span class="card__id">3-3</span><span class="card__body"><span class="card__title">전문가</span><span class="card__file">3-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-3-1.html" target="_blank"><span class="card__id">3-3-1</span><span class="card__body"><span class="card__title">계정 정보</span><span class="card__file">3-3-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-3-2.html" target="_blank"><span class="card__id">3-3-2</span><span class="card__body"><span class="card__title">상담 이력</span><span class="card__file">3-3-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-3-3.html" target="_blank"><span class="card__id">3-3-3</span><span class="card__body"><span class="card__title">열람권 내역</span><span class="card__file">3-3-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/3-3-4.html" target="_blank"><span class="card__id">3-3-4</span><span class="card__body"><span class="card__title">한 줄 평 리스트</span><span class="card__file">3-3-4.html</span></span><span class="card__arrow">→</span></a>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">메인 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">사업자 정보</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">약관 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-3.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">약관 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-3-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">약관 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-3-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">공지사항 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-4.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">공지사항 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-4-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">공지사항 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-4-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">팝업 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-5.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">팝업 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-5-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">팝업 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-5-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">이벤트 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-6.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">이벤트 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-6-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">이벤트 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-6-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">Q&A 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-7.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">Q&A 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-7-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">Q&A 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-7-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">커뮤니티 카테고리 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-8.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">커뮤니티 카테고리 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-8-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">커뮤니티 카테고리 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-8-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">커뮤니티 정보글 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-9.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">커뮤니티 정보글 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-9-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">커뮤니티 정보글 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-9-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">커뮤니티 상담 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-11.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">커뮤니티 상담 관리 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-11-1.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">한 줄 평</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-10.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">신고 접수 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-12.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">신고 접수 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-12-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">돌봄동향리포트 관리</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-13.html" target="_blank"></a></td>
-              <td>250609</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">돌봄동향리포트 등록</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-13-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">돌봄동향리포트 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/5-13-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
       </section>
-      <!-- // APP -->
 
-      <!-- 전체 공고 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>전체 공고</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+      <section class="section">
+        <div class="section__head">
+          <h2>의견 접수</h2>
+          <span>Feedback</span>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">돌봄 서비스</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-1.html" target="_blank"></a></td>
-              <td>250605</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">공고 정보</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-1-1.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">케어메이트 지원 정보</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-1-2.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">한 줄 평 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-1-3.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">상담 서비스</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-2.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">상담 정보</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-2-1.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">상담 상세</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-2-2.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">지원 정보</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-2-3.html" target="_blank"></a></td>
-              <td>250623</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="onlyPcMo">지원자 답변 팝업</td>
-              <td><a href="html/6-2-3-P1.html" target="_blank"></a></td>
-              <td>250610</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="onlyPcMo">한 줄 평 (키워드)</td>
-              <td></td>
-              <td></td>
-              <td><a href="html/6-2-4.html" target="_blank"></a></td>
-              <td>250612</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <!-- // 등록 공고 -->
-
-      <!-- 내정보 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>내정보</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+        <div class="grid">
+          <a class="card" href="./html/4-1.html" target="_blank"><span class="card__id">4-1</span><span class="card__body"><span class="card__title">의견 접수</span><span class="card__file">4-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/4-1-1.html" target="_blank"><span class="card__id">4-1-1</span><span class="card__body"><span class="card__title">의견 접수 상세</span><span class="card__file">4-1-1.html</span></span><span class="card__arrow">→</span></a>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">내정보</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/7.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
       </section>
-      <!-- // 내정보 -->
 
-      <!-- 기타 -->
-      <section class="tableWrap">
-        <div class="tableWrap__tit">
-          <div class="stickyWrap">
-            <h2>기타</h2>
-          </div>
-          <button type="button" class="btnFold"></button>
+      <section class="section">
+        <div class="section__head">
+          <h2>APP</h2>
+          <span>서비스 콘텐츠 관리</span>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Depth1</th>
-              <th>Depth2</th>
-              <th>Depth3</th>
-              <th>Depth4</th>
-              <th>html</th>
-              <th>날짜</th>
-              <th>상태</th>
-              <th>comment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="onlyPcMo">404 페이지</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/10-1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPc">브라우저 안내</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/10-2.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="onlyPcMo">로딩중</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="html/10-3.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="onlyPcMo">기본 팝업</td>
-              <td><a href="html/10-P1.html" target="_blank"></a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="grid">
+          <a class="card" href="./html/5-1.html" target="_blank"><span class="card__id">5-1</span><span class="card__body"><span class="card__title">메인 관리</span><span class="card__file">5-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-2.html" target="_blank"><span class="card__id">5-2</span><span class="card__body"><span class="card__title">사업자 정보</span><span class="card__file">5-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-3.html" target="_blank"><span class="card__id">5-3</span><span class="card__body"><span class="card__title">약관 관리</span><span class="card__file">5-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-3-1.html" target="_blank"><span class="card__id">5-3-1</span><span class="card__body"><span class="card__title">약관 등록</span><span class="card__file">5-3-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-3-2.html" target="_blank"><span class="card__id">5-3-2</span><span class="card__body"><span class="card__title">약관 상세</span><span class="card__file">5-3-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-4.html" target="_blank"><span class="card__id">5-4</span><span class="card__body"><span class="card__title">공지사항 관리</span><span class="card__file">5-4.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-4-1.html" target="_blank"><span class="card__id">5-4-1</span><span class="card__body"><span class="card__title">공지사항 등록</span><span class="card__file">5-4-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-4-2.html" target="_blank"><span class="card__id">5-4-2</span><span class="card__body"><span class="card__title">공지사항 상세</span><span class="card__file">5-4-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-5.html" target="_blank"><span class="card__id">5-5</span><span class="card__body"><span class="card__title">팝업 관리</span><span class="card__file">5-5.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-5-1.html" target="_blank"><span class="card__id">5-5-1</span><span class="card__body"><span class="card__title">팝업 등록</span><span class="card__file">5-5-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-5-2.html" target="_blank"><span class="card__id">5-5-2</span><span class="card__body"><span class="card__title">팝업 상세</span><span class="card__file">5-5-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-6.html" target="_blank"><span class="card__id">5-6</span><span class="card__body"><span class="card__title">이벤트 관리</span><span class="card__file">5-6.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-6-1.html" target="_blank"><span class="card__id">5-6-1</span><span class="card__body"><span class="card__title">이벤트 등록</span><span class="card__file">5-6-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-6-2.html" target="_blank"><span class="card__id">5-6-2</span><span class="card__body"><span class="card__title">이벤트 상세</span><span class="card__file">5-6-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-7.html" target="_blank"><span class="card__id">5-7</span><span class="card__body"><span class="card__title">Q&amp;A 관리</span><span class="card__file">5-7.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-7-1.html" target="_blank"><span class="card__id">5-7-1</span><span class="card__body"><span class="card__title">Q&amp;A 등록</span><span class="card__file">5-7-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-7-2.html" target="_blank"><span class="card__id">5-7-2</span><span class="card__body"><span class="card__title">Q&amp;A 상세</span><span class="card__file">5-7-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-8.html" target="_blank"><span class="card__id">5-8</span><span class="card__body"><span class="card__title">커뮤니티 카테고리 관리</span><span class="card__file">5-8.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-8-1.html" target="_blank"><span class="card__id">5-8-1</span><span class="card__body"><span class="card__title">커뮤니티 카테고리 등록</span><span class="card__file">5-8-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-8-2.html" target="_blank"><span class="card__id">5-8-2</span><span class="card__body"><span class="card__title">커뮤니티 카테고리 상세</span><span class="card__file">5-8-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-9.html" target="_blank"><span class="card__id">5-9</span><span class="card__body"><span class="card__title">커뮤니티 정보글 관리</span><span class="card__file">5-9.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-9-1.html" target="_blank"><span class="card__id">5-9-1</span><span class="card__body"><span class="card__title">커뮤니티 정보글 등록</span><span class="card__file">5-9-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-9-2.html" target="_blank"><span class="card__id">5-9-2</span><span class="card__body"><span class="card__title">커뮤니티 정보글 상세</span><span class="card__file">5-9-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-11.html" target="_blank"><span class="card__id">5-11</span><span class="card__body"><span class="card__title">커뮤니티 상담 관리</span><span class="card__file">5-11.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-11-1.html" target="_blank"><span class="card__id">5-11-1</span><span class="card__body"><span class="card__title">커뮤니티 상담 상세</span><span class="card__file">5-11-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-10.html" target="_blank"><span class="card__id">5-10</span><span class="card__body"><span class="card__title">한 줄 평</span><span class="card__file">5-10.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-12.html" target="_blank"><span class="card__id">5-12</span><span class="card__body"><span class="card__title">신고 접수 관리</span><span class="card__file">5-12.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-12-1.html" target="_blank"><span class="card__id">5-12-1</span><span class="card__body"><span class="card__title">신고 접수 상세</span><span class="card__file">5-12-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-13.html" target="_blank"><span class="card__id">5-13</span><span class="card__body"><span class="card__title">돌봄동향리포트 관리</span><span class="card__file">5-13.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-13-1.html" target="_blank"><span class="card__id">5-13-1</span><span class="card__body"><span class="card__title">돌봄동향리포트 등록</span><span class="card__file">5-13-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/5-13-2.html" target="_blank"><span class="card__id">5-13-2</span><span class="card__body"><span class="card__title">돌봄동향리포트 상세</span><span class="card__file">5-13-2.html</span></span><span class="card__arrow">→</span></a>
+        </div>
       </section>
-      <!-- // 기타 -->
 
-      <!-- floatingWrap -->
-      <div class="floatingWrap">
-        <button type="button" class="btnTop">TOP</button>
-      </div>
-      <!-- // floatingWrap -->
+      <section class="section">
+        <div class="section__head">
+          <h2>전체 공고</h2>
+          <span>Listings</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/6-1.html" target="_blank"><span class="card__id">6-1</span><span class="card__body"><span class="card__title">돌봄 서비스</span><span class="card__file">6-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-1-1.html" target="_blank"><span class="card__id">6-1-1</span><span class="card__body"><span class="card__title">공고 정보</span><span class="card__file">6-1-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-1-2.html" target="_blank"><span class="card__id">6-1-2</span><span class="card__body"><span class="card__title">케어메이트 지원 정보</span><span class="card__file">6-1-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-1-3.html" target="_blank"><span class="card__id">6-1-3</span><span class="card__body"><span class="card__title">한 줄 평 상세</span><span class="card__file">6-1-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2.html" target="_blank"><span class="card__id">6-2</span><span class="card__body"><span class="card__title">상담 서비스</span><span class="card__file">6-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2-1.html" target="_blank"><span class="card__id">6-2-1</span><span class="card__body"><span class="card__title">상담 정보</span><span class="card__file">6-2-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2-2.html" target="_blank"><span class="card__id">6-2-2</span><span class="card__body"><span class="card__title">상담 상세</span><span class="card__file">6-2-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2-3.html" target="_blank"><span class="card__id">6-2-3</span><span class="card__body"><span class="card__title">지원 정보</span><span class="card__file">6-2-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2-3-P1.html" target="_blank"><span class="card__id">P1</span><span class="card__body"><span class="card__title">지원자 답변 팝업</span><span class="card__file">6-2-3-P1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/6-2-4.html" target="_blank"><span class="card__id">6-2-4</span><span class="card__body"><span class="card__title">한 줄 평 (키워드)</span><span class="card__file">6-2-4.html</span></span><span class="card__arrow">→</span></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <h2>내정보 · 기타</h2>
+          <span>Utility</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="./html/7.html" target="_blank"><span class="card__id">07</span><span class="card__body"><span class="card__title">내정보</span><span class="card__file">7.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/10-1.html" target="_blank"><span class="card__id">10-1</span><span class="card__body"><span class="card__title">404 페이지</span><span class="card__file">10-1.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/10-2.html" target="_blank"><span class="card__id">10-2</span><span class="card__body"><span class="card__title">브라우저 안내</span><span class="card__file">10-2.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/10-3.html" target="_blank"><span class="card__id">10-3</span><span class="card__body"><span class="card__title">로딩중</span><span class="card__file">10-3.html</span></span><span class="card__arrow">→</span></a>
+          <a class="card" href="./html/10-P1.html" target="_blank"><span class="card__id">P1</span><span class="card__body"><span class="card__title">기본 팝업</span><span class="card__file">10-P1.html</span></span><span class="card__arrow">→</span></a>
+        </div>
+      </section>
     </main>
+
+    <footer>© CARENATION · 경영진 관리자 대시보드 퍼블리싱 인덱스</footer>
   </body>
 </html>
