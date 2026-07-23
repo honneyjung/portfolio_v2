@@ -457,6 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc: "헬스케어 스타트업 해밀리의 신규 앱 프론트엔드 개발에 참여했습니다. 설문 기반 건강 유형 분류 화면부터 DNA 단계별 챌린지·리포트 UI까지 컴포넌트 설계 및 API 연동을 직접 담당했습니다.",
         tags: ["React 19", "TypeScript", "TanStack Query", "Zustand", "Vite", "TailwindCSS"],
         link: "./projects/hemily-health/index.html",
+        indexLink: "./projects/hemily-health/sitemap.html",
       },
       "carenation-web": {
         title: "케어네이션 홈페이지 리뉴얼",
@@ -471,6 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc: "신규 서비스 추가에 따른 케어네이션 홈페이지 전면 리뉴얼을 담당했습니다. 페이지 구조 설계부터 퍼블리싱까지 단독으로 진행했으며, 기존 CSS를 SCSS로 리팩토링하여 유지보수성을 개선했습니다.",
         tags: ["HTML5", "CSS3", "SCSS", "jQuery", "반응형"],
         link: "./projects/carenation_v2/html/0.html",
+        indexLink: "./projects/carenation_v2/index.html",
       },
       asan: {
         title: "아산나눔재단 웹사이트",
@@ -485,6 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc: "아산나눔재단 공식 홈페이지 클론 코딩을 작업했습니다. 시맨틱 마크업과 웹 접근성 기준을 준수하며 1920px~280px 반응형 레이아웃을 구현했습니다.",
         tags: ["HTML5", "CSS3", "SCSS", "반응형", "웹접근성"],
         link: "./projects/asan-nanum/html/0.html",
+        indexLink: "./projects/asan-nanum/index.html",
       },
       "carenation-app": {
         title: "케어네이션 앱 UI",
@@ -499,6 +502,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc: "요양·간병 매칭 서비스 케어네이션의 모바일 앱 UI를 퍼블리싱했습니다. 모바일 환경 기준으로 컴포넌트를 설계하고 공통 스타일을 구조화했습니다.",
         tags: ["HTML5", "CSS3", "SCSS", "모바일 UI"],
         link: "./projects/care/html/0.html",
+        indexLink: "./projects/care/index.html",
       },
       backoffice: {
         title: "경영진 관리자 대시보드",
@@ -513,6 +517,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc: "백오피스 경영진 전용 관리자 대시보드를 퍼블리싱했습니다. 테이블·차트·모달·폼 등 다양한 공통 컴포넌트를 구조화하고, 대규모 페이지 구성을 체계적으로 관리했습니다.",
         tags: ["HTML5", "CSS3", "SCSS", "Dashboard", "공통 컴포넌트"],
         link: "./projects/backoffice-executive/html/1.html",
+        indexLink: "./projects/backoffice-executive/index.html",
       },
     };
 
@@ -556,6 +561,14 @@ document.addEventListener("DOMContentLoaded", function () {
         link.style.display = "inline-flex";
       } else {
         link.style.display = "none";
+      }
+
+      const indexLink = document.getElementById("pfModalIndexLink");
+      if (data.indexLink) {
+        indexLink.href = data.indexLink;
+        indexLink.style.display = "inline-flex";
+      } else {
+        indexLink.style.display = "none";
       }
 
       overlay.setAttribute("aria-hidden", "false");
