@@ -1562,6 +1562,12 @@ ul {
     min-width: 0;
     border-radius: 0;
     padding-bottom: 0;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
   }
   .sidebar .sidebar-inner {
     flex-direction: row;
@@ -1575,7 +1581,7 @@ ul {
     flex: 1 1 auto;
     min-width: 0;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 16px;
   }
   .sidebar .profile-avatar {
@@ -1587,14 +1593,21 @@ ul {
     font-size: 18px;
   }
   .sidebar .profile-title {
+    display: none;
+  }
+  .sidebar .profile-contact {
     margin-bottom: 0;
   }
   .sidebar .social-links {
-    margin-bottom: 0;
+    display: none;
+  }
+  .sidebar .btn-download-cv {
+    display: none;
   }
   .main-panel {
     border-radius: 0;
     overflow-y: visible;
+    padding-bottom: 176px;
   }
   .section {
     padding: 36px 24px;
